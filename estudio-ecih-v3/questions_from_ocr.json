@@ -1,0 +1,416 @@
+{
+  "version": "ECIH v3 - Extraido del temario oficial",
+  "source": "ECIHv3.pdf (OCR)",
+  "questions": [
+    {
+      "id": 1,
+      "module": 1,
+      "question_en": "Information security relies on five major elements. Which of the following is NOT one of them?",
+      "question_es": "La seguridad de la informacion se basa en cinco elementos principales. Cual de los siguientes NO es uno de ellos?",
+      "options_en": ["Confidentiality", "Integrity", "Availability", "Accountability"],
+      "options_es": ["Confidencialidad", "Integridad", "Disponibilidad", "Responsabilidad"],
+      "correct": 3,
+      "explanation_en": "According to the courseware, information security relies on five major elements: confidentiality, integrity, availability, authenticity, and nonrepudiation. Accountability is not listed.",
+      "explanation_es": "Segun el temario, la seguridad de la informacion se basa en cinco elementos: confidencialidad, integridad, disponibilidad, autenticidad y no repudio. Responsabilidad no esta listada.",
+      "source_page": 19
+    },
+    {
+      "id": 2,
+      "module": 1,
+      "question_en": "According to the ECIH courseware, what is the definition of 'Confidentiality'?",
+      "question_es": "Segun el temario ECIH, cual es la definicion de 'Confidencialidad'?",
+      "options_en": [
+        "The trustworthiness of data in prevention of unauthorized changes",
+        "The assurance that information is accessible only to those authorized to have access",
+        "The assurance that systems are accessible when required by authorized users",
+        "The genuineness or uncorruptness of communication"
+      ],
+      "options_es": [
+        "La confiabilidad de los datos en la prevencion de cambios no autorizados",
+        "La garantia de que la informacion es accesible solo para aquellos autorizados",
+        "La garantia de que los sistemas estan accesibles cuando los usuarios autorizados lo requieren",
+        "La autenticidad o incorruptibilidad de la comunicacion"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware defines Confidentiality as 'the assurance that the information is accessible only to those who are authorized to have access.'",
+      "explanation_es": "El temario define Confidencialidad como 'la garantia de que la informacion es accesible solo para aquellos autorizados a tener acceso.'",
+      "source_page": 19
+    },
+    {
+      "id": 3,
+      "module": 1,
+      "question_en": "According to the ECIH courseware, what is the definition of 'Integrity'?",
+      "question_es": "Segun el temario ECIH, cual es la definicion de 'Integridad'?",
+      "options_en": [
+        "The assurance that information is accessible only to authorized users",
+        "The genuineness of communication and documents",
+        "The trustworthiness of data or resources in the prevention of improper and unauthorized changes",
+        "A way to guarantee that the sender cannot deny having sent a message"
+      ],
+      "options_es": [
+        "La garantia de que la informacion es accesible solo para usuarios autorizados",
+        "La autenticidad de comunicaciones y documentos",
+        "La confiabilidad de datos o recursos en la prevencion de cambios inapropiados y no autorizados",
+        "Una forma de garantizar que el emisor no puede negar haber enviado un mensaje"
+      ],
+      "correct": 2,
+      "explanation_en": "The courseware defines Integrity as 'the trustworthiness of data or resources in the prevention of improper and unauthorized changes.'",
+      "explanation_es": "El temario define Integridad como 'la confiabilidad de datos o recursos en la prevencion de cambios inapropiados y no autorizados.'",
+      "source_page": 19
+    },
+    {
+      "id": 4,
+      "module": 1,
+      "question_en": "What are Confidentiality, Integrity, and Availability collectively referred to as?",
+      "question_es": "Como se denomina colectivamente a Confidencialidad, Integridad y Disponibilidad?",
+      "options_en": ["The Security Triangle", "The CIA Triad", "The Information Security Model", "The Defense Framework"],
+      "options_es": ["El Triangulo de Seguridad", "La Triada CIA", "El Modelo de Seguridad de la Informacion", "El Marco de Defensa"],
+      "correct": 1,
+      "explanation_en": "According to the courseware: 'Confidentiality, integrity, and availability are collectively referred to as the CIA triad.'",
+      "explanation_es": "Segun el temario: 'Confidencialidad, integridad y disponibilidad se denominan colectivamente triada CIA.'",
+      "source_page": 20
+    },
+    {
+      "id": 5,
+      "module": 1,
+      "question_en": "According to the courseware, what is the formula for information security attacks?",
+      "question_es": "Segun el temario, cual es la formula para los ataques de seguridad de la informacion?",
+      "options_en": [
+        "Attacks = Threat + Exploit + Target",
+        "Attacks = Motive (Goal) + Method + Vulnerability",
+        "Attacks = Hacker + Tools + System",
+        "Attacks = Risk + Impact + Probability"
+      ],
+      "options_es": [
+        "Ataques = Amenaza + Exploit + Objetivo",
+        "Ataques = Motivo (Objetivo) + Metodo + Vulnerabilidad",
+        "Ataques = Hacker + Herramientas + Sistema",
+        "Ataques = Riesgo + Impacto + Probabilidad"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware states: 'Attacks = Motive (Goal) + Method + Vulnerability'",
+      "explanation_es": "El temario indica: 'Ataques = Motivo (Objetivo) + Metodo + Vulnerabilidad'",
+      "source_page": 20
+    },
+    {
+      "id": 6,
+      "module": 1,
+      "question_en": "According to the ECIH courseware, what is a 'Threat'?",
+      "question_es": "Segun el temario ECIH, que es una 'Amenaza' (Threat)?",
+      "options_en": [
+        "A weakness in the design of a system",
+        "The potential occurrence of an undesirable event that can damage and disrupt operational activities",
+        "A person responsible for harmful incidents",
+        "A method used to gain unauthorized access"
+      ],
+      "options_es": [
+        "Una debilidad en el diseno de un sistema",
+        "La posible ocurrencia de un evento indeseable que puede danar e interrumpir las actividades operativas",
+        "Una persona responsable de incidentes daninos",
+        "Un metodo usado para obtener acceso no autorizado"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware defines threat as 'the potential occurrence of an undesirable event that can eventually damage and disrupt the operational and functional activities of an organization.'",
+      "explanation_es": "El temario define amenaza como 'la posible ocurrencia de un evento indeseable que puede eventualmente danar e interrumpir las actividades operativas y funcionales de una organizacion.'",
+      "source_page": 20
+    },
+    {
+      "id": 7,
+      "module": 1,
+      "question_en": "According to the courseware, what is a 'Threat Actor'?",
+      "question_es": "Segun el temario, que es un 'Actor de Amenaza' (Threat Actor)?",
+      "options_en": [
+        "A software that performs malicious actions",
+        "A person or entity responsible for harmful incidents or has potential to impact the security of an organization's network",
+        "A type of malware that spreads automatically",
+        "An automated system that launches attacks"
+      ],
+      "options_es": [
+        "Un software que realiza acciones maliciosas",
+        "Una persona o entidad responsable de incidentes daninos o que tiene potencial de impactar la seguridad de la red de una organizacion",
+        "Un tipo de malware que se propaga automaticamente",
+        "Un sistema automatizado que lanza ataques"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware defines: 'A threat actor or malicious actor is a person or entity responsible for harmful incidents or has the potential to impact the security of an organization's network.'",
+      "explanation_es": "El temario define: 'Un actor de amenaza o actor malicioso es una persona o entidad responsable de incidentes daninos o tiene el potencial de impactar la seguridad de la red de una organizacion.'",
+      "source_page": 21
+    },
+    {
+      "id": 8,
+      "module": 1,
+      "question_en": "According to the ECIH courseware, threat sources can be broadly classified into which three categories?",
+      "question_es": "Segun el temario ECIH, las fuentes de amenazas se pueden clasificar ampliamente en cuales tres categorias?",
+      "options_en": [
+        "Internal, External, and Physical",
+        "Natural, Unintentional, and Intentional",
+        "Technical, Human, and Environmental",
+        "Active, Passive, and Hybrid"
+      ],
+      "options_es": [
+        "Internas, Externas y Fisicas",
+        "Naturales, No Intencionales e Intencionales",
+        "Tecnicas, Humanas y Ambientales",
+        "Activas, Pasivas e Hibridas"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware states threat sources 'can be broadly classified as natural, unintentional, or intentional threats.'",
+      "explanation_es": "El temario indica que las fuentes de amenazas 'pueden clasificarse ampliamente como amenazas naturales, no intencionales o intencionales.'",
+      "source_page": 21
+    },
+    {
+      "id": 9,
+      "module": 1,
+      "question_en": "Which of the following is an example of a Natural Threat according to the courseware?",
+      "question_es": "Cual de los siguientes es un ejemplo de Amenaza Natural segun el temario?",
+      "options_en": [
+        "Disgruntled employee",
+        "Hackers",
+        "Fires, floods, power failures, earthquakes",
+        "Unskilled administrators"
+      ],
+      "options_es": [
+        "Empleado descontento",
+        "Hackers",
+        "Incendios, inundaciones, fallos de energia, terremotos",
+        "Administradores no capacitados"
+      ],
+      "correct": 2,
+      "explanation_en": "The courseware states: 'Natural factors, such as fires, floods, power failures, lightning, meteors, and earthquakes, are potential threats.'",
+      "explanation_es": "El temario indica: 'Factores naturales, como incendios, inundaciones, fallos de energia, rayos, meteoros y terremotos, son amenazas potenciales.'",
+      "source_page": 21
+    },
+    {
+      "id": 10,
+      "module": 1,
+      "question_en": "According to the courseware, which type of threat actor uses their hacking skills for defensive purposes?",
+      "question_es": "Segun el temario, que tipo de actor de amenaza usa sus habilidades de hacking con propositos defensivos?",
+      "options_en": ["Black Hats", "White Hats", "Gray Hats", "Script Kiddies"],
+      "options_es": ["Black Hats", "White Hats", "Gray Hats", "Script Kiddies"],
+      "correct": 1,
+      "explanation_en": "The courseware states: 'White hats or penetration testers use their hacking skills for defensive purposes.'",
+      "explanation_es": "El temario indica: 'Los white hats o pentesters usan sus habilidades de hacking con propositos defensivos.'",
+      "source_page": 23
+    },
+    {
+      "id": 11,
+      "module": 1,
+      "question_en": "What are 'Black Hats' according to the ECIH courseware?",
+      "question_es": "Que son los 'Black Hats' segun el temario ECIH?",
+      "options_en": [
+        "Security professionals who protect networks",
+        "Individuals who use their computing skills for illegal or malicious purposes",
+        "Government-sponsored hackers",
+        "Untrained attackers who use freely available tools"
+      ],
+      "options_es": [
+        "Profesionales de seguridad que protegen redes",
+        "Individuos que usan sus habilidades informaticas para propositos ilegales o maliciosos",
+        "Hackers patrocinados por el gobierno",
+        "Atacantes no entrenados que usan herramientas disponibles gratuitamente"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware defines: 'Black hats are individuals who use their extraordinary computing skills for illegal or malicious purposes.'",
+      "explanation_es": "El temario define: 'Los black hats son individuos que usan sus habilidades informaticas extraordinarias para propositos ilegales o maliciosos.'",
+      "source_page": 23
+    },
+    {
+      "id": 12,
+      "module": 1,
+      "question_en": "According to the courseware, what type of attackers are 'Script Kiddies'?",
+      "question_es": "Segun el temario, que tipo de atacantes son los 'Script Kiddies'?",
+      "options_en": [
+        "Highly skilled hackers",
+        "Government-sponsored attackers",
+        "Unskilled attackers who use freely available online tools",
+        "Corporate espionage specialists"
+      ],
+      "options_es": [
+        "Hackers altamente capacitados",
+        "Atacantes patrocinados por el gobierno",
+        "Atacantes no capacitados que usan herramientas en linea disponibles gratuitamente",
+        "Especialistas en espionaje corporativo"
+      ],
+      "correct": 2,
+      "explanation_en": "The courseware states: 'Unstructured external threats are implemented by unskilled/aspiring attackers, popularly known as script kiddies.'",
+      "explanation_es": "El temario indica: 'Las amenazas externas no estructuradas son implementadas por atacantes no capacitados/aspirantes, popularmente conocidos como script kiddies.'",
+      "source_page": 22
+    },
+    {
+      "id": 13,
+      "module": 1,
+      "question_en": "According to the ECIH courseware, why are insider attacks more dangerous than external attacks?",
+      "question_es": "Segun el temario ECIH, por que los ataques internos son mas peligrosos que los externos?",
+      "options_en": [
+        "Because insiders have more powerful tools",
+        "Because insiders are familiar with network architecture, security policies, and organizational regulations",
+        "Because external attacks are always detected",
+        "Because insiders have unlimited resources"
+      ],
+      "options_es": [
+        "Porque los insiders tienen herramientas mas poderosas",
+        "Porque los insiders estan familiarizados con la arquitectura de red, politicas de seguridad y regulaciones organizacionales",
+        "Porque los ataques externos siempre son detectados",
+        "Porque los insiders tienen recursos ilimitados"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware states: 'Insider attacks are more dangerous than external attacks because insiders are familiar with the network architecture, security policies, and organizational regulations.'",
+      "explanation_es": "El temario indica: 'Los ataques internos son mas peligrosos que los externos porque los insiders estan familiarizados con la arquitectura de red, politicas de seguridad y regulaciones organizacionales.'",
+      "source_page": 22
+    },
+    {
+      "id": 14,
+      "module": 1,
+      "question_en": "What is 'Non-Repudiation' according to the ECIH courseware?",
+      "question_es": "Que es 'No Repudio' segun el temario ECIH?",
+      "options_en": [
+        "The assurance that information is accessible only to authorized users",
+        "The trustworthiness of data in prevention of unauthorized changes",
+        "A way to guarantee that the sender cannot deny having sent a message and the recipient cannot deny having received it",
+        "The genuineness of communication and documents"
+      ],
+      "options_es": [
+        "La garantia de que la informacion es accesible solo para usuarios autorizados",
+        "La confiabilidad de datos en la prevencion de cambios no autorizados",
+        "Una forma de garantizar que el emisor no puede negar haber enviado un mensaje y el receptor no puede negar haberlo recibido",
+        "La autenticidad de comunicaciones y documentos"
+      ],
+      "correct": 2,
+      "explanation_en": "The courseware defines: 'Non-repudiation is a way to guarantee that the sender of a message cannot later deny having sent the message, and that the recipient cannot deny having received the message.'",
+      "explanation_es": "El temario define: 'No repudio es una forma de garantizar que el emisor de un mensaje no puede negar despues haber enviado el mensaje, y que el receptor no puede negar haberlo recibido.'",
+      "source_page": 19
+    },
+    {
+      "id": 15,
+      "module": 1,
+      "question_en": "According to the courseware, which controls ensure the authenticity of data, transactions, communications, and documents?",
+      "question_es": "Segun el temario, que controles aseguran la autenticidad de datos, transacciones, comunicaciones y documentos?",
+      "options_en": [
+        "Firewalls and IDS",
+        "Biometrics, smart cards, and digital certificates",
+        "Antivirus and encryption",
+        "Backups and redundancy"
+      ],
+      "options_es": [
+        "Firewalls e IDS",
+        "Biometria, tarjetas inteligentes y certificados digitales",
+        "Antivirus y cifrado",
+        "Backups y redundancia"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware states: 'Controls, such as biometrics, smart cards, and digital certificates, ensure the authenticity of data, transactions, communications, and documents.'",
+      "explanation_es": "El temario indica: 'Controles como biometria, tarjetas inteligentes y certificados digitales aseguran la autenticidad de datos, transacciones, comunicaciones y documentos.'",
+      "source_page": 19
+    },
+    {
+      "id": 16,
+      "module": 1,
+      "question_en": "According to the courseware, which of the following is NOT a motive behind information security attacks?",
+      "question_es": "Segun el temario, cual de los siguientes NO es un motivo detras de los ataques de seguridad de la informacion?",
+      "options_en": [
+        "Disrupting business continuity",
+        "Demanding ransom",
+        "Improving system performance",
+        "Taking revenge"
+      ],
+      "options_es": [
+        "Interrumpir la continuidad del negocio",
+        "Exigir rescate",
+        "Mejorar el rendimiento del sistema",
+        "Tomar venganza"
+      ],
+      "correct": 2,
+      "explanation_en": "The courseware lists motives including: disrupting business continuity, performing information theft, demanding ransom, taking revenge, etc. Improving system performance is NOT a motive for attacks.",
+      "explanation_es": "El temario lista motivos incluyendo: interrumpir continuidad del negocio, robo de informacion, exigir rescate, venganza, etc. Mejorar el rendimiento del sistema NO es un motivo para ataques.",
+      "source_page": 20
+    },
+    {
+      "id": 17,
+      "module": 1,
+      "question_en": "What is 'Authenticity' according to the ECIH courseware?",
+      "question_es": "Que es 'Autenticidad' segun el temario ECIH?",
+      "options_en": [
+        "The assurance that systems are accessible when required",
+        "The trustworthiness of data in prevention of unauthorized changes",
+        "The genuineness or uncorruptness of communication, documents, or data",
+        "A way to guarantee that a sender cannot deny sending a message"
+      ],
+      "options_es": [
+        "La garantia de que los sistemas estan accesibles cuando se requieren",
+        "La confiabilidad de datos en la prevencion de cambios no autorizados",
+        "La autenticidad o incorruptibilidad de comunicacion, documentos o datos",
+        "Una forma de garantizar que un emisor no puede negar enviar un mensaje"
+      ],
+      "correct": 2,
+      "explanation_en": "The courseware defines: 'Authenticity refers to the genuineness or uncorruptness of communication, documents, or data.'",
+      "explanation_es": "El temario define: 'Autenticidad se refiere a la genuinidad o incorruptibilidad de comunicacion, documentos o datos.'",
+      "source_page": 19
+    },
+    {
+      "id": 18,
+      "module": 1,
+      "question_en": "According to the courseware, what measures can maintain data integrity?",
+      "question_es": "Segun el temario, que medidas pueden mantener la integridad de datos?",
+      "options_en": [
+        "Firewalls and VPNs",
+        "Checksum and access control",
+        "Antivirus and DDoS prevention",
+        "Encryption and biometrics"
+      ],
+      "options_es": [
+        "Firewalls y VPNs",
+        "Checksum y control de acceso",
+        "Antivirus y prevencion de DDoS",
+        "Cifrado y biometria"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware states: 'Measures to maintain data integrity may include a checksum and access control.'",
+      "explanation_es": "El temario indica: 'Las medidas para mantener la integridad de datos pueden incluir checksum y control de acceso.'",
+      "source_page": 19
+    },
+    {
+      "id": 19,
+      "module": 1,
+      "question_en": "According to the ECIH courseware, what is the 2023 ransomware attack mentioned in the Foreword?",
+      "question_es": "Segun el temario ECIH, cual es el ataque de ransomware de 2023 mencionado en el Prologo?",
+      "options_en": [
+        "WannaCry attack on hospitals",
+        "LockBit attack on Dental Insurer MCNA compromising 8.9 million records",
+        "NotPetya attack on shipping companies",
+        "REvil attack on meat processing plants"
+      ],
+      "options_es": [
+        "Ataque WannaCry a hospitales",
+        "Ataque LockBit a la aseguradora dental MCNA comprometiendo 8.9 millones de registros",
+        "Ataque NotPetya a companias navieras",
+        "Ataque REvil a plantas procesadoras de carne"
+      ],
+      "correct": 1,
+      "explanation_en": "The Foreword mentions: 'A recent (2023) ransomware attack on Dental Insurer MCNA compromised sensitive medical records of over 8.9 million people... the attack was launched by LockBit.'",
+      "explanation_es": "El Prologo menciona: 'Un reciente (2023) ataque de ransomware a la aseguradora dental MCNA comprometio registros medicos sensibles de mas de 8.9 millones de personas... el ataque fue lanzado por LockBit.'",
+      "source_page": 4
+    },
+    {
+      "id": 20,
+      "module": 1,
+      "question_en": "What does the courseware say about structured external threats?",
+      "question_es": "Que dice el temario sobre las amenazas externas estructuradas?",
+      "options_en": [
+        "They are performed by untrained attackers out of curiosity",
+        "They are implemented by technically skilled attackers using various tools to gain access",
+        "They can easily be prevented by using port-scanning tools",
+        "They are always performed by single individuals"
+      ],
+      "options_es": [
+        "Son realizadas por atacantes no entrenados por curiosidad",
+        "Son implementadas por atacantes tecnicamente capacitados usando varias herramientas para obtener acceso",
+        "Pueden prevenirse facilmente usando herramientas de escaneo de puertos",
+        "Siempre son realizadas por individuos solos"
+      ],
+      "correct": 1,
+      "explanation_en": "The courseware states: 'Structured external threats are implemented by technically skilled attackers using various tools to gain access to a network.'",
+      "explanation_es": "El temario indica: 'Las amenazas externas estructuradas son implementadas por atacantes tecnicamente capacitados usando varias herramientas para obtener acceso a una red.'",
+      "source_page": 22
+    }
+  ]
+}

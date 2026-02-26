@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECIH v3 - Plataforma de Estudio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <h2>ECIH v3</h2>
+            <p>Incident Handler</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#" onclick="showSection('dashboard')" class="active" data-i18n="nav.dashboard">Dashboard</a></li>
+            <li><a href="#" onclick="showSection('modulos')" data-i18n="nav.modules">Módulos</a></li>
+            <li><a href="#" onclick="showSection('flashcards')" data-i18n="nav.flashcards">Flashcards</a></li>
+            <li><a href="#" onclick="showSection('practica')" data-i18n="nav.practice">Práctica</a></li>
+            <li><a href="#" onclick="showSection('simulacro')" data-i18n="nav.exam">Simulacro</a></li>
+            <li><a href="#" onclick="showSection('progreso')" data-i18n="nav.progress">Progreso</a></li>
+        </ul>
+        <div class="lang-toggle">
+            <button id="langBtn" onclick="toggleLanguage()" title="Switch language">
+                <span id="langBtnText">EN</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="content">
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="section active">
+            <h1>Bienvenido al Estudio ECIH v3</h1>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 id="totalQuestionsCount">100</h3>
+                    <p data-i18n="dashboard.examQuestions">Preguntas en Examen</p>
+                </div>
+                <div class="stat-card">
+                    <h3>3 hrs</h3>
+                    <p data-i18n="dashboard.duration">Duración</p>
+                </div>
+                <div class="stat-card">
+                    <h3>70%</h3>
+                    <p data-i18n="dashboard.minScore">Puntuación Mínima</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="availableQuestionsCount">-</h3>
+                    <p data-i18n="dashboard.availableQuestions">Preguntas Disponibles</p>
+                </div>
+            </div>
+            <div id="weakAreasContainer" class="weak-areas-container" style="display:none;">
+                <h2 data-i18n="dashboard.weakAreas">Areas Debiles</h2>
+                <div id="weakAreasList" class="weak-areas-list"></div>
+            </div>
+            <div class="modules-overview">
+                <h2>Módulos del Curso</h2>
+                <div class="module-cards">
+                    <div class="module-card" onclick="showModule(1)">
+                        <span class="module-num">01</span>
+                        <h4>Introduction to Incident Handling</h4>
+                    </div>
+                    <div class="module-card" onclick="showModule(2)">
+                        <span class="module-num">02</span>
+                        <h4>IH&R Process</h4>
+                    </div>
+                    <div class="module-card" onclick="showModule(3)">
+                        <span class="module-num">03</span>
+                        <h4>First Response</h4>
+                    </div>
+                    <div class="module-card" onclick="showModule(4)">
+                        <span class="module-num">04</span>
+                        <h4>Malware Incidents</h4>
+                    </div>
+                    <div class="module-card" onclick="showModule(5)">
+                        <span class="module-num">05</span>
+                        <h4>Email Security</h4>
+                    </div>
+                    <div class="module-card" onclick="showModule(6)">
+                        <span class="module-num">06</span>
+                        <h4>Network Security</h4>
+                    </div>
+                    <div class="module-card" onclick="showModule(7)">
+                        <span class="module-num">07</span>
+                        <h4>Web Application Security</h4>
+                    </div>
+                    <div class="module-card" onclick="showModule(8)">
+                        <span class="module-num">08</span>
+                        <h4>Cloud Security</h4>
+                    </div>
+                    <div class="module-card" onclick="showModule(9)">
+                        <span class="module-num">09</span>
+                        <h4>Insider Threats</h4>
+                    </div>
+                    <div class="module-card" onclick="showModule(10)">
+                        <span class="module-num">10</span>
+                        <h4>Endpoint Security</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÓDULOS -->
+        <section id="modulos" class="section">
+            <h1>Resúmenes por Módulo</h1>
+            <div class="module-selector">
+                <select id="moduleSelect" onchange="loadModuleContent()">
+                    <option value="1">Módulo 1: Introduction to Incident Handling</option>
+                    <option value="2">Módulo 2: IH&R Process</option>
+                    <option value="3">Módulo 3: First Response</option>
+                    <option value="4">Módulo 4: Malware Incidents</option>
+                    <option value="5">Módulo 5: Email Security</option>
+                    <option value="6">Módulo 6: Network Security</option>
+                    <option value="7">Módulo 7: Web Application Security</option>
+                    <option value="8">Módulo 8: Cloud Security</option>
+                    <option value="9">Módulo 9: Insider Threats</option>
+                    <option value="10">Módulo 10: Endpoint Security</option>
+                </select>
+            </div>
+            <div id="moduleContent" class="module-content"></div>
+        </section>
+
+        <!-- FLASHCARDS -->
+        <section id="flashcards" class="section">
+            <h1>Flashcards</h1>
+            <div class="flashcard-controls">
+                <select id="flashcardModule" onchange="loadFlashcards()">
+                    <option value="all">Todos los módulos</option>
+                    <option value="1">Módulo 1</option>
+                    <option value="2">Módulo 2</option>
+                    <option value="3">Módulo 3</option>
+                    <option value="4">Módulo 4</option>
+                    <option value="5">Módulo 5</option>
+                    <option value="6">Módulo 6</option>
+                    <option value="7">Módulo 7</option>
+                    <option value="8">Módulo 8</option>
+                    <option value="9">Módulo 9</option>
+                    <option value="10">Módulo 10</option>
+                </select>
+                <button onclick="shuffleFlashcards()">Mezclar</button>
+            </div>
+            <div class="flashcard-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <p id="flashcardQuestion">Cargando...</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <p id="flashcardAnswer">Cargando...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-nav">
+                    <button onclick="prevFlashcard()">← Anterior</button>
+                    <span id="flashcardCounter">1/50</span>
+                    <button onclick="nextFlashcard()">Siguiente →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRÁCTICA -->
+        <section id="practica" class="section">
+            <h1 data-i18n="section.practice">Preguntas de Práctica</h1>
+            <div class="practice-controls">
+                <select id="practiceModule" onchange="loadPracticeQuestions()">
+                    <option value="all" data-i18n="filter.allModules">Todos los módulos</option>
+                    <option value="1">Módulo 1</option>
+                    <option value="2">Módulo 2</option>
+                    <option value="3">Módulo 3</option>
+                    <option value="4">Módulo 4</option>
+                    <option value="5">Módulo 5</option>
+                    <option value="6">Módulo 6</option>
+                    <option value="7">Módulo 7</option>
+                    <option value="8">Módulo 8</option>
+                    <option value="9">Módulo 9</option>
+                    <option value="10">Módulo 10</option>
+                </select>
+                <span id="practiceScore">Puntuación: 0/0</span>
+            </div>
+            <div id="practiceContainer" class="practice-container"></div>
+            <div class="practice-nav">
+                <button onclick="prevQuestion()">← Anterior</button>
+                <span id="questionCounter">1/10</span>
+                <button onclick="nextQuestion()">Siguiente →</button>
+            </div>
+        </section>
+
+        <!-- SIMULACRO -->
+        <section id="simulacro" class="section">
+            <h1 data-i18n="nav.exam">Simulacro de Examen</h1>
+            <div id="examIntro" class="exam-intro">
+                <div class="exam-info">
+                    <h2 data-i18n="exam.title">Examen ECIH v3</h2>
+                    <ul>
+                        <li><strong data-i18n="exam.questionsLabel">Preguntas:</strong> <span data-i18n="exam.questions">100 multiple choice</span></li>
+                        <li><strong data-i18n="exam.timeLabel">Tiempo:</strong> <span data-i18n="exam.time">3 horas (180 minutos)</span></li>
+                        <li><strong data-i18n="exam.passingLabel">Aprobación:</strong> <span data-i18n="exam.passing">70% (70 respuestas correctas)</span></li>
+                    </ul>
+                    <button class="start-exam-btn" onclick="startExam()" data-i18n="btn.startExam">Iniciar Simulacro</button>
+                </div>
+            </div>
+            <div id="examContainer" class="exam-container" style="display:none;">
+                <div class="exam-header">
+                    <div class="exam-timer">
+                        <span id="examTimer">03:00:00</span>
+                    </div>
+                    <div class="exam-progress">
+                        <span id="examProgress">1/100</span>
+                    </div>
+                </div>
+                <div id="examQuestion" class="exam-question"></div>
+                <div class="exam-nav">
+                    <button onclick="prevExamQuestion()" data-i18n="btn.prev">← Anterior</button>
+                    <button onclick="nextExamQuestion()" data-i18n="btn.next">Siguiente →</button>
+                    <button onclick="finishExam()" class="finish-btn" data-i18n="btn.finish">Finalizar</button>
+                </div>
+                <div class="question-grid" id="questionGrid"></div>
+            </div>
+            <div id="examResults" class="exam-results" style="display:none;"></div>
+        </section>
+
+        <!-- PROGRESO -->
+        <section id="progreso" class="section">
+            <h1 data-i18n="nav.progress">Tu Progreso</h1>
+            <div class="progress-stats">
+                <div class="progress-card">
+                    <h3 id="totalStudied">0</h3>
+                    <p data-i18n="progress.flashcards">Flashcards estudiadas</p>
+                </div>
+                <div class="progress-card">
+                    <h3 id="totalCorrect">0%</h3>
+                    <p data-i18n="progress.accuracy">Precisión en práctica</p>
+                </div>
+                <div class="progress-card">
+                    <h3 id="examsCompleted">0</h3>
+                    <p data-i18n="progress.exams">Simulacros completados</p>
+                </div>
+                <div class="progress-card">
+                    <h3 id="bestScore">0%</h3>
+                    <p data-i18n="progress.best">Mejor puntuación</p>
+                </div>
+            </div>
+            <div class="progress-chart">
+                <h2 data-i18n="progress.byModule">Rendimiento por Módulo</h2>
+                <div id="moduleProgress" class="module-progress-bars"></div>
+            </div>
+            <button onclick="resetProgress()" class="reset-btn" data-i18n="btn.reset">Reiniciar Progreso</button>
+        </section>
+    </main>
+
+    <script src="data.js?v=4"></script>
+    <script src="app.js?v=4"></script>
+</body>
+</html>

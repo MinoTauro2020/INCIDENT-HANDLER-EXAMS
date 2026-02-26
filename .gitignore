@@ -1,0 +1,20 @@
+# EC-Council copyrighted courseware - DO NOT commit
+*.pdf
+*.rar
+*.png
+EC Council*/
+EC_Council*/
+
+# Extracted OCR/text data (large files from courseware)
+estudio-ecih-v3/extracted_ocr.json
+estudio-ecih-v3/extracted_ocr.txt
+estudio-ecih-v3/extracted_text.txt
+estudio-ecih-v3/extracted_content.json
+estudio-ecih-v3/module_*_content.txt
+estudio-ecih-v3/ecih_v3_complete.json
+estudio-ecih-v3/similares.txt
+
+# IDE / OS
+.claude/
+.DS_Store
+Thumbs.db
