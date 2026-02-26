@@ -1,0 +1,758 @@
+[
+  {
+    "id": 501,
+    "module": 7,
+    "question_en": "According to the ECIH v3 courseware, what is the OWASP Top 10 2021 risk category A03?",
+    "question_es": "Segun el temario ECIH v3, cual es la categoria de riesgo A03 del OWASP Top 10 2021?",
+    "options_en": [
+      "Broken Access Control",
+      "Cryptographic Failures",
+      "Injection",
+      "Security Misconfiguration"
+    ],
+    "options_es": [
+      "Control de acceso roto",
+      "Fallos criptograficos",
+      "Inyeccion",
+      "Configuracion de seguridad incorrecta"
+    ],
+    "correct": 2,
+    "explanation_en": "According to ECIH v3, A03 - Injection covers flaws such as SQL command and LDAP injections that occur when untrusted data are sent to an interpreter as part of a command or query. Attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.",
+    "explanation_es": "Segun ECIH v3, A03 - Inyeccion cubre fallos como inyecciones de comandos SQL y LDAP que ocurren cuando datos no confiables se envian a un interprete como parte de un comando o consulta. Los datos hostiles del atacante pueden engañar al interprete para ejecutar comandos no deseados o acceder a datos sin autorizacion adecuada."
+  },
+  {
+    "id": 502,
+    "module": 7,
+    "question_en": "When deploying a WAF to protect web applications, which of the following is NOT listed as a common factor included in designing WAF policies or rules according to the ECIH v3 courseware?",
+    "question_es": "Al desplegar un WAF para proteger aplicaciones web, cual de los siguientes NO se menciona como factor comun incluido en el diseño de politicas o reglas de WAF segun el temario ECIH v3?",
+    "options_en": [
+      "IP address and geographical location data",
+      "Request methods such as POST or GET",
+      "Database schema information",
+      "HTTP/S header values"
+    ],
+    "options_es": [
+      "Direccion IP y datos de ubicacion geografica",
+      "Metodos de solicitud como POST o GET",
+      "Informacion del esquema de base de datos",
+      "Valores de cabeceras HTTP/S"
+    ],
+    "correct": 2,
+    "explanation_en": "According to ECIH v3, common factors in designing WAF policies include: IP address and geographical location data, request methods (POST/GET), URL parameters, HTTP/S header values, and access rate. Database schema information is not listed as a WAF policy design factor.",
+    "explanation_es": "Segun ECIH v3, los factores comunes en el diseño de politicas WAF incluyen: direccion IP y datos de ubicacion geografica, metodos de solicitud (POST/GET), parametros de URL, valores de cabeceras HTTP/S y tasa de acceso. La informacion del esquema de base de datos no se lista como factor de diseño de politicas WAF."
+  },
+  {
+    "id": 503,
+    "module": 7,
+    "question_en": "In the ECIH v3 courseware, what technique is recommended to prevent SQL injection attacks in web application coding best practices?",
+    "question_es": "En el temario ECIH v3, que tecnica se recomienda para prevenir ataques de inyeccion SQL en las mejores practicas de codificacion de aplicaciones web?",
+    "options_en": [
+      "Use dynamic SQL queries with string concatenation",
+      "Use stored procedures with automatically parameterized parameters",
+      "Disable all database logging",
+      "Allow unrestricted input field lengths"
+    ],
+    "options_es": [
+      "Usar consultas SQL dinamicas con concatenacion de cadenas",
+      "Usar procedimientos almacenados con parametros automaticamente parametrizados",
+      "Desactivar todo el registro de base de datos",
+      "Permitir longitudes de campos de entrada sin restriccion"
+    ],
+    "correct": 1,
+    "explanation_en": "The ECIH v3 courseware explicitly states: 'To prevent SQLi attacks, use stored procedures with automatically parameterized parameters.' This prevents attackers from injecting malicious SQL code through user input fields.",
+    "explanation_es": "El temario ECIH v3 establece explicitamente: 'Para prevenir ataques SQLi, usar procedimientos almacenados con parametros automaticamente parametrizados.' Esto previene que los atacantes inyecten codigo SQL malicioso a traves de campos de entrada de usuario."
+  },
+  {
+    "id": 504,
+    "module": 7,
+    "question_en": "According to ECIH v3, which regular expression pattern signature is commonly associated with SQL injection attempts that incident responders should look for in web access logs?",
+    "question_es": "Segun ECIH v3, que patron de firma de expresion regular esta comunmente asociado con intentos de inyeccion SQL que los respondedores de incidentes deben buscar en los logs de acceso web?",
+    "options_en": [
+      "<script>alert(1)</script>",
+      "1' or 1=1 --",
+      "../../etc/passwd",
+      "Cookie: session=stolen"
+    ],
+    "options_es": [
+      "<script>alert(1)</script>",
+      "1' or 1=1 --",
+      "../../etc/passwd",
+      "Cookie: session=stolen"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, incident responders should use sniffing tools to capture and analyze network traffic for SQL injection signatures. The courseware specifically states that common signatures related to SQL injection attempts are '1' or 1=1 --'. Responders must examine IDS, web server, and database log files to detect these patterns.",
+    "explanation_es": "Segun ECIH v3, los respondedores de incidentes deben usar herramientas de sniffing para capturar y analizar trafico de red en busca de firmas de inyeccion SQL. El temario especifica que las firmas comunes relacionadas con intentos de inyeccion SQL son '1' or 1=1 --'. Los respondedores deben examinar archivos de log de IDS, servidor web y base de datos para detectar estos patrones."
+  },
+  {
+    "id": 505,
+    "module": 7,
+    "question_en": "In the ECIH v3 GoDaddy data breach case study, what was the primary cause that led to the exposure of customer credentials?",
+    "question_es": "En el caso de estudio de la brecha de datos de GoDaddy en ECIH v3, cual fue la causa principal que llevo a la exposicion de credenciales de clientes?",
+    "options_en": [
+      "SQL injection vulnerability in the database",
+      "Storage of sFTP credentials in plain text format without being salted",
+      "Phishing attack against administrators",
+      "Zero-day vulnerability in the firewall"
+    ],
+    "options_es": [
+      "Vulnerabilidad de inyeccion SQL en la base de datos",
+      "Almacenamiento de credenciales sFTP en formato texto plano sin sal",
+      "Ataque de phishing contra administradores",
+      "Vulnerabilidad de dia cero en el firewall"
+    ],
+    "correct": 1,
+    "explanation_en": "According to the ECIH v3 case study, the GoDaddy breach was attributed to the storage of sFTP credentials in plain text format without being salted with random numbers or using public key authentication mechanisms. The attack remained undetected for over 70 days and exposed data of approximately 1.2 million WordPress customers.",
+    "explanation_es": "Segun el caso de estudio ECIH v3, la brecha de GoDaddy se atribuyo al almacenamiento de credenciales sFTP en formato texto plano sin ser salteadas con numeros aleatorios ni usar mecanismos de autenticacion de clave publica. El ataque permanecio sin detectar por mas de 70 dias y expuso datos de aproximadamente 1.2 millones de clientes de WordPress."
+  },
+  {
+    "id": 506,
+    "module": 7,
+    "question_en": "According to ECIH v3, which OWASP Top 10 2021 risk (A05) includes issues such as open S3 buckets, misconfigured HTTP headers, and error messages containing sensitive information?",
+    "question_es": "Segun ECIH v3, que riesgo del OWASP Top 10 2021 (A05) incluye problemas como buckets S3 abiertos, cabeceras HTTP mal configuradas y mensajes de error que contienen informacion sensible?",
+    "options_en": [
+      "Injection",
+      "Insecure Design",
+      "Security Misconfiguration",
+      "Vulnerable and Outdated Components"
+    ],
+    "options_es": [
+      "Inyeccion",
+      "Diseño inseguro",
+      "Configuracion de seguridad incorrecta",
+      "Componentes vulnerables y desactualizados"
+    ],
+    "correct": 2,
+    "explanation_en": "ECIH v3 describes A05 - Security Misconfiguration as the most common issue in web security, which includes insecure default configurations, open S3 buckets, misconfigured HTTP headers, error messages containing sensitive information, and failure to patch or upgrade systems, frameworks, dependencies, and components in a timely manner.",
+    "explanation_es": "ECIH v3 describe A05 - Configuracion de seguridad incorrecta como el problema mas comun en seguridad web, que incluye configuraciones por defecto inseguras, buckets S3 abiertos, cabeceras HTTP mal configuradas, mensajes de error con informacion sensible, y falta de parcheo o actualizacion de sistemas, frameworks, dependencias y componentes de manera oportuna."
+  },
+  {
+    "id": 507,
+    "module": 7,
+    "question_en": "According to ECIH v3 web application coding best practices, where should session token timeouts be implemented to effectively prevent attackers from bypassing security controls?",
+    "question_es": "Segun las mejores practicas de codificacion de aplicaciones web de ECIH v3, donde deben implementarse los timeouts de tokens de sesion para prevenir efectivamente que los atacantes evadan los controles de seguridad?",
+    "options_en": [
+      "Only on the client-side",
+      "On the server-side",
+      "In the browser cache",
+      "In the URL parameters"
+    ],
+    "options_es": [
+      "Solo en el lado del cliente",
+      "En el lado del servidor",
+      "En la cache del navegador",
+      "En los parametros de la URL"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3: 'Session tokens have a timeout feature on the server-side; implementing a timeout feature on the client-side may not prevent attackers from bypassing security controls and misusing them.' The courseware emphasizes server-side timeout implementation as the effective approach.",
+    "explanation_es": "Segun ECIH v3: 'Los tokens de sesion tienen una funcion de timeout en el lado del servidor; implementar una funcion de timeout en el lado del cliente puede no prevenir que los atacantes evadan los controles de seguridad y los utilicen indebidamente.' El temario enfatiza la implementacion de timeout en el lado del servidor como el enfoque efectivo."
+  },
+  {
+    "id": 508,
+    "module": 7,
+    "question_en": "Which web application firewall mentioned in the ECIH v3 courseware is described as a software-based WAF that protects websites from SQL injection, path traversal, and XSS attacks?",
+    "question_es": "Que firewall de aplicacion web mencionado en el temario ECIH v3 se describe como un WAF basado en software que protege sitios web contra ataques de inyeccion SQL, path traversal y XSS?",
+    "options_en": [
+      "F5 Advanced WAF",
+      "dotDefender",
+      "Barracuda Web Application Firewall",
+      "FortiWeb"
+    ],
+    "options_es": [
+      "F5 Advanced WAF",
+      "dotDefender",
+      "Barracuda Web Application Firewall",
+      "FortiWeb"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, DotDefender is a software-based WAF that protects websites from malicious attacks such as SQL injection, path traversal, XSS, and others. It complements the network firewall, IPS, and other network-based Internet security products, and inspects HTTP/HTTPS traffic for suspicious behavior.",
+    "explanation_es": "Segun ECIH v3, DotDefender es un WAF basado en software que protege sitios web contra ataques maliciosos como inyeccion SQL, path traversal, XSS y otros. Complementa el firewall de red, IPS y otros productos de seguridad de Internet basados en red, e inspecciona el trafico HTTP/HTTPS en busca de comportamiento sospechoso."
+  },
+  {
+    "id": 509,
+    "module": 8,
+    "question_en": "According to ECIH v3, in the IaaS cloud service model, who is responsible for incident response regarding networking, storage, and server infrastructure?",
+    "question_es": "Segun ECIH v3, en el modelo de servicio en la nube IaaS, quien es responsable de la respuesta a incidentes en cuanto a redes, almacenamiento e infraestructura de servidores?",
+    "options_en": [
+      "Only the Cloud Customer (CC)",
+      "Only the Cloud Service Provider (CSP)",
+      "Both CC and CSP share responsibilities",
+      "A third-party auditor"
+    ],
+    "options_es": [
+      "Solo el Cliente Cloud (CC)",
+      "Solo el Proveedor de Servicios Cloud (CSP)",
+      "Tanto el CC como el CSP comparten responsabilidades",
+      "Un auditor externo"
+    ],
+    "correct": 2,
+    "explanation_en": "According to ECIH v3, CSPs are responsible for most incident handling activities in the PaaS and SaaS models, while both CCs and CSPs share responsibilities in the IaaS model. CCs and CSPs should handle their corresponding incident response processes, including detection, analysis, containment, eradication, and recovery.",
+    "explanation_es": "Segun ECIH v3, los CSPs son responsables de la mayoria de actividades de manejo de incidentes en los modelos PaaS y SaaS, mientras que tanto los CCs como los CSPs comparten responsabilidades en el modelo IaaS. Los CCs y CSPs deben manejar sus procesos de respuesta a incidentes correspondientes, incluyendo deteccion, analisis, contencion, erradicacion y recuperacion."
+  },
+  {
+    "id": 510,
+    "module": 8,
+    "question_en": "In the ECIH v3 courseware, which OWASP cloud security risk (R8) describes the challenge of event logs being distributed across multiple hosts and data centers in different countries?",
+    "question_es": "En el temario ECIH v3, que riesgo de seguridad en la nube de OWASP (R8) describe el desafio de que los logs de eventos esten distribuidos en multiples hosts y centros de datos en diferentes paises?",
+    "options_en": [
+      "R7 - Multi Tenancy and Physical Security",
+      "R8 - Incidence Analysis and Forensic Support",
+      "R9 - Infrastructure Security",
+      "R10 - Non-Production Environment Exposure"
+    ],
+    "options_es": [
+      "R7 - Multi-tenencia y seguridad fisica",
+      "R8 - Analisis de incidentes y soporte forense",
+      "R9 - Seguridad de infraestructura",
+      "R10 - Exposicion del entorno de no produccion"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, R8 - Incidence Analysis and Forensic Support describes the challenge where event logs are distributed across multiple hosts and data centers located in several countries governed by different laws and policies. This distribution makes investigation of cloud-hosted applications and services challenging, and may cause problems for law enforcement in forensics recovery.",
+    "explanation_es": "Segun ECIH v3, R8 - Analisis de incidentes y soporte forense describe el desafio donde los logs de eventos estan distribuidos en multiples hosts y centros de datos ubicados en varios paises gobernados por diferentes leyes y politicas. Esta distribucion dificulta la investigacion de aplicaciones y servicios alojados en la nube, y puede causar problemas para las fuerzas del orden en la recuperacion forense."
+  },
+  {
+    "id": 511,
+    "module": 8,
+    "question_en": "According to the ECIH v3 courseware, what is a major challenge related to cloud forensics regarding volatile data?",
+    "question_es": "Segun el temario ECIH v3, cual es un desafio principal relacionado con la forensia en la nube respecto a datos volatiles?",
+    "options_en": [
+      "Cloud data is always encrypted and cannot be accessed",
+      "Logs stored in volatile memory such as VMs vanish when the VM instance is switched off",
+      "CSPs always delete logs after 24 hours",
+      "Cloud forensic tools are not compatible with virtual environments"
+    ],
+    "options_es": [
+      "Los datos en la nube siempre estan cifrados y no se pueden acceder",
+      "Los logs almacenados en memoria volatil como VMs desaparecen cuando la instancia VM se apaga",
+      "Los CSPs siempre eliminan los logs despues de 24 horas",
+      "Las herramientas forenses en la nube no son compatibles con entornos virtuales"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 identifies 'Evaporation of logs' as a key cloud forensics challenge: 'Some logs in the cloud environment are stored in volatile memory such as VMs. When a VM instance is switched off, the logs vanish.' This makes timely evidence collection critical in cloud incident response.",
+    "explanation_es": "ECIH v3 identifica la 'Evaporacion de logs' como un desafio clave de la forensia en la nube: 'Algunos logs en el entorno cloud se almacenan en memoria volatil como VMs. Cuando una instancia VM se apaga, los logs desaparecen.' Esto hace que la recoleccion oportuna de evidencia sea critica en la respuesta a incidentes en la nube."
+  },
+  {
+    "id": 512,
+    "module": 8,
+    "question_en": "According to ECIH v3, what tool is described as a cloud-native runtime security project that helps incident responders in Kubernetes threat detection by analyzing the behavior of cloud applications and containers?",
+    "question_es": "Segun ECIH v3, que herramienta se describe como un proyecto de seguridad en tiempo de ejecucion nativo de la nube que ayuda a los respondedores de incidentes en la deteccion de amenazas en Kubernetes analizando el comportamiento de aplicaciones y contenedores en la nube?",
+    "options_en": [
+      "Microsoft Azure Sentinel",
+      "Falco",
+      "Dynatrace",
+      "Chronicle"
+    ],
+    "options_es": [
+      "Microsoft Azure Sentinel",
+      "Falco",
+      "Dynatrace",
+      "Chronicle"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 describes Falco as a cloud-native runtime security project that helps incident responders in Kubernetes threat detection. It detects security events by analyzing cloud applications and containers behavior, sends instant alerts, and allows incident responders to use plugins to enhance detection across cloud platforms.",
+    "explanation_es": "ECIH v3 describe Falco como un proyecto de seguridad en tiempo de ejecucion nativo de la nube que ayuda a los respondedores de incidentes en la deteccion de amenazas en Kubernetes. Detecta eventos de seguridad analizando el comportamiento de aplicaciones y contenedores en la nube, envia alertas instantaneas y permite usar plugins para mejorar la deteccion en plataformas cloud."
+  },
+  {
+    "id": 513,
+    "module": 8,
+    "question_en": "In the ECIH v3 courseware section on Microsoft Azure Sentinel, what types of built-in detection rules are available for threat detection?",
+    "question_es": "En la seccion del temario ECIH v3 sobre Microsoft Azure Sentinel, que tipos de reglas de deteccion integradas estan disponibles para la deteccion de amenazas?",
+    "options_en": [
+      "Only manual and custom rules",
+      "Microsoft security, fusion, ML behavioral analytics, anomaly, scheduled, and near-real-time (NRT)",
+      "Only signature-based and heuristic rules",
+      "Only scheduled and on-demand rules"
+    ],
+    "options_es": [
+      "Solo reglas manuales y personalizadas",
+      "Seguridad de Microsoft, fusion, analitica conductual ML, anomalia, programadas y casi en tiempo real (NRT)",
+      "Solo reglas basadas en firmas y heuristicas",
+      "Solo reglas programadas y bajo demanda"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, Microsoft Azure Sentinel includes the following built-in detection rule types: Microsoft security, fusion, machine learning (ML) behavioral analytics, anomaly, scheduled, and near-real-time (NRT). These templates can be customized to detect specific activities based on investigation requirements.",
+    "explanation_es": "Segun ECIH v3, Microsoft Azure Sentinel incluye los siguientes tipos de reglas de deteccion integradas: seguridad de Microsoft, fusion, analitica conductual de aprendizaje automatico (ML), anomalia, programadas y casi en tiempo real (NRT). Estas plantillas pueden personalizarse para detectar actividades especificas segun los requisitos de investigacion."
+  },
+  {
+    "id": 514,
+    "module": 8,
+    "question_en": "According to ECIH v3, what is a key indicator of a cloud security incident related to Azure storage that incident handlers should monitor?",
+    "question_es": "Segun ECIH v3, cual es un indicador clave de un incidente de seguridad en la nube relacionado con almacenamiento de Azure que los manejadores de incidentes deben monitorear?",
+    "options_en": [
+      "Regular scheduled backups completing successfully",
+      "Unauthenticated access to Azure storage containers configured with read access permissions",
+      "Users logging in from their regular office location",
+      "Normal file upload patterns to storage accounts"
+    ],
+    "options_es": [
+      "Copias de seguridad programadas completandose exitosamente",
+      "Acceso no autenticado a contenedores de almacenamiento Azure configurados con permisos de lectura",
+      "Usuarios iniciando sesion desde su ubicacion de oficina habitual",
+      "Patrones normales de carga de archivos a cuentas de almacenamiento"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 lists several Azure storage-related security incident indicators including: accessing Azure storage from unusual/suspicious locations, unauthenticated access to containers configured with read access, unusual files uploaded, series of failed scanning attempts on public containers, large data extraction, and unexpected file deletion from storage accounts.",
+    "explanation_es": "ECIH v3 lista varios indicadores de incidentes de seguridad relacionados con almacenamiento Azure incluyendo: acceso desde ubicaciones inusuales/sospechosas, acceso no autenticado a contenedores con permisos de lectura, archivos inusuales cargados, series de intentos de escaneo fallidos en contenedores publicos, gran extraccion de datos y eliminacion inesperada de archivos de cuentas de almacenamiento."
+  },
+  {
+    "id": 515,
+    "module": 8,
+    "question_en": "In the ECIH v3 Kaseya VSA ransomware case study, what type of attack was used by the threat actors to deliver the malicious payload?",
+    "question_es": "En el caso de estudio del ransomware Kaseya VSA de ECIH v3, que tipo de ataque fue usado por los actores de amenaza para entregar la carga maliciosa?",
+    "options_en": [
+      "Phishing email with malicious attachment",
+      "Supply chain attack through a malicious update to VSA servers",
+      "Brute force attack on administrative credentials",
+      "DNS poisoning attack"
+    ],
+    "options_es": [
+      "Email de phishing con archivo malicioso adjunto",
+      "Ataque a la cadena de suministro mediante una actualizacion maliciosa a servidores VSA",
+      "Ataque de fuerza bruta a credenciales administrativas",
+      "Ataque de envenenamiento DNS"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, the threat actors performed a supply chain attack by delivering a malicious payload to Kaseya's VSA servers, which in turn was delivered to MSP VSA agents and downstream. They used the REvil ransomware by exploiting zero-day vulnerabilities. The ransom demand was $70 million in BTC for a universal decryptor.",
+    "explanation_es": "Segun ECIH v3, los actores de amenaza realizaron un ataque a la cadena de suministro entregando una carga maliciosa a los servidores VSA de Kaseya, que a su vez fue entregada a los agentes VSA de MSP y niveles inferiores. Usaron el ransomware REvil explotando vulnerabilidades de dia cero. La demanda de rescate fue de $70 millones en BTC por un descifrador universal."
+  },
+  {
+    "id": 516,
+    "module": 8,
+    "question_en": "According to ECIH v3, in the SaaS cloud service model, who is primarily responsible for incident response?",
+    "question_es": "Segun ECIH v3, en el modelo de servicio en la nube SaaS, quien es el principal responsable de la respuesta a incidentes?",
+    "options_en": [
+      "The Cloud Customer (CC) handles all incident response",
+      "Both CC and CSP share equal responsibility",
+      "The Cloud Service Provider (CSP) is completely responsible, while CCs produce access control logs",
+      "A third-party security vendor manages all incidents"
+    ],
+    "options_es": [
+      "El Cliente Cloud (CC) maneja toda la respuesta a incidentes",
+      "Tanto el CC como el CSP comparten responsabilidad equitativa",
+      "El Proveedor de Servicios Cloud (CSP) es completamente responsable, mientras los CCs producen logs de control de acceso",
+      "Un proveedor de seguridad externo gestiona todos los incidentes"
+    ],
+    "correct": 2,
+    "explanation_en": "According to ECIH v3: 'In SaaS, CSPs offer the required software, storage, applications, and data, while CCs create accounts required to access cloud services. In this case, CSPs are completely responsible for incident response, whereas CCs are liable to produce access control logs for incident responders.'",
+    "explanation_es": "Segun ECIH v3: 'En SaaS, los CSPs ofrecen el software requerido, almacenamiento, aplicaciones y datos, mientras los CCs crean cuentas para acceder a los servicios cloud. En este caso, los CSPs son completamente responsables de la respuesta a incidentes, mientras que los CCs son responsables de producir logs de control de acceso para los respondedores de incidentes.'"
+  },
+  {
+    "id": 517,
+    "module": 8,
+    "question_en": "According to ECIH v3, what is a key challenge of cloud forensics related to log management?",
+    "question_es": "Segun ECIH v3, cual es un desafio clave de la forensia en la nube relacionado con la gestion de logs?",
+    "options_en": [
+      "Logs are always stored in a centralized server making them easy to collect",
+      "Log information is distributed across different servers and is not stored in a centralized log server",
+      "CSPs provide unlimited log storage for all customers",
+      "Logs in the cloud are always in a standardized format"
+    ],
+    "options_es": [
+      "Los logs siempre se almacenan en un servidor centralizado facilitando su recoleccion",
+      "La informacion de logs esta distribuida en diferentes servidores y no se almacena en un servidor de logs centralizado",
+      "Los CSPs proporcionan almacenamiento de logs ilimitado para todos los clientes",
+      "Los logs en la nube siempre estan en un formato estandarizado"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 identifies 'Decentralization of logs' as a major cloud forensics challenge: 'Log information is not stored in a centralized log server in the cloud, but distributed across different servers.' Additionally, different CSPs provide logs in heterogeneous formats, making correlation and analysis difficult.",
+    "explanation_es": "ECIH v3 identifica la 'Descentralizacion de logs' como un desafio importante de la forensia en la nube: 'La informacion de logs no se almacena en un servidor de logs centralizado en la nube, sino distribuida en diferentes servidores.' Adicionalmente, diferentes CSPs proporcionan logs en formatos heterogeneos, dificultando la correlacion y el analisis."
+  },
+  {
+    "id": 518,
+    "module": 8,
+    "question_en": "Which Google Cloud monitoring tool mentioned in the ECIH v3 courseware provides automatic visibility across Google Cloud native and hybrid environments, including Google Compute Engine and Google Kubernetes Engine?",
+    "question_es": "Que herramienta de monitoreo de Google Cloud mencionada en el temario ECIH v3 proporciona visibilidad automatica en entornos nativos e hibridos de Google Cloud, incluyendo Google Compute Engine y Google Kubernetes Engine?",
+    "options_en": [
+      "Chronicle",
+      "CrowdStrike Falcon",
+      "Dynatrace",
+      "Datadog"
+    ],
+    "options_es": [
+      "Chronicle",
+      "CrowdStrike Falcon",
+      "Dynatrace",
+      "Datadog"
+    ],
+    "correct": 2,
+    "explanation_en": "According to ECIH v3, Dynatrace is a Google Cloud monitoring tool that provides automatic and comprehensive visibility across Google Cloud native and hybrid environments. It provides metrics, logs, and traces along with user experience data, and offers a single view of the ecosystem including Google Compute Engine, Google Kubernetes Engine, Anthos, hybrid, and multi-cloud environments.",
+    "explanation_es": "Segun ECIH v3, Dynatrace es una herramienta de monitoreo de Google Cloud que proporciona visibilidad automatica e integral en entornos nativos e hibridos de Google Cloud. Proporciona metricas, logs y trazas junto con datos de experiencia de usuario, y ofrece una vista unica del ecosistema incluyendo Google Compute Engine, Google Kubernetes Engine, Anthos, entornos hibridos y multi-nube."
+  },
+  {
+    "id": 519,
+    "module": 8,
+    "question_en": "According to the ECIH v3 CSA best practices for cloud security, which practice focuses on understanding the gaps that cloud computing characteristics can create in incident response?",
+    "question_es": "Segun las mejores practicas de la CSA para seguridad en la nube de ECIH v3, que practica se enfoca en comprender las brechas que las caracteristicas de computacion en la nube pueden crear en la respuesta a incidentes?",
+    "options_en": [
+      "Virtualization",
+      "Application Security",
+      "Incident Response",
+      "Data Security and Encryption"
+    ],
+    "options_es": [
+      "Virtualizacion",
+      "Seguridad de aplicaciones",
+      "Respuesta a incidentes",
+      "Seguridad de datos y cifrado"
+    ],
+    "correct": 2,
+    "explanation_en": "ECIH v3 describes the CSA Incident Response best practice as: 'Some cloud computing characteristics can create gaps related to incidence response. Discover these gaps for making incidence response preparation plans for organizations.' This emphasizes identifying and addressing IR gaps specific to cloud environments.",
+    "explanation_es": "ECIH v3 describe la practica de Respuesta a Incidentes de la CSA como: 'Algunas caracteristicas de la computacion en la nube pueden crear brechas relacionadas con la respuesta a incidentes. Descubrir estas brechas para elaborar planes de preparacion de respuesta a incidentes para organizaciones.' Esto enfatiza identificar y abordar brechas de IR especificas de entornos cloud."
+  },
+  {
+    "id": 520,
+    "module": 8,
+    "question_en": "According to ECIH v3, what best practice should be enforced to enhance cloud security by combining traditional endpoint security with continuous monitoring and automated response?",
+    "question_es": "Segun ECIH v3, que mejor practica debe implementarse para mejorar la seguridad en la nube combinando seguridad tradicional de endpoints con monitoreo continuo y respuesta automatizada?",
+    "options_en": [
+      "Deploy only network firewalls",
+      "Utilize endpoint detection and response (EDR) and endpoint protection platform (EPP) solutions",
+      "Implement only antivirus software",
+      "Use manual log review processes exclusively"
+    ],
+    "options_es": [
+      "Desplegar solo firewalls de red",
+      "Utilizar soluciones de deteccion y respuesta en endpoints (EDR) y plataforma de proteccion de endpoints (EPP)",
+      "Implementar solo software antivirus",
+      "Usar procesos de revision de logs manuales exclusivamente"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 recommends: 'Utilize endpoint detection and response (EDR) and endpoint protection platform (EPP) solutions to combine traditional endpoint security capabilities with continuous monitoring and automated response.' This is listed among cloud security best practices alongside CASB solutions and UBA.",
+    "explanation_es": "ECIH v3 recomienda: 'Utilizar soluciones de deteccion y respuesta en endpoints (EDR) y plataforma de proteccion de endpoints (EPP) para combinar capacidades tradicionales de seguridad de endpoints con monitoreo continuo y respuesta automatizada.' Esto se lista entre las mejores practicas de seguridad en la nube junto con soluciones CASB y UBA."
+  },
+  {
+    "id": 521,
+    "module": 9,
+    "question_en": "According to ECIH v3, what is the best method for controlling insider threats?",
+    "question_es": "Segun ECIH v3, cual es el mejor metodo para controlar amenazas internas?",
+    "options_en": [
+      "Installing surveillance cameras only",
+      "Limiting and controlling access (principle of least privilege)",
+      "Monitoring internet browsing activity only",
+      "Conducting annual security awareness training only"
+    ],
+    "options_es": [
+      "Instalar solo camaras de vigilancia",
+      "Limitar y controlar el acceso (principio de minimo privilegio)",
+      "Monitorear solo la actividad de navegacion en internet",
+      "Realizar solo capacitacion anual de concienciacion en seguridad"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 explicitly states: 'The best method for controlling insider threats is limiting and controlling access. In almost every situation where an insider compromises a company, the possible damage is increased because someone had more access than they needed to do their job.' Organizations must allocate the least amount of access and privilege to employees.",
+    "explanation_es": "ECIH v3 establece explicitamente: 'El mejor metodo para controlar amenazas internas es limitar y controlar el acceso. En casi toda situacion donde un insider compromete una empresa, el daño posible se incrementa porque alguien tenia mas acceso del que necesitaba para hacer su trabajo.' Las organizaciones deben asignar la menor cantidad de acceso y privilegio a los empleados."
+  },
+  {
+    "id": 522,
+    "module": 9,
+    "question_en": "According to ECIH v3, what technology can help identify malicious behavior before compromised insiders gain access to sensitive information by detecting unusual behavior that deviates from policies?",
+    "question_es": "Segun ECIH v3, que tecnologia puede ayudar a identificar comportamiento malicioso antes de que insiders comprometidos obtengan acceso a informacion sensible, detectando comportamiento inusual que se desvia de las politicas?",
+    "options_en": [
+      "Traditional antivirus software",
+      "User and Entity Behavior Analytics (UEBA)",
+      "Standard firewall rules",
+      "Physical access card systems"
+    ],
+    "options_es": [
+      "Software antivirus tradicional",
+      "Analitica de Comportamiento de Usuarios y Entidades (UEBA)",
+      "Reglas de firewall estandar",
+      "Sistemas de tarjetas de acceso fisico"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 states: 'User and Entity Behavior Analytics (UEBA) can help in identifying malicious behavior before the compromised insiders can gain access to sensitive information.' UEBA uses advanced analytics including machine learning to detect anomalies that indicate the presence of malware and lateral movement in the network.",
+    "explanation_es": "ECIH v3 establece: 'La Analitica de Comportamiento de Usuarios y Entidades (UEBA) puede ayudar a identificar comportamiento malicioso antes de que los insiders comprometidos obtengan acceso a informacion sensible.' UEBA usa analitica avanzada incluyendo aprendizaje automatico para detectar anomalias que indican la presencia de malware y movimiento lateral en la red."
+  },
+  {
+    "id": 523,
+    "module": 9,
+    "question_en": "According to ECIH v3, what solution should organizations implement to provide necessary privileges for the required period only, avoiding persistent privilege access for privileged users?",
+    "question_es": "Segun ECIH v3, que solucion deben implementar las organizaciones para proporcionar privilegios necesarios solo por el periodo requerido, evitando acceso de privilegios persistentes para usuarios privilegiados?",
+    "options_en": [
+      "Role-Based Access Control (RBAC)",
+      "JIT Privileged Access Management (JIT PAM)",
+      "Single Sign-On (SSO)",
+      "Multi-Factor Authentication (MFA)"
+    ],
+    "options_es": [
+      "Control de Acceso Basado en Roles (RBAC)",
+      "Gestion de Acceso Privilegiado Just-In-Time (JIT PAM)",
+      "Inicio de Sesion Unico (SSO)",
+      "Autenticacion Multi-Factor (MFA)"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 recommends: 'Implement JIT Privileged Access Management (JIT PAM) solutions to provide necessary privileges for the required period to avoid persistent privilege access.' This is a key eradication guideline for insider threats involving privileged users.",
+    "explanation_es": "ECIH v3 recomienda: 'Implementar soluciones de Gestion de Acceso Privilegiado Just-In-Time (JIT PAM) para proporcionar privilegios necesarios por el periodo requerido y evitar acceso de privilegios persistentes.' Esta es una guia clave de erradicacion para amenazas internas que involucran usuarios privilegiados."
+  },
+  {
+    "id": 524,
+    "module": 9,
+    "question_en": "In the ECIH v3 Ubiquiti data breach insider threat case study, how was the perpetrator ultimately identified?",
+    "question_es": "En el caso de estudio de amenaza interna de la brecha de datos de Ubiquiti en ECIH v3, como fue identificado finalmente el perpetrador?",
+    "options_en": [
+      "Through facial recognition on security cameras",
+      "By correlating IP addresses after a VPN outage exposed the perpetrator's unmasked IP during SSH connection",
+      "Through a confession during an employee interview",
+      "By analyzing physical access card logs"
+    ],
+    "options_es": [
+      "A traves de reconocimiento facial en camaras de seguridad",
+      "Correlacionando direcciones IP despues de que una interrupcion de VPN expuso la IP sin enmascarar del perpetrador durante una conexion SSH",
+      "A traves de una confesion durante una entrevista al empleado",
+      "Analizando logs de tarjetas de acceso fisico"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, the perpetrator used Surfshark VPN to mask their IP while exfiltrating data from AWS servers and GitHub. However, during the exfiltration, the perpetrator experienced an internet outage. When service was restored, the unmasked IP address made an SSH connection to GitHub and the activity was logged. By correlating this IP with communications on Keybase, the FBI identified the perpetrator as an employee and member of the incident response team.",
+    "explanation_es": "Segun ECIH v3, el perpetrador uso Surfshark VPN para enmascarar su IP al exfiltrar datos de servidores AWS y GitHub. Sin embargo, durante la exfiltracion, el perpetrador experimento una interrupcion de internet. Cuando el servicio se restablecio, la direccion IP sin enmascarar realizo una conexion SSH a GitHub y la actividad fue registrada. Correlacionando esta IP con comunicaciones en Keybase, el FBI identifico al perpetrador como un empleado y miembro del equipo de respuesta a incidentes."
+  },
+  {
+    "id": 525,
+    "module": 9,
+    "question_en": "According to ECIH v3, which solution should organizations adopt to monitor and analyze user privileges, detecting unauthorized changes made to permissions?",
+    "question_es": "Segun ECIH v3, que solucion deben adoptar las organizaciones para monitorear y analizar privilegios de usuarios, detectando cambios no autorizados en los permisos?",
+    "options_en": [
+      "Network Access Control (NAC)",
+      "Data Centric Audit and Protection (DCAP)",
+      "Web Application Firewall (WAF)",
+      "Intrusion Prevention System (IPS)"
+    ],
+    "options_es": [
+      "Control de Acceso a Red (NAC)",
+      "Auditoria y Proteccion Centrada en Datos (DCAP)",
+      "Firewall de Aplicacion Web (WAF)",
+      "Sistema de Prevencion de Intrusiones (IPS)"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 states: 'Organizations should adopt DCAP solutions to monitor and analyze user privileges, thereby detecting unauthorized changes made to these permissions. A DCAP solution can be used to automate the process of managing user accounts and monitoring usage patterns. Organizations can set up DCAP solutions that include automated tools to discover and classify critical or sensitive data.'",
+    "explanation_es": "ECIH v3 establece: 'Las organizaciones deben adoptar soluciones DCAP para monitorear y analizar privilegios de usuarios, detectando asi cambios no autorizados en estos permisos. Una solucion DCAP puede usarse para automatizar el proceso de gestion de cuentas de usuario y monitoreo de patrones de uso. Las organizaciones pueden configurar soluciones DCAP que incluyan herramientas automatizadas para descubrir y clasificar datos criticos o sensibles.'"
+  },
+  {
+    "id": 526,
+    "module": 9,
+    "question_en": "According to ECIH v3, what physical security technique should incident response teams use to detect spy devices in meeting rooms after a suspected insider data theft?",
+    "question_es": "Segun ECIH v3, que tecnica de seguridad fisica deben usar los equipos de respuesta a incidentes para detectar dispositivos espia en salas de reuniones despues de un robo de datos sospechoso por un insider?",
+    "options_en": [
+      "Only check the CCTV footage",
+      "RF and bug detectors to detect recorders, trackers, bugs, and other surveillance devices",
+      "Only review network logs",
+      "Only interview employees"
+    ],
+    "options_es": [
+      "Solo revisar las grabaciones de CCTV",
+      "Detectores de RF y bugs para detectar grabadoras, rastreadores, bugs y otros dispositivos de vigilancia",
+      "Solo revisar logs de red",
+      "Solo entrevistar a los empleados"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 lists several physical detection methods for spy devices: RF and bug detectors to detect recorders, trackers, bugs, and surveillance devices; digital cameras in cell phones to detect infrared and polarized light; mobile applications such as EMF Detector to detect electromagnetic waves; and manual searches in ceilings, pin holes, air vents, and other locations.",
+    "explanation_es": "ECIH v3 lista varios metodos de deteccion fisica de dispositivos espia: detectores de RF y bugs para detectar grabadoras, rastreadores, bugs y dispositivos de vigilancia; camaras digitales en telefonos para detectar luz infrarroja y polarizada; aplicaciones moviles como EMF Detector para detectar ondas electromagneticas; y busquedas manuales en techos, agujeros, ventilaciones y otras ubicaciones."
+  },
+  {
+    "id": 527,
+    "module": 9,
+    "question_en": "According to ECIH v3, what is the first step in performing behavioral analysis for detecting insider threats?",
+    "question_es": "Segun ECIH v3, cual es el primer paso para realizar analisis conductual para detectar amenazas internas?",
+    "options_en": [
+      "Generate clusters based on behavioral similarity",
+      "Extract behavioral patterns from user data including emails, keystrokes, and internet usage",
+      "Immediately terminate suspicious employees",
+      "Deploy surveillance cameras in all offices"
+    ],
+    "options_es": [
+      "Generar clusters basados en similitud conductual",
+      "Extraer patrones conductuales de datos de usuario incluyendo emails, pulsaciones de teclado y uso de internet",
+      "Terminar inmediatamente a los empleados sospechosos",
+      "Desplegar camaras de vigilancia en todas las oficinas"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, the behavioral analysis process for insider threat detection follows this sequence: 1) Extract behavioral patterns from user data (emails, keystrokes, internet usage), 2) Compare each user's behavioral pattern with others, 3) Generate clusters based on behavioral similarity and define threshold values, 4) Generate profiles for each group, 5) Identify outliers that exhibit patterns falling outside threshold values.",
+    "explanation_es": "Segun ECIH v3, el proceso de analisis conductual para deteccion de amenazas internas sigue esta secuencia: 1) Extraer patrones conductuales de datos de usuario (emails, pulsaciones, uso de internet), 2) Comparar el patron conductual de cada usuario con otros, 3) Generar clusters basados en similitud conductual y definir valores umbral, 4) Generar perfiles para cada grupo, 5) Identificar outliers que exhiben patrones fuera de los valores umbral."
+  },
+  {
+    "id": 528,
+    "module": 9,
+    "question_en": "In the ECIH v3 Stradis Healthcare insider threat case study, how did the former employee maintain access to the company's systems after termination?",
+    "question_es": "En el caso de estudio de amenaza interna de Stradis Healthcare en ECIH v3, como mantuvo el ex-empleado acceso a los sistemas de la empresa despues de su terminacion?",
+    "options_en": [
+      "By using a backdoor implanted in the firewall",
+      "By creating a secret account in the NetSuite application before their authorized access was disabled",
+      "By stealing another employee's credentials",
+      "By exploiting a zero-day vulnerability in the VPN"
+    ],
+    "options_es": [
+      "Usando una puerta trasera implantada en el firewall",
+      "Creando una cuenta secreta en la aplicacion NetSuite antes de que su acceso autorizado fuera desactivado",
+      "Robando credenciales de otro empleado",
+      "Explotando una vulnerabilidad de dia cero en la VPN"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, the former Vice President of Stradis created a secret account in the NetSuite application before their authorized access was disabled. They then created a second account using the secret account and used TorGuard VPN to hide their IP. They used these accounts to edit 115,581 records and delete 2,371 records, disrupting the COVID PPE supply chain.",
+    "explanation_es": "Segun ECIH v3, el ex-Vicepresidente de Stradis creo una cuenta secreta en la aplicacion NetSuite antes de que su acceso autorizado fuera desactivado. Luego creo una segunda cuenta usando la cuenta secreta y uso TorGuard VPN para ocultar su IP. Uso estas cuentas para editar 115,581 registros y eliminar 2,371 registros, interrumpiendo la cadena de suministro de EPP para COVID."
+  },
+  {
+    "id": 529,
+    "module": 10,
+    "question_en": "According to ECIH v3, which OWASP Top 10 IoT threat relates to the use of weak, guessable, or hardcoded passwords, including backdoors in firmware or client software?",
+    "question_es": "Segun ECIH v3, que amenaza del OWASP Top 10 IoT se relaciona con el uso de contraseñas debiles, adivinables o codificadas de forma fija, incluyendo puertas traseras en firmware o software cliente?",
+    "options_en": [
+      "Insecure Network Services",
+      "Weak, Guessable, or Hardcoded Passwords",
+      "Insecure Ecosystem Interfaces",
+      "Lack of Secure Update Mechanisms"
+    ],
+    "options_es": [
+      "Servicios de red inseguros",
+      "Contraseñas debiles, adivinables o codificadas de forma fija",
+      "Interfaces de ecosistema inseguras",
+      "Falta de mecanismos de actualizacion seguros"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 lists 'Weak, Guessable, or Hardcoded Passwords' as the first OWASP Top 10 IoT threat: 'Owing to the use of weak, guessable, or hardcoded passwords, publicly available or unchangeable credentials can be determined through brute-force attacks. This also includes backdoors in the firmware or client software that lead to unauthorized access to deployed devices.'",
+    "explanation_es": "ECIH v3 lista 'Contraseñas debiles, adivinables o codificadas de forma fija' como la primera amenaza del OWASP Top 10 IoT: 'Debido al uso de contraseñas debiles, adivinables o codificadas, las credenciales publicamente disponibles o no modificables pueden determinarse mediante ataques de fuerza bruta. Esto tambien incluye puertas traseras en el firmware o software cliente que conducen a acceso no autorizado a dispositivos desplegados.'"
+  },
+  {
+    "id": 530,
+    "module": 10,
+    "question_en": "According to ECIH v3, what preparation step should organizations take regarding IoT devices to identify potential shadow IT threats?",
+    "question_es": "Segun ECIH v3, que paso de preparacion deben tomar las organizaciones respecto a dispositivos IoT para identificar posibles amenazas de shadow IT?",
+    "options_en": [
+      "Block all IoT devices from the network",
+      "Create an inventory list of IoT devices in the organizational infrastructure to identify shadow IT devices",
+      "Only monitor IoT devices during business hours",
+      "Allow unrestricted IoT device connections"
+    ],
+    "options_es": [
+      "Bloquear todos los dispositivos IoT de la red",
+      "Crear una lista de inventario de dispositivos IoT en la infraestructura organizacional para identificar dispositivos shadow IT",
+      "Solo monitorear dispositivos IoT durante horario laboral",
+      "Permitir conexiones de dispositivos IoT sin restriccion"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 recommends as a preparation step: 'Create an inventory list of IoT devices in the organizational infrastructure to identify shadow IT devices that can become a threat.' Other preparation steps include storing vendor contact information, conducting training sessions, and deploying network sniffing tools.",
+    "explanation_es": "ECIH v3 recomienda como paso de preparacion: 'Crear una lista de inventario de dispositivos IoT en la infraestructura organizacional para identificar dispositivos shadow IT que pueden convertirse en una amenaza.' Otros pasos de preparacion incluyen almacenar informacion de contacto del proveedor, realizar sesiones de capacitacion y desplegar herramientas de sniffing de red."
+  },
+  {
+    "id": 531,
+    "module": 10,
+    "question_en": "Which IoT incident management tool mentioned in ECIH v3 is developed by Microsoft specifically for IoT security?",
+    "question_es": "Que herramienta de gestion de incidentes IoT mencionada en ECIH v3 es desarrollada por Microsoft especificamente para seguridad IoT?",
+    "options_en": [
+      "PagerDuty",
+      "Asimily",
+      "Microsoft Defender for IoT",
+      "OnPage"
+    ],
+    "options_es": [
+      "PagerDuty",
+      "Asimily",
+      "Microsoft Defender for IoT",
+      "OnPage"
+    ],
+    "correct": 2,
+    "explanation_en": "ECIH v3 lists Microsoft Defender for IoT as one of the IoT incident management tools, alongside PagerDuty, OnPage, Asimily, and AggreGate. Microsoft Defender for IoT helps in viewing incidents triggered by Defender for IoT alerts and is specifically designed for IoT security monitoring.",
+    "explanation_es": "ECIH v3 lista Microsoft Defender for IoT como una de las herramientas de gestion de incidentes IoT, junto con PagerDuty, OnPage, Asimily y AggreGate. Microsoft Defender for IoT ayuda a visualizar incidentes activados por alertas de Defender for IoT y esta diseñado especificamente para monitoreo de seguridad IoT."
+  },
+  {
+    "id": 532,
+    "module": 10,
+    "question_en": "According to ECIH v3, what should be deployed to separate the IT network from the IoT network as a preparation step for handling IoT-based incidents?",
+    "question_es": "Segun ECIH v3, que debe desplegarse para separar la red IT de la red IoT como paso de preparacion para manejar incidentes basados en IoT?",
+    "options_en": [
+      "A single unified network architecture",
+      "Network segmentation",
+      "A dedicated VPN for IoT devices only",
+      "Physical air-gapping of all IoT devices"
+    ],
+    "options_es": [
+      "Una arquitectura de red unificada",
+      "Segmentacion de red",
+      "Una VPN dedicada solo para dispositivos IoT",
+      "Aislamiento fisico de todos los dispositivos IoT"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 explicitly recommends: 'Deploy network segmentation to separate the IT network from IoT network' as one of the preparation steps for handling IoT-based security incidents. Additionally, multilayered security controls should be deployed to protect IoT assets connected to the network.",
+    "explanation_es": "ECIH v3 recomienda explicitamente: 'Desplegar segmentacion de red para separar la red IT de la red IoT' como uno de los pasos de preparacion para manejar incidentes de seguridad basados en IoT. Adicionalmente, deben desplegarse controles de seguridad multicapa para proteger los activos IoT conectados a la red."
+  },
+  {
+    "id": 533,
+    "module": 10,
+    "question_en": "According to ECIH v3, what mobile device security containment action should incident responders take to immediately isolate an infected mobile device?",
+    "question_es": "Segun ECIH v3, que accion de contencion de seguridad de dispositivos moviles deben tomar los respondedores de incidentes para aislar inmediatamente un dispositivo movil infectado?",
+    "options_en": [
+      "Turn off the device completely and remove the battery",
+      "Isolate the mobile device by disconnecting it from the organizational network",
+      "Factory reset the device immediately",
+      "Install additional security apps"
+    ],
+    "options_es": [
+      "Apagar completamente el dispositivo y remover la bateria",
+      "Aislar el dispositivo movil desconectandolo de la red organizacional",
+      "Realizar un restablecimiento de fabrica inmediatamente",
+      "Instalar aplicaciones de seguridad adicionales"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 recommends: 'Isolate the mobile device by disconnecting it from the organizational network' as a containment step. Additional containment measures include utilizing the remote wipe feature to remove malware, rebooting into safe mode to isolate malicious applications, and disposing compromised devices safely.",
+    "explanation_es": "ECIH v3 recomienda: 'Aislar el dispositivo movil desconectandolo de la red organizacional' como paso de contencion. Medidas de contencion adicionales incluyen utilizar la funcion de borrado remoto para eliminar malware, reiniciar en modo seguro para aislar aplicaciones maliciosas y disponer de dispositivos comprometidos de forma segura."
+  },
+  {
+    "id": 534,
+    "module": 10,
+    "question_en": "According to ECIH v3, what IoT monitoring tool is provided by AWS for managing IoT devices?",
+    "question_es": "Segun ECIH v3, que herramienta de monitoreo IoT es proporcionada por AWS para gestionar dispositivos IoT?",
+    "options_en": [
+      "Domotz",
+      "AWS IoT Device Management",
+      "Particle",
+      "ScienceLogic SL1 Platform"
+    ],
+    "options_es": [
+      "Domotz",
+      "AWS IoT Device Management",
+      "Particle",
+      "ScienceLogic SL1 Platform"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 lists AWS IoT Device Management as one of the IoT monitoring tools that allow incident handlers and administrators to monitor and analyze IoT devices and infrastructure. Other tools listed include Domotz, Datadog IoT Monitoring, Particle, and ScienceLogic SL1 Platform.",
+    "explanation_es": "ECIH v3 lista AWS IoT Device Management como una de las herramientas de monitoreo IoT que permiten a los manejadores de incidentes y administradores monitorear y analizar dispositivos e infraestructura IoT. Otras herramientas listadas incluyen Domotz, Datadog IoT Monitoring, Particle y ScienceLogic SL1 Platform."
+  },
+  {
+    "id": 535,
+    "module": 10,
+    "question_en": "According to ECIH v3, what is the primary reason why IoT devices are difficult to secure?",
+    "question_es": "Segun ECIH v3, cual es la razon principal por la que los dispositivos IoT son dificiles de asegurar?",
+    "options_en": [
+      "IoT devices are too expensive to protect",
+      "IoT devices use simple processors and stripped-down operating systems that may not support sophisticated security approaches",
+      "IoT devices cannot connect to the internet",
+      "IoT vendors refuse to provide security updates"
+    ],
+    "options_es": [
+      "Los dispositivos IoT son demasiado costosos de proteger",
+      "Los dispositivos IoT usan procesadores simples y sistemas operativos reducidos que pueden no soportar enfoques de seguridad sofisticados",
+      "Los dispositivos IoT no pueden conectarse a internet",
+      "Los proveedores de IoT se niegan a proporcionar actualizaciones de seguridad"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 states: 'It is difficult to ensure IoT security because IoT devices use simple processors and stripped-down operating systems that may not support sophisticated security approaches.' This inherent limitation makes IoT networks more susceptible to attacks and requires specialized incident handling capabilities.",
+    "explanation_es": "ECIH v3 establece: 'Es dificil asegurar la seguridad IoT porque los dispositivos IoT usan procesadores simples y sistemas operativos reducidos que pueden no soportar enfoques de seguridad sofisticados.' Esta limitacion inherente hace que las redes IoT sean mas susceptibles a ataques y requiere capacidades especializadas de manejo de incidentes."
+  },
+  {
+    "id": 536,
+    "module": 10,
+    "question_en": "According to ECIH v3, what mobile device security best practice should be configured to encrypt data stored on the device?",
+    "question_es": "Segun ECIH v3, que mejor practica de seguridad de dispositivos moviles debe configurarse para cifrar los datos almacenados en el dispositivo?",
+    "options_en": [
+      "Enable Bluetooth encryption only",
+      "Configure your mobile device to encrypt its storage with hardware encryption if supported",
+      "Use only cloud-based storage",
+      "Disable all encryption to improve performance"
+    ],
+    "options_es": [
+      "Habilitar solo el cifrado Bluetooth",
+      "Configurar tu dispositivo movil para cifrar su almacenamiento con cifrado por hardware si es compatible",
+      "Usar solo almacenamiento basado en la nube",
+      "Desactivar todo el cifrado para mejorar el rendimiento"
+    ],
+    "correct": 1,
+    "explanation_en": "ECIH v3 recommends: 'If supported, configure your mobile device to encrypt its storage with hardware encryption.' Additionally, sensitive data should be kept off shared mobile devices, and if enterprise information is locally stored, it should be properly protected.",
+    "explanation_es": "ECIH v3 recomienda: 'Si es compatible, configurar tu dispositivo movil para cifrar su almacenamiento con cifrado por hardware.' Adicionalmente, los datos sensibles deben mantenerse fuera de dispositivos moviles compartidos, y si la informacion empresarial se almacena localmente, debe estar debidamente protegida."
+  }
+]
