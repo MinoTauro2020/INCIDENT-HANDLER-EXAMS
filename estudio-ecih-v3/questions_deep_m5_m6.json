@@ -1,0 +1,212 @@
+[
+  {
+    "id": 451,
+    "module": 5,
+    "question_en": "An incident responder needs to recover permanently deleted emails from a user's mailbox in Microsoft Outlook. The user used Shift+Delete to remove the emails. According to ECIH v3, what type of deletion does this represent and what is the recovery procedure?",
+    "question_es": "Un respondedor de incidentes necesita recuperar correos electrónicos eliminados permanentemente del buzón de un usuario en Microsoft Outlook. El usuario usó Shift+Delete para eliminar los correos. Según ECIH v3, ¿qué tipo de eliminación representa esto y cuál es el procedimiento de recuperación?",
+    "options_en": [
+      "Soft deletion; recover from the Deleted Items folder directly",
+      "Hard deletion; use the Recover Deleted Items From Server option in the HOME tab after opening the Deleted Items folder",
+      "Permanent deletion; no recovery is possible without third-party tools",
+      "Soft deletion; restore from the Recycle Bin on the desktop"
+    ],
+    "options_es": [
+      "Eliminación suave; recuperar directamente de la carpeta Elementos eliminados",
+      "Eliminación dura; usar la opción Recuperar elementos eliminados del servidor en la pestaña INICIO después de abrir la carpeta Elementos eliminados",
+      "Eliminación permanente; no es posible la recuperación sin herramientas de terceros",
+      "Eliminación suave; restaurar desde la Papelera de reciclaje del escritorio"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, when a user deletes emails using Shift+Delete, Outlook performs a 'hard deletion' that permanently removes them from the mailbox. However, incident responders can recover such emails by logging into MS Outlook, opening the Deleted Items folder, and clicking on 'Recover Deleted Items From Server' in the HOME tab. The recovered email can then be found back in the Deleted Items folder.",
+    "explanation_es": "Según ECIH v3, cuando un usuario elimina correos usando Shift+Delete, Outlook realiza una 'eliminación dura' que los elimina permanentemente del buzón. Sin embargo, los respondedores de incidentes pueden recuperar dichos correos iniciando sesión en MS Outlook, abriendo la carpeta Elementos eliminados y haciendo clic en 'Recuperar elementos eliminados del servidor' en la pestaña INICIO. El correo recuperado se encontrará de vuelta en la carpeta Elementos eliminados."
+  },
+  {
+    "id": 452,
+    "module": 5,
+    "question_en": "An incident handler is investigating a compromised Outlook mailbox and needs to recover corrupted PST files. Which of the following tools is specifically designed to recover lost or deleted emails from Microsoft Outlook and repair corrupted PST files, including deleted folders, contacts, attachments, calendars, and meeting requests?",
+    "question_es": "Un manejador de incidentes está investigando un buzón de Outlook comprometido y necesita recuperar archivos PST corruptos. ¿Cuál de las siguientes herramientas está específicamente diseñada para recuperar correos perdidos o eliminados de Microsoft Outlook y reparar archivos PST corruptos, incluyendo carpetas eliminadas, contactos, adjuntos, calendarios y solicitudes de reunión?",
+    "options_en": [
+      "Wireshark Email Analyzer",
+      "EaseUS Email Recovery Wizard",
+      "Nmap Mail Scanner",
+      "Volatility Framework"
+    ],
+    "options_es": [
+      "Wireshark Email Analyzer",
+      "EaseUS Email Recovery Wizard",
+      "Nmap Mail Scanner",
+      "Volatility Framework"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, EaseUS Email Recovery Wizard is a sophisticated email recovery tool that can recover lost or deleted emails from Microsoft Outlook and repair corrupted PST files. It can recover deleted folders, contacts, attachments, calendars, and meeting requests from damaged or inaccessible PST files. It also allows users to preview deleted or lost emails before recovering them. Other tools mentioned include Stellar Undelete Email for Outlook, SysTools Outlook Recovery, and Kernel for Outlook PST Repair.",
+    "explanation_es": "Según ECIH v3, EaseUS Email Recovery Wizard es una herramienta sofisticada de recuperación de correo que puede recuperar correos perdidos o eliminados de Microsoft Outlook y reparar archivos PST corruptos. Puede recuperar carpetas eliminadas, contactos, adjuntos, calendarios y solicitudes de reunión de archivos PST dañados o inaccesibles. También permite a los usuarios previsualizar correos eliminados o perdidos antes de recuperarlos. Otras herramientas mencionadas incluyen Stellar Undelete Email for Outlook, SysTools Outlook Recovery y Kernel for Outlook PST Repair."
+  },
+  {
+    "id": 453,
+    "module": 5,
+    "question_en": "During an email security investigation, an incident responder analyzes the SMTP communication logs from an Exchange server and observes the command 'STARTTLS' in the conversation. What does this indicate about the email transmission?",
+    "question_es": "Durante una investigación de seguridad de correo electrónico, un respondedor de incidentes analiza los registros de comunicación SMTP de un servidor Exchange y observa el comando 'STARTTLS' en la conversación. ¿Qué indica esto sobre la transmisión del correo?",
+    "options_en": [
+      "The email was sent without any encryption and is vulnerable to interception",
+      "The SMTP connection is upgrading from plaintext to TLS encrypted communication",
+      "The email server is rejecting the connection due to invalid certificates",
+      "The sender is attempting to bypass email authentication checks"
+    ],
+    "options_es": [
+      "El correo fue enviado sin ninguna encriptación y es vulnerable a interceptación",
+      "La conexión SMTP está actualizándose de texto plano a comunicación encriptada con TLS",
+      "El servidor de correo está rechazando la conexión debido a certificados inválidos",
+      "El remitente está intentando evadir las verificaciones de autenticación de correo"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3 courseware, STARTTLS is a command used in SMTP email communication that initiates the upgrade of a plaintext connection to a TLS (Transport Layer Security) encrypted connection. The courseware shows SMTP protocol logs where the STARTTLS command is issued, followed by '220 2.0.0 Ready to start TLS', indicating the server accepts the encryption upgrade. After TLS negotiation succeeds, the email communication continues in encrypted form, protecting the email content from interception during transit.",
+    "explanation_es": "Según el material ECIH v3, STARTTLS es un comando utilizado en la comunicación SMTP de correo que inicia la actualización de una conexión de texto plano a una conexión encriptada con TLS (Transport Layer Security). El material muestra registros del protocolo SMTP donde se emite el comando STARTTLS, seguido de '220 2.0.0 Ready to start TLS', indicando que el servidor acepta la actualización de encriptación. Después de que la negociación TLS tiene éxito, la comunicación de correo continúa en forma encriptada, protegiendo el contenido del correo de interceptación durante el tránsito."
+  },
+  {
+    "id": 454,
+    "module": 5,
+    "question_en": "An incident responder is analyzing an email header to determine if the sender is legitimate. The SPF check returns 'Softfail'. According to ECIH v3, what does this SPF result indicate?",
+    "question_es": "Un respondedor de incidentes está analizando un encabezado de correo electrónico para determinar si el remitente es legítimo. La verificación SPF devuelve 'Softfail'. Según ECIH v3, ¿qué indica este resultado SPF?",
+    "options_en": [
+      "The IP address is fully authorized to send email for this domain",
+      "No SPF records exist for this domain",
+      "The IP address is not authorized but the domain is in a transitional state, and the email should be accepted but flagged",
+      "The SPF records cannot be verified due to syntax errors"
+    ],
+    "options_es": [
+      "La dirección IP está completamente autorizada para enviar correo de este dominio",
+      "No existen registros SPF para este dominio",
+      "La dirección IP no está autorizada pero el dominio está en estado de transición, y el correo debe ser aceptado pero marcado",
+      "Los registros SPF no pueden ser verificados debido a errores de sintaxis"
+    ],
+    "correct": 2,
+    "explanation_en": "According to ECIH v3, SPF (Sender Policy Framework) is an email validation protocol used by domain owners to prevent email spoofing. The SPF result 'Softfail' indicates that the IP address is not authorized to send email for this domain, but the domain is in a transitional state. This typically means the domain owner has not fully defined all authorized senders yet, so the email should be accepted but flagged for further review. Other SPF results include Pass (authorized), Fail (not authorized, reject), Neutral (domain does not disclose), and PermError (syntax errors in SPF record).",
+    "explanation_es": "Según ECIH v3, SPF (Sender Policy Framework) es un protocolo de validación de correo utilizado por propietarios de dominio para prevenir la suplantación de correo. El resultado SPF 'Softfail' indica que la dirección IP no está autorizada para enviar correo de este dominio, pero el dominio está en estado de transición. Esto típicamente significa que el propietario del dominio no ha definido completamente todos los remitentes autorizados, por lo que el correo debe ser aceptado pero marcado para revisión adicional. Otros resultados SPF incluyen Pass (autorizado), Fail (no autorizado, rechazar), Neutral (el dominio no divulga) y PermError (errores de sintaxis en registro SPF)."
+  },
+  {
+    "id": 455,
+    "module": 5,
+    "question_en": "An organization has suffered a malware attack delivered through email attachments. During the recovery phase, the incident handling team needs to restore email services. According to ECIH v3, which of the following is the CORRECT sequence of recovery actions for email services after an email-borne malware incident?",
+    "question_es": "Una organización ha sufrido un ataque de malware distribuido a través de adjuntos de correo electrónico. Durante la fase de recuperación, el equipo de manejo de incidentes necesita restaurar los servicios de correo. Según ECIH v3, ¿cuál de las siguientes es la secuencia CORRECTA de acciones de recuperación para servicios de correo después de un incidente de malware distribuido por correo?",
+    "options_en": [
+      "Restore email immediately, then change passwords, then scan for malware",
+      "Block malicious email senders at the server level, require all employees to change passwords, enable two-factor authentication, and enable scanning of links and attachments for all emails",
+      "Disable the email server permanently and switch to a new provider",
+      "Restore email from backup and enable automatic file sharing between systems"
+    ],
+    "options_es": [
+      "Restaurar el correo inmediatamente, luego cambiar contraseñas, luego escanear malware",
+      "Bloquear remitentes maliciosos a nivel de servidor, requerir que todos los empleados cambien contraseñas, habilitar autenticación de dos factores, y habilitar escaneo de enlaces y adjuntos en todos los correos",
+      "Deshabilitar el servidor de correo permanentemente y cambiar a un nuevo proveedor",
+      "Restaurar correo desde respaldo y habilitar el uso compartido automático de archivos entre sistemas"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, the recovery steps for email services after a malware incident include: restoring email services after blocking malicious email senders at the server level, requiring all employees to change their account passwords (to prevent account compromise if the malware accessed credentials), enabling two-factor authentication for organizational email/login/user accounts, and enabling scanning of links and attachments for all emails passing through the server. The courseware also emphasizes disabling automatic file sharing between systems rather than enabling it.",
+    "explanation_es": "Según ECIH v3, los pasos de recuperación para servicios de correo después de un incidente de malware incluyen: restaurar servicios de correo después de bloquear remitentes maliciosos a nivel de servidor, requerir que todos los empleados cambien sus contraseñas de cuenta (para prevenir compromiso de cuentas si el malware accedió a credenciales), habilitar autenticación de dos factores para cuentas de correo/inicio de sesión/usuario organizacionales, y habilitar escaneo de enlaces y adjuntos en todos los correos que pasan por el servidor. El material también enfatiza deshabilitar el uso compartido automático de archivos entre sistemas en lugar de habilitarlo."
+  },
+  {
+    "id": 456,
+    "module": 6,
+    "question_en": "An incident handler is preparing the organization for potential wireless network security incidents. According to ECIH v3, which of the following is NOT a recommended preparation strategy for handling wireless network security incidents?",
+    "question_es": "Un manejador de incidentes está preparando a la organización para posibles incidentes de seguridad en redes inalámbricas. Según ECIH v3, ¿cuál de las siguientes NO es una estrategia de preparación recomendada para manejar incidentes de seguridad en redes inalámbricas?",
+    "options_en": [
+      "Enlist all wireless networking devices along with their MAC addresses, IP addresses, authentication details, and points of placement",
+      "Disable all wireless device logging to reduce storage overhead on centralized servers",
+      "Install wireless network sniffing tools, security solutions, and logging tools to record traffic and alert administrators",
+      "Develop incident response drill scenarios and regularly perform mock wireless security breaches"
+    ],
+    "options_es": [
+      "Enumerar todos los dispositivos de red inalámbrica junto con sus direcciones MAC, direcciones IP, detalles de autenticación y puntos de ubicación",
+      "Deshabilitar todo el registro de dispositivos inalámbricos para reducir la sobrecarga de almacenamiento en servidores centralizados",
+      "Instalar herramientas de sniffing de red inalámbrica, soluciones de seguridad y herramientas de registro para grabar tráfico y alertar a los administradores",
+      "Desarrollar escenarios de simulacro de respuesta a incidentes y realizar regularmente simulacros de brechas de seguridad inalámbrica"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, disabling wireless device logging is NOT a recommended preparation strategy. In fact, the courseware states the opposite: organizations should 'Enable all wireless devices to log and save the incoming and outgoing traffic on a centralized server.' Other correct preparation strategies include: enlisting all wireless networking devices with their details, installing wireless network monitoring tools, developing mock wireless security breach drills, maintaining wireless network architectural designs, and training employees regarding best practices.",
+    "explanation_es": "Según ECIH v3, deshabilitar el registro de dispositivos inalámbricos NO es una estrategia de preparación recomendada. De hecho, el material indica lo opuesto: las organizaciones deben 'Habilitar todos los dispositivos inalámbricos para registrar y guardar el tráfico entrante y saliente en un servidor centralizado.' Otras estrategias de preparación correctas incluyen: enumerar todos los dispositivos de red inalámbrica con sus detalles, instalar herramientas de monitoreo de red inalámbrica, desarrollar simulacros de brechas de seguridad, mantener diseños arquitectónicos de red inalámbrica y capacitar empleados sobre mejores prácticas."
+  },
+  {
+    "id": 457,
+    "module": 6,
+    "question_en": "A security analyst detects suspicious network behavior and suspects unauthorized access to the corporate network. According to ECIH v3, which of the following is an indicator of unauthorized access that falls under 'Changes in Administrator Settings'?",
+    "question_es": "Un analista de seguridad detecta comportamiento sospechoso en la red y sospecha acceso no autorizado a la red corporativa. Según ECIH v3, ¿cuál de los siguientes es un indicador de acceso no autorizado que se clasifica bajo 'Cambios en Configuración de Administrador'?",
+    "options_en": [
+      "Sudden increase in CPU and memory consumption",
+      "User reports regarding unexpected data modifications in shared files",
+      "Creation of new administrative-level user accounts or groups and changes in log and audit policies",
+      "Presence of unauthorized hardware components in the server room"
+    ],
+    "options_es": [
+      "Aumento repentino en el consumo de CPU y memoria",
+      "Reportes de usuarios sobre modificaciones inesperadas de datos en archivos compartidos",
+      "Creación de nuevas cuentas de usuario a nivel de administrador o grupos y cambios en políticas de registro y auditoría",
+      "Presencia de componentes de hardware no autorizados en la sala de servidores"
+    ],
+    "correct": 2,
+    "explanation_en": "According to ECIH v3, indicators of unauthorized access under 'Changes in Administrator Settings' include: changes in log and audit policies, creation of new administrative-level user accounts or groups, changes in critical files such as OS files or system libraries, and creation of new files or directories with unusual names. Option A describes 'High Resource Utilization' indicators, option B describes 'Unauthorized Data Modification' indicators, and option D describes 'Physical Intrusion' indicators.",
+    "explanation_es": "Según ECIH v3, los indicadores de acceso no autorizado bajo 'Cambios en Configuración de Administrador' incluyen: cambios en políticas de registro y auditoría, creación de nuevas cuentas de usuario a nivel de administrador o grupos, cambios en archivos críticos como archivos del SO o bibliotecas del sistema, y creación de nuevos archivos o directorios con nombres inusuales. La opción A describe indicadores de 'Alta Utilización de Recursos', la opción B describe indicadores de 'Modificación No Autorizada de Datos', y la opción D describe indicadores de 'Intrusión Física'."
+  },
+  {
+    "id": 458,
+    "module": 6,
+    "question_en": "An incident handler suspects that an ARP poisoning attack is occurring on the network. According to ECIH v3, which Wireshark filter should be used to detect duplicate IP address traffic that indicates an ARP poisoning attempt?",
+    "question_es": "Un manejador de incidentes sospecha que un ataque de envenenamiento ARP está ocurriendo en la red. Según ECIH v3, ¿qué filtro de Wireshark debería usarse para detectar tráfico de direcciones IP duplicadas que indica un intento de envenenamiento ARP?",
+    "options_en": [
+      "tcp.flags.syn==1 and tcp.flags.ack==0",
+      "icmp.type==8 or icmp.type==0",
+      "arp.duplicate-address-detected",
+      "http.request.method==POST"
+    ],
+    "options_es": [
+      "tcp.flags.syn==1 and tcp.flags.ack==0",
+      "icmp.type==8 or icmp.type==0",
+      "arp.duplicate-address-detected",
+      "http.request.method==POST"
+    ],
+    "correct": 2,
+    "explanation_en": "According to ECIH v3, incident handlers can use Wireshark to detect ARP poisoning attempts by checking for 'duplicate IP address configured' messages in the Warnings tab and using the filter 'arp.duplicate-address-detected' to locate duplicate IP address traffic. In ARP spoofing, numerous forged ARP requests and reply packets overload a switch, and the ARP cache of target computers is flooded with forged entries. Additionally, Wireshark can be configured to automatically detect ARP packet storms by enabling 'Register network address mappings' under Preferences. Option A detects half-open/stealth scans, and option B detects ICMP ping sweeps.",
+    "explanation_es": "Según ECIH v3, los manejadores de incidentes pueden usar Wireshark para detectar intentos de envenenamiento ARP verificando mensajes de 'dirección IP duplicada configurada' en la pestaña Warnings y usando el filtro 'arp.duplicate-address-detected' para localizar tráfico de direcciones IP duplicadas. En la suplantación ARP, numerosos paquetes ARP de solicitud y respuesta falsificados sobrecargan un switch, y la caché ARP de las computadoras objetivo se inunda con entradas falsificadas. Además, Wireshark puede configurarse para detectar automáticamente tormentas de paquetes ARP habilitando 'Register network address mappings' en Preferencias. La opción A detecta escaneos stealth/half-open, y la opción B detecta ping sweeps ICMP."
+  },
+  {
+    "id": 459,
+    "module": 6,
+    "question_en": "An incident response team is investigating a network security incident and needs to perform packet analysis to identify protocol violations. According to ECIH v3, which of the following combinations of tools can be used for network sniffing, packet capture, and packet analysis respectively?",
+    "question_es": "Un equipo de respuesta a incidentes está investigando un incidente de seguridad de red y necesita realizar análisis de paquetes para identificar violaciones de protocolo. Según ECIH v3, ¿cuál de las siguientes combinaciones de herramientas puede usarse para sniffing de red, captura de paquetes y análisis de paquetes respectivamente?",
+    "options_en": [
+      "Nmap for sniffing, Metasploit for capture, Burp Suite for analysis",
+      "Wireshark for sniffing and capture, and Omnipeek, dSniff, Ettercap, and tcpdump for packet analysis",
+      "John the Ripper for sniffing, Hydra for capture, Hashcat for analysis",
+      "Volatility for sniffing, Autopsy for capture, FTK for analysis"
+    ],
+    "options_es": [
+      "Nmap para sniffing, Metasploit para captura, Burp Suite para análisis",
+      "Wireshark para sniffing y captura, y Omnipeek, dSniff, Ettercap y tcpdump para análisis de paquetes",
+      "John the Ripper para sniffing, Hydra para captura, Hashcat para análisis",
+      "Volatility para sniffing, Autopsy para captura, FTK para análisis"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, network sniffing and packet capture tools include Wireshark and NetworkMiner, while packet analysis tools include Omnipeek, dSniff, Ettercap, and tcpdump. The courseware states that packet sniffer applications such as Wireshark, tcpdump, Omnipeek, and Kismet are installed on devices connecting external to internal networks. By performing packet analysis, incident responders can identify unusual protocol behavior or violations such as invalid option bits, sequence numbers in TCP packets, invalid flags, and invalid fragments. Additionally, ngrep can be used to search for particular strings or patterns in captured packets.",
+    "explanation_es": "Según ECIH v3, las herramientas de sniffing de red y captura de paquetes incluyen Wireshark y NetworkMiner, mientras que las herramientas de análisis de paquetes incluyen Omnipeek, dSniff, Ettercap y tcpdump. El material indica que aplicaciones de captura de paquetes como Wireshark, tcpdump, Omnipeek y Kismet se instalan en dispositivos que conectan redes externas con internas. Al realizar análisis de paquetes, los respondedores de incidentes pueden identificar comportamiento inusual de protocolos o violaciones como bits de opción inválidos, números de secuencia en paquetes TCP, flags inválidos y fragmentos inválidos. Además, ngrep puede usarse para buscar cadenas o patrones particulares en paquetes capturados."
+  },
+  {
+    "id": 460,
+    "module": 6,
+    "question_en": "A network security analyst identifies the presence of duplicate wireless access points with the same SSID on the corporate network. According to ECIH v3, what type of incident does this indicator suggest, and what other indicators should the analyst look for to confirm the incident?",
+    "question_es": "Un analista de seguridad de red identifica la presencia de puntos de acceso inalámbricos duplicados con el mismo SSID en la red corporativa. Según ECIH v3, ¿qué tipo de incidente sugiere este indicador, y qué otros indicadores debería buscar el analista para confirmar el incidente?",
+    "options_en": [
+      "A DDoS attack; look for increased bandwidth utilization and SYN flood patterns",
+      "A wireless network security incident; look for unauthorized devices on the network, multiple authentication failures, changes in wireless network SSID, and misconfigured access points",
+      "An inappropriate usage incident; look for policy violations in web proxy logs",
+      "A malware incident; look for suspicious executables and registry changes"
+    ],
+    "options_es": [
+      "Un ataque DDoS; buscar aumento de utilización de ancho de banda y patrones de inundación SYN",
+      "Un incidente de seguridad de red inalámbrica; buscar dispositivos no autorizados en la red, múltiples fallos de autenticación, cambios en el SSID de la red inalámbrica y puntos de acceso mal configurados",
+      "Un incidente de uso inapropiado; buscar violaciones de políticas en registros de proxy web",
+      "Un incidente de malware; buscar ejecutables sospechosos y cambios en el registro"
+    ],
+    "correct": 1,
+    "explanation_en": "According to ECIH v3, the presence of duplicate wireless access points with the same SSID is a key indicator of a wireless network security incident, potentially indicating a rogue or evil twin access point. Other indicators listed in the courseware include: presence of unauthorized devices on the network, disruption of services or unavailability of wireless clients, multiple authentication failure attempts, changes in security protocols, traffic from unauthorized sources, surge in bad or malformed packets, unusual increase in bandwidth utilization, changes in existing account passwords, outbound traffic to public IP addresses, changes in wireless network SSID, misconfigured wireless network access points, and connection to improperly encrypted public wireless networks.",
+    "explanation_es": "Según ECIH v3, la presencia de puntos de acceso inalámbricos duplicados con el mismo SSID es un indicador clave de un incidente de seguridad de red inalámbrica, potencialmente indicando un punto de acceso rogue o evil twin. Otros indicadores listados en el material incluyen: presencia de dispositivos no autorizados en la red, interrupción de servicios o indisponibilidad de clientes inalámbricos, múltiples intentos fallidos de autenticación, cambios en protocolos de seguridad, tráfico de fuentes no autorizadas, aumento de paquetes malformados, aumento inusual en utilización de ancho de banda, cambios en contraseñas de cuentas existentes, tráfico saliente a direcciones IP públicas, cambios en SSID de red inalámbrica, puntos de acceso mal configurados y conexión a redes inalámbricas públicas con encriptación inadecuada."
+  }
+]

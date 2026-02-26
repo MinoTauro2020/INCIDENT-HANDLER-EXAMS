@@ -187,7 +187,11 @@ function applyLanguage() {
 async function loadExternalQuestions() {
     const files = [
         'questions_bilingual.json',
-        'questions_additional.json'
+        'questions_additional.json',
+        'questions_similares.json',
+        'questions_deep_m1_m4.json',
+        'questions_deep_m5_m6.json',
+        'questions_deep_m7_m10.json'
     ];
 
     let loaded = 0;
@@ -199,8 +203,8 @@ async function loadExternalQuestions() {
             if (!resp.ok) continue;
             const data = await resp.json();
 
-            // Handle both formats
-            const rawList = data.questions || data.additional_questions || [];
+            // Handle all formats: array, { questions: [] }, { additional_questions: [] }
+            const rawList = Array.isArray(data) ? data : (data.questions || data.additional_questions || []);
 
             rawList.forEach(q => {
                 if (existingIds.has(q.id)) return;
@@ -254,7 +258,7 @@ async function loadExternalQuestions() {
             const resp = await fetch(file);
             if (!resp.ok) continue;
             const data = await resp.json();
-            const rawList = data.questions || data.additional_questions || [];
+            const rawList = Array.isArray(data) ? data : (data.questions || data.additional_questions || []);
 
             rawList.forEach(q => {
                 if (existingIds.has(q.id)) return;
