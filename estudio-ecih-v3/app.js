@@ -35,6 +35,8 @@ let currentLang = localStorage.getItem('ecih_lang') || 'es';
 
 const i18n = {
     es: {
+        'dashboard.welcome': 'Bienvenido al Estudio ECIH v3',
+        'dashboard.modulesTitle': 'Módulos del Curso',
         'nav.dashboard': 'Dashboard',
         'nav.modules': 'Módulos',
         'nav.flashcards': 'Flashcards',
@@ -93,6 +95,8 @@ const i18n = {
         'flashcard.loading': 'Cargando...'
     },
     en: {
+        'dashboard.welcome': 'Welcome to ECIH v3 Study Platform',
+        'dashboard.modulesTitle': 'Course Modules',
         'nav.dashboard': 'Dashboard',
         'nav.modules': 'Modules',
         'nav.flashcards': 'Flashcards',
@@ -427,8 +431,10 @@ function showSection(sectionId) {
     // Actualizar navegación
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.classList.remove('active');
+        if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(sectionId)) {
+            link.classList.add('active');
+        }
     });
-    event.target.classList.add('active');
 
     // Acciones específicas por sección
     if (sectionId === 'progreso') {
