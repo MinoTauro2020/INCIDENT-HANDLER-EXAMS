@@ -92,7 +92,11 @@ const i18n = {
         'no.questions': 'No hay preguntas para este módulo',
         'no.flashcards': 'No hay flashcards para este módulo',
         'module.prefix': 'Módulo',
-        'flashcard.loading': 'Cargando...'
+        'flashcard.loading': 'Cargando...',
+        'section.modules': 'Resúmenes por Módulo',
+        'section.flashcards': 'Flashcards',
+        'select.allModules': 'Todos los módulos',
+        'select.module': 'Módulo'
     },
     en: {
         'dashboard.welcome': 'Welcome to ECIH v3 Study Platform',
@@ -152,7 +156,11 @@ const i18n = {
         'no.questions': 'No questions for this module',
         'no.flashcards': 'No flashcards for this module',
         'module.prefix': 'Module',
-        'flashcard.loading': 'Loading...'
+        'flashcard.loading': 'Loading...',
+        'section.modules': 'Module Summaries',
+        'section.flashcards': 'Flashcards',
+        'select.allModules': 'All modules',
+        'select.module': 'Module'
     }
 };
 
@@ -165,11 +173,16 @@ function toggleLanguage() {
     localStorage.setItem('ecih_lang', currentLang);
     applyLanguage();
     // Re-render active view content
+    loadModuleContent();
     loadFlashcards();
     loadPracticeQuestions();
     updateProgressDisplay();
     renderModuleProgressBars();
     updateWeakAreas();
+    // Refresh exam question if exam is active
+    if (examQuestions.length > 0 && document.getElementById('examContainer').style.display !== 'none') {
+        displayExamQuestion();
+    }
 }
 
 function applyLanguage() {
@@ -181,6 +194,27 @@ function applyLanguage() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         el.textContent = t(key);
+    });
+
+    // Update module select options
+    const moduleNames = [
+        '', 'Introduction to Incident Handling', 'IH&R Process', 'First Response',
+        'Malware Incidents', 'Email Security', 'Network Security',
+        'Web Application Security', 'Cloud Security', 'Insider Threats', 'Endpoint Security'
+    ];
+    ['moduleSelect', 'flashcardModule', 'practiceModule'].forEach(selectId => {
+        const sel = document.getElementById(selectId);
+        if (!sel) return;
+        Array.from(sel.options).forEach(opt => {
+            if (opt.value === 'all') {
+                opt.textContent = t('select.allModules');
+            } else {
+                const num = parseInt(opt.value);
+                if (num >= 1 && num <= 10) {
+                    opt.textContent = `${t('select.module')} ${num}: ${moduleNames[num]}`;
+                }
+            }
+        });
     });
 }
 
@@ -450,11 +484,6 @@ function showModule(moduleNum) {
     document.getElementById('moduleSelect').value = moduleNum;
     loadModuleContent();
     showSection('modulos');
-    // Actualizar nav
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.classList.remove('active');
-        if (link.textContent === 'Módulos') link.classList.add('active');
-    });
 }
 
 // =============================================
@@ -466,9 +495,11 @@ function loadModuleContent() {
     const module = moduleContent[moduleNum];
 
     if (module) {
+        const title = (currentLang === 'en' && module.title_en) ? module.title_en : module.title;
+        const content = (currentLang === 'en' && module.content_en) ? module.content_en : module.content;
         document.getElementById('moduleContent').innerHTML = `
-            <h2>${module.title}</h2>
-            ${module.content}
+            <h2>${title}</h2>
+            ${content}
         `;
     }
 }
