@@ -701,7 +701,6 @@ h1 {
 
 /* LANGUAGE TOGGLE */
 .lang-toggle {
-    margin-top: auto;
     padding-top: 20px;
     border-top: 1px solid rgba(99, 102, 241, 0.3);
 }
@@ -722,6 +721,64 @@ h1 {
 
 #langBtn:hover {
     background: var(--primary);
+}
+
+/* USER INFO PANEL (auth) */
+.user-info-panel {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.user-info-email {
+    font-size: 12px;
+    color: var(--text);
+    opacity: 0.7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 4px;
+}
+
+.nav-admin-link {
+    display: block;
+    padding: 9px 16px;
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    border-radius: 8px;
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.nav-admin-link:hover {
+    background: rgba(34, 211, 238, 0.18);
+    border-color: rgba(34, 211, 238, 0.5);
+}
+
+.nav-logout-btn {
+    width: 100%;
+    padding: 9px 16px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    color: #fca5a5;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.nav-logout-btn:hover {
+    background: rgba(239, 68, 68, 0.16);
+    border-color: rgba(239, 68, 68, 0.5);
 }
 
 /* DIFFICULTY BADGE */

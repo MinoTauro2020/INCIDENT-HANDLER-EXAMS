@@ -26,6 +26,13 @@ estudio-ecih-v3/test_translation.py
 test_i18n_full.py
 test_i18n_verify.py
 
+# Node.js
+node_modules/
+npm-debug.log*
+
+# SQLite database (runtime data — never commit)
+db/database.sqlite
+
 # IDE / OS
 .claude/
 .DS_Store

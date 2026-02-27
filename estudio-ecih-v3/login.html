@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="">
+    <title>ECIH v3 - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #22d3ee;
+            --danger: #ef4444;
+            --dark: #1e1b4b;
+            --darker: #0f0a3c;
+            --text: #c7d2fe;
+            --white: #ffffff;
+            --input-bg: rgba(15, 10, 60, 0.8);
+            --card-bg: rgba(30, 27, 75, 0.85);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            padding: 20px;
+        }
+
+        /* Animated background dots */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(34, 211, 238, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .login-wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        /* Logo / Brand area */
+        .brand {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+        }
+
+        .brand-logo svg {
+            width: 36px;
+            height: 36px;
+            fill: none;
+            stroke: white;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .brand h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .brand h1 span {
+            color: var(--secondary);
+        }
+
+        .brand p {
+            font-size: 13px;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+
+        /* Login card */
+        .login-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 16px;
+            padding: 36px 40px;
+            backdrop-filter: blur(12px);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(99, 102, 241, 0.1) inset;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        /* Form fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .input-wrap {
+            position: relative;
+        }
+
+        .input-wrap svg {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            stroke: rgba(199, 210, 254, 0.4);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            pointer-events: none;
+            transition: stroke 0.2s;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 16px 13px 44px;
+            background: var(--input-bg);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(199, 210, 254, 0.35);
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+        }
+
+        .form-group input:focus + svg,
+        .input-wrap:focus-within svg {
+            stroke: var(--primary);
+        }
+
+        /* Reorder: input before svg in DOM but position with sibling trick via wrap */
+        .input-wrap input:focus ~ svg {
+            stroke: var(--primary);
+        }
+
+        /* Password toggle */
+        .pw-toggle {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            color: rgba(199, 210, 254, 0.4);
+            transition: color 0.2s;
+        }
+
+        .pw-toggle:hover {
+            color: var(--text);
+        }
+
+        .pw-toggle svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            position: static;
+            transform: none;
+        }
+
+        /* Error & lockout messages */
+        .alert {
+            display: none;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .alert.show {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .alert-error {
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #fca5a5;
+        }
+
+        .alert-locked {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #fcd34d;
+        }
+
+        .alert svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 1px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .alert-text {
+            flex: 1;
+        }
+
+        #lockCountdown {
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Submit button */
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-login:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-login:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .btn-login:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+        }
+
+        /* Spinner inside button */
+        .btn-login .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            margin: 0 auto;
+        }
+
+        .btn-login.loading .btn-text { display: none; }
+        .btn-login.loading .spinner { display: inline-block; }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer note */
+        .login-footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 12px;
+            color: rgba(199, 210, 254, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 28px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="brand">
+            <div class="brand-logo">
+                <!-- Shield icon -->
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z"/>
+                    <polyline points="9 12 11 14 15 10"/>
+                </svg>
+            </div>
+            <h1>ECIH <span>v3</span></h1>
+            <p>Incident Handler Certification</p>
+        </div>
+
+        <div class="login-card">
+            <p class="card-title">Acceso a la Plataforma de Estudio</p>
+
+            <!-- Error alert -->
+            <div class="alert alert-error" id="alertError" role="alert">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                <span class="alert-text" id="errorText">Credenciales incorrectas. Verifica tu email y contrasena.</span>
+            </div>
+
+            <!-- Lockout alert -->
+            <div class="alert alert-locked" id="alertLocked" role="alert">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <span class="alert-text">
+                    Cuenta bloqueada temporalmente por multiples intentos fallidos.
+                    Intentalo de nuevo en <strong id="lockCountdown">00:00</strong>.
+                </span>
+            </div>
+
+            <form id="loginForm" novalidate>
+                <div class="form-group">
+                    <label for="email">Correo electronico</label>
+                    <div class="input-wrap">
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="usuario@ejemplo.com"
+                            autocomplete="email"
+                            required
+                        >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contrasena</label>
+                    <div class="input-wrap">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Tu contrasena"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        <button type="button" class="pw-toggle" id="pwToggle" aria-label="Mostrar contrasena">
+                            <svg id="eyeIcon" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login" id="loginBtn">
+                    <span class="btn-text">Iniciar Sesion</span>
+                    <span class="spinner"></span>
+                </button>
+            </form>
+        </div>
+
+        <p class="login-footer">ECIH v3 Study Platform &mdash; Acceso restringido</p>
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            // ---- Helpers ----
+            function escapeHtml(str) {
+                const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;' };
+                return String(str).replace(/[&<>"']/g, function (c) { return map[c]; });
+            }
+
+            function getCsrfToken() {
+                const meta = document.querySelector('meta[name="csrf-token"]');
+                return meta ? meta.getAttribute('content') : '';
+            }
+
+            // ---- DOM refs ----
+            const form       = document.getElementById('loginForm');
+            const emailInput = document.getElementById('email');
+            const pwInput    = document.getElementById('password');
+            const loginBtn   = document.getElementById('loginBtn');
+            const alertError = document.getElementById('alertError');
+            const alertLocked = document.getElementById('alertLocked');
+            const errorText  = document.getElementById('errorText');
+            const lockCountdown = document.getElementById('lockCountdown');
+            const pwToggle   = document.getElementById('pwToggle');
+            const eyeIcon    = document.getElementById('eyeIcon');
+
+            // ---- Password visibility toggle ----
+            pwToggle.addEventListener('click', function () {
+                const isPassword = pwInput.type === 'password';
+                pwInput.type = isPassword ? 'text' : 'password';
+                // Swap icon
+                eyeIcon.innerHTML = isPassword
+                    ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>'
+                    : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+                pwToggle.setAttribute('aria-label', isPassword ? 'Ocultar contrasena' : 'Mostrar contrasena');
+            });
+
+            // ---- Lockout countdown ----
+            let lockTimer = null;
+
+            function showLockout(secondsRemaining) {
+                alertError.classList.remove('show');
+                alertLocked.classList.add('show');
+                loginBtn.disabled = true;
+                emailInput.disabled = true;
+                pwInput.disabled = true;
+
+                clearInterval(lockTimer);
+                let remaining = Math.max(0, Math.round(secondsRemaining));
+
+                function update() {
+                    const m = Math.floor(remaining / 60).toString().padStart(2, '0');
+                    const s = (remaining % 60).toString().padStart(2, '0');
+                    lockCountdown.textContent = m + ':' + s;
+                    if (remaining <= 0) {
+                        clearInterval(lockTimer);
+                        alertLocked.classList.remove('show');
+                        loginBtn.disabled = false;
+                        emailInput.disabled = false;
+                        pwInput.disabled = false;
+                    }
+                    remaining--;
+                }
+                update();
+                lockTimer = setInterval(update, 1000);
+            }
+
+            function showError(message) {
+                alertLocked.classList.remove('show');
+                errorText.textContent = escapeHtml(message);
+                alertError.classList.add('show');
+            }
+
+            function hideAlerts() {
+                alertError.classList.remove('show');
+                alertLocked.classList.remove('show');
+            }
+
+            // ---- Form submit ----
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                hideAlerts();
+
+                const email    = emailInput.value.trim();
+                const password = pwInput.value;
+
+                if (!email || !password) {
+                    showError('Por favor completa todos los campos.');
+                    return;
+                }
+
+                // Basic email format check
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    showError('Ingresa un correo electronico valido.');
+                    emailInput.focus();
+                    return;
+                }
+
+                loginBtn.disabled = true;
+                loginBtn.classList.add('loading');
+
+                try {
+                    const headers = { 'Content-Type': 'application/json' };
+                    const csrf = getCsrfToken();
+                    if (csrf) headers['X-CSRF-Token'] = csrf;
+
+                    const response = await fetch('/api/auth/login', {
+                        method: 'POST',
+                        headers: headers,
+                        credentials: 'include',
+                        body: JSON.stringify({ email: email, password: password })
+                    });
+
+                    let data = {};
+                    try { data = await response.json(); } catch (_) {}
+
+                    if (response.ok) {
+                        // Success — redirect
+                        window.location.href = '/index.html';
+                        return;
+                    }
+
+                    if (response.status === 429 || data.locked) {
+                        // Account/IP locked — show countdown
+                        const retryAfter = data.retryAfter || data.lockoutSeconds || 300;
+                        showLockout(retryAfter);
+                    } else if (response.status === 401) {
+                        const remaining = data.attemptsRemaining;
+                        let msg = data.message || 'Credenciales incorrectas.';
+                        if (remaining !== undefined && remaining > 0) {
+                            msg += ' Intentos restantes: ' + remaining + '.';
+                        }
+                        showError(msg);
+                    } else if (response.status === 400) {
+                        showError(data.message || 'Datos de inicio de sesion invalidos.');
+                    } else {
+                        showError('Error del servidor. Intentalo de nuevo mas tarde.');
+                    }
+                } catch (err) {
+                    showError('No se pudo conectar al servidor. Verifica tu conexion.');
+                } finally {
+                    loginBtn.classList.remove('loading');
+                    if (!alertLocked.classList.contains('show')) {
+                        loginBtn.disabled = false;
+                    }
+                }
+            });
+
+            // Clear alerts when typing
+            emailInput.addEventListener('input', hideAlerts);
+            pwInput.addEventListener('input', hideAlerts);
+        })();
+    </script>
+</body>
+</html>

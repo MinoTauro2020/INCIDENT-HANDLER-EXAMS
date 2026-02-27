@@ -433,6 +433,12 @@ function updateWeakAreas() {
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', async () => {
+    // Auth check — must come first
+    const user = await checkAuthAndInit();
+    if (!user) return; // redirect already triggered or network issue
+
+    setupNavUserPanel(user);
+
     loadProgress();
     applyLanguage();
     loadModuleContent();
@@ -567,6 +573,59 @@ function loadModuleContent() {
 // =============================================
 // SLIDE VIEWER (LIGHTBOX)
 // =============================================
+
+// =============================================
+// AUTH HELPERS
+// =============================================
+
+function escapeHtmlAuth(str) {
+    if (!str) return '';
+    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;' };
+    return String(str).replace(/[&<>"']/g, (c) => map[c]);
+}
+
+async function checkAuthAndInit() {
+    try {
+        const res = await fetch('/api/auth/me', {
+            credentials: 'include'
+        });
+        if (!res.ok) {
+            window.location.href = '/login.html';
+            return null;
+        }
+        const data = await res.json();
+        return data.user || null;
+    } catch (_) {
+        return null;
+    }
+}
+
+function setupNavUserPanel(user) {
+    const panel     = document.getElementById('userInfoPanel');
+    const emailEl   = document.getElementById('navUserEmail');
+    const adminLink = document.getElementById('navAdminLink');
+    const logoutBtn = document.getElementById('navLogoutBtn');
+
+    if (!panel || !user) return;
+
+    panel.style.display = '';
+    if (emailEl) emailEl.textContent = escapeHtmlAuth(user.email || user.name || '');
+    if (adminLink) {
+        adminLink.style.display = user.role === 'admin' ? '' : 'none';
+    }
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', async () => {
+            try {
+                await fetch('/api/auth/logout', {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+            } catch (_) {}
+            window.location.href = '/login.html';
+        });
+    }
+}
 
 let _slideViewerModule = 0;
 let _slideViewerIndex = 0;

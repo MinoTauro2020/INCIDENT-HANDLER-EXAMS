@@ -1,0 +1,8 @@
+node_modules
+database.sqlite
+*.pdf
+*.rar
+*.png
+estudio-ecih-v3/slides/
+.git
+.claude
