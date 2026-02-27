@@ -1,17 +1,16 @@
 'use strict';
 
-const express = require('express');
+const express    = require('express');
 const { body, validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const rateLimit = require('express-rate-limit');
-const getDb = require('../db/database');
+const bcrypt     = require('bcryptjs');
+const jwt        = require('jsonwebtoken');
+const rateLimit  = require('express-rate-limit');
+const { getDb, saveDb } = require('../db/database');
 const { requireAuth, recordFailedAttempt, resetFailedAttempts } = require('../middleware/auth');
 
 const router = express.Router();
 
-const JWT_EXPIRY = '24h';
-const LOCKOUT_THRESHOLD = 5;
+const JWT_EXPIRY          = '24h';
 const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes
 
 // ── Rate limiter: 5 login attempts per 15 min per IP ──────────────────────
@@ -46,12 +45,24 @@ function issueTokenCookie(res, userId, role) {
 
   res.cookie('token', token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure:   process.env.NODE_ENV === 'production',
     sameSite: 'Strict',
-    maxAge: 24 * 60 * 60 * 1000 // 24 hours in ms
+    maxAge:   24 * 60 * 60 * 1000 // 24 hours in ms
   });
 
   return token;
+}
+
+// ── Helper: select one row ─────────────────────────────────────────────────
+function selectOne(db, sql, params) {
+  const stmt = db.prepare(sql);
+  stmt.bind(params);
+  let row = null;
+  if (stmt.step()) {
+    row = stmt.getAsObject();
+  }
+  stmt.free();
+  return row;
 }
 
 // ── POST /api/auth/login ──────────────────────────────────────────────────
@@ -63,22 +74,24 @@ router.post('/login', loginLimiter, loginValidation, async (req, res) => {
   }
 
   const { email, password } = req.body;
-  const db = getDb();
+  const db = await getDb();
 
   // Lookup user — always perform bcrypt compare to prevent timing attacks
-  const user = db
-    .prepare('SELECT id, email, name, role, password_hash, is_active, failed_attempts, locked_until FROM users WHERE email = ?')
-    .get(email);
+  const user = selectOne(
+    db,
+    'SELECT id, email, name, role, password_hash, is_active, failed_attempts, locked_until FROM users WHERE email = ?',
+    [email]
+  );
 
   // Use a dummy hash when user not found to prevent timing side-channel
-  const DUMMY_HASH = '$2a$12$invalidhashtopreventtimingattacksonnonexistentusers..';
+  const DUMMY_HASH    = '$2a$12$invalidhashtopreventtimingattacksonnonexistentusers..';
   const hashToCompare = user ? user.password_hash : DUMMY_HASH;
 
   const passwordMatch = await bcrypt.compare(password, hashToCompare);
 
   if (!user || !passwordMatch) {
     if (user) {
-      recordFailedAttempt(user.id);
+      await recordFailedAttempt(user.id);
     }
     // Generic error — don't reveal whether the email exists
     return res.status(401).json({ error: 'Invalid email or password.' });
@@ -101,16 +114,16 @@ router.post('/login', loginLimiter, loginValidation, async (req, res) => {
   }
 
   // Success — reset lockout, issue JWT
-  resetFailedAttempts(user.id);
+  await resetFailedAttempts(user.id);
   issueTokenCookie(res, user.id, user.role);
 
   return res.json({
     message: 'Login successful.',
     user: {
-      id: user.id,
+      id:    user.id,
       email: user.email,
-      name: user.name,
-      role: user.role
+      name:  user.name,
+      role:  user.role
     }
   });
 });
@@ -119,7 +132,7 @@ router.post('/login', loginLimiter, loginValidation, async (req, res) => {
 router.post('/logout', (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure:   process.env.NODE_ENV === 'production',
     sameSite: 'Strict'
   });
   return res.json({ message: 'Logged out successfully.' });

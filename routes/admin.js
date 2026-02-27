@@ -1,9 +1,9 @@
 'use strict';
 
-const express = require('express');
+const express  = require('express');
 const { body, param, validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
-const getDb = require('../db/database');
+const bcrypt   = require('bcryptjs');
+const { getDb, saveDb } = require('../db/database');
 const { requireAuth, requireAdmin } = require('../middleware/auth');
 
 const router = express.Router();
@@ -23,16 +23,40 @@ function firstError(req, res) {
   return false;
 }
 
+// ── Helper: select one row ────────────────────────────────────────────────
+function selectOne(db, sql, params) {
+  const stmt = db.prepare(sql);
+  stmt.bind(params);
+  let row = null;
+  if (stmt.step()) {
+    row = stmt.getAsObject();
+  }
+  stmt.free();
+  return row;
+}
+
+// ── Helper: select all rows ───────────────────────────────────────────────
+function selectAll(db, sql, params) {
+  const stmt = db.prepare(sql);
+  if (params && params.length) stmt.bind(params);
+  const rows = [];
+  while (stmt.step()) {
+    rows.push(stmt.getAsObject());
+  }
+  stmt.free();
+  return rows;
+}
+
 // ── GET /api/admin/users ──────────────────────────────────────────────────
-router.get('/users', (req, res) => {
-  const db = getDb();
-  const users = db
-    .prepare(`
-      SELECT id, email, name, role, is_active, failed_attempts, locked_until, created_at, last_login
-      FROM users
-      ORDER BY created_at DESC
-    `)
-    .all();
+router.get('/users', async (req, res) => {
+  const db    = await getDb();
+  const users = selectAll(
+    db,
+    `SELECT id, email, name, role, is_active, failed_attempts, locked_until, created_at, last_login
+     FROM users
+     ORDER BY created_at DESC`,
+    []
+  );
 
   return res.json({ users });
 });
@@ -62,27 +86,32 @@ router.post('/users', createUserValidation, async (req, res) => {
   if (firstError(req, res)) return;
 
   const { email, password, name, role } = req.body;
-  const db = getDb();
+  const db = await getDb();
 
   // Check for duplicate email
-  const existing = db.prepare('SELECT id FROM users WHERE email = ?').get(email);
+  const existing = selectOne(db, 'SELECT id FROM users WHERE email = ?', [email]);
   if (existing) {
     return res.status(409).json({ error: 'A user with that email already exists.' });
   }
 
   const hash = await bcrypt.hash(password, BCRYPT_ROUNDS);
 
-  const result = db
-    .prepare(`
-      INSERT INTO users (email, password_hash, name, role, is_active)
-      VALUES (?, ?, ?, ?, 1)
-    `)
-    .run(email, hash, name, role);
+  db.run(
+    `INSERT INTO users (email, password_hash, name, role, is_active)
+     VALUES (?, ?, ?, ?, 1)`,
+    [email, hash, name, role]
+  );
+
+  // Retrieve the last inserted row id
+  const rowResult = selectOne(db, 'SELECT last_insert_rowid() AS id', []);
+  const newId     = rowResult ? rowResult.id : null;
+
+  saveDb();
 
   return res.status(201).json({
     message: 'User created successfully.',
     user: {
-      id: result.lastInsertRowid,
+      id:        newId,
       email,
       name,
       role,
@@ -121,9 +150,13 @@ router.put('/users/:id', updateUserValidation, async (req, res) => {
   if (firstError(req, res)) return;
 
   const targetId = parseInt(req.params.id, 10);
-  const db = getDb();
+  const db       = await getDb();
 
-  const target = db.prepare('SELECT id, email, name, role, is_active FROM users WHERE id = ?').get(targetId);
+  const target = selectOne(
+    db,
+    'SELECT id, email, name, role, is_active FROM users WHERE id = ?',
+    [targetId]
+  );
   if (!target) {
     return res.status(404).json({ error: 'User not found.' });
   }
@@ -132,7 +165,7 @@ router.put('/users/:id', updateUserValidation, async (req, res) => {
 
   // Build update fields dynamically (parameterized — no string concatenation)
   const updates = [];
-  const params = [];
+  const params  = [];
 
   if (name !== undefined) {
     updates.push('name = ?');
@@ -158,11 +191,15 @@ router.put('/users/:id', updateUserValidation, async (req, res) => {
 
   params.push(targetId);
 
-  db.prepare(`UPDATE users SET ${updates.join(', ')} WHERE id = ?`).run(...params);
+  db.run(`UPDATE users SET ${updates.join(', ')} WHERE id = ?`, params);
 
-  const updated = db
-    .prepare('SELECT id, email, name, role, is_active, created_at, last_login FROM users WHERE id = ?')
-    .get(targetId);
+  const updated = selectOne(
+    db,
+    'SELECT id, email, name, role, is_active, created_at, last_login FROM users WHERE id = ?',
+    [targetId]
+  );
+
+  saveDb();
 
   return res.json({ message: 'User updated successfully.', user: updated });
 });
@@ -170,7 +207,7 @@ router.put('/users/:id', updateUserValidation, async (req, res) => {
 // ── DELETE /api/admin/users/:id ───────────────────────────────────────────
 router.delete('/users/:id', [
   param('id').isInt({ min: 1 }).withMessage('Invalid user ID.')
-], (req, res) => {
+], async (req, res) => {
   if (firstError(req, res)) return;
 
   const targetId = parseInt(req.params.id, 10);
@@ -180,15 +217,16 @@ router.delete('/users/:id', [
     return res.status(400).json({ error: 'You cannot delete your own account.' });
   }
 
-  const db = getDb();
+  const db = await getDb();
 
-  const target = db.prepare('SELECT id FROM users WHERE id = ?').get(targetId);
+  const target = selectOne(db, 'SELECT id FROM users WHERE id = ?', [targetId]);
   if (!target) {
     return res.status(404).json({ error: 'User not found.' });
   }
 
   // Soft delete — set is_active = 0
-  db.prepare('UPDATE users SET is_active = 0 WHERE id = ?').run(targetId);
+  db.run('UPDATE users SET is_active = 0 WHERE id = ?', [targetId]);
+  saveDb();
 
   return res.json({ message: 'User deactivated successfully.' });
 });

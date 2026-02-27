@@ -1,10 +1,10 @@
 'use strict';
 
 const jwt = require('jsonwebtoken');
-const getDb = require('../db/database');
+const { getDb, saveDb } = require('../db/database');
 
-const LOCKOUT_THRESHOLD = 5;       // failed attempts before lockout
-const LOCKOUT_DURATION_MS = 15 * 60 * 1000; // 15 minutes
+const LOCKOUT_THRESHOLD    = 5;                   // failed attempts before lockout
+const LOCKOUT_DURATION_MS  = 15 * 60 * 1000;     // 15 minutes
 
 /**
  * Extracts the JWT token from:
@@ -23,11 +23,26 @@ function extractToken(req) {
 }
 
 /**
+ * Helper: run a SELECT and return the first row as a plain object, or null.
+ * Frees the statement automatically.
+ */
+function selectOne(db, sql, params) {
+  const stmt = db.prepare(sql);
+  stmt.bind(params);
+  let row = null;
+  if (stmt.step()) {
+    row = stmt.getAsObject();
+  }
+  stmt.free();
+  return row;
+}
+
+/**
  * requireAuth middleware
  * Verifies JWT and attaches the full user record to req.user.
  * Respects account lockout status.
  */
-function requireAuth(req, res, next) {
+async function requireAuth(req, res, next) {
   const token = extractToken(req);
 
   if (!token) {
@@ -41,10 +56,13 @@ function requireAuth(req, res, next) {
     return res.status(401).json({ error: 'Invalid or expired token.' });
   }
 
-  const db = getDb();
-  const user = db
-    .prepare('SELECT id, email, name, role, is_active, failed_attempts, locked_until FROM users WHERE id = ?')
-    .get(payload.sub);
+  const db = await getDb();
+
+  const user = selectOne(
+    db,
+    'SELECT id, email, name, role, is_active, failed_attempts, locked_until FROM users WHERE id = ?',
+    [payload.sub]
+  );
 
   if (!user) {
     return res.status(401).json({ error: 'User not found.' });
@@ -64,17 +82,18 @@ function requireAuth(req, res, next) {
       });
     }
     // Lockout expired — clear it
-    db.prepare('UPDATE users SET failed_attempts = 0, locked_until = NULL WHERE id = ?').run(user.id);
+    db.run('UPDATE users SET failed_attempts = 0, locked_until = NULL WHERE id = ?', [user.id]);
+    saveDb();
     user.failed_attempts = 0;
-    user.locked_until = null;
+    user.locked_until    = null;
   }
 
   // Attach to request (exclude sensitive fields)
   req.user = {
-    id: user.id,
+    id:    user.id,
     email: user.email,
-    name: user.name,
-    role: user.role
+    name:  user.name,
+    role:  user.role
   };
 
   next();
@@ -95,29 +114,32 @@ function requireAdmin(req, res, next) {
  * Utility: record a failed login attempt and lock the account if threshold is reached.
  * @param {number} userId
  */
-function recordFailedAttempt(userId) {
-  const db = getDb();
+async function recordFailedAttempt(userId) {
+  const db = await getDb();
 
-  // Increment failed_attempts
-  db.prepare('UPDATE users SET failed_attempts = failed_attempts + 1 WHERE id = ?').run(userId);
+  db.run('UPDATE users SET failed_attempts = failed_attempts + 1 WHERE id = ?', [userId]);
 
-  const user = db.prepare('SELECT failed_attempts FROM users WHERE id = ?').get(userId);
+  const user = selectOne(db, 'SELECT failed_attempts FROM users WHERE id = ?', [userId]);
 
   if (user && user.failed_attempts >= LOCKOUT_THRESHOLD) {
     const lockedUntil = new Date(Date.now() + LOCKOUT_DURATION_MS).toISOString();
-    db.prepare('UPDATE users SET locked_until = ? WHERE id = ?').run(lockedUntil, userId);
+    db.run('UPDATE users SET locked_until = ? WHERE id = ?', [lockedUntil, userId]);
   }
+
+  saveDb();
 }
 
 /**
  * Utility: reset failed attempts and lockout after successful login.
  * @param {number} userId
  */
-function resetFailedAttempts(userId) {
-  const db = getDb();
-  db.prepare(
-    'UPDATE users SET failed_attempts = 0, locked_until = NULL, last_login = datetime(\'now\') WHERE id = ?'
-  ).run(userId);
+async function resetFailedAttempts(userId) {
+  const db = await getDb();
+  db.run(
+    "UPDATE users SET failed_attempts = 0, locked_until = NULL, last_login = datetime('now') WHERE id = ?",
+    [userId]
+  );
+  saveDb();
 }
 
 module.exports = { requireAuth, requireAdmin, recordFailedAttempt, resetFailedAttempts };
