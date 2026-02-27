@@ -49,7 +49,10 @@ app.use(helmet({
       formAction:  ["'self'"]
     }
   },
-  crossOriginEmbedderPolicy: false  // allow loading local resources
+  crossOriginEmbedderPolicy: false,  // allow loading local resources
+  hsts: false,                       // disable HSTS — Coolify handles HTTPS at proxy level
+  crossOriginOpenerPolicy: false,
+  originAgentCluster: false
 }));
 
 // CORS: same-origin only (browser requests from other origins are blocked)
