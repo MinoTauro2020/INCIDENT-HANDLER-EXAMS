@@ -501,7 +501,107 @@ function loadModuleContent() {
             <h2>${title}</h2>
             ${content}
         `;
+
+        // Append Visual Reference slides section
+        const slides = (typeof slidesData !== 'undefined') ? (slidesData[parseInt(moduleNum)] || []) : [];
+        if (slides.length > 0) {
+            const sectionTitle = currentLang === 'en'
+                ? 'Visual Reference - CEI Slides'
+                : 'Referencia Visual - Slides CEI';
+
+            const slidesHtml = slides.map((s, i) => `
+                <div class="slide-thumb" onclick="openSlideViewer(${moduleNum}, ${i})" title="${s.caption}">
+                    <img src="${s.file}" alt="${s.caption}" loading="lazy">
+                    <div class="slide-thumb-caption">${s.caption}</div>
+                </div>
+            `).join('');
+
+            document.getElementById('moduleContent').innerHTML += `
+                <div class="visual-reference-section">
+                    <h2 class="visual-reference-title">
+                        <span class="vr-icon">&#128247;</span> ${sectionTitle}
+                    </h2>
+                    <p class="vr-hint">${currentLang === 'en' ? 'Click any slide to open fullscreen viewer' : 'Haz clic en cualquier slide para abrirlo en pantalla completa'}</p>
+                    <div class="slides-grid">${slidesHtml}</div>
+                </div>
+            `;
+        }
     }
+}
+
+// =============================================
+// SLIDE VIEWER (LIGHTBOX)
+// =============================================
+
+let _slideViewerModule = 0;
+let _slideViewerIndex = 0;
+
+function openSlideViewer(moduleNum, index) {
+    const slides = (typeof slidesData !== 'undefined') ? (slidesData[parseInt(moduleNum)] || []) : [];
+    if (!slides.length) return;
+
+    _slideViewerModule = parseInt(moduleNum);
+    _slideViewerIndex = index;
+
+    // Remove any existing modal
+    const existing = document.getElementById('slideViewerModal');
+    if (existing) existing.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'slideViewerModal';
+    modal.className = 'slide-modal';
+    modal.innerHTML = `
+        <div class="slide-modal-content">
+            <span class="slide-close" onclick="document.getElementById('slideViewerModal').remove()" title="Close">&times;</span>
+            <img id="slideViewerImg" src="${slides[index].file}" alt="${slides[index].caption}">
+            <div class="slide-caption-bar" id="slideCaptionBar">${slides[index].caption}</div>
+            <div class="slide-modal-nav">
+                <button id="slidePrevBtn" onclick="changeSlide(-1)">&#8592; Prev</button>
+                <span id="slideCounter">${index + 1} / ${slides.length}</span>
+                <button id="slideNextBtn" onclick="changeSlide(1)">Next &#8594;</button>
+            </div>
+        </div>
+    `;
+
+    // Close on backdrop click (outside modal-content)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.remove();
+    });
+
+    document.body.appendChild(modal);
+
+    // Keyboard navigation while modal is open
+    modal._keyHandler = (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); changeSlide(-1); }
+        if (e.key === 'Escape') { modal.remove(); }
+    };
+    document.addEventListener('keydown', modal._keyHandler);
+
+    // Clean up keyboard listener when modal is removed
+    const observer = new MutationObserver(() => {
+        if (!document.getElementById('slideViewerModal')) {
+            document.removeEventListener('keydown', modal._keyHandler);
+            observer.disconnect();
+        }
+    });
+    observer.observe(document.body, { childList: true });
+}
+
+function changeSlide(delta) {
+    const slides = (typeof slidesData !== 'undefined') ? (slidesData[_slideViewerModule] || []) : [];
+    if (!slides.length) return;
+
+    _slideViewerIndex = (_slideViewerIndex + delta + slides.length) % slides.length;
+
+    const img = document.getElementById('slideViewerImg');
+    const counter = document.getElementById('slideCounter');
+    const caption = document.getElementById('slideCaptionBar');
+
+    if (img) img.src = slides[_slideViewerIndex].file;
+    if (img) img.alt = slides[_slideViewerIndex].caption;
+    if (counter) counter.textContent = `${_slideViewerIndex + 1} / ${slides.length}`;
+    if (caption) caption.textContent = slides[_slideViewerIndex].caption;
 }
 
 // =============================================

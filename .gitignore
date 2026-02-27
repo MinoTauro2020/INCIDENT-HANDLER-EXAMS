@@ -14,6 +14,18 @@ estudio-ecih-v3/module_*_content.txt
 estudio-ecih-v3/ecih_v3_complete.json
 estudio-ecih-v3/similares.txt
 
+# Full-size rendered slides (local only, ~891 pages)
+estudio-ecih-v3/slides/
+slides/
+
+# Analysis/test artifacts
+cei_analysis.json
+cei_slides_analysis.json
+estudio-ecih-v3/slides_meta.json
+estudio-ecih-v3/test_translation.py
+test_i18n_full.py
+test_i18n_verify.py
+
 # IDE / OS
 .claude/
 .DS_Store
