@@ -45,8 +45,8 @@ function issueTokenCookie(res, userId, role) {
 
   res.cookie('token', token, {
     httpOnly: true,
-    secure:   process.env.NODE_ENV === 'production',
-    sameSite: 'Strict',
+    secure:   false,  // app runs behind Coolify HTTP proxy — never TLS at app level
+    sameSite: 'Lax',  // 'Strict' blocks cookies on initial navigation; 'Lax' is safe and works over HTTP
     maxAge:   24 * 60 * 60 * 1000 // 24 hours in ms
   });
 
@@ -132,8 +132,8 @@ router.post('/login', loginLimiter, loginValidation, async (req, res) => {
 router.post('/logout', (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
-    secure:   process.env.NODE_ENV === 'production',
-    sameSite: 'Strict'
+    secure:   false,  // must match the flags used when the cookie was set
+    sameSite: 'Lax'
   });
   return res.json({ message: 'Logged out successfully.' });
 });

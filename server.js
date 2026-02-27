@@ -31,22 +31,27 @@ const adminRoutes   = require('./routes/admin');
 const app  = express();
 const PORT = parseInt(process.env.PORT || '3000', 10);
 
+// Trust the first proxy (Coolify / Traefik) so Express reads the real client IP
+// from X-Forwarded-For. Required for rate limiting and secure cookie detection.
+app.set('trust proxy', 1);
+
 // ── Security middleware ───────────────────────────────────────────────────
 
 // Helmet: sets secure HTTP headers including a strict CSP
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
-      defaultSrc:  ["'self'"],
-      scriptSrc:   ["'self'", "'unsafe-inline'"],  // login.html & admin.html use inline scripts
-      styleSrc:    ["'self'", "'unsafe-inline'"],   // allow inline styles for the app
-      imgSrc:      ["'self'", 'data:'],
-      fontSrc:     ["'self'"],
-      connectSrc:  ["'self'"],
-      frameSrc:    ["'none'"],
-      objectSrc:   ["'none'"],
-      baseUri:     ["'self'"],
-      formAction:  ["'self'"]
+      defaultSrc:              ["'self'"],
+      scriptSrc:               ["'self'", "'unsafe-inline'"],  // login.html & admin.html use inline scripts
+      styleSrc:                ["'self'", "'unsafe-inline'"],   // allow inline styles for the app
+      imgSrc:                  ["'self'", 'data:'],
+      fontSrc:                 ["'self'"],
+      connectSrc:              ["'self'"],
+      frameSrc:                ["'none'"],
+      objectSrc:               ["'none'"],
+      baseUri:                 ["'self'"],
+      formAction:              ["'self'"],
+      upgradeInsecureRequests: null  // MUST be null — removes helmet's default; app runs on HTTP behind Coolify proxy
     }
   },
   crossOriginEmbedderPolicy: false,  // allow loading local resources
@@ -55,10 +60,23 @@ app.use(helmet({
   originAgentCluster: false
 }));
 
-// CORS: same-origin only (browser requests from other origins are blocked)
+// CORS: allow the deployed origin and localhost dev.
+// origin: false would strip CORS headers entirely, causing fetch() with
+// credentials:'include' to fail even on same-origin behind a reverse proxy.
+const ALLOWED_ORIGINS = [
+  'http://ckk4400400g0c8gk0co8o04k.46.224.138.85.sslip.io',
+  'https://ckk4400400g0c8gk0co8o04k.46.224.138.85.sslip.io',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000'
+];
 app.use(cors({
-  origin:      false, // block all cross-origin requests
-  credentials: false
+  origin: function (origin, callback) {
+    // Allow requests with no Origin header (e.g., same-origin, curl, Postman)
+    if (!origin) return callback(null, true);
+    if (ALLOWED_ORIGINS.indexOf(origin) !== -1) return callback(null, true);
+    return callback(new Error('CORS: origin not allowed'));
+  },
+  credentials: true  // allow cookies to be sent with cross-origin requests from allowed origins
 }));
 
 // Global rate limiter (generous; auth routes have their own tighter limits)
