@@ -1,5 +1,5 @@
 # OWASP Security Checklist & Requirements
-## ECIH Study Platform - Node.js/Express Authentication System
+## Incident Handler Study Platform - Node.js/Express Authentication System
 
 **Version:** 1.0
 **Date:** 2026-02-27
@@ -230,16 +230,16 @@ const token = jwt.sign(
   {
     algorithm: 'HS256',
     expiresIn: '15m',    // 15-minute access token
-    issuer: 'ecih-study-platform',
-    audience: 'ecih-web'
+    issuer: 'incident-handler-study-platform',
+    audience: 'incident-handler-web'
   }
 );
 
 // --- VERIFICATION (on every authenticated request) ---
 const payload = jwt.verify(token, process.env.JWT_SECRET, {
   algorithms: ['HS256'],     // CRITICAL: whitelist algorithms
-  issuer: 'ecih-study-platform',
-  audience: 'ecih-web',
+  issuer: 'incident-handler-study-platform',
+  audience: 'incident-handler-web',
   clockTolerance: 30         // 30-second tolerance for clock skew
 });
 ```
@@ -554,14 +554,14 @@ grep -rn "db\.\(exec\|prepare\)" --include="*.js" | grep -E '(\$\{|` \+|" \+|'"'
 
 | # | Test Case | Target | Payload Examples | Expected Result | Status |
 |---|-----------|--------|-----------------|-----------------|--------|
-| SQLi-01 | [ ] Classic login bypass | `POST /api/auth/login` | `email: "admin@ecih.local' OR '1'='1"` | Login fails, no SQL error | |
+| SQLi-01 | [ ] Classic login bypass | `POST /api/auth/login` | `email: "admin@incidenthandler.local' OR '1'='1"` | Login fails, no SQL error | |
 | SQLi-02 | [ ] Union-based injection | `POST /api/auth/login` | `email: "' UNION SELECT 1,2,3,4,5,6,7,8,9,10--"` | Login fails, no data leak | |
 | SQLi-03 | [ ] Boolean-based blind | `GET /api/users?search=` | `search: "' AND 1=1--"` | No behavioral difference | |
-| SQLi-04 | [ ] Time-based blind | `POST /api/auth/login` | `email: "admin@ecih.local'; WAITFOR DELAY '0:0:5'--"` | No delay (SQLite doesn't support WAITFOR but test for stacked queries) | |
+| SQLi-04 | [ ] Time-based blind | `POST /api/auth/login` | `email: "admin@incidenthandler.local'; WAITFOR DELAY '0:0:5'--"` | No delay (SQLite doesn't support WAITFOR but test for stacked queries) | |
 | SQLi-05 | [ ] Stacked queries | `POST /api/auth/login` | `email: "'; DROP TABLE users;--"` | Table intact, request fails gracefully | |
 | SQLi-06 | [ ] Second-order injection | Register user with SQL in name | `name: "Robert'; DROP TABLE users;--"` | Name stored literally, no execution on retrieval | |
 | SQLi-07 | [ ] Parameter pollution | `GET /api/users/:id` | `id: "1 OR 1=1"` | Validation rejects non-integer | |
-| SQLi-08 | [ ] NULL byte injection | `POST /api/auth/login` | `email: "admin@ecih.local%00"` | Login fails or null stripped | |
+| SQLi-08 | [ ] NULL byte injection | `POST /api/auth/login` | `email: "admin@incidenthandler.local%00"` | Login fails or null stripped | |
 
 ### 7.2 XSS (Cross-Site Scripting) Tests
 

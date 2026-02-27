@@ -1,5 +1,5 @@
 // =============================================
-// ECIH v3 - Visual Reference: CEI Slide Data
+// Incident Handler v3 - Visual Reference: CEI Slide Data
 // 100 curated slides (10 per module), selected
 // by file size (largest = most visual content)
 // =============================================
@@ -123,6 +123,6 @@ const slidesData = {
         { file: "img/m10_slide_007.jpg", caption: "Endpoint Containment & Isolation (p.857)" },
         { file: "img/m10_slide_008.jpg", caption: "Endpoint Threat Hunting (p.872)" },
         { file: "img/m10_slide_009.jpg", caption: "Endpoint Hardening Measures (p.873)" },
-        { file: "img/m10_slide_010.jpg", caption: "ECIH v3 Exam Key Topics Summary (p.886)" }
+        { file: "img/m10_slide_010.jpg", caption: "Incident Handler v3 Exam Key Topics Summary (p.886)" }
     ]
 };

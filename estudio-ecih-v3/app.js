@@ -1,5 +1,5 @@
 // =============================================
-// ECIH v3 - APLICACIÓN DE ESTUDIO
+// Incident Handler v3 - APLICACIÓN DE ESTUDIO
 // =============================================
 
 // Estado de la aplicación
@@ -31,11 +31,11 @@ let progress = {
 // INTERNACIONALIZACIÓN (i18n)
 // =============================================
 
-let currentLang = localStorage.getItem('ecih_lang') || 'es';
+let currentLang = localStorage.getItem('incident-handler_lang') || 'es';
 
 const i18n = {
     es: {
-        'dashboard.welcome': 'Bienvenido al Estudio ECIH v3',
+        'dashboard.welcome': 'Bienvenido al Estudio Incident Handler v3',
         'dashboard.modulesTitle': 'Módulos del Curso',
         'nav.dashboard': 'Dashboard',
         'nav.modules': 'Módulos',
@@ -66,7 +66,7 @@ const i18n = {
         'btn.review': 'Revisar Respuestas',
         'btn.newExam': 'Nuevo Simulacro',
         'btn.reset': 'Reiniciar Progreso',
-        'exam.title': 'Examen ECIH v3',
+        'exam.title': 'Examen Incident Handler v3',
         'exam.questions': '100 multiple choice',
         'exam.time': '3 horas (180 minutos)',
         'exam.passing': '70% (70 respuestas correctas)',
@@ -99,7 +99,7 @@ const i18n = {
         'select.module': 'Módulo'
     },
     en: {
-        'dashboard.welcome': 'Welcome to ECIH v3 Study Platform',
+        'dashboard.welcome': 'Welcome to Incident Handler v3 Study Platform',
         'dashboard.modulesTitle': 'Course Modules',
         'nav.dashboard': 'Dashboard',
         'nav.modules': 'Modules',
@@ -130,7 +130,7 @@ const i18n = {
         'btn.review': 'Review Answers',
         'btn.newExam': 'New Exam',
         'btn.reset': 'Reset Progress',
-        'exam.title': 'ECIH v3 Exam',
+        'exam.title': 'Incident Handler v3 Exam',
         'exam.questions': '100 multiple choice',
         'exam.time': '3 hours (180 minutes)',
         'exam.passing': '70% (70 correct answers)',
@@ -170,7 +170,7 @@ function t(key) {
 
 function toggleLanguage() {
     currentLang = currentLang === 'es' ? 'en' : 'es';
-    localStorage.setItem('ecih_lang', currentLang);
+    localStorage.setItem('incident-handler_lang', currentLang);
     applyLanguage();
     // Re-render active view content
     loadModuleContent();
@@ -515,8 +515,8 @@ function loadModuleContent() {
                 ? 'Hands-on Lab Exercises'
                 : 'Ejercicios Prácticos de Laboratorio';
             const labHint = currentLang === 'en'
-                ? 'From the official ECIH v3 CEI instructor material'
-                : 'Del material oficial CEI del instructor ECIH v3';
+                ? 'From the official Incident Handler v3 CEI instructor material'
+                : 'Del material oficial CEI del instructor Incident Handler v3';
 
             const labsHtml = labData.labs.map(lab => {
                 const labName = (currentLang === 'en' && lab.name_en) ? lab.name_en : lab.name;
@@ -1218,14 +1218,14 @@ function restartExam() {
 // =============================================
 
 function loadProgress() {
-    const saved = localStorage.getItem('ecih_progress');
+    const saved = localStorage.getItem('incident-handler_progress');
     if (saved) {
         progress = JSON.parse(saved);
     }
 }
 
 function saveProgress() {
-    localStorage.setItem('ecih_progress', JSON.stringify(progress));
+    localStorage.setItem('incident-handler_progress', JSON.stringify(progress));
 }
 
 function updateProgressDisplay() {

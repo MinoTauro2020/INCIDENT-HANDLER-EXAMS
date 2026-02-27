@@ -128,7 +128,7 @@ app.use((err, req, res, _next) => {
     }
 
     app.listen(PORT, '0.0.0.0', () => {
-      console.log(`[server] ECIH Study Platform listening on http://0.0.0.0:${PORT}`);
+      console.log(`[server] Incident Handler Study Platform listening on http://0.0.0.0:${PORT}`);
       console.log(`[server] NODE_ENV: ${process.env.NODE_ENV || 'development'}`);
     });
   } catch (err) {

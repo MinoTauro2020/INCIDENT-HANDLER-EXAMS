@@ -1,5 +1,5 @@
 // =============================================
-// ECIH v3 - BASE DE DATOS DE ESTUDIO
+// Incident Handler v3 - BASE DE DATOS DE ESTUDIO
 // =============================================
 
 // RESÚMENES DE MÓDULOS
@@ -2479,7 +2479,7 @@ const practiceQuestions = [
     },
     {
         module: 1,
-        question: "El ataque de ransomware de 2023 mencionado en el temario ECIH involucro a que grupo atacando una aseguradora dental?",
+        question: "El ataque de ransomware de 2023 mencionado en el temario Incident Handler involucro a que grupo atacando una aseguradora dental?",
         options: [
             "WannaCry",
             "LockBit atacando MCNA",

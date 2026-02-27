@@ -1,6 +1,6 @@
 {
-  "version": "ECIH v3 - Extraido del temario oficial",
-  "source": "ECIHv3.pdf (OCR)",
+  "version": "Incident Handler v3 - Extraido del temario oficial",
+  "source": "IncidentHandlerv3.pdf (OCR)",
   "questions": [
     {
       "id": 1,
@@ -17,8 +17,8 @@
     {
       "id": 2,
       "module": 1,
-      "question_en": "According to the ECIH courseware, what is the definition of 'Confidentiality'?",
-      "question_es": "Segun el temario ECIH, cual es la definicion de 'Confidencialidad'?",
+      "question_en": "According to the Incident Handler courseware, what is the definition of 'Confidentiality'?",
+      "question_es": "Segun el temario Incident Handler, cual es la definicion de 'Confidencialidad'?",
       "options_en": [
         "The trustworthiness of data in prevention of unauthorized changes",
         "The assurance that information is accessible only to those authorized to have access",
@@ -39,8 +39,8 @@
     {
       "id": 3,
       "module": 1,
-      "question_en": "According to the ECIH courseware, what is the definition of 'Integrity'?",
-      "question_es": "Segun el temario ECIH, cual es la definicion de 'Integridad'?",
+      "question_en": "According to the Incident Handler courseware, what is the definition of 'Integrity'?",
+      "question_es": "Segun el temario Incident Handler, cual es la definicion de 'Integridad'?",
       "options_en": [
         "The assurance that information is accessible only to authorized users",
         "The genuineness of communication and documents",
@@ -95,8 +95,8 @@
     {
       "id": 6,
       "module": 1,
-      "question_en": "According to the ECIH courseware, what is a 'Threat'?",
-      "question_es": "Segun el temario ECIH, que es una 'Amenaza' (Threat)?",
+      "question_en": "According to the Incident Handler courseware, what is a 'Threat'?",
+      "question_es": "Segun el temario Incident Handler, que es una 'Amenaza' (Threat)?",
       "options_en": [
         "A weakness in the design of a system",
         "The potential occurrence of an undesirable event that can damage and disrupt operational activities",
@@ -139,8 +139,8 @@
     {
       "id": 8,
       "module": 1,
-      "question_en": "According to the ECIH courseware, threat sources can be broadly classified into which three categories?",
-      "question_es": "Segun el temario ECIH, las fuentes de amenazas se pueden clasificar ampliamente en cuales tres categorias?",
+      "question_en": "According to the Incident Handler courseware, threat sources can be broadly classified into which three categories?",
+      "question_es": "Segun el temario Incident Handler, las fuentes de amenazas se pueden clasificar ampliamente en cuales tres categorias?",
       "options_en": [
         "Internal, External, and Physical",
         "Natural, Unintentional, and Intentional",
@@ -195,8 +195,8 @@
     {
       "id": 11,
       "module": 1,
-      "question_en": "What are 'Black Hats' according to the ECIH courseware?",
-      "question_es": "Que son los 'Black Hats' segun el temario ECIH?",
+      "question_en": "What are 'Black Hats' according to the Incident Handler courseware?",
+      "question_es": "Que son los 'Black Hats' segun el temario Incident Handler?",
       "options_en": [
         "Security professionals who protect networks",
         "Individuals who use their computing skills for illegal or malicious purposes",
@@ -239,8 +239,8 @@
     {
       "id": 13,
       "module": 1,
-      "question_en": "According to the ECIH courseware, why are insider attacks more dangerous than external attacks?",
-      "question_es": "Segun el temario ECIH, por que los ataques internos son mas peligrosos que los externos?",
+      "question_en": "According to the Incident Handler courseware, why are insider attacks more dangerous than external attacks?",
+      "question_es": "Segun el temario Incident Handler, por que los ataques internos son mas peligrosos que los externos?",
       "options_en": [
         "Because insiders have more powerful tools",
         "Because insiders are familiar with network architecture, security policies, and organizational regulations",
@@ -261,8 +261,8 @@
     {
       "id": 14,
       "module": 1,
-      "question_en": "What is 'Non-Repudiation' according to the ECIH courseware?",
-      "question_es": "Que es 'No Repudio' segun el temario ECIH?",
+      "question_en": "What is 'Non-Repudiation' according to the Incident Handler courseware?",
+      "question_es": "Que es 'No Repudio' segun el temario Incident Handler?",
       "options_en": [
         "The assurance that information is accessible only to authorized users",
         "The trustworthiness of data in prevention of unauthorized changes",
@@ -327,8 +327,8 @@
     {
       "id": 17,
       "module": 1,
-      "question_en": "What is 'Authenticity' according to the ECIH courseware?",
-      "question_es": "Que es 'Autenticidad' segun el temario ECIH?",
+      "question_en": "What is 'Authenticity' according to the Incident Handler courseware?",
+      "question_es": "Que es 'Autenticidad' segun el temario Incident Handler?",
       "options_en": [
         "The assurance that systems are accessible when required",
         "The trustworthiness of data in prevention of unauthorized changes",
@@ -371,8 +371,8 @@
     {
       "id": 19,
       "module": 1,
-      "question_en": "According to the ECIH courseware, what is the 2023 ransomware attack mentioned in the Foreword?",
-      "question_es": "Segun el temario ECIH, cual es el ataque de ransomware de 2023 mencionado en el Prologo?",
+      "question_en": "According to the Incident Handler courseware, what is the 2023 ransomware attack mentioned in the Foreword?",
+      "question_es": "Segun el temario Incident Handler, cual es el ataque de ransomware de 2023 mencionado en el Prologo?",
       "options_en": [
         "WannaCry attack on hospitals",
         "LockBit attack on Dental Insurer MCNA compromising 8.9 million records",

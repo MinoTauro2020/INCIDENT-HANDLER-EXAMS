@@ -1,5 +1,5 @@
 // =============================================
-// ECIH v3 - Lab Exercises from CEI Material
+// Incident Handler v3 - Lab Exercises from CEI Material
 // Extracted from Instructor Presentation slides
 // =============================================
 

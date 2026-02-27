@@ -14,8 +14,8 @@ const bcrypt = require('bcryptjs');
 const { getDb, saveDb } = require('./database');
 
 const BCRYPT_ROUNDS  = 12;
-const ADMIN_EMAIL    = 'admin@ecih.local';
-const ADMIN_PASSWORD = 'Admin2026!';
+const ADMIN_EMAIL    = 'admin@incidenthandler.local';
+const ADMIN_PASSWORD = 'l4FrYXahraiZRRwcflNbFEsnnXe0uIBakcyO02Fwr9E';
 const ADMIN_NAME     = 'Administrator';
 
 async function init() {
