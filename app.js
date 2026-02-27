@@ -502,6 +502,41 @@ function loadModuleContent() {
             ${content}
         `;
 
+        // Append Lab Exercises section
+        const labData = (typeof labExercises !== 'undefined') ? (labExercises[parseInt(moduleNum)] || null) : null;
+        if (labData && labData.labs.length > 0) {
+            const labTitle = currentLang === 'en'
+                ? 'Hands-on Lab Exercises'
+                : 'Ejercicios Prácticos de Laboratorio';
+            const labHint = currentLang === 'en'
+                ? 'From the official ECIH v3 CEI instructor material'
+                : 'Del material oficial CEI del instructor ECIH v3';
+
+            const labsHtml = labData.labs.map(lab => {
+                const labName = (currentLang === 'en' && lab.name_en) ? lab.name_en : lab.name;
+                const steps = (currentLang === 'en' && lab.steps_en) ? lab.steps_en : lab.steps;
+                const toolsStr = lab.tools.map(t => `<span class="lab-tool">${t}</span>`).join(' ');
+                const stepsStr = steps.map(s => `<li>${s}</li>`).join('');
+                return `
+                    <div class="lab-card">
+                        <h3 class="lab-name">${labName}</h3>
+                        <div class="lab-tools">${toolsStr}</div>
+                        <ol class="lab-steps">${stepsStr}</ol>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('moduleContent').innerHTML += `
+                <div class="labs-section">
+                    <h2 class="labs-title">
+                        <span class="labs-icon">&#128300;</span> ${labTitle}
+                    </h2>
+                    <p class="labs-hint">${labHint}</p>
+                    ${labsHtml}
+                </div>
+            `;
+        }
+
         // Append Visual Reference slides section
         const slides = (typeof slidesData !== 'undefined') ? (slidesData[parseInt(moduleNum)] || []) : [];
         if (slides.length > 0) {
