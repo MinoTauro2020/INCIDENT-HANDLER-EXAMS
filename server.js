@@ -38,7 +38,7 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc:  ["'self'"],
-      scriptSrc:   ["'self'"],
+      scriptSrc:   ["'self'", "'unsafe-inline'"],  // login.html & admin.html use inline scripts
       styleSrc:    ["'self'", "'unsafe-inline'"],   // allow inline styles for the app
       imgSrc:      ["'self'", 'data:'],
       fontSrc:     ["'self'"],
