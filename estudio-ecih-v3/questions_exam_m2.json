@@ -1,0 +1,844 @@
+{
+  "exam_questions_m2": [
+    {
+      "id": 301,
+      "module": 2,
+      "question_es": "Laura, una gestora de incidentes en DataShield Corp, acaba de ser contratada y se le pide que establezca el proceso de IH&R de la organizacion. Segun EC-Council, cual es el PRIMER paso del proceso de manejo y respuesta a incidentes de 9 pasos?",
+      "question_en": "Laura, an incident handler at DataShield Corp, has just been hired and is asked to establish the organization's IH&R process. According to EC-Council, what is the FIRST step of the 9-step incident handling and response process?",
+      "options_es": [
+        "Triaje del incidente",
+        "Registro y asignacion del incidente",
+        "Notificacion",
+        "Preparacion para IH&R"
+      ],
+      "options_en": [
+        "Incident Triage",
+        "Incident Recording and Assignment",
+        "Notification",
+        "Preparation for IH&R"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. El proceso de IH&R de 9 pasos de EC-Council comienza con la Preparacion, que incluye auditar recursos, definir politicas y procedimientos, y formar el equipo de respuesta. A (Registro) es el paso 2, C (Triaje) es el paso 3, y D (Notificacion) es el paso 4.",
+      "explanation_en": "D is correct. EC-Council's 9-step IH&R process begins with Preparation, which includes auditing resources, defining policies and procedures, and building the response team. A (Recording) is step 2, C (Triage) is step 3, and D (Notification) is step 4."
+    },
+    {
+      "id": 302,
+      "module": 2,
+      "question_es": "Durante una revision post-incidente en CyberNova Inc., el equipo de IH&R esta preparando el Informe de Accion Posterior (AAR). Cual de las siguientes NO es una seccion estandar de un AAR segun EC-Council?",
+      "question_en": "During a post-incident review at CyberNova Inc., the IH&R team is preparing the After-Action Report (AAR). Which of the following is NOT a standard section of an AAR according to EC-Council?",
+      "options_es": [
+        "Atribucion del atacante",
+        "Areas de mejora",
+        "Resumen",
+        "Revision"
+      ],
+      "options_en": [
+        "Attacker Attribution",
+        "Areas of Improvement",
+        "Summary",
+        "Review"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. Las cuatro secciones del AAR segun EC-Council son: Resumen (Summary), Revision (Review), Analisis (Analysis), y Areas de Mejora (Areas of Improvement). La atribucion del atacante no es una seccion estandar del AAR.",
+      "explanation_en": "A is correct. The four AAR sections per EC-Council are: Summary, Review, Analysis, and Areas of Improvement. Attacker Attribution is not a standard AAR section."
+    },
+    {
+      "id": 303,
+      "module": 2,
+      "question_es": "Marco, un analista SOC en TechGuard Ltd., detecta trafico saliente inusual desde un servidor hacia una IP externa a las 3AM. Tras confirmar la presencia de malware, cual es el SIGUIENTE paso segun el proceso de IH&R de EC-Council?",
+      "question_en": "Marco, a SOC analyst at TechGuard Ltd., detects unusual outbound traffic from a server to an external IP at 3AM. After confirming the presence of malware, what is the NEXT step according to the EC-Council IH&R process?",
+      "options_es": [
+        "Erradicacion del malware",
+        "Recuperacion de sistemas",
+        "Recopilacion de evidencias y analisis forense",
+        "Contencion del incidente"
+      ],
+      "options_en": [
+        "Malware eradication",
+        "System recovery",
+        "Evidence gathering and forensic analysis",
+        "Incident containment"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. Tras confirmar un incidente (Registro/Triaje completados), el siguiente paso es la Contencion (Paso 5) para detener la propagacion. A (Erradicacion) es el Paso 7, C (Evidencias) es el Paso 6, y D (Recuperacion) es el Paso 8. La contencion ocurre simultaneamente con la notificacion.",
+      "explanation_en": "D is correct. After confirming an incident (Recording/Triage completed), the next step is Containment (Step 5) to stop propagation. A (Eradication) is Step 7, C (Evidence) is Step 6, and D (Recovery) is Step 8. Containment occurs simultaneously with notification."
+    },
+    {
+      "id": 304,
+      "module": 2,
+      "question_es": "Cual de los siguientes terminos describe MEJOR el periodo critico inmediatamente posterior a la ocurrencia de un incidente de seguridad, donde la respuesta del equipo de IH&R determinara el impacto general y el resultado?",
+      "question_en": "Which of the following terms BEST describes the critical period immediately after the occurrence of a security incident, where the IH&R team's response will determine the overall impact and outcome?",
+      "options_es": [
+        "Ventana de deteccion",
+        "Periodo de contencion",
+        "Hora dorada",
+        "Tiempo de respuesta critico"
+      ],
+      "options_en": [
+        "Detection window",
+        "Containment period",
+        "Golden Hour",
+        "Critical response time"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. La 'Hora Dorada' (Golden Hour) se refiere al tiempo critico inmediatamente despues de la ocurrencia de cualquier incidente de seguridad. La respuesta del equipo de IH&R durante este periodo determinara significativamente cuanto dano se sufre y la rapidez de recuperacion.",
+      "explanation_en": "C is correct. The 'Golden Hour' refers to the critical time immediately after the occurrence of any security incident. The IH&R team's response during this period will significantly determine how much damage is suffered and how rapidly the organization can recover."
+    },
+    {
+      "id": 305,
+      "module": 2,
+      "question_es": "Sofia, la lider del equipo de IH&R en SecureBank, esta priorizando multiples incidentes simultaneos. Segun NIST, cuales son los tres factores principales para priorizar incidentes?",
+      "question_en": "Sofia, the IH&R team lead at SecureBank, is prioritizing multiple simultaneous incidents. According to NIST, what are the three main factors for prioritizing incidents?",
+      "options_es": [
+        "Impacto funcional, impacto informacional y recuperabilidad",
+        "Severidad, urgencia y alcance",
+        "Tipo de activo, vector de ataque y motivo del atacante",
+        "Costo, tiempo de resolucion y reputacion"
+      ],
+      "options_en": [
+        "Functional impact, information impact, and recoverability",
+        "Severity, urgency, and scope",
+        "Asset type, attack vector, and attacker motive",
+        "Cost, resolution time, and reputation"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. NIST define tres factores de priorizacion: Impacto Funcional (efecto en la continuidad del negocio), Impacto Informacional (sensibilidad de los datos comprometidos) y Recuperabilidad (capacidad de recuperacion del incidente). Las otras opciones son factores validos pero no son los tres factores especificos de NIST.",
+      "explanation_en": "A is correct. NIST defines three prioritization factors: Functional Impact (effect on business continuity), Information Impact (sensitivity of compromised data), and Recoverability (ability to recover from the incident). The other options are valid factors but not the three specific NIST factors."
+    },
+    {
+      "id": 306,
+      "module": 2,
+      "question_es": "Durante la fase de post-incidente, el equipo de IH&R de NexGen Corp realiza un postmortem. Cual de las siguientes es una directriz CRITICA para realizar un postmortem de incidente segun EC-Council?",
+      "question_en": "During the post-incident phase, NexGen Corp's IH&R team conducts a postmortem. Which of the following is a CRITICAL guideline for performing an incident postmortem according to EC-Council?",
+      "options_es": [
+        "Siempre realizar una revision sin culpas (blameless review)",
+        "Completar el postmortem dentro de las primeras 24 horas",
+        "Limitar el postmortem solo al equipo tecnico",
+        "Identificar y culpar al responsable del incidente"
+      ],
+      "options_en": [
+        "Always conduct a blameless review",
+        "Complete the postmortem within the first 24 hours",
+        "Limit the postmortem to the technical team only",
+        "Identify and blame the person responsible for the incident"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. EC-Council establece explicitamente que siempre se debe realizar una 'revision sin culpas' (blameless review) como directriz del postmortem. A contradice directamente esta directriz. C es incorrecto porque se debe incluir al personal interno impactado. D no es un requisito especificado.",
+      "explanation_en": "A is correct. EC-Council explicitly states that one should 'always conduct a blameless review' as a postmortem guideline. A directly contradicts this guideline. C is incorrect because impacted internal personnel should be included. D is not a specified requirement."
+    },
+    {
+      "id": 307,
+      "module": 2,
+      "question_es": "Carlos, un incident handler en OmniTech, necesita una herramienta que utilice estructura de arbol y expresiones XPath para la gestion de datos y generacion de reportes durante la respuesta a incidentes. Cual herramienta deberia utilizar?",
+      "question_en": "Carlos, an incident handler at OmniTech, needs a tool that uses tree structure and XPath expressions for data management and report generation during incident response. Which tool should he use?",
+      "options_es": [
+        "AlienVault OSSIM",
+        "ServiceNow",
+        "Splunk SIEM",
+        "MagicTree"
+      ],
+      "options_en": [
+        "AlienVault OSSIM",
+        "ServiceNow",
+        "Splunk SIEM",
+        "MagicTree"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. MagicTree es la herramienta que utiliza estructura de arbol y expresiones XPath para la gestion de datos y generacion de reportes. A es una plataforma SIEM, C es un sistema de gestion de seguridad de codigo abierto, y D es una plataforma ITSM.",
+      "explanation_en": "D is correct. MagicTree is the tool that uses tree structure and XPath expressions for data management and report generation. A is a SIEM platform, C is an open-source security management system, and D is an ITSM platform."
+    },
+    {
+      "id": 308,
+      "module": 2,
+      "question_es": "En el proceso de IH&R de EC-Council, la fase de contencion ocurre simultaneamente con cual otra fase?",
+      "question_en": "In the EC-Council IH&R process, the containment phase occurs simultaneously with which other phase?",
+      "options_es": [
+        "Notificacion",
+        "Erradicacion",
+        "Triaje del incidente",
+        "Recopilacion de evidencias"
+      ],
+      "options_en": [
+        "Notification",
+        "Eradication",
+        "Incident Triage",
+        "Evidence Gathering"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. Segun EC-Council, la fase de contencion (Paso 5) ocurre al mismo tiempo que la fase de notificacion (Paso 4). Mientras se notifica a las partes interesadas, el equipo de IH&R simultaneamente contiene el incidente para evitar que se propague.",
+      "explanation_en": "A is correct. According to EC-Council, the containment phase (Step 5) occurs at the same time as the notification phase (Step 4). While stakeholders are being notified, the IH&R team simultaneously contains the incident to prevent it from spreading."
+    },
+    {
+      "id": 309,
+      "module": 2,
+      "question_es": "Ana, la directora de TI en GlobalFinance, necesita implementar un sistema de tickets para gestionar incidentes de seguridad. El equipo de soporte tecnico (help desk) recibe un ticket de un usuario reportando actividad sospechosa. Cual es el flujo correcto?",
+      "question_en": "Ana, the IT director at GlobalFinance, needs to implement a ticketing system for managing security incidents. The help desk receives a ticket from a user reporting suspicious activity. What is the correct flow?",
+      "options_es": [
+        "El help desk resuelve directamente el ticket y notifica al usuario",
+        "El help desk escala automaticamente todos los tickets al CISO",
+        "El help desk archiva el ticket y espera a que se repita el evento",
+        "El help desk determina si es un incidente de seguridad y, de serlo, lo reenvía al equipo de IR junto con las autoridades correspondientes"
+      ],
+      "options_en": [
+        "The help desk directly resolves the ticket and notifies the user",
+        "The help desk automatically escalates all tickets to the CISO",
+        "The help desk archives the ticket and waits for the event to recur",
+        "The help desk determines if it is a security incident and, if so, forwards the ticket to the IR team along with concerned authorities"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. Segun EC-Council, el help desk recibe el ticket, determina si se trata de un incidente de seguridad, y si lo es, lo reenvía al equipo de IR junto con las autoridades correspondientes. El proceso continua hasta que el miembro asignado cierra el ticket tras resolver el problema.",
+      "explanation_en": "D is correct. According to EC-Council, the help desk receives the ticket, determines if it is a security incident, and if so, forwards the ticket to the IR team along with concerned authorities. The process continues until the assigned member closes the ticket after solving the issue."
+    },
+    {
+      "id": 310,
+      "module": 2,
+      "question_es": "Diego, un incident handler senior, esta realizando la fase de triaje de un incidente. Segun EC-Council, cual de las siguientes actividades NO forma parte del triaje de incidentes?",
+      "question_en": "Diego, a senior incident handler, is performing the triage phase of an incident. According to EC-Council, which of the following activities is NOT part of incident triage?",
+      "options_es": [
+        "Clasificacion del incidente",
+        "Priorizacion y evaluacion de impacto",
+        "Restauracion de sistemas afectados",
+        "Documentacion"
+      ],
+      "options_en": [
+        "Incident classification",
+        "Prioritization and impact assessment",
+        "Restoration of affected systems",
+        "Documentation"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. La restauracion de sistemas es parte de la fase de Recuperacion (Paso 8), no del Triaje (Paso 3). El triaje incluye: Clasificacion, Documentacion, Priorizacion y Evaluacion de Impacto.",
+      "explanation_en": "C is correct. Restoration of systems is part of the Recovery phase (Step 8), not Triage (Step 3). Triage includes: Classification, Documentation, Prioritization, and Impact Assessment."
+    },
+    {
+      "id": 311,
+      "module": 2,
+      "question_es": "El ciclo de vida de respuesta a incidentes de NIST SP 800-61 consta de cuantas fases?",
+      "question_en": "The NIST SP 800-61 incident response life cycle consists of how many phases?",
+      "options_es": [
+        "4 fases",
+        "6 fases",
+        "9 fases",
+        "3 fases"
+      ],
+      "options_en": [
+        "4 phases",
+        "6 phases",
+        "9 phases",
+        "3 phases"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. NIST SP 800-61 define 4 fases: 1) Preparacion, 2) Deteccion y Analisis, 3) Contencion, Erradicacion y Recuperacion, 4) Actividad Post-Incidente. A es demasiado pocas, C corresponde al modelo PICERL (6 fases), y D corresponde al proceso de EC-Council de 9 pasos.",
+      "explanation_en": "A is correct. NIST SP 800-61 defines 4 phases: 1) Preparation, 2) Detection & Analysis, 3) Containment, Eradication & Recovery, 4) Post-Incident Activity. A is too few, C corresponds to the PICERL model (6 phases), and D corresponds to EC-Council's 9-step process."
+    },
+    {
+      "id": 312,
+      "module": 2,
+      "question_es": "Patricia, la CISO de MedSafe Healthcare, quiere asegurarse de que la comunicacion interna durante incidentes sea efectiva. Cual de las siguientes es una consideracion clave para la comunicacion interna de incidentes segun EC-Council?",
+      "question_en": "Patricia, the CISO at MedSafe Healthcare, wants to ensure internal communication during incidents is effective. Which of the following is a key consideration for internal incident communication according to EC-Council?",
+      "options_es": [
+        "Desactivar todas las comunicaciones hasta que el incidente sea contenido",
+        "Compartir los detalles del incidente con todos los empleados simultaneamente",
+        "Usar el correo electronico corporativo estandar para todas las comunicaciones de IR",
+        "Utilizar comunicacion fuera de banda (out-of-band) en lugar de mecanismos de correo y chat comunes"
+      ],
+      "options_en": [
+        "Disable all communications until the incident is contained",
+        "Share incident details with all employees simultaneously",
+        "Use standard corporate email for all IR communications",
+        "Use out-of-band communication instead of common email and chat mechanisms"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. EC-Council establece que el equipo de IH&R debe evitar usar mecanismos comunes de correo electronico y chat para comunicarse internamente durante IR, y en su lugar usar herramientas de comunicacion IR estandar (out-of-band). A contradice directamente esta directriz. C viola la limitacion de acceso. D es impractico.",
+      "explanation_en": "D is correct. EC-Council states the IH&R team should avoid using common email and chat mechanisms for internal IR communication, instead using standard IR communication tools (out-of-band). A directly contradicts this. C violates access limitation. D is impractical."
+    },
+    {
+      "id": 313,
+      "module": 2,
+      "question_es": "Roberto, un incident handler en CyberDefense SA, ha completado la contencion de un ataque de ransomware. Cual es el SIGUIENTE paso en el proceso de IH&R de EC-Council?",
+      "question_en": "Roberto, an incident handler at CyberDefense SA, has completed the containment of a ransomware attack. What is the NEXT step in the EC-Council IH&R process?",
+      "options_es": [
+        "Recopilacion de evidencias y analisis forense",
+        "Actividades post-incidente",
+        "Recuperacion de sistemas",
+        "Erradicacion"
+      ],
+      "options_en": [
+        "Evidence gathering and forensic analysis",
+        "Post-incident activities",
+        "System recovery",
+        "Eradication"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. Despues de la Contencion (Paso 5), el siguiente paso es la Recopilacion de Evidencias y Analisis Forense (Paso 6). D (Erradicacion) es el Paso 7, A (Recuperacion) es el Paso 8, y B (Post-incidente) es el Paso 9.",
+      "explanation_en": "A is correct. After Containment (Step 5), the next step is Evidence Gathering and Forensic Analysis (Step 6). D (Eradication) is Step 7, A (Recovery) is Step 8, and B (Post-incident) is Step 9."
+    },
+    {
+      "id": 314,
+      "module": 2,
+      "question_es": "Durante el triaje de incidentes, el equipo de IH&R de TechVault clasifica un incidente como ataque a endpoint. Ademas de este tipo, cual de las siguientes es OTRA categoria de clasificacion de incidentes mencionada por EC-Council?",
+      "question_en": "During incident triage, TechVault's IH&R team classifies an incident as an endpoint attack. Besides this type, which of the following is ANOTHER incident classification category mentioned by EC-Council?",
+      "options_es": [
+        "Incidente de cumplimiento",
+        "Incidente de red",
+        "Incidente de hardware",
+        "Incidente de proveedor"
+      ],
+      "options_en": [
+        "Compliance incident",
+        "Network incident",
+        "Hardware incident",
+        "Vendor incident"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council clasifica los incidentes como: endpoint, red (network), malware, aplicacion (application) o navegador (browser). B, C y D no son categorias de clasificacion estandar segun EC-Council.",
+      "explanation_en": "B is correct. EC-Council classifies incidents as: endpoint, network, malware, application, or browser. B, C, and D are not standard classification categories per EC-Council."
+    },
+    {
+      "id": 315,
+      "module": 2,
+      "question_es": "Cual de las siguientes herramientas permite al equipo de IH&R automatizar el sistema de alertas y notificaciones para notificar tanto a grupos internos como externos durante un incidente de seguridad, y escalar al siguiente usuario si una notificacion no es reconocida a tiempo?",
+      "question_en": "Which of the following tools allows the IH&R team to automate the incident alerting and notification system to notify both internal and external groups during a security incident, and escalate to the next user if a notification is not acknowledged on time?",
+      "options_es": [
+        "Splunk SOAR",
+        "PagerDuty",
+        "OnPage",
+        "Jira Service Management"
+      ],
+      "options_en": [
+        "Splunk SOAR",
+        "PagerDuty",
+        "OnPage",
+        "Jira Service Management"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. OnPage permite al equipo de IH&R automatizar las alertas y notificaciones, notificar a grupos internos y externos, y escalar al siguiente usuario si la notificacion no es reconocida a tiempo. Tambien sincroniza configuraciones en tiempo real entre dispositivos.",
+      "explanation_en": "C is correct. OnPage allows the IH&R team to automate alerting and notifications, notify internal and external groups, and escalate to the next user if the notification is not acknowledged on time. It also syncs settings in real-time across devices."
+    },
+    {
+      "id": 316,
+      "module": 2,
+      "question_es": "Elena, una gestora de incidentes, esta definiendo la declaracion de vision de IH&R para su organizacion. Que refleja una declaracion de vision de IH&R?",
+      "question_en": "Elena, an incident handler, is defining the IH&R vision statement for her organization. What does an IH&R vision statement reflect?",
+      "options_es": [
+        "Los requisitos regulatorios especificos del sector",
+        "Las herramientas especificas que el equipo de IR utilizara",
+        "Los objetivos a medio y largo plazo de las capacidades de gestion de incidentes de la organizacion",
+        "El presupuesto anual asignado a la respuesta a incidentes"
+      ],
+      "options_en": [
+        "Industry-specific regulatory requirements",
+        "The specific tools the IR team will use",
+        "The organization's mid-term and long-term goals for incident management capabilities",
+        "The annual budget allocated to incident response"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. Segun EC-Council, la declaracion de vision de IH&R refleja los objetivos a medio y largo plazo de las capacidades de gestion de incidentes de la organizacion. Es un plan medido que define la direccion futura.",
+      "explanation_en": "C is correct. According to EC-Council, the IH&R vision statement reflects the organization's mid-term and long-term goals for incident management capabilities. It is a measured plan that defines the future direction."
+    },
+    {
+      "id": 317,
+      "module": 2,
+      "question_es": "La organizacion FinSecure ha sufrido un ataque donde un servidor fue comprometido a traves de una vulnerabilidad desconocida. Cual es la tecnica de contencion MAS apropiada como respuesta inmediata?",
+      "question_en": "FinSecure has suffered an attack where a server was compromised through an unknown vulnerability. What is the MOST appropriate containment technique as an immediate response?",
+      "options_es": [
+        "Parchear inmediatamente la vulnerabilidad",
+        "Cambiar las contrasenas de todos los usuarios de la organizacion",
+        "Reinstalar el sistema operativo completo",
+        "Desconectar el sistema comprometido de la red"
+      ],
+      "options_en": [
+        "Immediately patch the vulnerability",
+        "Change passwords for all users in the organization",
+        "Reinstall the complete operating system",
+        "Disconnect the compromised system from the network"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. EC-Council establece que si un sistema es comprometido a traves de una vulnerabilidad desconocida, el equipo de IH&R debe desconectar el sistema de la red hasta que el incidente sea resuelto. A no es viable sin conocer la vulnerabilidad, C es parte de la recuperacion, y D es excesivo para esta situacion.",
+      "explanation_en": "D is correct. EC-Council states that if a system is compromised through an unknown vulnerability, the IH&R team should disconnect the system from the network until the incident is resolved. A is not feasible without knowing the vulnerability, C is part of recovery, and D is excessive for this situation."
+    },
+    {
+      "id": 318,
+      "module": 2,
+      "question_es": "Cual de las siguientes metricas mide el tiempo promedio que tarda una organizacion en resolver completamente un incidente de seguridad desde su deteccion?",
+      "question_en": "Which of the following metrics measures the average time it takes an organization to completely resolve a security incident from its detection?",
+      "options_es": [
+        "Mean Time to Contain (MTTC)",
+        "Mean Time Between Failures (MTBF)",
+        "Mean Time to Resolution (MTTR)",
+        "Mean Time to Detect (MTTD)"
+      ],
+      "options_en": [
+        "Mean Time to Contain (MTTC)",
+        "Mean Time Between Failures (MTBF)",
+        "Mean Time to Resolution (MTTR)",
+        "Mean Time to Detect (MTTD)"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. El MTTR (Mean Time to Resolution) mide el tiempo promedio para resolver completamente un incidente. EC-Council destaca que es una metrica clave a obtener durante el postmortem. A mide el tiempo de deteccion, B el tiempo de contencion, y D mide tiempo entre fallos de sistema.",
+      "explanation_en": "C is correct. MTTR (Mean Time to Resolution) measures the average time to completely resolve an incident. EC-Council highlights it as a key metric to obtain during postmortem. A measures detection time, B measures containment time, and D measures time between system failures."
+    },
+    {
+      "id": 319,
+      "module": 2,
+      "question_es": "Jorge, el lider de IH&R en CyberOps, esta priorizando incidentes basandose en su nivel de riesgo. Cual es el orden correcto de atencion segun EC-Council?",
+      "question_en": "Jorge, the IH&R lead at CyberOps, is prioritizing incidents based on their risk level. What is the correct order of attention according to EC-Council?",
+      "options_es": [
+        "Se atienden todos simultaneamente sin priorizacion",
+        "Alto, medio, bajo",
+        "Medio, alto, bajo",
+        "Bajo, medio, alto"
+      ],
+      "options_en": [
+        "All are handled simultaneously without prioritization",
+        "High, medium, low",
+        "Medium, high, low",
+        "Low, medium, high"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council establece que el equipo debe clasificar los incidentes y atender primero los de alta prioridad, luego los de prioridad media, y finalmente los de baja prioridad. La priorizacion depende de la severidad del impacto y su efecto en el negocio.",
+      "explanation_en": "B is correct. EC-Council states the team should classify incidents and first attend to high-priority incidents, then medium-priority, and finally low-priority incidents. Prioritization depends on the severity of impact and its effect on the business."
+    },
+    {
+      "id": 320,
+      "module": 2,
+      "question_es": "La fase de erradicacion en el proceso de IH&R implica eliminar la causa raiz del incidente. Cual de los siguientes es un metodo de erradicacion valido segun EC-Council?",
+      "question_en": "The eradication phase in the IH&R process involves eliminating the root cause of the incident. Which of the following is a valid eradication method according to EC-Council?",
+      "options_es": [
+        "Restaurar datos desde copias de seguridad",
+        "Notificar a las partes interesadas sobre el incidente",
+        "Realizar un postmortem del incidente",
+        "Parchear vulnerabilidades y reemplazar dispositivos defectuosos"
+      ],
+      "options_en": [
+        "Restore data from backups",
+        "Notify stakeholders about the incident",
+        "Perform an incident postmortem",
+        "Patch vulnerabilities and replace malfunctioning devices"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. EC-Council establece que los metodos de erradicacion incluyen parchear vulnerabilidades, reemplazar dispositivos defectuosos e instalar mejores mecanismos de seguridad que escaneen firmas de malware. A es parte de Recuperacion, C es Post-incidente, y D es Notificacion.",
+      "explanation_en": "D is correct. EC-Council states eradication methods include patching vulnerabilities, replacing malfunctioning devices, and installing better security mechanisms that scan for malware signatures. A is part of Recovery, C is Post-incident, and D is Notification."
+    },
+    {
+      "id": 321,
+      "module": 2,
+      "question_es": "Marta, una incident handler en DataVault Corp, esta en la fase de recopilacion de evidencias. Que debe crear el equipo de IH&R simultaneamente mientras recopila evidencias cruciales sobre el incidente?",
+      "question_en": "Marta, an incident handler at DataVault Corp, is in the evidence gathering phase. What must the IH&R team create simultaneously while collecting crucial evidence about the incident?",
+      "options_es": [
+        "Un informe de gestion ejecutivo",
+        "Un documento de cadena de custodia",
+        "Una solicitud de presupuesto adicional",
+        "Un plan de comunicacion externa"
+      ],
+      "options_en": [
+        "An executive management report",
+        "A chain of custody document",
+        "An additional budget request",
+        "An external communication plan"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council establece que el equipo de IH&R recopilara evidencias cruciales y simultaneamente creara un documento de cadena de custodia. Esto es esencial para mantener la integridad de la evidencia para posibles procedimientos legales.",
+      "explanation_en": "B is correct. EC-Council states the IH&R team will collect crucial evidence and simultaneously create a chain of custody document. This is essential to maintain evidence integrity for potential legal proceedings."
+    },
+    {
+      "id": 322,
+      "module": 2,
+      "question_es": "Cual de las siguientes herramientas permite al equipo de IH&R enviar notificaciones y alertas criticas a grupos internos y externos durante un incidente utilizando multiples canales, e incluye integraciones con funcionalidades de tickets, chat y monitoreo?",
+      "question_en": "Which of the following tools allows the IH&R team to send notifications and critical alerts to internal and external groups during an incident using multiple channels, and includes integrations with ticketing, chatting, and monitoring functionalities?",
+      "options_es": [
+        "Opsgenie",
+        "SolarWinds WHD",
+        "MagicTree",
+        "OnPage"
+      ],
+      "options_en": [
+        "Opsgenie",
+        "SolarWinds WHD",
+        "MagicTree",
+        "OnPage"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. Opsgenie permite enviar notificaciones y alertas criticas a grupos internos y externos durante un incidente usando multiples canales, con integraciones profundas para tickets, chat, monitoreo, alertas de grupo, filtrado de ruido y notificacion. A es para automatizar alertas y escalado. C es para gestion de datos con XPath. D es un sistema de tickets.",
+      "explanation_en": "A is correct. Opsgenie allows sending notifications and critical alerts to internal and external groups during an incident using multiple channels, with deep integrations for ticketing, chatting, monitoring, group alerts, noise filtering, and notification. A is for automating alerts and escalation. C is for data management with XPath. D is a ticketing system."
+    },
+    {
+      "id": 323,
+      "module": 2,
+      "question_es": "Alberto, un gestor de incidentes, necesita decidir si restaurar el sistema existente o reconstruirlo completamente despues de un incidente de seguridad grave. Segun EC-Council, de que depende generalmente el tiempo de recuperacion de un sistema?",
+      "question_en": "Alberto, an incident manager, needs to decide whether to restore the existing system or completely rebuild it after a serious security incident. According to EC-Council, what does the recovery time of a system generally depend on?",
+      "options_es": [
+        "El presupuesto disponible de la organizacion",
+        "La ubicacion geografica de los servidores",
+        "El numero de empleados en el equipo de IR",
+        "La extension de la brecha de seguridad"
+      ],
+      "options_en": [
+        "The organization's available budget",
+        "The geographic location of the servers",
+        "The number of employees on the IR team",
+        "The extent of the security breach"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. EC-Council indica que el tiempo necesario para recuperar un sistema generalmente depende de la extension de la brecha de seguridad. El equipo de IH&R debe decidir si restaurar el sistema existente o reconstruirlo completamente, pudiendo usar la copia de seguridad del sistema para cualquier proceso.",
+      "explanation_en": "D is correct. EC-Council states the time needed to recover a system generally depends on the extent of the security breach. The IH&R team must decide whether to restore the existing system or completely rebuild it, and can use the system backup for either process."
+    },
+    {
+      "id": 324,
+      "module": 2,
+      "question_es": "Veronica, una analista de seguridad, observa que cuentas de usuario han sido comprometidas en un ataque de phishing. Segun EC-Council, cual es la tecnica de contencion apropiada para cuentas comprometidas?",
+      "question_en": "Veronica, a security analyst, observes that user accounts have been compromised in a phishing attack. According to EC-Council, what is the appropriate containment technique for compromised accounts?",
+      "options_es": [
+        "Notificar a los usuarios y pedirles que cambien sus propias contrasenas",
+        "Deshabilitar las cuentas comprometidas y cambiar las contrasenas en todos los sistemas afectados",
+        "Monitorear las cuentas durante 48 horas para recopilar mas evidencia",
+        "Eliminar permanentemente las cuentas comprometidas del directorio activo"
+      ],
+      "options_en": [
+        "Notify users and ask them to change their own passwords",
+        "Disable compromised accounts and change passwords on all affected systems",
+        "Monitor the accounts for 48 hours to gather more evidence",
+        "Permanently delete compromised accounts from active directory"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council establece que el equipo de IH&R debe deshabilitar las cuentas comprometidas y cambiar las contrasenas en todos los sistemas afectados para minimizar cualquier perdida adicional de datos. A retrasa la contencion, C no es suficientemente rapido ni seguro, y D es una medida excesiva.",
+      "explanation_en": "B is correct. EC-Council states the IH&R team should disable compromised accounts and change passwords on all affected systems to minimize any further loss of data. A delays containment, C is not fast or secure enough, and D is an excessive measure."
+    },
+    {
+      "id": 325,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual de las siguientes actividades se realiza durante las actividades post-incidente (Paso 9)?",
+      "question_en": "According to EC-Council, which of the following activities is performed during post-incident activities (Step 9)?",
+      "options_es": [
+        "Creacion del informe de accion posterior (AAR) y lecciones aprendidas",
+        "Clasificacion y priorizacion del incidente",
+        "Desconexion de sistemas comprometidos de la red",
+        "Asignacion de un primer respondedor del equipo de IH&R"
+      ],
+      "options_en": [
+        "Creation of the after-action report (AAR) and lessons learned",
+        "Incident classification and prioritization",
+        "Disconnection of compromised systems from the network",
+        "Assignment of a first responder from the IH&R team"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. Las actividades post-incidente incluyen: mejorar la estrategia de gestion de incidentes, postmortem del incidente, crear el AAR, lecciones aprendidas, documentacion, analisis de impacto y revision de politicas. A es Triaje (Paso 3), B es Contencion (Paso 5), D es Registro y Asignacion (Paso 2).",
+      "explanation_en": "A is correct. Post-incident activities include: improving incident management strategy, incident postmortem, creating the AAR, lessons learned, documentation, impact analysis, and policy review. A is Triage (Step 3), B is Containment (Step 5), D is Recording and Assignment (Step 2)."
+    },
+    {
+      "id": 326,
+      "module": 2,
+      "question_es": "Pedro, el gestor de incidentes de SecureNet, esta documentando los pasos del postmortem. Segun EC-Council, con que debe comenzar el postmortem del incidente?",
+      "question_en": "Pedro, the incident manager at SecureNet, is documenting the postmortem steps. According to EC-Council, what should the incident postmortem commence with?",
+      "options_es": [
+        "La seleccion de nuevas herramientas de seguridad",
+        "Un cronograma (timeline) del incidente",
+        "Identificacion de los responsables del fallo",
+        "El calculo del costo total del incidente"
+      ],
+      "options_en": [
+        "The selection of new security tools",
+        "An incident timeline",
+        "Identification of those responsible for the failure",
+        "The calculation of the total cost of the incident"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council establece que el postmortem debe 'comenzar con un cronograma (timeline) del incidente'. A contradice la directriz de revision sin culpas. C y D son actividades posteriores que no inician el postmortem.",
+      "explanation_en": "B is correct. EC-Council states the postmortem should 'commence with an incident timeline.' A contradicts the blameless review guideline. C and D are subsequent activities that don't initiate the postmortem."
+    },
+    {
+      "id": 327,
+      "module": 2,
+      "question_es": "Una organizacion recibe multiples reportes de incidentes simultaneamente. El gestor del equipo de IH&R debe clasificar y priorizar los incidentes. Segun EC-Council, ademas del nivel de riesgo, que otro factor influye en la clasificacion?",
+      "question_en": "An organization receives multiple incident reports simultaneously. The IH&R team manager must classify and prioritize incidents. According to EC-Council, besides risk level, what other factor influences classification?",
+      "options_es": [
+        "El dia de la semana en que ocurrio el incidente",
+        "La antiguedad del empleado que reporto el incidente",
+        "Los requisitos legales y regulatorios con los que el proceso de IH&R debe alinearse",
+        "El numero de usuarios que reportaron el incidente"
+      ],
+      "options_en": [
+        "The day of the week when the incident occurred",
+        "The seniority of the employee who reported the incident",
+        "The legal and regulatory requirements with which the IH&R process must align",
+        "The number of users who reported the incident"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. EC-Council menciona que otros factores que impactan la clasificacion incluyen los activos impactados y los requisitos legales y regulatorios con los que el proceso de IH&R debe alinearse. Si el incidente esta fuera del ambito del equipo, se debe contactar a otros departamentos.",
+      "explanation_en": "C is correct. EC-Council mentions that other factors impacting classification include impacted assets and the legal and regulatory requirements with which the IH&R process must align. If the incident falls outside the team's purview, other departments must be contacted."
+    },
+    {
+      "id": 328,
+      "module": 2,
+      "question_es": "Cual de las siguientes describe MEJOR el modelo PICERL utilizado en la respuesta a incidentes?",
+      "question_en": "Which of the following BEST describes the PICERL model used in incident response?",
+      "options_es": [
+        "Un modelo de 4 fases desarrollado por ISO/IEC 27035",
+        "Un modelo de 3 fases que incluye Deteccion, Respuesta y Recuperacion",
+        "Un ciclo de vida de 6 fases: Preparacion, Identificacion, Contencion, Erradicacion, Recuperacion y Lecciones Aprendidas",
+        "Un marco de 9 pasos exclusivo de EC-Council"
+      ],
+      "options_en": [
+        "A 4-phase model developed by ISO/IEC 27035",
+        "A 3-phase model including Detection, Response, and Recovery",
+        "A 6-phase lifecycle: Preparation, Identification, Containment, Eradication, Recovery, and Lessons Learned",
+        "A 9-step framework exclusive to EC-Council"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. PICERL es un acronimo que representa las 6 fases del ciclo de vida de respuesta a incidentes: Preparation, Identification, Containment, Eradication, Recovery y Lessons Learned. Es utilizado tanto por SANS como por EC-Council de forma intercambiable.",
+      "explanation_en": "C is correct. PICERL is an acronym representing the 6 phases of the incident response lifecycle: Preparation, Identification, Containment, Eradication, Recovery, and Lessons Learned. It is used by both SANS and EC-Council interchangeably."
+    },
+    {
+      "id": 329,
+      "module": 2,
+      "question_es": "Lucia, la directora de IR en CloudSecure, esta configurando el canal de comunicacion de emergencia para incidentes. Cual es un requisito clave segun EC-Council para este canal?",
+      "question_en": "Lucia, the IR director at CloudSecure, is setting up the emergency communication channel for incidents. What is a key requirement according to EC-Council for this channel?",
+      "options_es": [
+        "Debe estar gestionado por el departamento de marketing",
+        "Debe utilizar exclusivamente comunicacion verbal, sin registros escritos",
+        "Debe ser accesible solo durante horario laboral",
+        "Debe estar disponible en cualquier momento a traves de los dispositivos del equipo, ya que las condiciones de crisis pueden recurrir fuera del horario oficial"
+      ],
+      "options_en": [
+        "It should be managed by the marketing department",
+        "It must use exclusively verbal communication, with no written records",
+        "It should only be accessible during business hours",
+        "It must be available at any time via team devices, as crisis conditions may recur during unofficial hours"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. EC-Council establece que el canal de comunicacion de emergencia de IR debe ser accesible en cualquier momento a traves de los dispositivos del equipo, ya que las condiciones de crisis pueden recurrir incluso fuera del horario oficial.",
+      "explanation_en": "D is correct. EC-Council states the IR emergency communication channel must be accessible at any time via team devices, as crisis conditions may recur even during unofficial hours."
+    },
+    {
+      "id": 330,
+      "module": 2,
+      "question_es": "Ricardo, un incident handler, ha completado la fase de recuperacion tras un incidente de ransomware. Cual es una accion critica que debe realizar el equipo de IH&R despues de recuperar los sistemas afectados?",
+      "question_en": "Ricardo, an incident handler, has completed the recovery phase after a ransomware incident. What is a critical action the IH&R team must perform after recovering affected systems?",
+      "options_es": [
+        "Eliminar todas las copias de seguridad para liberar espacio de almacenamiento",
+        "Reasignar al equipo de IH&R a otros proyectos inmediatamente",
+        "Desconectar permanentemente los sistemas recuperados de la red",
+        "Monitorear y validar los sistemas afectados para asegurar que no tengan trazas de malware o vulnerabilidades"
+      ],
+      "options_en": [
+        "Delete all backups to free storage space",
+        "Reassign the IH&R team to other projects immediately",
+        "Permanently disconnect recovered systems from the network",
+        "Monitor and validate affected systems to ensure they have no traces of malware or vulnerabilities"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. EC-Council establece que el equipo de IH&R debe monitorear y validar los sistemas afectados para asegurar que los sistemas recuperados no tengan trazas de malware o vulnerabilidades. A, C y D son practicas incorrectas post-recuperacion.",
+      "explanation_en": "D is correct. EC-Council states the IH&R team must monitor and validate affected systems to ensure recovered systems have no traces of malware or vulnerabilities. A, C, and D are incorrect post-recovery practices."
+    },
+    {
+      "id": 331,
+      "module": 2,
+      "question_es": "Un empleado descontento en MegaCorp ha pasado informacion confidencial de control de acceso a un tercero. El equipo de IH&R ha confirmado el incidente. Cual es la accion de contencion MAS apropiada para un incidente de amenaza interna?",
+      "question_en": "A disgruntled employee at MegaCorp has passed confidential access control information to a third party. The IH&R team has confirmed the incident. What is the MOST appropriate containment action for an insider threat incident?",
+      "options_es": [
+        "Confrontar al empleado directamente y solicitar una explicacion",
+        "Esperar a que el departamento legal complete su investigacion antes de tomar accion",
+        "Deshabilitar las cuentas comprometidas, cambiar contrasenas y bloquear accesos del empleado",
+        "Monitorear la actividad del empleado durante dos semanas adicionales"
+      ],
+      "options_en": [
+        "Directly confront the employee and request an explanation",
+        "Wait for the legal department to complete its investigation before taking action",
+        "Disable compromised accounts, change passwords, and block the employee's access",
+        "Monitor the employee's activity for an additional two weeks"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. La tecnica de contencion apropiada incluye deshabilitar cuentas comprometidas y cambiar contrasenas en todos los sistemas afectados para minimizar perdida adicional de datos. A y D retrasan la contencion. C no es una practica de IH&R.",
+      "explanation_en": "C is correct. The appropriate containment technique includes disabling compromised accounts and changing passwords on all affected systems to minimize further data loss. A and D delay containment. C is not an IH&R practice."
+    },
+    {
+      "id": 332,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual de las siguientes herramientas es utilizada como sistema de tickets para la gestion de incidentes de seguridad?",
+      "question_en": "According to EC-Council, which of the following tools is used as a ticketing system for security incident management?",
+      "options_es": [
+        "Wireshark",
+        "SolarWinds Web Help Desk (WHD)",
+        "Volatility Framework",
+        "Nmap"
+      ],
+      "options_en": [
+        "Wireshark",
+        "SolarWinds Web Help Desk (WHD)",
+        "Volatility Framework",
+        "Nmap"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council menciona SolarWinds Web Help Desk (WHD) y AlienVault OSSIM como herramientas de gestion de tickets para incidentes. A es un analizador de red, C es un framework de analisis de memoria, y D es un escaner de red.",
+      "explanation_en": "B is correct. EC-Council mentions SolarWinds Web Help Desk (WHD) and AlienVault OSSIM as ticketing tools for incident management. A is a network analyzer, C is a memory analysis framework, and D is a network scanner."
+    },
+    {
+      "id": 333,
+      "module": 2,
+      "question_es": "Fernando, el CISO de BioTech SA, esta revisando la declaracion de mision de IH&R. Cual de los siguientes es un elemento clave que debe incluir la declaracion de mision de IH&R?",
+      "question_en": "Fernando, the CISO at BioTech SA, is reviewing the IH&R mission statement. Which of the following is a key element that the IH&R mission statement should include?",
+      "options_es": [
+        "Que capacidad de IH&R se busca proteger y cuales son los objetivos a corto y largo plazo del equipo de IR",
+        "El presupuesto detallado del departamento de seguridad",
+        "Los nombres y roles de todos los miembros del equipo de IR",
+        "La lista completa de herramientas de seguridad adquiridas"
+      ],
+      "options_en": [
+        "What IH&R capability it aims to protect and the short- and long-term goals of the IR team",
+        "The detailed budget of the security department",
+        "The names and roles of all IR team members",
+        "The complete list of acquired security tools"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. EC-Council establece que los elementos clave de la declaracion de mision incluyen: que capacidad de IH&R se busca proteger, cuales son los objetivos a corto y largo plazo, que servicios ofrecera el equipo de IR, y como las capacidades de IH&R aseguraran la continuidad del negocio.",
+      "explanation_en": "A is correct. EC-Council states key mission statement elements include: what IH&R capability it aims to protect, short- and long-term goals, what services the IR team will offer, and how IH&R capabilities will ensure business continuity."
+    },
+    {
+      "id": 334,
+      "module": 2,
+      "question_es": "Claudia, una incident handler, necesita priorizar incidentes utilizando herramientas automatizadas. Cual de las siguientes herramientas es mencionada por EC-Council especificamente para el triaje automatico de incidentes?",
+      "question_en": "Claudia, an incident handler, needs to prioritize incidents using automated tools. Which of the following tools is mentioned by EC-Council specifically for automatic incident triage?",
+      "options_es": [
+        "BigPanda's Automatic Incident Triage",
+        "Burp Suite",
+        "Nessus",
+        "Metasploit"
+      ],
+      "options_en": [
+        "BigPanda's Automatic Incident Triage",
+        "Burp Suite",
+        "Nessus",
+        "Metasploit"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. EC-Council menciona PagerDuty, Cyber Triage y BigPanda's Automatic Incident Triage como herramientas para priorizar y asignar el nivel de urgencia de los incidentes. A es un escaner de vulnerabilidades, C es un framework de explotacion, y D es un proxy de pruebas web.",
+      "explanation_en": "A is correct. EC-Council mentions PagerDuty, Cyber Triage, and BigPanda's Automatic Incident Triage as tools to prioritize and assign urgency levels to incidents. A is a vulnerability scanner, C is an exploitation framework, and D is a web testing proxy."
+    },
+    {
+      "id": 335,
+      "module": 2,
+      "question_es": "Durante la fase de recuperacion, Isabel, una incident handler en NetGuard, necesita restaurar datos perdidos. Que debe asegurar el equipo de IH&R ANTES de restaurar el sistema desde una copia de seguridad?",
+      "question_en": "During the recovery phase, Isabel, an incident handler at NetGuard, needs to restore lost data. What must the IH&R team ensure BEFORE restoring the system from a backup?",
+      "options_es": [
+        "Que el informe AAR haya sido completado",
+        "Que la copia de seguridad no tenga trazas de malware o vectores de ataque",
+        "Que todos los empleados hayan sido notificados sobre el incidente",
+        "Que el atacante haya sido identificado y procesado legalmente"
+      ],
+      "options_en": [
+        "That the AAR report has been completed",
+        "That the backup has no traces of malware or attack vectors",
+        "That all employees have been notified about the incident",
+        "That the attacker has been identified and legally prosecuted"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council establece que durante la recuperacion, el equipo de IH&R debe asegurar que la copia de seguridad no tenga trazas de malware o vectores de ataque antes de restaurar el sistema. Restaurar una copia infectada reintroduciria la amenaza.",
+      "explanation_en": "B is correct. EC-Council states that during recovery, the IH&R team must ensure the backup has no traces of malware or attack vectors before restoring the system. Restoring an infected backup would reintroduce the threat."
+    },
+    {
+      "id": 336,
+      "module": 2,
+      "question_es": "Segun el proceso de EC-Council, si la contencion de un incidente falla, cual es la accion correcta del equipo de IH&R?",
+      "question_en": "According to the EC-Council process, if incident containment fails, what is the correct action for the IH&R team?",
+      "options_es": [
+        "Declarar el incidente como no recuperable y notificar a la direccion",
+        "Escalar el proceso a una etapa avanzada, revisar y actualizar el procedimiento de contencion, y reiniciar el proceso",
+        "Ignorar la contencion y centrarse en la recopilacion de evidencias",
+        "Proceder directamente a la fase de erradicacion"
+      ],
+      "options_en": [
+        "Declare the incident as unrecoverable and notify management",
+        "Escalate the process to an advanced stage, review and update the containment procedure, and restart the process",
+        "Skip containment and focus on evidence gathering",
+        "Proceed directly to the eradication phase"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council establece que si la contencion falla, el equipo de IH&R debe escalar el proceso a una etapa avanzada, revisar y actualizar el procedimiento de contencion, y reiniciar el proceso. No se debe saltar la contencion ni proceder sin haberla completado.",
+      "explanation_en": "B is correct. EC-Council states that if containment fails, the IH&R team must escalate the process to an advanced stage, review and update the containment procedure, and restart the process. Containment should not be skipped or bypassed."
+    },
+    {
+      "id": 337,
+      "module": 2,
+      "question_es": "Andres, un gestor de incidentes, esta estableciendo mecanismos de comunicacion interna durante incidentes. Cual de los siguientes mecanismos es recomendado por EC-Council para comunicarse con empleados y stakeholders?",
+      "question_en": "Andres, an incident manager, is establishing internal communication mechanisms during incidents. Which of the following mechanisms is recommended by EC-Council for communicating with employees and stakeholders?",
+      "options_es": [
+        "Redes sociales corporativas publicas",
+        "Un dashboard de incidentes accesible a traves de la red interna",
+        "Mensajes de texto personales del CISO",
+        "Notas impresas distribuidas fisicamente"
+      ],
+      "options_en": [
+        "Public corporate social media",
+        "An incident dashboard accessible through the internal network",
+        "Personal text messages from the CISO",
+        "Physically distributed printed notes"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council recomienda usar un dashboard de incidentes accesible a traves de la red interna para comunicarse con empleados y stakeholders. El dashboard contiene actualizaciones regulares sobre incidentes recientes e informes.",
+      "explanation_en": "B is correct. EC-Council recommends using an incident dashboard accessible through the internal network for communicating with employees and stakeholders. The dashboard contains regular updates on recent incidents and reports."
+    },
+    {
+      "id": 338,
+      "module": 2,
+      "question_es": "Diana, una incident handler senior, esta documentando el proceso de IH&R de su organizacion. Segun EC-Council, que debe detallar el plan de respuesta a incidentes sobre el ciclo de vida del proceso?",
+      "question_en": "Diana, a senior incident handler, is documenting her organization's IH&R process. According to EC-Council, what should the incident response plan detail about the process lifecycle?",
+      "options_es": [
+        "Solo los pasos de deteccion y contencion",
+        "El proceso de cada tarea, tecnicas involucradas, herramientas requeridas, personas de contacto de emergencia y autoridades de aprobacion",
+        "Unicamente las herramientas tecnologicas a utilizar",
+        "Solo los roles y responsabilidades del equipo de gestion ejecutiva"
+      ],
+      "options_en": [
+        "Only the detection and containment steps",
+        "The process of performing each task, techniques involved, tools required, emergency contacts, and approval authorities",
+        "Only the technological tools to be used",
+        "Only the roles and responsibilities of executive management"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council establece que el plan debe detallar el proceso de cada tarea, las tecnicas involucradas, las herramientas requeridas, las personas de contacto en caso de emergencia, y las autoridades que pueden otorgar aprobaciones, cubriendo todo el ciclo de vida.",
+      "explanation_en": "B is correct. EC-Council states the plan should detail the process of performing each task, techniques involved, tools required, emergency contacts, and approval authorities, covering the complete lifecycle."
+    },
+    {
+      "id": 339,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual es el papel del abogado (attorney) durante la fase de notificacion e investigacion de un incidente de seguridad?",
+      "question_en": "According to EC-Council, what is the role of the attorney during the notification and investigation phase of a security incident?",
+      "options_es": [
+        "Gestionar la restauracion tecnica de los sistemas afectados",
+        "Dirigir tecnicamente la investigacion forense",
+        "Comunicarse con las fuerzas del orden y asesorar al equipo de IH&R sobre responsabilidad y obligaciones legales y de notificacion",
+        "Decidir unilateralmente si el incidente debe ser reportado al publico"
+      ],
+      "options_en": [
+        "Manage the technical restoration of affected systems",
+        "Technically lead the forensic investigation",
+        "Communicate with law enforcement and advise the IH&R team on liability, regulatory, and notification obligations",
+        "Unilaterally decide whether the incident should be reported to the public"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. EC-Council establece que el abogado es responsable de la comunicacion con las fuerzas del orden y de asesorar al equipo de IH&R sobre responsabilidad, requisitos regulatorios y obligaciones de notificacion. A y D son funciones tecnicas, no legales. C no es una decision unilateral.",
+      "explanation_en": "C is correct. EC-Council states the attorney is responsible for communicating with law enforcement and advising the IH&R team on liability, regulatory, and notification obligations. A and D are technical functions, not legal. C is not a unilateral decision."
+    },
+    {
+      "id": 340,
+      "module": 2,
+      "question_es": "Miguel, el director de IR en DataProtect, quiere asegurar que la comunicacion durante incidentes se maneje adecuadamente. EC-Council recomienda que el equipo de IH&R utilice plantillas preestablecidas para que tipo de comunicacion?",
+      "question_en": "Miguel, the IR director at DataProtect, wants to ensure incident communication is handled properly. EC-Council recommends the IH&R team use pre-established templates for what type of communication?",
+      "options_es": [
+        "Documentos legales para demandas judiciales",
+        "Scripts para llamadas telefonicas a clientes",
+        "Plantillas de correo electronico para diferentes tipos de incidentes para facilitar la comunicacion interna",
+        "Comunicados de prensa para medios de comunicacion"
+      ],
+      "options_en": [
+        "Legal documents for lawsuits",
+        "Scripts for phone calls to customers",
+        "Email templates for different types of incidents to ease internal communication",
+        "Press releases for media outlets"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. EC-Council establece que el equipo de IH&R debe usar plantillas de correo electronico preestablecidas para diferentes tipos de incidentes con el fin de facilitar el proceso de comunicacion interna. Esto acelera la notificacion y mantiene la consistencia.",
+      "explanation_en": "C is correct. EC-Council states the IH&R team must use pre-established email templates for different types of incidents to ease the internal communication process. This speeds up notification and maintains consistency."
+    }
+  ]
+}

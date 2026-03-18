@@ -143,7 +143,11 @@
                     <option value="10">Módulo 10</option>
                 </select>
                 <button onclick="shuffleFlashcards()" data-i18n="btn.shuffle">Mezclar</button>
+                <!-- Feature 6: Leitner pending study button -->
+                <button onclick="loadLeitnerPendingCards()" class="leitner-study-btn" data-i18n="btn.studyPending">Estudiar pendientes (Leitner)</button>
             </div>
+            <!-- Feature 6: Leitner distribution mini-bar -->
+            <div id="leitnerDistribution" class="leitner-dist-inline"></div>
             <div class="flashcard-container">
                 <div class="flashcard" onclick="flipCard(this)">
                     <div class="flashcard-inner">
@@ -159,6 +163,11 @@
                     <button onclick="prevFlashcard()" data-i18n="btn.prev">← Anterior</button>
                     <span id="flashcardCounter">1/50</span>
                     <button onclick="nextFlashcard()" data-i18n="btn.next">Siguiente →</button>
+                </div>
+                <!-- Feature 6: Leitner answer buttons (visible after flip) -->
+                <div class="leitner-answer-btns">
+                    <button class="leitner-wrong-btn" onclick="leitnerWrong()" data-i18n="leitner.wrong">✗ Incorrecto → Caja 1</button>
+                    <button class="leitner-correct-btn" onclick="leitnerCorrect()" data-i18n="leitner.correct">✓ Correcto → subir caja</button>
                 </div>
             </div>
         </section>
@@ -181,6 +190,8 @@
                     <option value="10">Módulo 10</option>
                 </select>
                 <span id="practiceScore">Puntuación: 0/0</span>
+                <button class="failed-btn" onclick="loadPracticeQuestions(true)" data-i18n="btn.repeatFailed">Repetir falladas</button>
+                <span id="failedBadge" class="failed-badge" style="display:none;"></span>
             </div>
             <div id="practiceContainer" class="practice-container"></div>
             <div class="practice-nav">
@@ -201,6 +212,31 @@
                         <li><strong data-i18n="exam.timeLabel">Tiempo:</strong> <span data-i18n="exam.time">3 horas (180 minutos)</span></li>
                         <li><strong data-i18n="exam.passingLabel">Aprobación:</strong> <span data-i18n="exam.passing">70% (70 respuestas correctas)</span></li>
                     </ul>
+                    <!-- Feature 5: Module mini-exam selector -->
+                    <div class="exam-options">
+                        <label data-i18n="exam.moduleSelect">Mini-examen por módulo:</label>
+                        <select id="moduleExamSelect">
+                            <option value="all" data-i18n="exam.allModules">Examen completo (todos los módulos)</option>
+                            <option value="1">Módulo 1: Introduction to IH (~9 min)</option>
+                            <option value="2">Módulo 2: IH&amp;R Process (~54 min)</option>
+                            <option value="3">Módulo 3: First Response (~27 min)</option>
+                            <option value="4">Módulo 4: Malware Incidents (~23 min)</option>
+                            <option value="5">Módulo 5: Email Security (~18 min)</option>
+                            <option value="6">Módulo 6: Network Security (~20 min)</option>
+                            <option value="7">Módulo 7: Web App Security (~14 min)</option>
+                            <option value="8">Módulo 8: Cloud Security (~11 min)</option>
+                            <option value="9">Módulo 9: Insider Threats (~7 min)</option>
+                            <option value="10">Módulo 10: Endpoint Security (~13 min)</option>
+                        </select>
+                    </div>
+                    <!-- Feature 1: Weighted toggle -->
+                    <div class="exam-options">
+                        <label class="weighted-toggle-label">
+                            <input type="checkbox" id="weightedToggle">
+                            <span data-i18n="exam.weightedToggle">Ponderado (blueprint real)</span>
+                        </label>
+                        <small class="weighted-hint">M1:5% M2:31% M3:15% M4:13% M5:10% M6:11% M7:8% M8:6% M9:4% M10:7%</small>
+                    </div>
                     <button class="start-exam-btn" onclick="startExam()" data-i18n="btn.startExam">Iniciar Simulacro</button>
                 </div>
             </div>
@@ -211,6 +247,11 @@
                     </div>
                     <div class="exam-progress">
                         <span id="examProgress">1/100</span>
+                    </div>
+                    <!-- Feature 3: Flagged count -->
+                    <div class="exam-flagged-info">
+                        <span id="flaggedCount"></span>
+                        <button class="next-flagged-btn" onclick="goToNextFlagged()" data-i18n="exam.nextFlagged">Ir a siguiente marcada</button>
                     </div>
                 </div>
                 <div id="examQuestion" class="exam-question"></div>
@@ -248,6 +289,15 @@
             <div class="progress-chart">
                 <h2 data-i18n="progress.byModule">Rendimiento por Módulo</h2>
                 <div id="moduleProgress" class="module-progress-bars"></div>
+            </div>
+            <!-- Feature 4: Exam History -->
+            <div class="exam-history-section">
+                <div id="examHistoryContainer"></div>
+            </div>
+            <!-- Feature 6: Leitner distribution -->
+            <div class="leitner-section">
+                <h2 data-i18n="leitner.title">Sistema Leitner (Repetición Espaciada)</h2>
+                <div id="leitnerDistribution"></div>
             </div>
             <button onclick="resetProgress()" class="reset-btn" data-i18n="btn.reset">Reiniciar Progreso</button>
         </section>

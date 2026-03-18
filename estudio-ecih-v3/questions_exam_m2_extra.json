@@ -1,0 +1,1474 @@
+{
+  "exam_questions_m2_extra": [
+    {
+      "id": 444,
+      "module": 2,
+      "question_es": "Segun NIST SP 800-61, cuando el impacto funcional de un incidente se clasifica como 'Alto', que significa esto para la organizacion?",
+      "question_en": "According to NIST SP 800-61, when the functional impact of an incident is classified as 'High', what does this mean for the organization?",
+      "options_es": [
+        "Un servicio critico no esta disponible para un subconjunto de usuarios",
+        "Se ha notificado el incidente pero no hay impacto en servicios",
+        "Un servicio critico no esta disponible para todos los usuarios del sistema",
+        "No hay efecto en la funcionalidad de la organizacion"
+      ],
+      "options_en": [
+        "A critical service is unavailable for a subset of users",
+        "The incident has been reported but there is no impact on services",
+        "A critical service is unavailable for all system users",
+        "No effect on the organization's functionality"
+      ],
+      "correct": 2,
+      "explanation_es": "D es correcto. Segun NIST SP 800-61, un impacto funcional 'Alto' significa que la funcionalidad de un servicio critico no esta disponible para todos los usuarios. A describe 'Ninguno', B no es una categoria NIST, y C describe un impacto 'Medio' donde solo un subconjunto se ve afectado.",
+      "explanation_en": "D is correct. According to NIST SP 800-61, a 'High' functional impact means a critical service is unavailable for all users. A describes 'None', B is not a NIST category, and C describes a 'Medium' impact where only a subset is affected."
+    },
+    {
+      "id": 445,
+      "module": 2,
+      "question_es": "Sandra, lider del equipo IRT en CyberTrust SA, esta definiendo los roles del equipo de respuesta a incidentes. Cual de los siguientes roles es responsable de coordinar la comunicacion con los medios de comunicacion y las partes interesadas externas durante un incidente?",
+      "question_en": "Sandra, the IRT team lead at CyberTrust SA, is defining the incident response team roles. Which of the following roles is responsible for coordinating communication with media and external stakeholders during an incident?",
+      "options_es": [
+        "Lider del incidente",
+        "Analista forense",
+        "Lider tecnico",
+        "Lider de comunicaciones"
+      ],
+      "options_en": [
+        "Incident lead",
+        "Forensic analyst",
+        "Technical lead",
+        "Communications lead"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. El lider de comunicaciones gestiona toda la comunicacion externa e interna, incluyendo medios, clientes y reguladores. A (lider tecnico) se enfoca en la respuesta tecnica, C (analista forense) recopila evidencia, y D (lider del incidente) coordina la respuesta general pero delega la comunicacion al rol especializado.",
+      "explanation_en": "B is correct. The communications lead manages all external and internal communication, including media, customers, and regulators. A (technical lead) focuses on technical response, C (forensic analyst) collects evidence, and D (incident lead) coordinates the overall response but delegates communication to the specialized role."
+    },
+    {
+      "id": 446,
+      "module": 2,
+      "question_es": "Segun NIST SP 800-61, cual de los siguientes factores de priorizacion mide la sensibilidad de los datos comprometidos durante un incidente?",
+      "question_en": "According to NIST SP 800-61, which of the following prioritization factors measures the sensitivity of data compromised during an incident?",
+      "options_es": [
+        "Impacto en la informacion",
+        "Urgencia del negocio",
+        "Recuperabilidad",
+        "Impacto funcional"
+      ],
+      "options_en": [
+        "Information impact",
+        "Business urgency",
+        "Recoverability",
+        "Functional impact"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. El impacto en la informacion mide la sensibilidad de los datos comprometidos (privacidad, propiedad intelectual, integridad). A mide el efecto en la continuidad del negocio, C mide la capacidad de recuperacion, y D no es un factor de priorizacion NIST estandar.",
+      "explanation_en": "B is correct. Information impact measures the sensitivity of compromised data (privacy, proprietary, integrity). A measures the effect on business continuity, C measures recovery capability, and D is not a standard NIST prioritization factor."
+    },
+    {
+      "id": 447,
+      "module": 2,
+      "question_es": "Durante un ejercicio de simulacion tabletop en OmegaSec, el equipo descubre que no tienen un procedimiento para notificar a las autoridades legales. En que fase del proceso IH&R deberia haberse definido este procedimiento?",
+      "question_en": "During a tabletop exercise at OmegaSec, the team discovers they have no procedure for notifying law enforcement. In which phase of the IH&R process should this procedure have been defined?",
+      "options_es": [
+        "Preparacion",
+        "Actividades post-incidente",
+        "Contencion",
+        "Erradicacion"
+      ],
+      "options_en": [
+        "Preparation",
+        "Post-incident activities",
+        "Containment",
+        "Eradication"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. La fase de Preparacion incluye definir todos los procedimientos, politicas, contactos de emergencia y planes de notificacion, incluyendo a las fuerzas del orden. A, C y D son fases de ejecucion que dependen de la planificacion previa realizada en Preparacion.",
+      "explanation_en": "B is correct. The Preparation phase includes defining all procedures, policies, emergency contacts, and notification plans, including law enforcement. A, C, and D are execution phases that depend on prior planning done in Preparation."
+    },
+    {
+      "id": 448,
+      "module": 2,
+      "question_es": "Raul, gestor de incidentes en BankSecure, necesita calcular el tiempo medio de deteccion (MTTD) de incidentes. Que mide exactamente esta metrica?",
+      "question_en": "Raul, an incident manager at BankSecure, needs to calculate the Mean Time to Detect (MTTD) for incidents. What exactly does this metric measure?",
+      "options_es": [
+        "El tiempo promedio desde que ocurre un incidente hasta que es detectado",
+        "El tiempo promedio desde la deteccion hasta la resolucion completa",
+        "El tiempo promedio para restaurar los sistemas a su estado operativo normal",
+        "El tiempo promedio desde la deteccion hasta la contencion completa del incidente"
+      ],
+      "options_en": [
+        "The average time from when an incident occurs until it is detected",
+        "The average time from detection to complete resolution",
+        "The average time to restore systems to normal operational state",
+        "The average time from detection to complete containment of the incident"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. MTTD mide el tiempo promedio entre la ocurrencia real de un incidente y su deteccion. A describe MTTC (Mean Time to Contain), C describe MTTR (Mean Time to Resolve/Respond), y D describe el tiempo de recuperacion.",
+      "explanation_en": "B is correct. MTTD measures the average time between the actual occurrence of an incident and its detection. A describes MTTC (Mean Time to Contain), C describes MTTR (Mean Time to Resolve/Respond), and D describes recovery time."
+    },
+    {
+      "id": 449,
+      "module": 2,
+      "question_es": "Segun EC-Council, cuando la contencion del incidente falla, el equipo IH&R debe regresar a una fase anterior. A que fase debe regresar?",
+      "question_en": "According to EC-Council, when incident containment fails, the IH&R team must return to a previous phase. Which phase should they return to?",
+      "options_es": [
+        "Registro y asignacion del incidente",
+        "Triaje del incidente",
+        "Notificacion",
+        "Preparacion"
+      ],
+      "options_en": [
+        "Incident Recording and Assignment",
+        "Incident Triage",
+        "Notification",
+        "Preparation"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. Segun EC-Council, si la contencion falla, el equipo debe regresar a la fase de Notificacion para re-evaluar y escalar el incidente, notificando a las partes correspondientes del fallo en la contencion. A, B y D son fases demasiado tempranas en el proceso.",
+      "explanation_en": "C is correct. According to EC-Council, if containment fails, the team must return to the Notification phase to re-evaluate and escalate the incident, notifying relevant parties of the containment failure. A, B, and D are too early in the process."
+    },
+    {
+      "id": 450,
+      "module": 2,
+      "question_es": "Alicia, directora de seguridad en TechNova, esta estableciendo un canal de comunicacion de emergencia para incidentes. Segun EC-Council, cual es un requisito clave para este canal?",
+      "question_en": "Alicia, the security director at TechNova, is establishing an emergency communication channel for incidents. According to EC-Council, what is a key requirement for this channel?",
+      "options_es": [
+        "Solo debe ser accesible durante horario laboral",
+        "Debe ser fuera de banda (out-of-band) respecto a los canales normales de comunicacion",
+        "Debe usar el sistema de correo electronico corporativo estandar",
+        "Debe permitir acceso publico para transparencia"
+      ],
+      "options_en": [
+        "It should only be accessible during business hours",
+        "It must be out-of-band from normal communication channels",
+        "It must use the standard corporate email system",
+        "It must allow public access for transparency"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council recomienda que la comunicacion de IR sea fuera de banda (out-of-band), evitando correo electronico y chat comunes ya que el atacante podria tener acceso a estos. A contradice esta recomendacion, C limita la disponibilidad cuando los incidentes pueden ocurrir en cualquier momento, y D expondria informacion sensible del incidente.",
+      "explanation_en": "B is correct. EC-Council recommends IR communication be out-of-band, avoiding common email and chat as the attacker may have access to these. A contradicts this recommendation, C limits availability when incidents can occur at any time, and D would expose sensitive incident information."
+    },
+    {
+      "id": 451,
+      "module": 2,
+      "question_es": "Segun NIST SP 800-61, cual de las siguientes categorias de recuperabilidad indica que el tiempo para recuperarse del incidente es impredecible y pueden requerirse recursos adicionales de fuentes externas?",
+      "question_en": "According to NIST SP 800-61, which of the following recoverability categories indicates that the time to recover from the incident is unpredictable and additional resources from external sources may be required?",
+      "options_es": [
+        "Suplementada",
+        "No recuperable",
+        "Regular",
+        "Extendida"
+      ],
+      "options_en": [
+        "Supplemented",
+        "Not Recoverable",
+        "Regular",
+        "Extended"
+      ],
+      "correct": 3,
+      "explanation_es": "C es correcto. 'Extendida' significa que el tiempo de recuperacion es impredecible y se necesitan recursos adicionales externos. A (Regular) indica recuperacion con recursos existentes, B (Suplementada) indica que se necesitan recursos adicionales pero el tiempo es predecible, y D (No recuperable) significa que la recuperacion no es posible.",
+      "explanation_en": "C is correct. 'Extended' means recovery time is unpredictable and additional external resources are needed. A (Regular) indicates recovery with existing resources, B (Supplemented) indicates additional resources are needed but time is predictable, and D (Not Recoverable) means recovery is not possible."
+    },
+    {
+      "id": 452,
+      "module": 2,
+      "question_es": "Gabriel, lider del equipo IRT en SecureData Corp, esta organizando la reunion de lecciones aprendidas despues de un incidente de ransomware. Segun NIST SP 800-61, cuando debe celebrarse esta reunion?",
+      "question_en": "Gabriel, the IRT team lead at SecureData Corp, is organizing the lessons learned meeting after a ransomware incident. According to NIST SP 800-61, when should this meeting be held?",
+      "options_es": [
+        "Inmediatamente durante la fase de contencion",
+        "Al menos 6 meses despues del incidente",
+        "Dentro de los primeros dias tras la resolucion del incidente",
+        "Solo cuando haya multiples incidentes acumulados"
+      ],
+      "options_en": [
+        "Immediately during the containment phase",
+        "At least 6 months after the incident",
+        "Within the first few days after the incident is resolved",
+        "Only when multiple incidents have accumulated"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. NIST SP 800-61 recomienda que las reuniones de lecciones aprendidas se celebren pocos dias despues de la resolucion del incidente, mientras los detalles estan frescos. A es durante la respuesta activa, C es demasiado tarde para ser efectivo, y D no es una practica recomendada por NIST.",
+      "explanation_en": "B is correct. NIST SP 800-61 recommends lessons learned meetings be held within a few days after the incident is resolved, while details are fresh. A is during active response, C is too late to be effective, and D is not a NIST recommended practice."
+    },
+    {
+      "id": 453,
+      "module": 2,
+      "question_es": "En el modelo NIST SP 800-61, las fases de Contencion, Erradicacion y Recuperacion se agrupan en una sola fase. Cual es la razon principal de esta agrupacion?",
+      "question_en": "In the NIST SP 800-61 model, the Containment, Eradication, and Recovery phases are grouped into a single phase. What is the main reason for this grouping?",
+      "options_es": [
+        "Son las fases menos importantes del ciclo de vida",
+        "Solo aplican a incidentes de baja prioridad",
+        "Son actividades que puede realizar una sola persona",
+        "Se ejecutan de forma iterativa y a menudo se solapan durante el manejo del incidente"
+      ],
+      "options_en": [
+        "They are the least important phases of the lifecycle",
+        "They only apply to low-priority incidents",
+        "They are activities that can be performed by a single person",
+        "They are executed iteratively and often overlap during incident handling"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. NIST agrupa estas tres fases porque en la practica son iterativas y se solapan: contener, erradicar y recuperar son actividades que pueden repetirse segun evolucione el incidente. A es incorrecto ya que requieren multiples roles, C es falso ya que son criticas, y D es falso porque aplican a todos los incidentes.",
+      "explanation_en": "B is correct. NIST groups these three phases because in practice they are iterative and overlap: containing, eradicating, and recovering are activities that may repeat as the incident evolves. A is incorrect as they require multiple roles, C is false as they are critical, and D is false because they apply to all incidents."
+    },
+    {
+      "id": 454,
+      "module": 2,
+      "question_es": "Natalia, analista de seguridad en CloudPro, detecta un incidente que afecta datos personales de clientes europeos. Ademas del equipo de IH&R, a quien debe notificarse obligatoriamente segun los requisitos legales de proteccion de datos?",
+      "question_en": "Natalia, a security analyst at CloudPro, detects an incident affecting personal data of European customers. In addition to the IH&R team, who must be mandatorily notified according to data protection legal requirements?",
+      "options_es": [
+        "Los medios de comunicacion locales",
+        "La autoridad de proteccion de datos competente",
+        "El proveedor de servicios en la nube unicamente",
+        "Solo el departamento de marketing"
+      ],
+      "options_en": [
+        "Local news media",
+        "The competent data protection authority",
+        "The cloud service provider only",
+        "Only the marketing department"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. Cuando datos personales de ciudadanos europeos se ven comprometidos, las regulaciones de proteccion de datos (como GDPR) requieren notificar a la autoridad de proteccion de datos competente. A no tiene obligacion legal, C no es mandatorio inicialmente, y D puede ser necesario pero no es la notificacion legalmente obligatoria principal.",
+      "explanation_en": "B is correct. When personal data of European citizens is compromised, data protection regulations (such as GDPR) require notifying the competent data protection authority. A has no legal obligation, C is not initially mandatory, and D may be needed but is not the primary legally mandatory notification."
+    },
+    {
+      "id": 455,
+      "module": 2,
+      "question_es": "Durante la fase de contencion de un ataque activo en MegaTech SA, el equipo IH&R debe tomar una decision critica. Cual de las siguientes consideraciones es la MAS importante al seleccionar una estrategia de contencion?",
+      "question_en": "During the containment phase of an active attack at MegaTech SA, the IH&R team must make a critical decision. Which of the following considerations is MOST important when selecting a containment strategy?",
+      "options_es": [
+        "El numero de miembros del equipo IH&R disponibles",
+        "La reputacion del proveedor de herramientas de contencion",
+        "La preservacion de evidencia potencial mientras se limita el dano",
+        "El costo de adquirir nuevos equipos de seguridad"
+      ],
+      "options_en": [
+        "The number of available IH&R team members",
+        "The reputation of the containment tool vendor",
+        "Preserving potential evidence while limiting damage",
+        "The cost of acquiring new security equipment"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. La consideracion mas critica durante la contencion es equilibrar la limitacion del dano con la preservacion de evidencia forense. Acciones de contencion precipitadas pueden destruir evidencia valiosa. A, C y D son consideraciones secundarias que no afectan directamente la efectividad de la contencion.",
+      "explanation_en": "B is correct. The most critical consideration during containment is balancing damage limitation with preserving forensic evidence. Hasty containment actions can destroy valuable evidence. A, C, and D are secondary considerations that don't directly affect containment effectiveness."
+    },
+    {
+      "id": 456,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual de las siguientes actividades NO forma parte de las actividades post-incidente (Paso 9)?",
+      "question_en": "According to EC-Council, which of the following activities is NOT part of post-incident activities (Step 9)?",
+      "options_es": [
+        "Divulgacion del incidente",
+        "Evaluacion del impacto del incidente",
+        "Revision y actualizacion de politicas",
+        "Aislamiento de los sistemas comprometidos"
+      ],
+      "options_en": [
+        "Incident disclosure",
+        "Incident impact assessment",
+        "Policy review and revision",
+        "Isolation of compromised systems"
+      ],
+      "correct": 3,
+      "explanation_es": "C es correcto. El aislamiento de sistemas comprometidos pertenece a la fase de Contencion (Paso 5), no a las actividades post-incidente. A (revision de politicas), B (evaluacion de impacto) y D (divulgacion) son todas sub-actividades del Paso 9 segun EC-Council.",
+      "explanation_en": "C is correct. Isolation of compromised systems belongs to the Containment phase (Step 5), not post-incident activities. A (policy review), B (impact assessment), and D (disclosure) are all sub-activities of Step 9 according to EC-Council."
+    },
+    {
+      "id": 457,
+      "module": 2,
+      "question_es": "Hugo, el CISO de FinanceGuard, quiere implementar un sistema SOAR para mejorar la respuesta a incidentes. Cual es la principal ventaja que SOAR proporciona al equipo de IH&R?",
+      "question_en": "Hugo, the CISO of FinanceGuard, wants to implement a SOAR system to improve incident response. What is the main advantage SOAR provides to the IH&R team?",
+      "options_es": [
+        "Solo proporciona almacenamiento de logs a largo plazo",
+        "Exclusivamente detecta amenazas avanzadas mediante machine learning",
+        "Automatiza acciones de respuesta y orquesta herramientas de seguridad",
+        "Reemplaza completamente la necesidad de analistas humanos"
+      ],
+      "options_en": [
+        "Only provides long-term log storage",
+        "Exclusively detects advanced threats using machine learning",
+        "Automates response actions and orchestrates security tools",
+        "Completely replaces the need for human analysts"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. SOAR (Security Orchestration, Automation, and Response) automatiza acciones de respuesta y permite orquestar multiples herramientas de seguridad desde una plataforma unificada. A es falso ya que complementa a los analistas, C describe funcionalidad de SIEM, y D confunde SOAR con capacidades puramente de deteccion.",
+      "explanation_en": "B is correct. SOAR (Security Orchestration, Automation, and Response) automates response actions and allows orchestrating multiple security tools from a unified platform. A is false as it complements analysts, C describes SIEM functionality, and D confuses SOAR with purely detection capabilities."
+    },
+    {
+      "id": 458,
+      "module": 2,
+      "question_es": "Isabella, gestora de incidentes en DataCore, esta elaborando el formulario de notificacion de incidentes. Cual de los siguientes campos NO es tipico en un formulario de notificacion de incidentes segun EC-Council?",
+      "question_en": "Isabella, an incident manager at DataCore, is creating the incident notification form. Which of the following fields is NOT typical in an incident notification form according to EC-Council?",
+      "options_es": [
+        "Fecha y hora del incidente",
+        "Tipo de incidente",
+        "Sistemas afectados",
+        "Evaluacion de desempeno anual del empleado que reporta"
+      ],
+      "options_en": [
+        "Date and time of the incident",
+        "Incident type",
+        "Affected systems",
+        "Annual performance review of the reporting employee"
+      ],
+      "correct": 3,
+      "explanation_es": "C es correcto. La evaluacion de desempeno del empleado no es un campo relevante en un formulario de notificacion de incidentes. A (fecha/hora), B (tipo de incidente) y D (sistemas afectados) son campos estandar que EC-Council incluye en los formularios de notificacion.",
+      "explanation_en": "C is correct. The employee's performance review is not a relevant field in an incident notification form. A (date/time), B (incident type), and D (affected systems) are standard fields EC-Council includes in notification forms."
+    },
+    {
+      "id": 459,
+      "module": 2,
+      "question_es": "Segun EC-Council, durante la comunicacion externa de un incidente, cual de las siguientes entidades debe ser informada para obtener cambios bancarios necesarios como acceso a banca por internet?",
+      "question_en": "According to EC-Council, during external incident communication, which of the following entities should be informed to obtain necessary banking changes such as access to internet banking?",
+      "options_es": [
+        "Socios comerciales",
+        "Medios de comunicacion",
+        "Bancos",
+        "Proveedores"
+      ],
+      "options_en": [
+        "Business partners",
+        "Media",
+        "Banks",
+        "Suppliers"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. Segun EC-Council, comunicarse con los bancos durante un incidente puede ayudar a la organizacion a obtener los cambios bancarios necesarios, como acceso a banca por internet, lo antes posible. A (medios) se informa sobre el incidente, B (proveedores) sobre el impacto en relaciones, y D (socios) para contribuir a la gestion.",
+      "explanation_en": "C is correct. According to EC-Council, communicating with banks during an incident can help the organization get necessary banking changes, such as internet banking access, at the earliest. A (media) is informed about the incident, B (suppliers) about business relationship impact, and D (partners) to contribute to management."
+    },
+    {
+      "id": 460,
+      "module": 2,
+      "question_es": "Martin, analista de seguridad en RetailSec, observa que un incidente afecta la integridad de datos financieros pero no involucra informacion personal. Segun NIST SP 800-61, como se clasificaria el impacto en la informacion?",
+      "question_en": "Martin, a security analyst at RetailSec, observes that an incident affects the integrity of financial data but does not involve personal information. According to NIST SP 800-61, how would the information impact be classified?",
+      "options_es": [
+        "Perdida de integridad",
+        "Ninguno",
+        "Brecha de propiedad intelectual",
+        "Violacion de privacidad"
+      ],
+      "options_en": [
+        "Integrity loss",
+        "None",
+        "Proprietary breach",
+        "Privacy breach"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. Cuando los datos financieros han sido alterados sin autorizacion, el impacto en la informacion se clasifica como perdida de integridad segun NIST. A aplica cuando hay datos personales comprometidos, C cuando hay informacion propietaria exfiltrada, y D cuando no hay datos afectados.",
+      "explanation_en": "B is correct. When financial data has been altered without authorization, the information impact is classified as integrity loss per NIST. A applies when personal data is compromised, C when proprietary information is exfiltrated, and D when no data is affected."
+    },
+    {
+      "id": 461,
+      "module": 2,
+      "question_es": "Emilia, CISO de HealthNet, necesita decidir sobre la estrategia de contencion para un servidor comprometido que procesa datos medicos criticos. Cual estrategia de contencion mantiene el servidor operativo mientras se mitiga la amenaza?",
+      "question_en": "Emilia, CISO of HealthNet, needs to decide on the containment strategy for a compromised server processing critical medical data. Which containment strategy keeps the server operational while mitigating the threat?",
+      "options_es": [
+        "Sandboxing o segmentacion de red del servidor afectado",
+        "Eliminacion del disco duro del servidor",
+        "Desconexion total de la red",
+        "Apagado inmediato del servidor"
+      ],
+      "options_en": [
+        "Sandboxing or network segmentation of the affected server",
+        "Removal of the server's hard drive",
+        "Complete network disconnection",
+        "Immediate server shutdown"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. El sandboxing o la segmentacion de red permite aislar la amenaza mientras el servidor sigue operativo para datos criticos. A y C interrumpen servicios criticos de salud, y D es una accion forense que elimina toda funcionalidad del servidor.",
+      "explanation_en": "B is correct. Sandboxing or network segmentation allows isolating the threat while the server remains operational for critical data. A and C interrupt critical health services, and D is a forensic action that eliminates all server functionality."
+    },
+    {
+      "id": 462,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual de los siguientes es un paso clave durante la verificacion de erradicacion despues de eliminar malware de sistemas comprometidos?",
+      "question_en": "According to EC-Council, which of the following is a key step during eradication verification after removing malware from compromised systems?",
+      "options_es": [
+        "Eliminar todos los logs del sistema para limpiar los registros",
+        "Desmantelar permanentemente los sistemas afectados",
+        "Monitorear los sistemas para confirmar que no haya indicadores de reinfeccion",
+        "Publicar un comunicado de prensa sobre la resolucion del incidente"
+      ],
+      "options_en": [
+        "Delete all system logs to clean the records",
+        "Permanently decommission the affected systems",
+        "Monitor systems to confirm there are no indicators of reinfection",
+        "Issue a press release about the incident resolution"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. Despues de la erradicacion, es esencial monitorear los sistemas para confirmar que la amenaza fue completamente eliminada y no hay reinfeccion. A es prematuro, C es excesivo si los sistemas pueden ser recuperados, y D destruiria evidencia forense valiosa.",
+      "explanation_en": "B is correct. After eradication, it is essential to monitor systems to confirm the threat was completely removed and there is no reinfection. A is premature, C is excessive if systems can be recovered, and D would destroy valuable forensic evidence."
+    },
+    {
+      "id": 463,
+      "module": 2,
+      "question_es": "Ramon, director de TI en GovSecure, esta planificando ejercicios de simulacion (tabletop exercises) para su equipo de respuesta a incidentes. Cual es el objetivo principal de estos ejercicios?",
+      "question_en": "Ramon, the IT director at GovSecure, is planning tabletop exercises for his incident response team. What is the primary objective of these exercises?",
+      "options_es": [
+        "Evaluar el rendimiento individual de cada miembro del equipo para promociones",
+        "Probar los procedimientos de respuesta y la coordinacion del equipo en escenarios simulados",
+        "Reemplazar la necesidad de un plan de respuesta a incidentes escrito",
+        "Generar ingresos vendiendo los resultados a empresas de consultoria"
+      ],
+      "options_en": [
+        "Evaluate individual performance of each team member for promotions",
+        "Test response procedures and team coordination in simulated scenarios",
+        "Replace the need for a written incident response plan",
+        "Generate revenue by selling results to consulting firms"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. Los ejercicios tabletop permiten al equipo probar procedimientos, identificar brechas y mejorar la coordinacion sin los riesgos de un incidente real. A no es su proposito principal, C es falso ya que complementan el plan escrito, y D es completamente irrelevante.",
+      "explanation_en": "B is correct. Tabletop exercises allow the team to test procedures, identify gaps, and improve coordination without the risks of a real incident. A is not their primary purpose, C is false as they complement the written plan, and D is completely irrelevant."
+    },
+    {
+      "id": 464,
+      "module": 2,
+      "question_es": "Segun EC-Council, durante la fase de recuperacion, cual es la accion critica que el equipo IH&R debe realizar ANTES de restaurar los sistemas desde backups?",
+      "question_en": "According to EC-Council, during the recovery phase, what is the critical action the IH&R team must perform BEFORE restoring systems from backups?",
+      "options_es": [
+        "Verificar que los backups no estan comprometidos o infectados",
+        "Despedir al empleado responsable del incidente",
+        "Actualizar el sitio web corporativo con informacion del incidente",
+        "Notificar a los medios de comunicacion sobre la recuperacion"
+      ],
+      "options_en": [
+        "Verify that backups are not compromised or infected",
+        "Terminate the employee responsible for the incident",
+        "Update the corporate website with incident information",
+        "Notify the media about the recovery"
+      ],
+      "correct": 0,
+      "explanation_es": "A es correcto. Antes de restaurar sistemas, el equipo debe verificar la integridad de los backups para asegurarse de que no contengan el malware o vulnerabilidad que causo el incidente original. B es prematuro e innecesario, C no es funcion del IH&R, y D podria comprometer la investigacion.",
+      "explanation_en": "A is correct. Before restoring systems, the team must verify backup integrity to ensure they don't contain the malware or vulnerability that caused the original incident. B is premature and unnecessary, C is not an IH&R function, and D could compromise the investigation."
+    },
+    {
+      "id": 465,
+      "module": 2,
+      "question_es": "Carolina, coordinadora de IR en CyberOps SA, necesita compartir informacion sobre un incidente con otras organizaciones del mismo sector. Que tipo de organizacion facilita el intercambio de informacion sobre amenazas entre organizaciones del mismo sector?",
+      "question_en": "Carolina, the IR coordinator at CyberOps SA, needs to share incident information with other organizations in the same sector. What type of organization facilitates threat information sharing among organizations in the same sector?",
+      "options_es": [
+        "ISP (Proveedor de Servicios de Internet)",
+        "IDS (Sistema de Deteccion de Intrusiones)",
+        "ISV (Proveedor Independiente de Software)",
+        "ISAC (Centro de Analisis e Intercambio de Informacion)"
+      ],
+      "options_en": [
+        "ISP (Internet Service Provider)",
+        "IDS (Intrusion Detection System)",
+        "ISV (Independent Software Vendor)",
+        "ISAC (Information Sharing and Analysis Center)"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. Los ISACs son organizaciones sectoriales que facilitan el intercambio de informacion sobre amenazas, vulnerabilidades e incidentes entre organizaciones del mismo sector. A es un proveedor de internet, C es un fabricante de software, y D es una herramienta de deteccion.",
+      "explanation_en": "B is correct. ISACs are sector-specific organizations that facilitate sharing of threat, vulnerability, and incident information among organizations in the same sector. A is an internet provider, C is a software vendor, and D is a detection tool."
+    },
+    {
+      "id": 466,
+      "module": 2,
+      "question_es": "Segun EC-Council, durante el registro y asignacion del incidente (Paso 2), que debe incluir el plan de escalado?",
+      "question_en": "According to EC-Council, during incident recording and assignment (Step 2), what should the escalation plan include?",
+      "options_es": [
+        "Los procedimientos y contactos para escalar incidentes que superan la capacidad del equipo inicial",
+        "El presupuesto anual de seguridad informatica",
+        "Unicamente las instrucciones de apagado de servidores",
+        "Solo los contactos del departamento de marketing"
+      ],
+      "options_en": [
+        "Procedures and contacts for escalating incidents that exceed the initial team's capacity",
+        "The annual IT security budget",
+        "Only server shutdown instructions",
+        "Only the marketing department contacts"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. El plan de escalado define los procedimientos y contactos para cuando un incidente supera la capacidad del equipo que lo recibe inicialmente, incluyendo criterios de escalamiento y cadena de mando. A, C y D no son componentes de un plan de escalado.",
+      "explanation_en": "B is correct. The escalation plan defines procedures and contacts for when an incident exceeds the initial team's capacity, including escalation criteria and chain of command. A, C, and D are not components of an escalation plan."
+    },
+    {
+      "id": 467,
+      "module": 2,
+      "question_es": "Eduardo, lider tecnico del equipo IRT en NovaSec, quiere calcular el Tiempo Medio de Contencion (MTTC). Que intervalo de tiempo mide esta metrica?",
+      "question_en": "Eduardo, the technical lead of the IRT team at NovaSec, wants to calculate the Mean Time to Contain (MTTC). What time interval does this metric measure?",
+      "options_es": [
+        "Desde la contencion hasta la erradicacion completa",
+        "Desde la erradicacion hasta la restauracion de servicios",
+        "Desde la ocurrencia del incidente hasta su deteccion",
+        "Desde la deteccion del incidente hasta su contencion exitosa"
+      ],
+      "options_en": [
+        "From containment to complete eradication",
+        "From eradication to service restoration",
+        "From the incident occurrence to its detection",
+        "From incident detection to successful containment"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. MTTC mide el tiempo promedio desde que se detecta un incidente hasta que se contiene exitosamente. A describe MTTD (tiempo de deteccion), C y D describen intervalos dentro de las fases posteriores a la contencion.",
+      "explanation_en": "B is correct. MTTC measures the average time from incident detection to successful containment. A describes MTTD (detection time), C and D describe intervals within post-containment phases."
+    },
+    {
+      "id": 468,
+      "module": 2,
+      "question_es": "Una organizacion sufre una violacion de datos que afecta a 50,000 clientes. El equipo legal insiste en participar en la respuesta al incidente. Segun las mejores practicas de IH&R, en que aspecto es MAS critica la participacion del equipo legal?",
+      "question_en": "An organization suffers a data breach affecting 50,000 customers. The legal team insists on participating in incident response. According to IH&R best practices, in which aspect is legal team participation MOST critical?",
+      "options_es": [
+        "Configurar los firewalls y reglas de red durante la contencion",
+        "Realizar el analisis forense de los servidores comprometidos",
+        "Asegurar el cumplimiento de las obligaciones de notificacion y proteger a la organizacion legalmente",
+        "Escribir el codigo de los parches de seguridad"
+      ],
+      "options_en": [
+        "Configuring firewalls and network rules during containment",
+        "Performing forensic analysis of compromised servers",
+        "Ensuring compliance with notification obligations and legally protecting the organization",
+        "Writing the security patch code"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. El equipo legal es critico para asegurar el cumplimiento de leyes de notificacion de brechas, preservar privilegio legal y proteger a la organizacion de responsabilidades. A es funcion del equipo forense, C del equipo de redes, y D del equipo de desarrollo.",
+      "explanation_en": "B is correct. The legal team is critical for ensuring compliance with breach notification laws, preserving legal privilege, and protecting the organization from liabilities. A is the forensic team's role, C is the network team's role, and D is the development team's role."
+    },
+    {
+      "id": 469,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual de las siguientes es una consideracion importante para la comunicacion interna durante un incidente?",
+      "question_en": "According to EC-Council, which of the following is an important consideration for internal communication during an incident?",
+      "options_es": [
+        "El acceso a la informacion del incidente debe estar limitado a los equipos correspondientes",
+        "Los detalles tecnicos deben ser compartidos con todos los empleados sin restriccion",
+        "La comunicacion debe ser compartida en redes sociales publicas para transparencia",
+        "Se debe usar el correo electronico corporativo estandar como unico canal"
+      ],
+      "options_en": [
+        "Access to incident information should be limited to corresponding teams",
+        "Technical details should be shared with all employees without restriction",
+        "Communication should be shared on public social media for transparency",
+        "Standard corporate email should be used as the only channel"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. EC-Council recomienda la limitacion de acceso: los datos relacionados con el incidente pueden filtrarse si pasan por multiples sistemas o canales, por lo que deben confinarse a los equipos correspondientes. A expone informacion sensible, C contradice la recomendacion de usar canales fuera de banda, y D viola el principio de necesidad de conocer.",
+      "explanation_en": "B is correct. EC-Council recommends access limitation: incident-related data can leak if it passes through multiple systems or channels, so it should be confined to corresponding teams. A exposes sensitive information, C contradicts the out-of-band recommendation, and D violates the need-to-know principle."
+    },
+    {
+      "id": 470,
+      "module": 2,
+      "question_es": "Patricia, gestora de incidentes en AeroSec, esta documentando los requisitos de un jump bag para su equipo de respuesta a incidentes. Cual de los siguientes elementos es esencial incluir en un jump bag?",
+      "question_en": "Patricia, an incident manager at AeroSec, is documenting the requirements for a jump bag for her incident response team. Which of the following items is essential to include in a jump bag?",
+      "options_es": [
+        "Manuales de usuario de impresoras de oficina",
+        "Equipos de videoconferencia para salas de reunion",
+        "Herramientas forenses, medios de almacenamiento esteriles y formularios de cadena de custodia",
+        "Material de marketing corporativo"
+      ],
+      "options_en": [
+        "Office printer user manuals",
+        "Video conferencing equipment for meeting rooms",
+        "Forensic tools, sterile storage media, and chain of custody forms",
+        "Corporate marketing materials"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. Un jump bag contiene herramientas forenses portatiles, medios de almacenamiento esteriles para imagenes, formularios de cadena de custodia, cables de red, herramientas de documentacion y otros elementos esenciales para la respuesta inmediata. A, C y D no son relevantes para la respuesta a incidentes en campo.",
+      "explanation_en": "B is correct. A jump bag contains portable forensic tools, sterile storage media for imaging, chain of custody forms, network cables, documentation tools, and other essentials for immediate response. A, C, and D are not relevant to field incident response."
+    },
+    {
+      "id": 471,
+      "module": 2,
+      "question_es": "Segun NIST SP 800-61, cual de las siguientes NO es una de las cuatro fases del ciclo de vida de respuesta a incidentes?",
+      "question_en": "According to NIST SP 800-61, which of the following is NOT one of the four phases of the incident response lifecycle?",
+      "options_es": [
+        "Deteccion y Analisis",
+        "Actividades Post-Incidente",
+        "Preparacion",
+        "Investigacion Forense"
+      ],
+      "options_en": [
+        "Detection and Analysis",
+        "Post-Incident Activity",
+        "Preparation",
+        "Forensic Investigation"
+      ],
+      "correct": 3,
+      "explanation_es": "C es correcto. Las cuatro fases NIST SP 800-61 son: Preparacion, Deteccion y Analisis, Contencion/Erradicacion/Recuperacion, y Actividades Post-Incidente. La investigacion forense es una actividad dentro del proceso pero no una fase principal del modelo NIST.",
+      "explanation_en": "C is correct. The four NIST SP 800-61 phases are: Preparation, Detection and Analysis, Containment/Eradication/Recovery, and Post-Incident Activity. Forensic investigation is an activity within the process but not a main phase of the NIST model."
+    },
+    {
+      "id": 472,
+      "module": 2,
+      "question_es": "Javier, analista SOC en TelecomSec, recibe multiples alertas simultaneas. Un incidente afecta al servidor de correo electronico (impacto funcional alto) y otro afecta a una estacion de trabajo individual (impacto funcional bajo). Segun NIST, cual incidente debe priorizarse primero?",
+      "question_en": "Javier, a SOC analyst at TelecomSec, receives multiple simultaneous alerts. One incident affects the email server (high functional impact) and another affects an individual workstation (low functional impact). According to NIST, which incident should be prioritized first?",
+      "options_es": [
+        "Ninguno hasta que el CISO apruebe personalmente cada respuesta",
+        "El servidor de correo electronico debido a su mayor impacto funcional",
+        "La estacion de trabajo porque fue reportada primero",
+        "Ambos deben manejarse exactamente al mismo tiempo sin priorizar"
+      ],
+      "options_en": [
+        "Neither until the CISO personally approves each response",
+        "The email server due to its higher functional impact",
+        "The workstation because it was reported first",
+        "Both should be handled at exactly the same time without prioritization"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. Segun NIST, los incidentes se priorizan por impacto funcional, impacto en la informacion y recuperabilidad, no por orden de llegada. El servidor de correo tiene mayor impacto funcional. A contradice NIST (no first-come first-served), C no es practico con recursos limitados, y D introduce demoras innecesarias.",
+      "explanation_en": "B is correct. According to NIST, incidents are prioritized by functional impact, information impact, and recoverability, not by arrival order. The email server has higher functional impact. A contradicts NIST (not first-come first-served), C is impractical with limited resources, and D introduces unnecessary delays."
+    },
+    {
+      "id": 473,
+      "module": 2,
+      "question_es": "Segun EC-Council, la comunicacion con los medios de comunicacion durante un incidente debe realizarse desde que momento?",
+      "question_en": "According to EC-Council, communication with the media during an incident should occur from what point?",
+      "options_es": [
+        "Solo despues de que el incidente haya sido completamente resuelto",
+        "Nunca, bajo ninguna circunstancia",
+        "Desde el inicio, ya que los medios tendran intuicion de lo que esta ocurriendo",
+        "Unicamente cuando un tribunal lo ordene"
+      ],
+      "options_en": [
+        "Only after the incident has been completely resolved",
+        "Never, under any circumstances",
+        "From the start, as media will have an intuition about what is going on",
+        "Only when a court orders it"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. Segun EC-Council, responder a las consultas de los medios debe hacerse desde el inicio ya que tendran intuicion sobre lo que esta pasando. A retrasa demasiado la comunicacion, B no es practico ni recomendado, y D solo aplica en circunstancias legales excepcionales.",
+      "explanation_en": "C is correct. According to EC-Council, responding to media queries should be from the start as they will have an intuition about what is going on. A delays communication too much, B is not practical or recommended, and D only applies in exceptional legal circumstances."
+    },
+    {
+      "id": 474,
+      "module": 2,
+      "question_es": "Lorenzo, responsable de IT en InsuranceSec, debe determinar los acuerdos de nivel de servicio (SLA) relevantes durante un incidente de seguridad. Que aspecto de los SLAs es MAS critico considerar durante la respuesta a incidentes?",
+      "question_en": "Lorenzo, the IT manager at InsuranceSec, must determine the relevant service level agreements (SLAs) during a security incident. What aspect of SLAs is MOST critical to consider during incident response?",
+      "options_es": [
+        "La frecuencia de las reuniones de revision trimestral con proveedores",
+        "Los objetivos de tiempo de recuperacion (RTO) y los compromisos de disponibilidad del servicio",
+        "El tamano del centro de datos del proveedor",
+        "El color del tema del portal de servicio al cliente"
+      ],
+      "options_en": [
+        "The frequency of quarterly review meetings with vendors",
+        "Recovery time objectives (RTO) and service availability commitments",
+        "The size of the vendor's data center",
+        "The color theme of the customer service portal"
+      ],
+      "correct": 1,
+      "explanation_es": "A es correcto. Durante un incidente, los RTOs y compromisos de disponibilidad definen cuanto tiempo puede estar el servicio inactivo antes de violar acuerdos contractuales, lo que guia las decisiones de priorizacion en la recuperacion. B, C y D son irrelevantes para la respuesta a incidentes.",
+      "explanation_en": "A is correct. During an incident, RTOs and availability commitments define how long a service can be down before violating contractual agreements, which guides prioritization decisions in recovery. B, C, and D are irrelevant to incident response."
+    },
+    {
+      "id": 475,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual es la diferencia clave entre el modelo de fases de NIST SP 800-61 y el modelo PICERL de EC-Council?",
+      "question_en": "According to EC-Council, what is the key difference between the NIST SP 800-61 phase model and EC-Council's PICERL model?",
+      "options_es": [
+        "NIST tiene 6 fases separadas mientras PICERL tiene 4",
+        "NIST no incluye actividades post-incidente",
+        "PICERL no incluye una fase de Preparacion",
+        "NIST agrupa Contencion, Erradicacion y Recuperacion en una sola fase; PICERL las separa"
+      ],
+      "options_en": [
+        "NIST has 6 separate phases while PICERL has 4",
+        "NIST does not include post-incident activities",
+        "PICERL does not include a Preparation phase",
+        "NIST groups Containment, Eradication, and Recovery into a single phase; PICERL separates them"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. NIST SP 800-61 tiene 4 fases donde Contencion/Erradicacion/Recuperacion es una sola fase iterativa, mientras que PICERL las trata como fases separadas (6 fases totales). A invierte los numeros, C es falso (Preparacion es la 'P' en PICERL), y D es falso (Post-Incident Activity es la 4ta fase NIST).",
+      "explanation_en": "B is correct. NIST SP 800-61 has 4 phases where Containment/Eradication/Recovery is a single iterative phase, while PICERL treats them as separate phases (6 total). A reverses the numbers, C is false (Preparation is the 'P' in PICERL), and D is false (Post-Incident Activity is the 4th NIST phase)."
+    },
+    {
+      "id": 476,
+      "module": 2,
+      "question_es": "Rosa, analista de incidentes en EduSecure, necesita documentar un incidente. Segun EC-Council, que informacion sobre el equipamiento debe incluirse en la documentacion de IH&R?",
+      "question_en": "Rosa, an incident analyst at EduSecure, needs to document an incident. According to EC-Council, what information about equipment should be included in IH&R documentation?",
+      "options_es": [
+        "Solo el nombre del fabricante",
+        "Numero de modelo, numero de serie y descripcion de todo el equipamiento",
+        "Unicamente la fecha de compra",
+        "Solo la direccion IP del equipo"
+      ],
+      "options_en": [
+        "Only the manufacturer's name",
+        "Model number, serial number, and description of all equipment",
+        "Only the purchase date",
+        "Only the equipment's IP address"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council especifica que la documentacion de IH&R debe incluir numero de modelo, numero de serie y descripcion de todo el equipamiento. A, C y D son datos parciales que no cumplen con los requisitos de documentacion completa.",
+      "explanation_en": "B is correct. EC-Council specifies that IH&R documentation should include model number, serial number, and description of all equipment. A, C, and D are partial data that do not meet complete documentation requirements."
+    },
+    {
+      "id": 477,
+      "module": 2,
+      "question_es": "Segun EC-Council, que herramienta de seguridad permite rastrear eventos historicos y actividades en una red, y los threat hunters utilizan los datos recopilados junto con inteligencia de amenazas?",
+      "question_en": "According to EC-Council, what security tool allows tracking historical events and activities in a network, and threat hunters use the collected data along with threat intelligence?",
+      "options_es": [
+        "SIEM",
+        "DLP",
+        "SOAR",
+        "WAF"
+      ],
+      "options_en": [
+        "SIEM",
+        "DLP",
+        "SOAR",
+        "WAF"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. SIEM (Security Information and Event Management) rastrea eventos historicos y actividades en la red, y los threat hunters analizan los datos recopilados usando inteligencia de amenazas. A (SOAR) automatiza respuestas, C (WAF) protege aplicaciones web, y D (DLP) previene fuga de datos.",
+      "explanation_en": "B is correct. SIEM (Security Information and Event Management) tracks historical events and activities in the network, and threat hunters analyze collected data using threat intelligence. A (SOAR) automates responses, C (WAF) protects web applications, and D (DLP) prevents data leakage."
+    },
+    {
+      "id": 478,
+      "module": 2,
+      "question_es": "Felipe, coordinador de IR en PharmaSec, recibe un reporte de un posible incidente de un empleado. Cual es el PRIMER paso que Felipe debe realizar segun el proceso de 9 pasos de EC-Council una vez que se reporta el incidente?",
+      "question_en": "Felipe, the IR coordinator at PharmaSec, receives a report of a possible incident from an employee. What is the FIRST step Felipe should perform according to EC-Council's 9-step process once the incident is reported?",
+      "options_es": [
+        "Registrar el incidente y asignarlo al equipo apropiado",
+        "Comenzar el analisis forense",
+        "Contener inmediatamente el sistema afectado",
+        "Notificar a la direccion ejecutiva"
+      ],
+      "options_en": [
+        "Record the incident and assign it to the appropriate team",
+        "Begin forensic analysis",
+        "Immediately contain the affected system",
+        "Notify executive management"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. Una vez reportado un incidente (Preparacion ya esta hecha), el Paso 2 es Registro y Asignacion, donde se documenta el incidente y se asigna al equipo correspondiente. A (Contencion) es Paso 5, C (Forense) es Paso 6, y D (Notificacion) es Paso 4.",
+      "explanation_en": "B is correct. Once an incident is reported (Preparation is already done), Step 2 is Recording and Assignment, where the incident is documented and assigned to the appropriate team. A (Containment) is Step 5, C (Forensic) is Step 6, and D (Notification) is Step 4."
+    },
+    {
+      "id": 479,
+      "module": 2,
+      "question_es": "Lucia, directora de IR en EnerSec, esta realizando un analisis de impacto de negocio (BIA) durante un incidente que ha afectado al sistema ERP. Cual es el proposito principal del BIA durante un incidente activo?",
+      "question_en": "Lucia, the IR director at EnerSec, is performing a business impact analysis (BIA) during an incident that has affected the ERP system. What is the main purpose of BIA during an active incident?",
+      "options_es": [
+        "Cuantificar las perdidas financieras y operativas para guiar las decisiones de priorizacion",
+        "Evaluar la satisfaccion del cliente con el departamento de TI",
+        "Planificar la proxima auditoria anual de seguridad",
+        "Determinar que empleados deben ser despedidos"
+      ],
+      "options_en": [
+        "Quantify financial and operational losses to guide prioritization decisions",
+        "Evaluate customer satisfaction with the IT department",
+        "Plan the next annual security audit",
+        "Determine which employees should be terminated"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. El BIA durante un incidente activo cuantifica perdidas financieras y operativas, ayudando al equipo a priorizar la recuperacion de sistemas criticos y justificar la asignacion de recursos. A, C y D no son propositos del BIA durante incidentes.",
+      "explanation_en": "B is correct. BIA during an active incident quantifies financial and operational losses, helping the team prioritize recovery of critical systems and justify resource allocation. A, C, and D are not purposes of BIA during incidents."
+    },
+    {
+      "id": 480,
+      "module": 2,
+      "question_es": "Segun EC-Council, al comunicar con los proveedores durante un incidente, que informacion se les debe proporcionar?",
+      "question_en": "According to EC-Council, when communicating with suppliers during an incident, what information should be provided to them?",
+      "options_es": [
+        "El impacto en sus relaciones comerciales y las consecuencias que pueden enfrentar",
+        "Los detalles tecnicos completos del exploit utilizado",
+        "Las credenciales de acceso a los sistemas comprometidos",
+        "Los salarios del personal del equipo de respuesta a incidentes"
+      ],
+      "options_en": [
+        "The impact on their business relationships and consequences they may face",
+        "The complete technical details of the exploit used",
+        "The access credentials to the compromised systems",
+        "The salaries of the incident response team staff"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. EC-Council indica que se debe informar a los proveedores sobre el impacto en sus relaciones comerciales y las consecuencias que pueden enfrentar. A expone detalles sensibles innecesariamente, C compromete la seguridad, y D es informacion confidencial irrelevante.",
+      "explanation_en": "B is correct. EC-Council states that suppliers should be informed about the impact on their business relationships and consequences they may face. A exposes sensitive details unnecessarily, C compromises security, and D is irrelevant confidential information."
+    },
+    {
+      "id": 481,
+      "module": 2,
+      "question_es": "Daniel, lider de incidentes en LogiSecure, esta decidiendo si restaurar el sistema existente o reconstruirlo completamente despues de un compromiso severo. Que factor es el MAS determinante para esta decision?",
+      "question_en": "Daniel, the incident lead at LogiSecure, is deciding whether to restore the existing system or completely rebuild it after a severe compromise. What factor is MOST determinant for this decision?",
+      "options_es": [
+        "La preferencia personal del administrador del sistema",
+        "La antiguedad del equipo fisico del servidor",
+        "El nivel de confianza en que se ha eliminado completamente la amenaza y la integridad del sistema",
+        "El dia de la semana en que ocurrio el incidente"
+      ],
+      "options_en": [
+        "The system administrator's personal preference",
+        "The age of the server's physical equipment",
+        "The confidence level that the threat has been completely eliminated and system integrity",
+        "The day of the week the incident occurred"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. La decision entre restaurar o reconstruir depende del nivel de confianza en la erradicacion completa de la amenaza. Si hay duda sobre la integridad del sistema, la reconstruccion es la opcion mas segura. A es subjetivo, C y D son irrelevantes para la decision de seguridad.",
+      "explanation_en": "B is correct. The decision between restoring or rebuilding depends on the confidence level in complete threat eradication. If there are doubts about system integrity, rebuilding is the safer option. A is subjective, C and D are irrelevant to the security decision."
+    },
+    {
+      "id": 482,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual de las siguientes es una actividad que debe realizarse durante el postmortem del incidente?",
+      "question_en": "According to EC-Council, which of the following is an activity that should be performed during the incident postmortem?",
+      "options_es": [
+        "Revisar la cronologia completa del incidente para identificar que se hizo bien y que se puede mejorar",
+        "Destruir toda la evidencia recopilada para proteger la privacidad",
+        "Reducir el presupuesto del equipo de seguridad como medida disciplinaria",
+        "Publicar los nombres de los empleados responsables en un boletin interno"
+      ],
+      "options_en": [
+        "Review the complete incident timeline to identify what was done well and what can be improved",
+        "Destroy all collected evidence to protect privacy",
+        "Reduce the security team's budget as a disciplinary measure",
+        "Publish the names of responsible employees in an internal bulletin"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. El postmortem implica revisar la cronologia completa del incidente, identificando aciertos y areas de mejora. A destruiria evidencia necesaria para futuras referencias, C es punitivo y no constructivo, y D perjudicaria la capacidad de respuesta futura.",
+      "explanation_en": "B is correct. The postmortem involves reviewing the complete incident timeline, identifying successes and areas for improvement. A would destroy evidence needed for future reference, C is punitive and not constructive, and D would harm future response capability."
+    },
+    {
+      "id": 483,
+      "module": 2,
+      "question_es": "Veronica, coordinadora de IR en MediSec, necesita coordinar con las fuerzas del orden despues de un ataque de ransomware. Segun las mejores practicas, que debe proporcionar el equipo IH&R a las autoridades?",
+      "question_en": "Veronica, the IR coordinator at MediSec, needs to coordinate with law enforcement after a ransomware attack. According to best practices, what should the IH&R team provide to authorities?",
+      "options_es": [
+        "Un resumen verbal sin documentacion escrita",
+        "Copias de la evidencia digital preservada siguiendo la cadena de custodia",
+        "Las contrasenas personales de todos los empleados",
+        "Acceso administrativo total e irrestricto a todos los sistemas de la organizacion"
+      ],
+      "options_en": [
+        "A verbal summary without written documentation",
+        "Copies of preserved digital evidence following the chain of custody",
+        "All employees' personal passwords",
+        "Full unrestricted administrative access to all organizational systems"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. La coordinacion con las fuerzas del orden requiere proporcionar copias de evidencia digital preservada con cadena de custodia intacta. A otorga acceso excesivo, C viola la privacidad y seguridad, y D carece de rigor probatorio.",
+      "explanation_en": "B is correct. Coordination with law enforcement requires providing copies of preserved digital evidence with intact chain of custody. A grants excessive access, C violates privacy and security, and D lacks evidentiary rigor."
+    },
+    {
+      "id": 484,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual de los siguientes mecanismos de comunicacion interna durante incidentes utiliza un dashboard accesible a traves de la red interna?",
+      "question_en": "According to EC-Council, which of the following internal communication mechanisms during incidents uses a dashboard accessible through the internal network?",
+      "options_es": [
+        "Limitacion de acceso",
+        "Dashboard de incidentes",
+        "Comunicacion fuera de banda",
+        "Plantillas pre-establecidas de correo"
+      ],
+      "options_en": [
+        "Access limitation",
+        "Incident dashboard",
+        "Out-of-band communication",
+        "Pre-established email templates"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council menciona que un dashboard de incidentes accesible a traves de la red interna puede ayudar a comunicar actualizaciones regulares sobre incidentes recientes a empleados y stakeholders. A usa canales alternativos, C son plantillas de correo, y D restringe el acceso a la informacion.",
+      "explanation_en": "B is correct. EC-Council mentions that an incident dashboard accessible through the internal network can help communicate regular updates about recent incidents to employees and stakeholders. A uses alternative channels, C are email templates, and D restricts information access."
+    },
+    {
+      "id": 485,
+      "module": 2,
+      "question_es": "Tomas, gestor de incidentes en CryptoSec, esta evaluando la recuperabilidad de un incidente donde los sistemas SCADA fueron comprometidos y los backups tambien estan corruptos. Segun NIST, como se clasificaria esta recuperabilidad?",
+      "question_en": "Tomas, an incident manager at CryptoSec, is evaluating the recoverability of an incident where SCADA systems were compromised and backups are also corrupted. According to NIST, how would this recoverability be classified?",
+      "options_es": [
+        "Extendida",
+        "Suplementada",
+        "Regular",
+        "No recuperable"
+      ],
+      "options_en": [
+        "Extended",
+        "Supplemented",
+        "Regular",
+        "Not Recoverable"
+      ],
+      "correct": 3,
+      "explanation_es": "D es correcto. Cuando tanto los sistemas como los backups estan comprometidos, la recuperacion del estado original no es posible, clasificandose como 'No recuperable' segun NIST. A indica recuperacion con recursos propios, B con recursos adicionales predecibles, y C con recursos externos y tiempo impredecible.",
+      "explanation_en": "D is correct. When both systems and backups are compromised, recovery to the original state is not possible, classifying as 'Not Recoverable' per NIST. A indicates recovery with own resources, B with predictable additional resources, and C with external resources and unpredictable time."
+    },
+    {
+      "id": 486,
+      "module": 2,
+      "question_es": "Andrea, CISO de RetailGuard, quiere establecer metricas para medir la eficiencia de su equipo de respuesta a incidentes. Cual de las siguientes combinaciones de metricas proporciona la vision MAS completa del rendimiento de IR?",
+      "question_en": "Andrea, CISO of RetailGuard, wants to establish metrics to measure her incident response team's efficiency. Which combination of metrics provides the MOST comprehensive view of IR performance?",
+      "options_es": [
+        "Horas extras del personal y presupuesto gastado",
+        "MTTD, MTTC y MTTR combinados",
+        "Solo el numero total de incidentes reportados",
+        "Numero de reuniones celebradas y correos electronicos enviados"
+      ],
+      "options_en": [
+        "Staff overtime hours and budget spent",
+        "MTTD, MTTC, and MTTR combined",
+        "Only the total number of reported incidents",
+        "Number of meetings held and emails sent"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. La combinacion de MTTD (deteccion), MTTC (contencion) y MTTR (resolucion) proporciona una vision completa de la eficiencia del equipo en cada fase critica del proceso de respuesta. A no mide eficacia, C es una metrica de volumen parcial, y D son metricas operativas no directamente de rendimiento IR.",
+      "explanation_en": "B is correct. The combination of MTTD (detection), MTTC (containment), and MTTR (resolution) provides a comprehensive view of team efficiency across each critical phase of the response process. A doesn't measure effectiveness, C is a partial volume metric, and D are operational metrics not directly IR performance."
+    },
+    {
+      "id": 487,
+      "module": 2,
+      "question_es": "Segun EC-Council, durante la notificacion de un incidente, cual de las siguientes preguntas NO es tipica para evaluar la situacion?",
+      "question_en": "According to EC-Council, during incident notification, which of the following questions is NOT typical for assessing the situation?",
+      "options_es": [
+        "Ha identificado a los atacantes?",
+        "Cuando identifico el incidente?",
+        "Cual es el salario anual del empleado afectado?",
+        "Puede mitigar el incidente?"
+      ],
+      "options_en": [
+        "Have you identified the attackers?",
+        "When did you identify the incident?",
+        "What is the affected employee's annual salary?",
+        "Can you mitigate the incident?"
+      ],
+      "correct": 2,
+      "explanation_es": "C es correcto. El salario del empleado no es una pregunta relevante durante la evaluacion del incidente. A (cuando se detecto), B (capacidad de mitigacion) y D (identificacion de atacantes) son preguntas estandar que EC-Council menciona para evaluar la situacion durante la notificacion.",
+      "explanation_en": "C is correct. The employee's salary is not a relevant question during incident assessment. A (when detected), B (mitigation capability), and D (attacker identification) are standard questions EC-Council mentions for assessing the situation during notification."
+    },
+    {
+      "id": 488,
+      "module": 2,
+      "question_es": "Sofia, lider del equipo IRT en AutoSec, descubre que un insider ha filtrado datos propietarios a un competidor. Segun EC-Council, que departamento debe ser notificado inmediatamente ademas del equipo de IH&R?",
+      "question_en": "Sofia, the IRT team lead at AutoSec, discovers that an insider has leaked proprietary data to a competitor. According to EC-Council, which department should be immediately notified in addition to the IH&R team?",
+      "options_es": [
+        "Recursos Humanos y el departamento Legal",
+        "Solo el departamento de limpieza",
+        "El departamento de cafeteria",
+        "Unicamente el departamento de ventas"
+      ],
+      "options_en": [
+        "Human Resources and the Legal department",
+        "Only the cleaning department",
+        "The cafeteria department",
+        "Only the sales department"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. En incidentes que involucran insiders, RRHH y Legal deben ser notificados inmediatamente para manejar las implicaciones laborales y legales. EC-Council enfatiza la coordinacion con legal, RRHH y direccion en estos casos. A, C y D no tienen rol directo en este tipo de incidente.",
+      "explanation_en": "B is correct. In incidents involving insiders, HR and Legal must be immediately notified to handle labor and legal implications. EC-Council emphasizes coordination with legal, HR, and management in these cases. A, C, and D have no direct role in this type of incident."
+    },
+    {
+      "id": 489,
+      "module": 2,
+      "question_es": "Segun EC-Council, durante el proceso de clasificacion del incidente en la fase de triaje, los incidentes se clasifican generalmente en que categorias principales?",
+      "question_en": "According to EC-Council, during the incident classification process in the triage phase, incidents are generally classified into which main categories?",
+      "options_es": [
+        "Interno, externo, mixto",
+        "Facil, medio, dificil, experto",
+        "Alto, medio, bajo, critico",
+        "Endpoint, red, malware, aplicacion y navegador"
+      ],
+      "options_en": [
+        "Internal, external, mixed",
+        "Easy, medium, hard, expert",
+        "High, medium, low, critical",
+        "Endpoint, network, malware, application, and browser"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. Segun EC-Council, durante el triaje los incidentes se clasifican como endpoint, red, malware, aplicacion o navegador. A no son categorias de clasificacion, C son tipos de fuente pero no categorias de triaje, y D son niveles de prioridad, no categorias de clasificacion.",
+      "explanation_en": "B is correct. According to EC-Council, during triage, incidents are classified as endpoint, network, malware, application, or browser. A are not classification categories, C are source types but not triage categories, and D are priority levels, not classification categories."
+    },
+    {
+      "id": 490,
+      "module": 2,
+      "question_es": "Roberto, director de seguridad en BioSec, esta preparando la lista de contactos de emergencia como parte de la preparacion de IH&R. Cual de las siguientes listas es esencial mantener actualizada?",
+      "question_en": "Roberto, the security director at BioSec, is preparing the emergency contact list as part of IH&R preparation. Which of the following lists is essential to keep updated?",
+      "options_es": [
+        "Lista de cumpleanos de los directivos",
+        "Lista de contactos de todos los miembros del IRT, direccion, legal, proveedores y autoridades",
+        "Lista de vacaciones del personal administrativo",
+        "Lista de restaurantes cercanos a la oficina"
+      ],
+      "options_en": [
+        "Management birthday list",
+        "Contact list of all IRT members, management, legal, vendors, and authorities",
+        "Administrative staff vacation list",
+        "List of restaurants near the office"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. La preparacion de IH&R requiere mantener actualizada una lista de contactos que incluya a todos los miembros del IRT, la direccion ejecutiva, asesores legales, proveedores de servicios y autoridades relevantes. A, C y D no son relevantes para la respuesta a incidentes.",
+      "explanation_en": "B is correct. IH&R preparation requires maintaining an updated contact list including all IRT members, executive management, legal advisors, service providers, and relevant authorities. A, C, and D are not relevant to incident response."
+    },
+    {
+      "id": 491,
+      "module": 2,
+      "question_es": "Segun EC-Council, que tipo de herramienta utiliza listas de control de acceso (ACL) en routers, firewalls e IDSs como parte de la preparacion de IH&R?",
+      "question_en": "According to EC-Council, what type of tool uses access control lists (ACLs) on routers, firewalls, and IDSs as part of IH&R preparation?",
+      "options_es": [
+        "Herramientas de seguridad de red que forman parte de la infraestructura de preparacion",
+        "Software de contabilidad",
+        "Herramientas de gestion de proyectos",
+        "Herramientas de diseno grafico"
+      ],
+      "options_en": [
+        "Network security tools that form part of the preparation infrastructure",
+        "Accounting software",
+        "Project management tools",
+        "Graphic design tools"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. EC-Council indica que la documentacion de IH&R debe incluir el uso de listas de control de acceso en routers, firewalls e IDSs como parte de la infraestructura de preparacion para la respuesta a incidentes. A, C y D no son herramientas de seguridad de red.",
+      "explanation_en": "B is correct. EC-Council states that IH&R documentation should include the use of access control lists on routers, firewalls, and IDSs as part of the preparation infrastructure for incident response. A, C, and D are not network security tools."
+    },
+    {
+      "id": 492,
+      "module": 2,
+      "question_es": "Marcos, analista SOC en DefensaSec, esta revisando los logs de un SIEM y detecta un patron que podria indicar un ataque. Segun el proceso IH&R, en que paso se encuentra Marcos?",
+      "question_en": "Marcos, a SOC analyst at DefensaSec, is reviewing SIEM logs and detects a pattern that could indicate an attack. According to the IH&R process, which step is Marcos currently in?",
+      "options_es": [
+        "Paso 5: Contencion",
+        "Paso 1: Preparacion",
+        "Paso 2: Registro y Asignacion",
+        "Paso 3: Triaje del Incidente"
+      ],
+      "options_en": [
+        "Step 5: Containment",
+        "Step 1: Preparation",
+        "Step 2: Recording and Assignment",
+        "Step 3: Incident Triage"
+      ],
+      "correct": 3,
+      "explanation_es": "C es correcto. La revision de logs, correlacion de indicadores y evaluacion de detalles del incidente son actividades del triaje (Paso 3), donde se clasifican y priorizan los incidentes. A es previo al incidente, B es el registro inicial, y D ocurre despues de la notificacion.",
+      "explanation_en": "C is correct. Log review, indicator correlation, and incident detail assessment are triage activities (Step 3), where incidents are classified and prioritized. A is before the incident, B is initial recording, and D occurs after notification."
+    },
+    {
+      "id": 493,
+      "module": 2,
+      "question_es": "Eva, gestora de incidentes en CloudNet, esta redactando la politica de divulgacion de incidentes. Segun EC-Council, la divulgacion del incidente es una sub-actividad de que fase?",
+      "question_en": "Eva, an incident manager at CloudNet, is drafting the incident disclosure policy. According to EC-Council, incident disclosure is a sub-activity of which phase?",
+      "options_es": [
+        "Contencion",
+        "Erradicacion",
+        "Actividades Post-Incidente",
+        "Preparacion"
+      ],
+      "options_en": [
+        "Containment",
+        "Eradication",
+        "Post-Incident Activities",
+        "Preparation"
+      ],
+      "correct": 2,
+      "explanation_es": "D es correcto. La divulgacion del incidente es una de las 8 sub-actividades de las Actividades Post-Incidente (Paso 9) segun EC-Council. A es la fase 1, B es la fase 5, y C es la fase 7, ninguna de las cuales incluye la divulgacion como sub-actividad.",
+      "explanation_en": "D is correct. Incident disclosure is one of the 8 sub-activities of Post-Incident Activities (Step 9) according to EC-Council. A is phase 1, B is phase 5, and C is phase 7, none of which include disclosure as a sub-activity."
+    },
+    {
+      "id": 494,
+      "module": 2,
+      "question_es": "Segun EC-Council, al comunicar con los clientes durante un incidente, que tipo de informacion se les debe comunicar?",
+      "question_en": "According to EC-Council, when communicating with customers during an incident, what type of information should be communicated to them?",
+      "options_es": [
+        "Los nombres y direcciones de los miembros del equipo IH&R",
+        "Las consecuencias que pueden enfrentar, como retrasos en el servicio",
+        "Las credenciales de acceso temporal a sistemas internos",
+        "Los detalles tecnicos completos del vector de ataque"
+      ],
+      "options_en": [
+        "The names and addresses of IH&R team members",
+        "The consequences they may face, such as service delays",
+        "Temporary access credentials to internal systems",
+        "The complete technical details of the attack vector"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council establece que a los clientes se les deben comunicar las consecuencias que pueden enfrentar, como retrasos en el servicio durante el incidente. A comparte informacion tecnica innecesaria, C compromete la seguridad, y D viola la privacidad del personal.",
+      "explanation_en": "B is correct. EC-Council states that customers should be communicated the consequences they may face, such as service delays during the incident. A shares unnecessary technical information, C compromises security, and D violates staff privacy."
+    },
+    {
+      "id": 495,
+      "module": 2,
+      "question_es": "Nicolas, lider tecnico en GovSec, esta verificando la erradicacion de un rootkit en un servidor critico. Cual es el enfoque MAS confiable para verificar que el rootkit ha sido completamente eliminado?",
+      "question_en": "Nicolas, the technical lead at GovSec, is verifying the eradication of a rootkit on a critical server. What is the MOST reliable approach to verify the rootkit has been completely removed?",
+      "options_es": [
+        "Reconstruir el sistema desde una imagen limpia conocida y aplicar todos los parches",
+        "Preguntar al usuario si nota algun comportamiento inusual",
+        "Reiniciar el servidor y verificar que arranca normalmente",
+        "Ejecutar un unico escaneo antivirus y asumir que el sistema esta limpio"
+      ],
+      "options_en": [
+        "Rebuild the system from a known clean image and apply all patches",
+        "Ask the user if they notice any unusual behavior",
+        "Restart the server and verify it boots normally",
+        "Run a single antivirus scan and assume the system is clean"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. Para rootkits, la reconstruccion desde una imagen limpia conocida es el enfoque mas confiable ya que los rootkits pueden evadir herramientas de deteccion. A no garantiza la eliminacion completa de rootkits, C solo verifica el arranque, y D no es un metodo de verificacion tecnica.",
+      "explanation_en": "B is correct. For rootkits, rebuilding from a known clean image is the most reliable approach since rootkits can evade detection tools. A doesn't guarantee complete rootkit removal, C only verifies boot, and D is not a technical verification method."
+    },
+    {
+      "id": 496,
+      "module": 2,
+      "question_es": "Segun EC-Council, la comunicacion del equipo IH&R debe cumplir con una caracteristica clave de retencion. Cual es el proposito de retener las comunicaciones del incidente?",
+      "question_en": "According to EC-Council, the IH&R team's communication must meet a key retention characteristic. What is the purpose of retaining incident communications?",
+      "options_es": [
+        "Para compartirlas en redes sociales como caso de estudio",
+        "Para crear contenido de marketing",
+        "Para evaluar el rendimiento gramatical de los analistas",
+        "Para mejorar futuros procesos de IR y como evidencia para procedimientos legales"
+      ],
+      "options_en": [
+        "To share them on social media as a case study",
+        "To create marketing content",
+        "To evaluate analysts' grammatical performance",
+        "To improve future IR processes and as evidence for legal proceedings"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. EC-Council indica que las comunicaciones del equipo IH&R deben guardarse y reutilizarse para mejorar futuros procesos de IR y pueden ser usadas en procedimientos legales. A expone informacion confidencial, C y D no son propositos de retencion de comunicaciones de IR.",
+      "explanation_en": "B is correct. EC-Council states that IH&R team communications must be saved and reused to improve future IR processes and can be used in legal proceedings. A exposes confidential information, C and D are not purposes of IR communication retention."
+    },
+    {
+      "id": 497,
+      "module": 2,
+      "question_es": "Segun EC-Council, que contiene el Informe de Accion Posterior (AAR) como uno de sus elementos principales?",
+      "question_en": "According to EC-Council, what does the After-Action Report (AAR) contain as one of its main elements?",
+      "options_es": [
+        "Predicciones sobre futuros ataques y sus fechas exactas",
+        "Unicamente una lista de los costos financieros del incidente",
+        "Solo la firma del CISO aprobando el cierre del incidente",
+        "La cronologia del incidente, acciones tomadas y recomendaciones de mejora"
+      ],
+      "options_en": [
+        "Predictions about future attacks and their exact dates",
+        "Only a list of the incident's financial costs",
+        "Only the CISO's signature approving incident closure",
+        "The incident timeline, actions taken, and improvement recommendations"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. El AAR incluye la cronologia completa del incidente, las acciones tomadas durante cada fase, las areas de mejora y las recomendaciones. A no es factible ni estandar, C es solo un componente parcial, y D no es el contenido principal de un AAR.",
+      "explanation_en": "B is correct. The AAR includes the complete incident timeline, actions taken during each phase, areas for improvement, and recommendations. A is not feasible or standard, C is only a partial component, and D is not the main content of an AAR."
+    },
+    {
+      "id": 498,
+      "module": 2,
+      "question_es": "Monica, coordinadora IR en DefenSec, descubre que el proceso de erradicacion no elimino todas las puertas traseras (backdoors). Cual es el paso CORRECTO segun el flujo del proceso IH&R?",
+      "question_en": "Monica, the IR coordinator at DefenSec, discovers that the eradication process did not remove all backdoors. What is the CORRECT step according to the IH&R process flow?",
+      "options_es": [
+        "Publicar un comunicado de prensa inmediatamente",
+        "Continuar directamente con la recuperacion ignorando las backdoors restantes",
+        "Declarar el incidente como cerrado y documentarlo",
+        "Volver a la fase de contencion y repetir el ciclo de erradicacion"
+      ],
+      "options_en": [
+        "Issue a press release immediately",
+        "Continue directly to recovery ignoring the remaining backdoors",
+        "Declare the incident as closed and document it",
+        "Return to the containment phase and repeat the eradication cycle"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. Si la erradicacion es incompleta, el equipo debe volver a contener los sistemas afectados y repetir el proceso de erradicacion hasta que todas las amenazas sean eliminadas. A dejaria el sistema vulnerable, C seria prematuro, y D es irrelevante en este contexto.",
+      "explanation_en": "B is correct. If eradication is incomplete, the team must return to contain the affected systems and repeat the eradication process until all threats are removed. A would leave the system vulnerable, C would be premature, and D is irrelevant in this context."
+    },
+    {
+      "id": 499,
+      "module": 2,
+      "question_es": "Segun EC-Council, en el contexto de la preparacion para IH&R, que incluye la 'auditoria de recursos y activos'?",
+      "question_en": "According to EC-Council, in the context of IH&R preparation, what does 'auditing resources and assets' include?",
+      "options_es": [
+        "Solo contar el numero de empleados en la empresa",
+        "Solo verificar el estado de los extintores de incendios",
+        "Determinar el proposito de la respuesta de seguridad e identificar los recursos criticos",
+        "Unicamente listar las licencias de software instaladas"
+      ],
+      "options_en": [
+        "Only counting the number of employees in the company",
+        "Only checking the status of fire extinguishers",
+        "Determining the purpose of the security response and identifying critical resources",
+        "Only listing installed software licenses"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. EC-Council indica que la preparacion incluye auditar recursos y activos para determinar el proposito de la respuesta de seguridad, identificando recursos criticos que necesitan proteccion. A, C y D son actividades parciales que no representan la auditoria completa de recursos.",
+      "explanation_en": "B is correct. EC-Council states that preparation includes auditing resources and assets to determine the purpose of the security response, identifying critical resources that need protection. A, C, and D are partial activities that don't represent the complete resource audit."
+    },
+    {
+      "id": 500,
+      "module": 2,
+      "question_es": "Oscar, director de IT en SeguroNet, quiere realizar un ejercicio de simulacion de incidentes de tipo funcional. A diferencia de un tabletop exercise, que caracteriza a un ejercicio funcional?",
+      "question_en": "Oscar, the IT director at SeguroNet, wants to conduct a functional incident simulation exercise. Unlike a tabletop exercise, what characterizes a functional exercise?",
+      "options_es": [
+        "Solo se discute el escenario verbalmente sin ejecutar acciones",
+        "Los participantes ejecutan acciones reales en un entorno controlado, probando procedimientos operativos",
+        "Solo se revisan documentos de politicas sin interaccion",
+        "Se limita a una presentacion PowerPoint sobre incidentes"
+      ],
+      "options_en": [
+        "The scenario is only discussed verbally without executing actions",
+        "Participants execute real actions in a controlled environment, testing operational procedures",
+        "Only policy documents are reviewed without interaction",
+        "It is limited to a PowerPoint presentation about incidents"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. Un ejercicio funcional requiere que los participantes ejecuten acciones reales (aunque en entorno controlado), probando procedimientos operativos. A describe un tabletop exercise, C es una revision de documentos, y D no es un tipo de ejercicio de simulacion.",
+      "explanation_en": "B is correct. A functional exercise requires participants to execute real actions (though in a controlled environment), testing operational procedures. A describes a tabletop exercise, C is a document review, and D is not a type of simulation exercise."
+    },
+    {
+      "id": 501,
+      "module": 2,
+      "question_es": "Segun EC-Council, que actividad del postmortem del incidente debe realizarse PRIMERO?",
+      "question_en": "According to EC-Council, which incident postmortem activity should be performed FIRST?",
+      "options_es": [
+        "Definir las brechas y mejoras en la estrategia de gestion de incidentes",
+        "Divulgar el incidente publicamente",
+        "Contratar nuevo personal de seguridad",
+        "Actualizar las politicas de seguridad"
+      ],
+      "options_en": [
+        "Define gaps and improvements in the incident management strategy",
+        "Publicly disclose the incident",
+        "Hire new security staff",
+        "Update security policies"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. Segun la lista de sub-actividades post-incidente de EC-Council, definir brechas y mejoras para la estrategia de gestion de incidentes es la primera actividad. A (revision de politicas) viene despues, C (divulgacion) es posterior, y D no es una actividad post-incidente estandar.",
+      "explanation_en": "B is correct. According to EC-Council's post-incident sub-activities list, defining gaps and improvements for the incident management strategy is the first activity. A (policy review) comes later, C (disclosure) is subsequent, and D is not a standard post-incident activity."
+    },
+    {
+      "id": 502,
+      "module": 2,
+      "question_es": "Angela, CISO de TechFin, esta evaluando si su equipo de IH&R necesita contratar consultores externos despues de un compromiso complejo. Segun las mejores practicas, en que circunstancia es MAS apropiado involucrar consultores externos?",
+      "question_en": "Angela, CISO of TechFin, is evaluating whether her IH&R team needs to hire external consultants after a complex compromise. According to best practices, under what circumstance is it MOST appropriate to involve external consultants?",
+      "options_es": [
+        "Solo cuando la direccion ejecutiva lo solicita por razones de imagen",
+        "Nunca, ya que toda la respuesta debe ser interna",
+        "Cuando el incidente excede la capacidad tecnica o los recursos del equipo interno",
+        "Para todos los incidentes, sin importar su severidad"
+      ],
+      "options_en": [
+        "Only when executive management requests it for image reasons",
+        "Never, as all response should be internal",
+        "When the incident exceeds the internal team's technical capacity or resources",
+        "For all incidents, regardless of their severity"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. Los consultores externos se involucran cuando el incidente supera la capacidad tecnica o los recursos del equipo interno, como en ataques avanzados o situaciones que requieren especializacion forense. A es excesivo, C limita la decision a imagen, y D ignora la realidad de recursos limitados.",
+      "explanation_en": "B is correct. External consultants are involved when the incident exceeds the internal team's technical capacity or resources, such as in advanced attacks or situations requiring forensic specialization. A is excessive, C limits the decision to image, and D ignores the reality of limited resources."
+    },
+    {
+      "id": 503,
+      "module": 2,
+      "question_es": "Segun EC-Council, que debe incluir la comunicacion asegurada (secured communication) del equipo IH&R?",
+      "question_en": "According to EC-Council, what should the IH&R team's secured communication include?",
+      "options_es": [
+        "Mensajes en papel transmitidos por mensajero exclusivamente",
+        "Solo mensajes de texto sin cifrado",
+        "Comunicacion unicamente a traves de fax analogico",
+        "Una solucion de comunicacion que proteja la confidencialidad e integridad incluso si el atacante tiene acceso a la red"
+      ],
+      "options_en": [
+        "Paper messages transmitted by courier exclusively",
+        "Only text messages without encryption",
+        "Communication only through analog fax",
+        "A communication solution that protects confidentiality and integrity even if the attacker has network access"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. EC-Council indica que la comunicacion asegurada debe proteger la confidencialidad e integridad de la comunicacion del equipo incluso si el atacante aun tiene acceso a la red. A carece de seguridad, C y D son metodos obsoletos e impracticos como solucion principal.",
+      "explanation_en": "B is correct. EC-Council states that secured communication should protect confidentiality and integrity of team communication even if the attacker still has network access. A lacks security, C and D are obsolete and impractical methods as a primary solution."
+    },
+    {
+      "id": 504,
+      "module": 2,
+      "question_es": "Pablo, gestor de incidentes en AeroSec, observa que la recuperacion de un incidente requiere recursos adicionales de socios externos pero el tiempo estimado es predecible. Segun NIST, como se clasifica esta recuperabilidad?",
+      "question_en": "Pablo, an incident manager at AeroSec, observes that recovery from an incident requires additional resources from external partners but the estimated time is predictable. According to NIST, how is this recoverability classified?",
+      "options_es": [
+        "Suplementada",
+        "Extendida",
+        "No recuperable",
+        "Regular"
+      ],
+      "options_en": [
+        "Supplemented",
+        "Extended",
+        "Not Recoverable",
+        "Regular"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. 'Suplementada' indica que la organizacion necesita recursos adicionales de fuentes externas pero el tiempo de recuperacion es predecible. A (Regular) no necesita recursos externos, C (Extendida) tiene tiempo impredecible, y D (No recuperable) significa que no es posible.",
+      "explanation_en": "B is correct. 'Supplemented' indicates the organization needs additional resources from external sources but recovery time is predictable. A (Regular) doesn't need external resources, C (Extended) has unpredictable time, and D (Not Recoverable) means it's not possible."
+    },
+    {
+      "id": 505,
+      "module": 2,
+      "question_es": "Segun EC-Council, que es lo que la fase de Preparacion establece como base para todo el proceso de IH&R?",
+      "question_en": "According to EC-Council, what does the Preparation phase establish as the foundation for the entire IH&R process?",
+      "options_es": [
+        "Solo la creacion de un sitio web corporativo",
+        "Unicamente la compra de herramientas de seguridad",
+        "Solo la contratacion de personal temporal",
+        "Las reglas, politicas y procedimientos que impulsan el proceso de IH&R, junto con la construccion del equipo de respuesta"
+      ],
+      "options_en": [
+        "Only the creation of a corporate website",
+        "Only the purchase of security tools",
+        "Only the hiring of temporary staff",
+        "The rules, policies, and procedures that drive the IH&R process, along with building the response team"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. EC-Council establece que la Preparacion incluye definir reglas, politicas y procedimientos que guian el proceso de IH&R, ademas de construir y entrenar al equipo de respuesta. A, C y D son componentes parciales que no representan la base completa.",
+      "explanation_en": "B is correct. EC-Council states that Preparation includes defining rules, policies, and procedures that guide the IH&R process, as well as building and training the response team. A, C, and D are partial components that don't represent the complete foundation."
+    },
+    {
+      "id": 506,
+      "module": 2,
+      "question_es": "Carmen, analista senior en BankDefense, esta realizando el proceso de evaluacion de impacto del incidente como parte de las actividades post-incidente. Que aspecto es el MAS importante a documentar?",
+      "question_en": "Carmen, a senior analyst at BankDefense, is performing the incident impact assessment process as part of post-incident activities. What aspect is MOST important to document?",
+      "options_es": [
+        "El impacto economico, operativo y reputacional causado por el incidente",
+        "Las quejas personales de los miembros del equipo",
+        "Las preferencias de almuerzo del equipo durante el incidente",
+        "Solo el numero de horas extras trabajadas"
+      ],
+      "options_en": [
+        "The economic, operational, and reputational impact caused by the incident",
+        "Personal complaints from team members",
+        "The team's lunch preferences during the incident",
+        "Only the number of overtime hours worked"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. La evaluacion de impacto del incidente debe documentar los efectos economicos, operativos y reputacionales para cuantificar el dano total y justificar mejoras futuras. A y D son irrelevantes, y C es solo un dato operativo parcial.",
+      "explanation_en": "B is correct. The incident impact assessment must document economic, operational, and reputational effects to quantify total damage and justify future improvements. A and D are irrelevant, and C is only a partial operational data point."
+    },
+    {
+      "id": 507,
+      "module": 2,
+      "question_es": "Segun EC-Council, que tipo de plantillas debe preparar el equipo IH&R como parte de los mecanismos de comunicacion interna?",
+      "question_en": "According to EC-Council, what type of templates should the IH&R team prepare as part of internal communication mechanisms?",
+      "options_es": [
+        "Plantillas de marketing para redes sociales",
+        "Plantillas de correo electronico pre-establecidas para diferentes tipos de incidentes",
+        "Plantillas de diseno de logotipos corporativos",
+        "Plantillas de curriculums para nuevas contrataciones"
+      ],
+      "options_en": [
+        "Social media marketing templates",
+        "Pre-established email templates for different types of incidents",
+        "Corporate logo design templates",
+        "Resume templates for new hires"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council recomienda que el equipo IH&R use plantillas de correo electronico pre-establecidas para diferentes tipos de incidentes, lo que facilita la comunicacion interna rapida y consistente. A, C y D no son mecanismos de comunicacion de IR.",
+      "explanation_en": "B is correct. EC-Council recommends the IH&R team use pre-established email templates for different types of incidents, facilitating rapid and consistent internal communication. A, C, and D are not IR communication mechanisms."
+    },
+    {
+      "id": 508,
+      "module": 2,
+      "question_es": "Segun EC-Council, durante la fase de triaje, cual de los siguientes factores se evalua para determinar la prioridad de un incidente basandose en los efectos legales y regulatorios?",
+      "question_en": "According to EC-Council, during the triage phase, which of the following factors is evaluated to determine an incident's priority based on legal and regulatory effects?",
+      "options_es": [
+        "El numero de seguidores de la empresa en redes sociales",
+        "El tamano fisico de los servidores afectados",
+        "La distancia geografica entre las oficinas de la organizacion",
+        "Los requisitos legales y regulatorios aplicables al tipo de datos comprometidos"
+      ],
+      "options_en": [
+        "The number of the company's social media followers",
+        "The physical size of the affected servers",
+        "The geographic distance between the organization's offices",
+        "The legal and regulatory requirements applicable to the type of compromised data"
+      ],
+      "correct": 3,
+      "explanation_es": "B es correcto. EC-Council establece que los requisitos legales y regulatorios son factores de priorizacion durante el triaje, especialmente cuando los datos comprometidos estan sujetos a regulaciones especificas. A, C y D no son factores de priorizacion de incidentes.",
+      "explanation_en": "B is correct. EC-Council states that legal and regulatory requirements are prioritization factors during triage, especially when compromised data is subject to specific regulations. A, C, and D are not incident prioritization factors."
+    },
+    {
+      "id": 509,
+      "module": 2,
+      "question_es": "Hector, CISO de MineraSec, quiere implementar un playbook de SOAR para automatizar la respuesta a ataques de phishing. Cual de las siguientes acciones puede automatizarse tipicamente mediante SOAR?",
+      "question_en": "Hector, CISO of MineraSec, wants to implement a SOAR playbook to automate the response to phishing attacks. Which of the following actions can typically be automated through SOAR?",
+      "options_es": [
+        "La negociacion de rescate con atacantes de ransomware",
+        "El bloqueo automatico de URLs maliciosas, el aislamiento de buzones afectados y la notificacion al equipo",
+        "La decision final de despedir empleados comprometidos",
+        "La aprobacion del presupuesto anual de seguridad"
+      ],
+      "options_en": [
+        "Ransom negotiation with ransomware attackers",
+        "Automatic blocking of malicious URLs, isolation of affected mailboxes, and team notification",
+        "The final decision to terminate compromised employees",
+        "The approval of the annual security budget"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. Los playbooks SOAR pueden automatizar acciones repetitivas como bloquear URLs, aislar buzones comprometidos y enviar notificaciones al equipo. A requiere decision humana de RRHH, C requiere negociadores humanos, y D es una decision de gestion no automatizable.",
+      "explanation_en": "B is correct. SOAR playbooks can automate repetitive actions like blocking URLs, isolating compromised mailboxes, and sending team notifications. A requires human HR decision, C requires human negotiators, and D is a non-automatable management decision."
+    },
+    {
+      "id": 510,
+      "module": 2,
+      "question_es": "Segun EC-Council, cuando los miembros del CERT abandonan la organizacion, que procedimiento de salida es obligatorio?",
+      "question_en": "According to EC-Council, when CERT members leave the organization, which exit procedure is mandatory?",
+      "options_es": [
+        "Revocar acceso a sistemas confidenciales, realizar entrevista de salida y anunciar el cambio a las partes interesadas",
+        "Unicamente eliminar su cuenta de correo electronico",
+        "Solo enviar un correo de despedida al equipo",
+        "No se requiere ningun procedimiento especial"
+      ],
+      "options_en": [
+        "Revoke access to confidential systems, conduct an exit interview, and announce the change to stakeholders",
+        "Only delete their email account",
+        "Only send a farewell email to the team",
+        "No special procedure is required"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. EC-Council especifica que al salir personal CERT se debe: revocar acceso (cambiar contrasenas, revocar certificados), registrar acciones, hacer backup de su trabajo, realizar entrevista de salida y anunciar el cambio. A y C son acciones parciales, y D ignora procedimientos de seguridad criticos.",
+      "explanation_en": "B is correct. EC-Council specifies that when CERT personnel leave: revoke access (change passwords, revoke certificates), log actions, back up their work, conduct an exit interview, and announce the change. A and C are partial actions, and D ignores critical security procedures."
+    },
+    {
+      "id": 511,
+      "module": 2,
+      "question_es": "Segun EC-Council, en la fase de recuperacion, que debe verificarse tras restaurar un servicio afectado antes de declararlo operativo?",
+      "question_en": "According to EC-Council, in the recovery phase, what must be verified after restoring an affected service before declaring it operational?",
+      "options_es": [
+        "Que el logotipo corporativo se muestra correctamente en el sitio web",
+        "Que el servicio funciona normalmente y obtener confirmacion positiva de cada parte involucrada",
+        "Solo que la IP del servidor es la misma",
+        "Solo que el servidor enciende correctamente"
+      ],
+      "options_en": [
+        "That the corporate logo displays correctly on the website",
+        "That the service functions normally and obtain positive confirmation from each involved party",
+        "Only that the server's IP is the same",
+        "Only that the server powers on correctly"
+      ],
+      "correct": 1,
+      "explanation_es": "B es correcto. EC-Council indica que es buena practica verificar el funcionamiento normal y obtener confirmacion positiva de cada parte de que todo opera normalmente. A y C son verificaciones parciales, y D no es una verificacion de seguridad relevante.",
+      "explanation_en": "B is correct. EC-Council states it is good practice to verify normal functioning and get positive confirmation from each party that everything is operating normally. A and C are partial verifications, and D is not a relevant security verification."
+    },
+    {
+      "id": 512,
+      "module": 2,
+      "question_es": "Raquel, gestora de incidentes en DataSafe, descubre que el equipo IH&R uso el correo electronico corporativo estandar para comunicar detalles del incidente internamente. Segun EC-Council, por que esto es un problema?",
+      "question_en": "Raquel, an incident manager at DataSafe, discovers the IH&R team used standard corporate email to communicate incident details internally. According to EC-Council, why is this a problem?",
+      "options_es": [
+        "Porque el correo corporativo es demasiado lento",
+        "Porque los correos no se pueden enviar fuera del horario laboral",
+        "Porque el atacante podria tener acceso a los canales de comunicacion normales de la organizacion",
+        "Porque el correo electronico no permite adjuntar archivos"
+      ],
+      "options_en": [
+        "Because corporate email is too slow",
+        "Because emails cannot be sent outside business hours",
+        "Because the attacker may have access to the organization's normal communication channels",
+        "Because email does not allow file attachments"
+      ],
+      "correct": 2,
+      "explanation_es": "B es correcto. EC-Council advierte que se debe evitar el correo y chat comunes porque el atacante podria tener acceso a la red y monitorear las comunicaciones. Se deben usar herramientas de comunicacion IR estandar fuera de banda. A, C y D son afirmaciones falsas.",
+      "explanation_en": "B is correct. EC-Council warns that common email and chat should be avoided because the attacker may have network access and monitor communications. Standard out-of-band IR communication tools should be used. A, C, and D are false statements."
+    },
+    {
+      "id": 513,
+      "module": 2,
+      "question_es": "Segun EC-Council, cual de las siguientes es una de las 8 sub-actividades post-incidente que involucra la creacion de un documento que resume las acciones tomadas, los resultados y las recomendaciones?",
+      "question_en": "According to EC-Council, which of the following is one of the 8 post-incident sub-activities that involves creating a document summarizing actions taken, results, and recommendations?",
+      "options_es": [
+        "Creacion del Informe de Accion Posterior (AAR)",
+        "Contencion del incidente",
+        "Escaneo de vulnerabilidades",
+        "Implementacion de firewall"
+      ],
+      "options_en": [
+        "Creating the After-Action Report (AAR)",
+        "Incident containment",
+        "Vulnerability scanning",
+        "Firewall implementation"
+      ],
+      "correct": 0,
+      "explanation_es": "B es correcto. La creacion del AAR es la tercera sub-actividad post-incidente segun EC-Council, y documenta las acciones tomadas, los resultados y las recomendaciones de mejora. A es una fase anterior (Paso 5), C es una actividad tecnica, y D es una medida de seguridad preventiva.",
+      "explanation_en": "B is correct. Creating the AAR is the third post-incident sub-activity per EC-Council, documenting actions taken, results, and improvement recommendations. A is a previous phase (Step 5), C is a technical activity, and D is a preventive security measure."
+    }
+  ]
+}

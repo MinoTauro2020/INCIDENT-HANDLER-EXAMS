@@ -1,0 +1,1201 @@
+{
+  "exam_questions": [
+    {
+      "id": 341,
+      "module": 1,
+      "question_es": "Carlos, analista de seguridad en TechGlobal Corp, está clasificando un incidente donde un atacante interceptó tráfico de red sin modificar los datos transmitidos. Según el framework IATF, ¿qué categoría de ataque describe mejor esta situación?",
+      "question_en": "Carlos, a security analyst at TechGlobal Corp, is classifying an incident where an attacker intercepted network traffic without modifying the transmitted data. According to the IATF framework, which attack category best describes this situation?",
+      "options_es": [
+        "A. Ataque pasivo",
+        "B. Ataque activo",
+        "C. Ataque de proximidad (Close-in)",
+        "D. Ataque de distribución"
+      ],
+      "options_en": [
+        "A. Passive attack",
+        "B. Active attack",
+        "C. Close-in attack",
+        "D. Distribution attack"
+      ],
+      "correct": 0,
+      "explanation_es": "Según IATF, los ataques pasivos implican interceptar y monitorear el tráfico de red sin alterar los datos (sniffing, eavesdropping). Los ataques activos modifican datos o interrumpen servicios. Los de proximidad requieren cercanía física. Los de distribución manipulan hardware/software antes de la instalación.",
+      "explanation_en": "According to IATF, passive attacks involve intercepting and monitoring network traffic without tampering with data (sniffing, eavesdropping). Active attacks modify data or disrupt services. Close-in attacks require physical proximity. Distribution attacks tamper with hardware/software before installation."
+    },
+    {
+      "id": 342,
+      "module": 1,
+      "question_es": "Una organización descubre que el firmware de varios routers nuevos fue modificado antes de su entrega por el proveedor. Según la clasificación IATF, ¿qué tipo de ataque se ha producido?",
+      "question_en": "An organization discovers that the firmware of several new routers was modified before delivery by the vendor. According to the IATF classification, what type of attack has occurred?",
+      "options_es": [
+        "A. Ataque de insider",
+        "B. Ataque activo",
+        "C. Ataque de distribución",
+        "D. Ataque de proximidad"
+      ],
+      "options_en": [
+        "A. Insider attack",
+        "B. Active attack",
+        "C. Distribution attack",
+        "D. Close-in attack"
+      ],
+      "correct": 2,
+      "explanation_es": "Los ataques de distribución implican la manipulación de hardware o software durante la producción o distribución, antes de la instalación. El firmware modificado antes de la entrega es un ejemplo clásico. Los ataques de insider provienen de personas de confianza internas, los activos alteran datos en tránsito, y los de proximidad requieren cercanía física.",
+      "explanation_en": "Distribution attacks involve tampering with hardware or software during production or distribution, before installation. Firmware modified before delivery is a classic example. Insider attacks come from trusted internal people, active attacks alter data in transit, and close-in attacks require physical proximity."
+    },
+    {
+      "id": 343,
+      "module": 1,
+      "question_es": "¿Cuál de las siguientes NO es una de las cuatro características principales del Diamond Model of Intrusion Analysis?",
+      "question_en": "Which of the following is NOT one of the four core features of the Diamond Model of Intrusion Analysis?",
+      "options_es": [
+        "A. Adversario",
+        "B. Capacidad",
+        "C. Persistencia",
+        "D. Víctima"
+      ],
+      "options_en": [
+        "A. Adversary",
+        "B. Capability",
+        "C. Persistence",
+        "D. Victim"
+      ],
+      "correct": 2,
+      "explanation_es": "Las cuatro características principales del Diamond Model son: Adversario, Infraestructura, Víctima y Capacidad. Persistencia es una táctica de MITRE ATT&CK, no un componente del Diamond Model.",
+      "explanation_en": "The four core features of the Diamond Model are: Adversary, Infrastructure, Victim, and Capability. Persistence is a MITRE ATT&CK tactic, not a Diamond Model component."
+    },
+    {
+      "id": 344,
+      "module": 1,
+      "question_es": "Laura, CISO de una empresa financiera, quiere implementar una política de seguridad que bloquee todos los servicios y solo habilite individualmente los estrictamente necesarios. ¿Qué tipo de política de seguridad debe implementar?",
+      "question_en": "Laura, CISO of a financial company, wants to implement a security policy that blocks all services and only individually enables those strictly necessary. What type of security policy should she implement?",
+      "options_es": [
+        "A. Política paranoica",
+        "B. Política prudente",
+        "C. Política permisiva",
+        "D. Política promiscua"
+      ],
+      "options_en": [
+        "A. Paranoid policy",
+        "B. Prudent policy",
+        "C. Permissive policy",
+        "D. Promiscuous policy"
+      ],
+      "correct": 1,
+      "explanation_es": "La política prudente proporciona seguridad máxima: bloquea todos los servicios y solo habilita individualmente los necesarios. La paranoica prohíbe todo (sin conexión a Internet). La permisiva es abierta y solo bloquea amenazas conocidas. La promiscua no tiene restricciones.",
+      "explanation_en": "The prudent policy provides maximum security: blocks all services and only individually enables necessary ones. Paranoid forbids everything (no Internet connection). Permissive is wide open and only blocks known threats. Promiscuous has no restrictions."
+    },
+    {
+      "id": 345,
+      "module": 1,
+      "question_es": "En el Cyber Kill Chain de Lockheed Martin, ¿en qué fase el atacante crea un payload malicioso combinando un exploit con un backdoor?",
+      "question_en": "In the Lockheed Martin Cyber Kill Chain, in which phase does the attacker create a malicious payload by combining an exploit with a backdoor?",
+      "options_es": [
+        "A. Reconocimiento",
+        "B. Weaponización",
+        "C. Entrega",
+        "D. Explotación"
+      ],
+      "options_en": [
+        "A. Reconnaissance",
+        "B. Weaponization",
+        "C. Delivery",
+        "D. Exploitation"
+      ],
+      "correct": 1,
+      "explanation_es": "La fase de Weaponización es donde el atacante crea un payload malicioso entregable combinando un exploit y un backdoor. Reconocimiento recopila información. Entrega envía el payload a la víctima. Explotación ejecuta código en el sistema víctima.",
+      "explanation_en": "The Weaponization phase is where the attacker creates a deliverable malicious payload using an exploit and a backdoor. Reconnaissance collects information. Delivery sends the payload to the victim. Exploitation executes code on the victim's system."
+    },
+    {
+      "id": 346,
+      "module": 1,
+      "question_es": "¿Cuántas tácticas Enterprise contiene el framework MITRE ATT&CK?",
+      "question_en": "How many Enterprise tactics does the MITRE ATT&CK framework contain?",
+      "options_es": [
+        "A. 7",
+        "B. 10",
+        "C. 12",
+        "D. 14"
+      ],
+      "options_en": [
+        "A. 7",
+        "B. 10",
+        "C. 12",
+        "D. 14"
+      ],
+      "correct": 3,
+      "explanation_es": "MITRE ATT&CK Enterprise contiene 14 tácticas: Reconnaissance, Resource Development, Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Command and Control, Exfiltration e Impact. El Cyber Kill Chain tiene 7 fases (no confundir).",
+      "explanation_en": "MITRE ATT&CK Enterprise contains 14 tactics: Reconnaissance, Resource Development, Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Command and Control, Exfiltration, and Impact. The Cyber Kill Chain has 7 phases (do not confuse)."
+    },
+    {
+      "id": 347,
+      "module": 1,
+      "question_es": "Una startup tecnológica permite todo el tráfico de red sin restricciones. Los empleados pueden acceder a cualquier servicio o sitio web sin filtros. ¿Qué tipo de política de seguridad describe esta configuración?",
+      "question_en": "A tech startup allows all network traffic without restrictions. Employees can access any service or website without filters. What type of security policy describes this configuration?",
+      "options_es": [
+        "A. Permisiva",
+        "B. Prudente",
+        "C. Promiscua",
+        "D. Paranoica"
+      ],
+      "options_en": [
+        "A. Permissive",
+        "B. Prudent",
+        "C. Promiscuous",
+        "D. Paranoid"
+      ],
+      "correct": 2,
+      "explanation_es": "La política promiscua no tiene restricciones y permite todo el tráfico. La permisiva es abierta pero bloquea amenazas conocidas. La prudente bloquea todo excepto lo necesario. La paranoica prohíbe todo incluida la conexión a Internet.",
+      "explanation_en": "The promiscuous policy has no restrictions and allows all traffic. Permissive is open but blocks known threats. Prudent blocks everything except what is necessary. Paranoid forbids everything including Internet connection."
+    },
+    {
+      "id": 348,
+      "module": 3,
+      "question_es": "María, investigadora forense, llega a una escena del crimen donde un ordenador está encendido con el protector de pantalla activo. ¿Cuál es el procedimiento correcto según las mejores prácticas de primera respuesta?",
+      "question_en": "Maria, a forensic investigator, arrives at a crime scene where a computer is powered on with the screensaver active. What is the correct procedure according to first response best practices?",
+      "options_es": [
+        "A. Presionar la barra espaciadora para desactivar el protector de pantalla",
+        "B. Mover el ratón lentamente sin presionar ningún botón",
+        "C. Desconectar el cable de alimentación inmediatamente",
+        "D. Hacer clic con el botón derecho del ratón para ver el escritorio"
+      ],
+      "options_en": [
+        "A. Press the spacebar to deactivate the screensaver",
+        "B. Move the mouse slowly without pressing any button",
+        "C. Disconnect the power cable immediately",
+        "D. Right-click the mouse to view the desktop"
+      ],
+      "correct": 1,
+      "explanation_es": "Cuando el protector de pantalla está activo, se debe mover el ratón lentamente SIN presionar ningún botón. Presionar teclas o botones podría alterar datos volátiles o ejecutar comandos no deseados. Desconectar la alimentación destruiría evidencia volátil.",
+      "explanation_en": "When the screensaver is active, move the mouse slowly WITHOUT pressing any button. Pressing keys or buttons could alter volatile data or execute unwanted commands. Disconnecting power would destroy volatile evidence."
+    },
+    {
+      "id": 349,
+      "module": 3,
+      "question_es": "Según el RFC 3227, ¿cuál es el orden correcto de volatilidad para la recolección de evidencia digital?",
+      "question_en": "According to RFC 3227, what is the correct order of volatility for digital evidence collection?",
+      "options_es": [
+        "A. Disco duro → RAM → Caché → Logs remotos",
+        "B. RAM → Caché → Swap → Disco duro → Logs remotos",
+        "C. Logs remotos → Disco duro → RAM → Caché",
+        "D. Caché → Disco duro → RAM → Logs remotos"
+      ],
+      "options_en": [
+        "A. Hard drive → RAM → Cache → Remote logs",
+        "B. RAM → Cache → Swap → Hard drive → Remote logs",
+        "C. Remote logs → Hard drive → RAM → Cache",
+        "D. Cache → Hard drive → RAM → Remote logs"
+      ],
+      "correct": 1,
+      "explanation_es": "RFC 3227 establece recolectar primero los datos más volátiles: RAM → Caché → Swap → Disco duro → Logs remotos. Los datos más volátiles se pierden primero al apagar el sistema, por lo que deben recolectarse con prioridad.",
+      "explanation_en": "RFC 3227 establishes collecting the most volatile data first: RAM → Cache → Swap → Hard drive → Remote logs. The most volatile data is lost first when the system shuts down, so it must be collected with priority."
+    },
+    {
+      "id": 350,
+      "module": 3,
+      "question_es": "Diego, primer respondedor en un incidente de ciberseguridad, acaba de llegar a la escena del crimen. ¿Cuál debería ser su primera acción al llegar?",
+      "question_en": "Diego, a first responder to a cybersecurity incident, has just arrived at the crime scene. What should be his first action upon arrival?",
+      "options_es": [
+        "A. Desconectar el ordenador de la red",
+        "B. Fotografiar la escena del crimen",
+        "C. Recolectar los discos duros",
+        "D. Entrevistar a los testigos"
+      ],
+      "options_en": [
+        "A. Disconnect the computer from the network",
+        "B. Photograph the crime scene",
+        "C. Collect the hard drives",
+        "D. Interview the witnesses"
+      ],
+      "correct": 1,
+      "explanation_es": "Lo primero al llegar a la escena del crimen es fotografiar la escena para documentar el estado original. Desconectar equipos o recolectar evidencia sin documentar primero podría comprometer la integridad de la investigación.",
+      "explanation_en": "The first thing upon arriving at the crime scene is to photograph the scene to document the original state. Disconnecting equipment or collecting evidence without documenting first could compromise the investigation's integrity."
+    },
+    {
+      "id": 351,
+      "module": 3,
+      "question_es": "¿Cuál de los siguientes es el formato correcto de numeración de evidencias según el courseware ECIH v3?",
+      "question_en": "Which of the following is the correct evidence numbering format according to the ECIH v3 courseware?",
+      "options_es": [
+        "A. nnnn/aaa/zz/ddmmyy",
+        "B. aaa/ddmmyy/nnnn/zz",
+        "C. ddmmyy/aaa/zz/nnnn",
+        "D. zz/nnnn/ddmmyy/aaa"
+      ],
+      "options_en": [
+        "A. nnnn/aaa/zz/ddmmyy",
+        "B. aaa/ddmmyy/nnnn/zz",
+        "C. ddmmyy/aaa/zz/nnnn",
+        "D. zz/nnnn/ddmmyy/aaa"
+      ],
+      "correct": 1,
+      "explanation_es": "El formato correcto de numeración de exhibiciones es aaa/ddmmyy/nnnn/zz, donde aaa=iniciales del examinador, ddmmyy=fecha, nnnn=número secuencial, zz=sufijo de sub-elemento. Ejemplo: AMT/150326/003/B.",
+      "explanation_en": "The correct exhibit numbering format is aaa/ddmmyy/nnnn/zz, where aaa=examiner initials, ddmmyy=date, nnnn=sequential number, zz=sub-element suffix. Example: AMT/150326/003/B."
+    },
+    {
+      "id": 352,
+      "module": 3,
+      "question_es": "Un investigador forense necesita apagar un sistema Linux de forma segura durante una investigación. ¿Cuál es el comando correcto según las mejores prácticas forenses?",
+      "question_en": "A forensic investigator needs to safely shut down a Linux system during an investigation. What is the correct command according to forensic best practices?",
+      "options_es": [
+        "A. shutdown -h now",
+        "B. poweroff",
+        "C. sync;sync;halt",
+        "D. kill -9 init"
+      ],
+      "options_en": [
+        "A. shutdown -h now",
+        "B. poweroff",
+        "C. sync;sync;halt",
+        "D. kill -9 init"
+      ],
+      "correct": 2,
+      "explanation_es": "El comando correcto para apagar un sistema Linux de forma forense es sync;sync;halt. El doble sync asegura que los buffers de disco se escriban completamente antes de detener el sistema, preservando la integridad de los datos.",
+      "explanation_en": "The correct command to forensically shut down a Linux system is sync;sync;halt. The double sync ensures disk buffers are fully written before halting the system, preserving data integrity."
+    },
+    {
+      "id": 353,
+      "module": 3,
+      "question_es": "Ana, técnica forense, necesita apagar un ordenador Windows en una escena del crimen. ¿Cuál es el procedimiento correcto en un entorno Windows típico?",
+      "question_en": "Ana, a forensic technician, needs to shut down a Windows computer at a crime scene. What is the correct procedure in a typical Windows environment?",
+      "options_es": [
+        "A. Usar Inicio → Apagar del sistema operativo",
+        "B. Desconectar el cable de alimentación de la parte trasera del equipo",
+        "C. Mantener presionado el botón de encendido durante 5 segundos",
+        "D. Ejecutar el comando shutdown /s /t 0"
+      ],
+      "options_en": [
+        "A. Use Start → Shut down from the operating system",
+        "B. Pull the power cord from the back of the computer",
+        "C. Hold the power button for 5 seconds",
+        "D. Execute the shutdown /s /t 0 command"
+      ],
+      "correct": 1,
+      "explanation_es": "En un entorno Windows típico, se debe desconectar el cable de alimentación de la parte trasera del equipo. Un apagado normal del SO podría alterar timestamps y ejecutar scripts de cierre que destruyan evidencia.",
+      "explanation_en": "In a typical Windows environment, pull the power cord from the back of the computer. A normal OS shutdown could alter timestamps and execute shutdown scripts that destroy evidence."
+    },
+    {
+      "id": 354,
+      "module": 3,
+      "question_es": "¿Cuál de las siguientes acciones es una responsabilidad del primer respondedor en una escena del crimen digital?",
+      "question_en": "Which of the following actions is a responsibility of the first responder at a digital crime scene?",
+      "options_es": [
+        "A. Analizar el malware encontrado en los sistemas",
+        "B. Identificar, proteger y preservar la evidencia",
+        "C. Redactar el informe final de la investigación",
+        "D. Testificar como perito en el juicio"
+      ],
+      "options_en": [
+        "A. Analyze the malware found on the systems",
+        "B. Identify, protect, and preserve evidence",
+        "C. Write the final investigation report",
+        "D. Testify as an expert witness at trial"
+      ],
+      "correct": 1,
+      "explanation_es": "Las responsabilidades del primer respondedor incluyen: identificar, proteger y preservar evidencia; documentar la escena; recolectar información del incidente; reportar al oficial encargado del caso; y fotografiar toda la evidencia. El análisis de malware y los informes finales son responsabilidad de otros roles.",
+      "explanation_en": "First responder responsibilities include: identify, protect, and preserve evidence; document the scene; collect incident information; report to the case officer in charge; and photograph all evidence. Malware analysis and final reports are the responsibility of other roles."
+    },
+    {
+      "id": 355,
+      "module": 3,
+      "question_es": "Roberto está empaquetando medios magnéticos como evidencia. ¿Cuál de las siguientes prácticas es la correcta?",
+      "question_en": "Roberto is packaging magnetic media as evidence. Which of the following practices is correct?",
+      "options_es": [
+        "A. Almacenar los medios cerca de altavoces para facilitar el acceso",
+        "B. Embalar los medios magnéticos en empaquetado antiestático",
+        "C. Colocar los medios junto a dispositivos electrónicos en la misma bolsa",
+        "D. Almacenar los medios en el maletero del vehículo durante períodos prolongados"
+      ],
+      "options_en": [
+        "A. Store media near speakers for easy access",
+        "B. Pack magnetic media in antistatic packaging",
+        "C. Place media alongside electronic devices in the same bag",
+        "D. Store media in the vehicle trunk for extended periods"
+      ],
+      "correct": 1,
+      "explanation_es": "Los medios magnéticos deben empaquetarse en material antiestático y mantenerse alejados de fuentes magnéticas (altavoces, motores). No deben almacenarse en vehículos por períodos prolongados debido a temperaturas extremas, ni mezclarse con otros dispositivos electrónicos.",
+      "explanation_en": "Magnetic media must be packed in antistatic material and kept away from magnetic sources (speakers, motors). They should not be stored in vehicles for extended periods due to extreme temperatures, nor mixed with other electronic devices."
+    },
+    {
+      "id": 356,
+      "module": 3,
+      "question_es": "Durante la recolección de evidencia digital, ¿cuándo debe crearse el documento de cadena de custodia?",
+      "question_en": "During digital evidence collection, when should the chain of custody document be created?",
+      "options_es": [
+        "A. Después de transportar la evidencia al laboratorio",
+        "B. Simultáneamente con la recolección de evidencia",
+        "C. Durante el análisis forense de la evidencia",
+        "D. Al finalizar el caso judicial"
+      ],
+      "options_en": [
+        "A. After transporting the evidence to the laboratory",
+        "B. Simultaneously with evidence collection",
+        "C. During forensic analysis of the evidence",
+        "D. At the end of the court case"
+      ],
+      "correct": 1,
+      "explanation_es": "La cadena de custodia debe crearse simultáneamente con la recolección de evidencia. Cualquier retraso podría crear brechas en la documentación que comprometan la admisibilidad de la evidencia en un tribunal.",
+      "explanation_en": "The chain of custody must be created simultaneously with evidence collection. Any delay could create gaps in documentation that compromise the admissibility of evidence in court."
+    },
+    {
+      "id": 357,
+      "module": 3,
+      "question_es": "¿Cuál de los siguientes datos se considera volátil y se perdería al apagar el sistema?",
+      "question_en": "Which of the following data is considered volatile and would be lost when the system is shut down?",
+      "options_es": [
+        "A. Archivos almacenados en el disco duro",
+        "B. Contenido de la memoria RAM y procesos en ejecución",
+        "C. Registros del sistema operativo en disco",
+        "D. Configuración del BIOS/UEFI"
+      ],
+      "options_en": [
+        "A. Files stored on the hard drive",
+        "B. RAM contents and running processes",
+        "C. Operating system logs on disk",
+        "D. BIOS/UEFI configuration"
+      ],
+      "correct": 1,
+      "explanation_es": "Los datos volátiles incluyen contenido de RAM, procesos en ejecución, conexiones de red activas y timestamps MAC. Estos se pierden al apagar el sistema. Los archivos en disco, logs persistidos y configuración BIOS son datos no volátiles.",
+      "explanation_en": "Volatile data includes RAM contents, running processes, active network connections, and MAC timestamps. These are lost when the system shuts down. Files on disk, persisted logs, and BIOS configuration are non-volatile data."
+    },
+    {
+      "id": 358,
+      "module": 3,
+      "question_es": "Patricia, investigadora forense, está documentando la escena del crimen. ¿Cuál de las siguientes acciones NO forma parte del primer paso de búsqueda de evidencia?",
+      "question_en": "Patricia, a forensic investigator, is documenting the crime scene. Which of the following actions is NOT part of the first step of evidence search?",
+      "options_es": [
+        "A. Identificar cámaras de vigilancia y grabadoras de audio/video",
+        "B. Considerar tarjetas de acceso y sistemas GPS",
+        "C. Formatear los discos para crear imágenes forenses limpias",
+        "D. Reconocer sistemas informáticos como fuentes potenciales de evidencia"
+      ],
+      "options_en": [
+        "A. Identify surveillance cameras and audio/video recorders",
+        "B. Consider access cards and GPS systems",
+        "C. Format disks to create clean forensic images",
+        "D. Recognize computing systems as potential sources of evidence"
+      ],
+      "correct": 2,
+      "explanation_es": "El primer paso es inspeccionar la escena para reconocer fuentes potenciales de evidencia: sistemas informáticos, grabadoras de audio/video, cámaras de vigilancia, tarjetas de acceso y GPS. Formatear discos destruiría evidencia y nunca es parte del proceso de búsqueda.",
+      "explanation_en": "The first step is to survey the scene to recognize potential evidence sources: computing systems, audio/video recorders, surveillance cameras, access cards, and GPS. Formatting disks would destroy evidence and is never part of the search process."
+    },
+    {
+      "id": 359,
+      "module": 3,
+      "question_es": "¿Cuál de los siguientes elementos NO se incluye típicamente en un documento de cadena de custodia?",
+      "question_en": "Which of the following elements is NOT typically included in a chain of custody document?",
+      "options_es": [
+        "A. Número de caso",
+        "B. Fecha y hora de recolección de la evidencia",
+        "C. Contraseña de acceso al sistema investigado",
+        "D. Descripción de la evidencia"
+      ],
+      "options_en": [
+        "A. Case number",
+        "B. Date and time of evidence collection",
+        "C. Access password to the investigated system",
+        "D. Description of the evidence"
+      ],
+      "correct": 2,
+      "explanation_es": "El documento de cadena de custodia contiene: número de caso, nombre del reportante, dirección y teléfono, ubicación de la evidencia, fecha/hora de recolección y descripción de la evidencia. Las contraseñas de acceso NO son parte de la cadena de custodia.",
+      "explanation_en": "The chain of custody document contains: case number, reporter's name, address and phone, evidence location, date/time of collection, and evidence description. Access passwords are NOT part of the chain of custody."
+    },
+    {
+      "id": 360,
+      "module": 3,
+      "question_es": "Javier llega a una escena donde encuentra un ordenador conectado a una red corporativa. ¿Qué debe documentar ANTES de desconectar el equipo de la red?",
+      "question_en": "Javier arrives at a scene where he finds a computer connected to a corporate network. What should he document BEFORE disconnecting the equipment from the network?",
+      "options_es": [
+        "A. El modelo del router más cercano",
+        "B. Las conexiones de red activas del equipo",
+        "C. La marca y modelo del cable de red",
+        "D. El número de puertos disponibles en el switch"
+      ],
+      "options_en": [
+        "A. The model of the nearest router",
+        "B. The active network connections of the equipment",
+        "C. The brand and model of the network cable",
+        "D. The number of available ports on the switch"
+      ],
+      "correct": 1,
+      "explanation_es": "Cuando un ordenador está en red, se deben documentar las conexiones de red antes de desconectar. Esta información volátil (conexiones activas, IPs, sesiones) se perdería al desconectar y puede ser crucial para la investigación.",
+      "explanation_en": "When a computer is networked, network connections must be documented before disconnecting. This volatile information (active connections, IPs, sessions) would be lost upon disconnection and can be crucial for the investigation."
+    },
+    {
+      "id": 361,
+      "module": 3,
+      "question_es": "¿Cuál de las siguientes es una definición correcta del primer respondedor (first responder) en el contexto forense digital?",
+      "question_en": "Which of the following is a correct definition of a first responder in the digital forensics context?",
+      "options_es": [
+        "A. Un policía que asegura el perímetro físico de la escena",
+        "B. Una persona del laboratorio forense o agencia que realiza la investigación inicial en la escena",
+        "C. El administrador del sistema que detectó el incidente",
+        "D. El abogado que autoriza la recolección de evidencia"
+      ],
+      "options_en": [
+        "A. A police officer who secures the physical perimeter of the scene",
+        "B. A person from the forensics laboratory or agency who performs the initial investigation at the scene",
+        "C. The system administrator who detected the incident",
+        "D. The lawyer who authorizes evidence collection"
+      ],
+      "correct": 1,
+      "explanation_es": "Un primer respondedor es una persona que proviene del laboratorio forense o agencia particular y llega a la escena del crimen para la investigación inicial. Debe tener conocimiento completo de investigación forense informática.",
+      "explanation_en": "A first responder is a person who comes from the forensics laboratory or particular agency at the crime scene for initial investigation. They must have complete knowledge of computer forensics investigation."
+    },
+    {
+      "id": 362,
+      "module": 3,
+      "question_es": "Sofía está recolectando evidencia y necesita proteger las huellas dactilares que podrían encontrarse en los dispositivos. ¿En qué paso de la búsqueda de evidencia se aborda esto?",
+      "question_en": "Sofia is collecting evidence and needs to protect fingerprints that might be found on devices. At which evidence search step is this addressed?",
+      "options_es": [
+        "A. Paso 1: Inspeccionar la escena del crimen",
+        "B. Paso 2: Proteger la evidencia física o huellas ocultas",
+        "C. Paso 4: Observar la situación actual",
+        "D. Paso 6: Buscar medios de almacenamiento secundarios"
+      ],
+      "options_en": [
+        "A. Step 1: Survey the crime scene",
+        "B. Step 2: Protect physical evidence or hidden fingerprints",
+        "C. Step 4: Observe the current situation",
+        "D. Step 6: Search for secondary storage media"
+      ],
+      "correct": 1,
+      "explanation_es": "El paso 2 de la búsqueda de evidencia es proteger la evidencia física o huellas dactilares ocultas que puedan encontrarse en teclados, ratones y otros equipos. Es crucial preservar esta evidencia antes de manipular los dispositivos.",
+      "explanation_en": "Step 2 of evidence search is to protect physical evidence or hidden fingerprints that may be found on keyboards, mice, and other equipment. It is crucial to preserve this evidence before handling devices."
+    },
+    {
+      "id": 363,
+      "module": 3,
+      "question_es": "¿Cuál de las siguientes es considerada un error común de los primeros respondedores en una escena del crimen digital?",
+      "question_en": "Which of the following is considered a common mistake by first responders at a digital crime scene?",
+      "options_es": [
+        "A. Fotografiar la escena antes de tocar cualquier dispositivo",
+        "B. Apagar el ordenador sin recolectar datos volátiles primero",
+        "C. Documentar todos los cables y conexiones visibles",
+        "D. Usar guantes antiestáticos al manipular la evidencia"
+      ],
+      "options_en": [
+        "A. Photographing the scene before touching any device",
+        "B. Shutting down the computer without collecting volatile data first",
+        "C. Documenting all visible cables and connections",
+        "D. Using antistatic gloves when handling evidence"
+      ],
+      "correct": 1,
+      "explanation_es": "Apagar el ordenador sin recolectar primero los datos volátiles es un error común y grave. Los datos volátiles (RAM, procesos, conexiones de red) se pierden permanentemente al apagar. Fotografiar, documentar cables y usar guantes son prácticas correctas.",
+      "explanation_en": "Shutting down the computer without first collecting volatile data is a common and serious mistake. Volatile data (RAM, processes, network connections) is permanently lost when powered off. Photographing, documenting cables, and using gloves are correct practices."
+    },
+    {
+      "id": 364,
+      "module": 3,
+      "question_es": "Miguel, primer respondedor, debe asegurar la escena del crimen digital. ¿Cuál de las siguientes acciones es prioritaria para asegurar la escena?",
+      "question_en": "Miguel, a first responder, must secure the digital crime scene. Which of the following actions is a priority for securing the scene?",
+      "options_es": [
+        "A. Comenzar inmediatamente el análisis forense de los discos",
+        "B. Asegurar todos los dispositivos electrónicos incluyendo dispositivos personales o portátiles",
+        "C. Permitir que el personal de IT continúe trabajando en los sistemas afectados",
+        "D. Desconectar todos los UPS y fuentes de alimentación de respaldo"
+      ],
+      "options_en": [
+        "A. Immediately begin forensic analysis of the disks",
+        "B. Secure all electronic devices including personal or portable devices",
+        "C. Allow IT staff to continue working on affected systems",
+        "D. Disconnect all UPS and backup power sources"
+      ],
+      "correct": 1,
+      "explanation_es": "Al asegurar la escena, se deben asegurar todos los dispositivos electrónicos, incluidos los personales o portátiles. Permitir que otros manipulen los sistemas compromete la evidencia. El análisis forense viene después de la recolección.",
+      "explanation_en": "When securing the scene, all electronic devices must be secured, including personal or portable ones. Allowing others to manipulate systems compromises evidence. Forensic analysis comes after collection."
+    },
+    {
+      "id": 365,
+      "module": 3,
+      "question_es": "¿Cuál es el propósito principal de la cadena de custodia en una investigación forense digital?",
+      "question_en": "What is the main purpose of the chain of custody in a digital forensic investigation?",
+      "options_es": [
+        "A. Acelerar el proceso de análisis forense",
+        "B. Mantener un registro documentado de quién manejó la evidencia y cuándo",
+        "C. Reducir los costos de almacenamiento de evidencia",
+        "D. Facilitar el intercambio de evidencia entre agencias"
+      ],
+      "options_en": [
+        "A. Speed up the forensic analysis process",
+        "B. Maintain a documented record of who handled the evidence and when",
+        "C. Reduce evidence storage costs",
+        "D. Facilitate evidence exchange between agencies"
+      ],
+      "correct": 1,
+      "explanation_es": "El propósito principal de la cadena de custodia es mantener un registro documentado de cada persona que manejó la evidencia, cuándo y cómo, para garantizar su admisibilidad en un tribunal y demostrar que no fue alterada.",
+      "explanation_en": "The main purpose of the chain of custody is to maintain a documented record of every person who handled the evidence, when and how, to ensure its admissibility in court and demonstrate it was not tampered with."
+    },
+    {
+      "id": 366,
+      "module": 3,
+      "question_es": "Elena, administradora de sistemas, detecta un posible incidente de seguridad. Según el courseware ECIH v3, ¿cuál es el rol del administrador de sistemas como primer respondedor?",
+      "question_en": "Elena, a system administrator, detects a possible security incident. According to the ECIH v3 courseware, what is the system administrator's role as a first responder?",
+      "options_es": [
+        "A. Realizar análisis forense completo de todos los sistemas afectados",
+        "B. Preservar la evidencia y reportar el incidente al equipo de respuesta",
+        "C. Reinstalar los sistemas operativos comprometidos inmediatamente",
+        "D. Contactar directamente a las fuerzas del orden"
+      ],
+      "options_en": [
+        "A. Perform complete forensic analysis of all affected systems",
+        "B. Preserve evidence and report the incident to the response team",
+        "C. Reinstall compromised operating systems immediately",
+        "D. Contact law enforcement directly"
+      ],
+      "correct": 1,
+      "explanation_es": "El administrador de sistemas como primer respondedor debe preservar la evidencia y reportar el incidente. No debe realizar análisis forense completo (es tarea del equipo forense) ni reinstalar sistemas (destruiría evidencia).",
+      "explanation_en": "The system administrator as first responder must preserve evidence and report the incident. They should not perform complete forensic analysis (that's the forensic team's task) or reinstall systems (would destroy evidence)."
+    },
+    {
+      "id": 367,
+      "module": 3,
+      "question_es": "Para que la evidencia digital sea admisible en un tribunal, ¿cuál de las siguientes características debe cumplir?",
+      "question_en": "For digital evidence to be admissible in court, which of the following characteristics must it meet?",
+      "options_es": [
+        "A. Debe ser recolectada exclusivamente por agentes de la ley",
+        "B. Debe ser auténtica, completa y confiable",
+        "C. Debe provenir únicamente de sistemas con antivirus actualizado",
+        "D. Debe haber sido analizada por al menos tres peritos diferentes"
+      ],
+      "options_en": [
+        "A. It must be collected exclusively by law enforcement agents",
+        "B. It must be authentic, complete, and reliable",
+        "C. It must come only from systems with updated antivirus",
+        "D. It must have been analyzed by at least three different experts"
+      ],
+      "correct": 1,
+      "explanation_es": "La evidencia digital debe ser admisible, auténtica, completa, confiable y creíble para ser aceptada en un tribunal. No necesita ser recolectada exclusivamente por la policía ni analizada por múltiples peritos, pero sí debe mantenerse su integridad.",
+      "explanation_en": "Digital evidence must be admissible, authentic, complete, reliable, and credible to be accepted in court. It does not need to be collected exclusively by police or analyzed by multiple experts, but its integrity must be maintained."
+    },
+    {
+      "id": 368,
+      "module": 4,
+      "question_es": "Andrés, analista de malware en SecureNet Corp, necesita identificar si un archivo ejecutable sospechoso ha sido empaquetado con un packer. ¿Qué herramienta debería utilizar?",
+      "question_en": "Andres, a malware analyst at SecureNet Corp, needs to identify if a suspicious executable file has been packed with a packer. Which tool should he use?",
+      "options_es": [
+        "A. Wireshark",
+        "B. PEiD",
+        "C. Volatility",
+        "D. oledump"
+      ],
+      "options_en": [
+        "A. Wireshark",
+        "B. PEiD",
+        "C. Volatility",
+        "D. oledump"
+      ],
+      "correct": 1,
+      "explanation_es": "PEiD puede identificar más de 600 packers y compiladores en ejecutables PE. Wireshark es para análisis de red. Volatility es para análisis de memoria. oledump es para documentos OLE (Office).",
+      "explanation_en": "PEiD can identify over 600 packers and compilers in PE executables. Wireshark is for network analysis. Volatility is for memory analysis. oledump is for OLE (Office) documents."
+    },
+    {
+      "id": 369,
+      "module": 4,
+      "question_es": "Durante el análisis de un documento Word sospechoso con oledump, Claudia observa que el stream 8 tiene una letra 'M' mayúscula junto a él. ¿Qué indica esto?",
+      "question_en": "During analysis of a suspicious Word document with oledump, Claudia observes that stream 8 has an uppercase 'M' next to it. What does this indicate?",
+      "options_es": [
+        "A. El stream contiene metadatos del documento",
+        "B. El stream contiene macros VBA",
+        "C. El stream ha sido modificado recientemente",
+        "D. El stream está cifrado con AES"
+      ],
+      "options_en": [
+        "A. The stream contains document metadata",
+        "B. The stream contains VBA macros",
+        "C. The stream has been recently modified",
+        "D. The stream is encrypted with AES"
+      ],
+      "correct": 1,
+      "explanation_es": "En oledump, una 'M' mayúscula junto a un stream indica que contiene macros VBA. Esta es una señal clave para identificar documentos potencialmente maliciosos que usan macros como vector de ataque.",
+      "explanation_en": "In oledump, an uppercase 'M' next to a stream indicates it contains VBA macros. This is a key indicator for identifying potentially malicious documents that use macros as an attack vector."
+    },
+    {
+      "id": 370,
+      "module": 4,
+      "question_es": "¿Cuál de las siguientes herramientas de Sysinternals combina las funcionalidades de Filemon y Regmon?",
+      "question_en": "Which of the following Sysinternals tools combines the functionalities of Filemon and Regmon?",
+      "options_es": [
+        "A. Process Explorer",
+        "B. Autoruns",
+        "C. Process Monitor",
+        "D. TCPView"
+      ],
+      "options_en": [
+        "A. Process Explorer",
+        "B. Autoruns",
+        "C. Process Monitor",
+        "D. TCPView"
+      ],
+      "correct": 2,
+      "explanation_es": "Process Monitor combina las funcionalidades de Filemon (monitoreo del sistema de archivos) y Regmon (monitoreo del registro). Monitorea actividad del sistema de archivos, registro y procesos/threads. Process Explorer muestra procesos activos. Autoruns gestiona programas de inicio. TCPView muestra conexiones de red.",
+      "explanation_en": "Process Monitor combines Filemon (file system monitoring) and Regmon (registry monitoring) functionalities. It monitors file system, registry, and process/thread activity. Process Explorer shows active processes. Autoruns manages startup programs. TCPView shows network connections."
+    },
+    {
+      "id": 371,
+      "module": 4,
+      "question_es": "Ricardo necesita analizar un volcado de memoria RAM de un sistema infectado. ¿Qué framework es el más apropiado para esta tarea?",
+      "question_en": "Ricardo needs to analyze a RAM memory dump from an infected system. Which framework is most appropriate for this task?",
+      "options_es": [
+        "A. Metasploit Framework",
+        "B. Volatility Framework",
+        "C. MITRE ATT&CK Framework",
+        "D. .NET Framework"
+      ],
+      "options_en": [
+        "A. Metasploit Framework",
+        "B. Volatility Framework",
+        "C. MITRE ATT&CK Framework",
+        "D. .NET Framework"
+      ],
+      "correct": 1,
+      "explanation_es": "Volatility Framework es una herramienta forense de memoria que ayuda a analizar memoria volátil en máquinas infectadas. Permite identificar procesos maliciosos, conexiones de red y artefactos en RAM. Metasploit es para pentesting. MITRE ATT&CK es un marco de conocimiento. .NET es para desarrollo.",
+      "explanation_en": "Volatility Framework is a memory forensic tool that helps analyze volatile memory on infected machines. It allows identifying malicious processes, network connections, and artifacts in RAM. Metasploit is for pentesting. MITRE ATT&CK is a knowledge framework. .NET is for development."
+    },
+    {
+      "id": 372,
+      "module": 4,
+      "question_es": "¿Cuál es la diferencia principal entre análisis estático y análisis dinámico de malware?",
+      "question_en": "What is the main difference between static and dynamic malware analysis?",
+      "options_es": [
+        "A. El estático requiere conexión a Internet, el dinámico no",
+        "B. El estático analiza el código sin ejecutarlo, el dinámico analiza el comportamiento en ejecución",
+        "C. El estático es más lento que el dinámico",
+        "D. El estático solo funciona en Windows, el dinámico en Linux"
+      ],
+      "options_en": [
+        "A. Static requires Internet connection, dynamic does not",
+        "B. Static analyzes code without executing it, dynamic analyzes behavior during execution",
+        "C. Static is slower than dynamic",
+        "D. Static only works on Windows, dynamic on Linux"
+      ],
+      "correct": 1,
+      "explanation_es": "El análisis estático (code analysis) examina el código del malware sin ejecutarlo. El análisis dinámico (behavioral analysis) analiza el malware en ejecución en sistemas vivos para observar su comportamiento. Ambos pueden usarse en múltiples plataformas.",
+      "explanation_en": "Static analysis (code analysis) examines malware code without executing it. Dynamic analysis (behavioral analysis) analyzes malware running on live systems to observe its behavior. Both can be used on multiple platforms."
+    },
+    {
+      "id": 373,
+      "module": 4,
+      "question_es": "Luisa, analista de malware, está escribiendo una regla YARA para detectar un nuevo malware. ¿Cuáles son las tres secciones principales de una regla YARA?",
+      "question_en": "Luisa, a malware analyst, is writing a YARA rule to detect new malware. What are the three main sections of a YARA rule?",
+      "options_es": [
+        "A. Header, Body, Footer",
+        "B. Strings, Metadata, Condition",
+        "C. Input, Process, Output",
+        "D. Variables, Functions, Returns"
+      ],
+      "options_en": [
+        "A. Header, Body, Footer",
+        "B. Strings, Metadata, Condition",
+        "C. Input, Process, Output",
+        "D. Variables, Functions, Returns"
+      ],
+      "correct": 1,
+      "explanation_es": "Las tres secciones principales de una regla YARA son: Strings (define todas las cadenas a buscar), Metadata (información general sobre la regla) y Condition (expresión booleana que establece la lógica de detección). Cada regla comienza con la palabra 'rule'.",
+      "explanation_en": "The three main sections of a YARA rule are: Strings (defines all strings to search for), Metadata (general information about the rule), and Condition (boolean expression establishing detection logic). Each rule starts with the word 'rule'."
+    },
+    {
+      "id": 374,
+      "module": 4,
+      "question_es": "Un equipo de respuesta a incidentes detecta un brote de ransomware en la red corporativa. ¿Cuál debería ser el PRIMER paso de contención?",
+      "question_en": "An incident response team detects a ransomware outbreak on the corporate network. What should be the FIRST containment step?",
+      "options_es": [
+        "A. Pagar el rescate para recuperar los archivos rápidamente",
+        "B. Desconectar todas las conexiones de red para prevenir la propagación",
+        "C. Reinstalar el sistema operativo en todos los equipos afectados",
+        "D. Ejecutar un escaneo antivirus completo en toda la red"
+      ],
+      "options_en": [
+        "A. Pay the ransom to recover files quickly",
+        "B. Disconnect all network connections to prevent spreading",
+        "C. Reinstall the operating system on all affected computers",
+        "D. Run a full antivirus scan across the entire network"
+      ],
+      "correct": 1,
+      "explanation_es": "El primer paso ante un ransomware es desconectar todas las conexiones de red para prevenir su propagación a otros sistemas. Nunca se debe pagar el rescate. La reinstalación y el antivirus son pasos posteriores.",
+      "explanation_en": "The first step against ransomware is to disconnect all network connections to prevent spreading to other systems. The ransom should never be paid. Reinstallation and antivirus are later steps."
+    },
+    {
+      "id": 375,
+      "module": 4,
+      "question_es": "¿Qué herramienta se utiliza para simular servicios de red durante el análisis dinámico de malware en un entorno aislado?",
+      "question_en": "What tool is used to simulate network services during dynamic malware analysis in an isolated environment?",
+      "options_es": [
+        "A. Wireshark",
+        "B. INetSim",
+        "C. Nmap",
+        "D. Autoruns"
+      ],
+      "options_en": [
+        "A. Wireshark",
+        "B. INetSim",
+        "C. Nmap",
+        "D. Autoruns"
+      ],
+      "correct": 1,
+      "explanation_es": "INetSim se utiliza para simulación de red en entornos de análisis de malware. Simula servicios de Internet (HTTP, DNS, SMTP, etc.) permitiendo que el malware interactúe con una red falsa. Wireshark captura tráfico. Nmap escanea puertos. Autoruns gestiona programas de inicio.",
+      "explanation_en": "INetSim is used for network simulation in malware analysis environments. It simulates Internet services (HTTP, DNS, SMTP, etc.) allowing malware to interact with a fake network. Wireshark captures traffic. Nmap scans ports. Autoruns manages startup programs."
+    },
+    {
+      "id": 376,
+      "module": 4,
+      "question_es": "Marcos está realizando análisis estático de un ejecutable PE sospechoso. ¿Cuál de las siguientes herramientas NO es apropiada para análisis estático?",
+      "question_en": "Marcos is performing static analysis of a suspicious PE executable. Which of the following tools is NOT appropriate for static analysis?",
+      "options_es": [
+        "A. PEView",
+        "B. PeStudio",
+        "C. Process Monitor",
+        "D. FileAlyzer"
+      ],
+      "options_en": [
+        "A. PEView",
+        "B. PeStudio",
+        "C. Process Monitor",
+        "D. FileAlyzer"
+      ],
+      "correct": 2,
+      "explanation_es": "Process Monitor es una herramienta de análisis dinámico que monitorea actividad del sistema de archivos, registro y procesos en tiempo real. PEView, PeStudio y FileAlyzer son herramientas de análisis estático que examinan la estructura de archivos PE sin ejecutarlos.",
+      "explanation_en": "Process Monitor is a dynamic analysis tool that monitors file system, registry, and process activity in real time. PEView, PeStudio, and FileAlyzer are static analysis tools that examine PE file structure without executing them."
+    },
+    {
+      "id": 377,
+      "module": 4,
+      "question_es": "Antes de analizar un volcado de RAM con Volatility, ¿qué debe crear el analista primero?",
+      "question_en": "Before analyzing a RAM dump with Volatility, what must the analyst create first?",
+      "options_es": [
+        "A. Una copia de seguridad del disco duro",
+        "B. Un perfil de Linux que defina el sistema/kernel al que pertenece la imagen",
+        "C. Una conexión VPN segura al servidor de análisis",
+        "D. Un ticket de incidente en el sistema SIEM"
+      ],
+      "options_en": [
+        "A. A backup of the hard drive",
+        "B. A Linux profile defining the system/kernel the memory image belongs to",
+        "C. A secure VPN connection to the analysis server",
+        "D. An incident ticket in the SIEM system"
+      ],
+      "correct": 1,
+      "explanation_es": "Antes de analizar la imagen de RAM con Volatility, el analista debe crear un perfil de Linux para definir el sistema/kernel al que pertenece el archivo de imagen de memoria. Esto permite a Volatility interpretar correctamente las estructuras de datos en memoria.",
+      "explanation_en": "Before analyzing the RAM image with Volatility, the analyst must create a Linux profile to define the system/kernel the memory image file belongs to. This allows Volatility to correctly interpret data structures in memory."
+    },
+    {
+      "id": 378,
+      "module": 4,
+      "question_es": "¿Cuál de las siguientes herramientas se utiliza para capturar volcados de memoria RAM en vivo?",
+      "question_en": "Which of the following tools is used to capture live RAM memory dumps?",
+      "options_es": [
+        "A. FTK Imager",
+        "B. Belkasoft Live RAM Capturer",
+        "C. PEiD",
+        "D. oledump"
+      ],
+      "options_en": [
+        "A. FTK Imager",
+        "B. Belkasoft Live RAM Capturer",
+        "C. PEiD",
+        "D. oledump"
+      ],
+      "correct": 1,
+      "explanation_es": "Belkasoft Live RAM Capturer está diseñado específicamente para capturar volcados de memoria RAM en sistemas vivos. FTK Imager es para imágenes de disco (aunque también puede capturar RAM). PEiD identifica packers. oledump analiza documentos OLE.",
+      "explanation_en": "Belkasoft Live RAM Capturer is specifically designed to capture RAM memory dumps on live systems. FTK Imager is for disk imaging (though it can also capture RAM). PEiD identifies packers. oledump analyzes OLE documents."
+    },
+    {
+      "id": 379,
+      "module": 4,
+      "question_es": "Durante el análisis de un documento Office sospechoso, Verónica quiere determinar rápidamente si contiene macros VBA, está cifrado o tiene objetos Flash. ¿Qué herramienta debería usar primero?",
+      "question_en": "During analysis of a suspicious Office document, Veronica wants to quickly determine if it contains VBA macros, is encrypted, or has Flash objects. Which tool should she use first?",
+      "options_es": [
+        "A. oledump",
+        "B. olevba",
+        "C. oleid",
+        "D. PEiD"
+      ],
+      "options_en": [
+        "A. oledump",
+        "B. olevba",
+        "C. oleid",
+        "D. PEiD"
+      ],
+      "correct": 2,
+      "explanation_es": "oleid es la herramienta de triaje inicial que busca componentes sospechosos en documentos OLE: macros VBA, cifrado, objetos Flash, etc. oledump muestra la estructura de streams y macros. olevba extrae y analiza código VBA. PEiD es para ejecutables PE.",
+      "explanation_en": "oleid is the initial triage tool that searches for suspicious components in OLE documents: VBA macros, encryption, Flash objects, etc. oledump shows stream structure and macros. olevba extracts and analyzes VBA code. PEiD is for PE executables."
+    },
+    {
+      "id": 380,
+      "module": 4,
+      "question_es": "¿Qué herramienta de Sysinternals permite a un analista ver todos los programas configurados para ejecutarse durante el inicio del sistema o el login?",
+      "question_en": "Which Sysinternals tool allows an analyst to see all programs configured to run during system startup or login?",
+      "options_es": [
+        "A. Process Monitor",
+        "B. TCPView",
+        "C. Autoruns",
+        "D. Process Explorer"
+      ],
+      "options_en": [
+        "A. Process Monitor",
+        "B. TCPView",
+        "C. Autoruns",
+        "D. Process Explorer"
+      ],
+      "correct": 2,
+      "explanation_es": "Autoruns muestra todos los programas configurados para ejecutarse durante el inicio del sistema o el login del usuario. Process Monitor monitorea actividad en tiempo real. TCPView muestra conexiones TCP/UDP. Process Explorer muestra procesos activos.",
+      "explanation_en": "Autoruns shows all programs configured to run during system startup or user login. Process Monitor monitors real-time activity. TCPView shows TCP/UDP connections. Process Explorer shows active processes."
+    },
+    {
+      "id": 381,
+      "module": 4,
+      "question_es": "Gabriel observa los siguientes indicadores en un sistema: nuevos servicios desconocidos, conexiones salientes a IPs sospechosas y cambios en el registro de Windows. ¿Qué tipo de actividad sugieren estos indicadores?",
+      "question_en": "Gabriel observes the following indicators on a system: unknown new services, outbound connections to suspicious IPs, and Windows registry changes. What type of activity do these indicators suggest?",
+      "options_es": [
+        "A. Actualización automática del sistema operativo",
+        "B. Indicadores de intrusión por malware",
+        "C. Configuración de una nueva VPN corporativa",
+        "D. Actividad normal de mantenimiento del sistema"
+      ],
+      "options_en": [
+        "A. Automatic operating system update",
+        "B. Malware intrusion indicators",
+        "C. Configuration of a new corporate VPN",
+        "D. Normal system maintenance activity"
+      ],
+      "correct": 1,
+      "explanation_es": "Nuevos servicios desconocidos, conexiones C2 salientes a IPs sospechosas y cambios en el registro son indicadores clásicos de intrusión por malware. Las actualizaciones del SO y mantenimiento siguen patrones conocidos y documentados.",
+      "explanation_en": "Unknown new services, outbound C2 connections to suspicious IPs, and registry changes are classic malware intrusion indicators. OS updates and maintenance follow known and documented patterns."
+    },
+    {
+      "id": 382,
+      "module": 4,
+      "question_es": "¿Cuántos packers y compiladores puede identificar la herramienta PEiD?",
+      "question_en": "How many packers and compilers can the PEiD tool identify?",
+      "options_es": [
+        "A. Más de 100",
+        "B. Más de 300",
+        "C. Más de 600",
+        "D. Más de 1000"
+      ],
+      "options_en": [
+        "A. More than 100",
+        "B. More than 300",
+        "C. More than 600",
+        "D. More than 1000"
+      ],
+      "correct": 2,
+      "explanation_es": "PEiD puede identificar más de 600 packers y compiladores diferentes en archivos ejecutables PE. Es una herramienta esencial en el análisis estático de malware para determinar si un archivo ha sido ofuscado.",
+      "explanation_en": "PEiD can identify more than 600 different packers and compilers in PE executable files. It is an essential tool in static malware analysis to determine if a file has been obfuscated."
+    },
+    {
+      "id": 383,
+      "module": 4,
+      "question_es": "¿Cuál de las siguientes herramientas se utiliza para crear imágenes forenses de discos durante una investigación de malware?",
+      "question_en": "Which of the following tools is used to create forensic disk images during a malware investigation?",
+      "options_es": [
+        "A. YARA",
+        "B. FTK Imager",
+        "C. Regshot",
+        "D. INetSim"
+      ],
+      "options_en": [
+        "A. YARA",
+        "B. FTK Imager",
+        "C. Regshot",
+        "D. INetSim"
+      ],
+      "correct": 1,
+      "explanation_es": "FTK Imager es una herramienta de extracción de imágenes forenses utilizada para crear copias exactas de discos. YARA detecta malware mediante reglas. Regshot compara snapshots del registro. INetSim simula servicios de red.",
+      "explanation_en": "FTK Imager is a forensic image extraction tool used to create exact copies of disks. YARA detects malware through rules. Regshot compares registry snapshots. INetSim simulates network services."
+    },
+    {
+      "id": 384,
+      "module": 4,
+      "question_es": "TCPView, herramienta de Sysinternals, ¿qué tipo de información proporciona durante el análisis de malware?",
+      "question_en": "TCPView, a Sysinternals tool, what type of information does it provide during malware analysis?",
+      "options_es": [
+        "A. Cambios en el registro de Windows",
+        "B. Conexiones TCP y UDP activas con los procesos asociados",
+        "C. Archivos modificados en el sistema de archivos",
+        "D. Programas configurados para inicio automático"
+      ],
+      "options_en": [
+        "A. Windows registry changes",
+        "B. Active TCP and UDP connections with associated processes",
+        "C. Files modified in the file system",
+        "D. Programs configured for automatic startup"
+      ],
+      "correct": 1,
+      "explanation_es": "TCPView muestra todas las conexiones TCP y UDP activas junto con los procesos que las generan. Es útil para identificar comunicaciones C2 de malware. Los cambios en registro los muestra Process Monitor. Los archivos modificados los rastrea Process Monitor. Los programas de inicio los muestra Autoruns.",
+      "explanation_en": "TCPView shows all active TCP and UDP connections along with the processes generating them. It is useful for identifying malware C2 communications. Registry changes are shown by Process Monitor. Modified files are tracked by Process Monitor. Startup programs are shown by Autoruns."
+    },
+    {
+      "id": 385,
+      "module": 5,
+      "question_es": "Isabel, analista SOC en BankCorp, recibe un reporte de un empleado del departamento de finanzas que recibió un email personalizado que mencionaba su nombre, cargo y un proyecto interno específico, solicitando credenciales de acceso. ¿Qué tipo de ataque es este?",
+      "question_en": "Isabel, a SOC analyst at BankCorp, receives a report from a finance department employee who received a personalized email mentioning their name, position, and a specific internal project, requesting access credentials. What type of attack is this?",
+      "options_es": [
+        "A. Phishing genérico",
+        "B. Spear phishing",
+        "C. Whaling",
+        "D. Pharming"
+      ],
+      "options_en": [
+        "A. Generic phishing",
+        "B. Spear phishing",
+        "C. Whaling",
+        "D. Pharming"
+      ],
+      "correct": 1,
+      "explanation_es": "El spear phishing es ingeniería social especializada dirigida a un empleado específico o grupo pequeño usando contenido personalizado (nombre, cargo, proyectos internos). El phishing genérico es masivo sin personalización. El whaling apunta a ejecutivos de alto perfil. El pharming redirige mediante manipulación de DNS.",
+      "explanation_en": "Spear phishing is specialized social engineering targeting a specific employee or small group using personalized content (name, position, internal projects). Generic phishing is mass without personalization. Whaling targets high-profile executives. Pharming redirects through DNS manipulation."
+    },
+    {
+      "id": 386,
+      "module": 5,
+      "question_es": "El CEO de GlobalTech Corp recibe un email que parece provenir del presidente de la junta directiva, solicitando una transferencia bancaria urgente de $500,000. ¿Qué tipo de ataque por email es este?",
+      "question_en": "The CEO of GlobalTech Corp receives an email that appears to come from the board chairman, requesting an urgent wire transfer of $500,000. What type of email attack is this?",
+      "options_es": [
+        "A. Spear phishing",
+        "B. Vishing",
+        "C. Whaling",
+        "D. Smishing"
+      ],
+      "options_en": [
+        "A. Spear phishing",
+        "B. Vishing",
+        "C. Whaling",
+        "D. Smishing"
+      ],
+      "correct": 2,
+      "explanation_es": "El whaling se dirige a ejecutivos de alto perfil (CEO, CFO, políticos, celebridades) que tienen acceso completo a información confidencial. La distinción clave con spear phishing es QUIÉN es la víctima: whaling = ejecutivos de alto nivel. Vishing es phishing por voz. Smishing es por SMS.",
+      "explanation_en": "Whaling targets high-profile executives (CEO, CFO, politicians, celebrities) who have complete access to confidential information. The key distinction from spear phishing is WHO the victim is: whaling = high-level executives. Vishing is voice phishing. Smishing is via SMS."
+    },
+    {
+      "id": 387,
+      "module": 5,
+      "question_es": "Al analizar las cabeceras de un email sospechoso, ¿en qué orden deben leerse los campos 'Received:' para rastrear la ruta del mensaje?",
+      "question_en": "When analyzing the headers of a suspicious email, in what order should the 'Received:' fields be read to trace the message route?",
+      "options_es": [
+        "A. De arriba hacia abajo",
+        "B. De abajo hacia arriba",
+        "C. Alfabéticamente por nombre de servidor",
+        "D. Por timestamp más reciente primero"
+      ],
+      "options_en": [
+        "A. Top to bottom",
+        "B. Bottom to top",
+        "C. Alphabetically by server name",
+        "D. By most recent timestamp first"
+      ],
+      "correct": 1,
+      "explanation_es": "Los campos Received: deben leerse de ABAJO hacia ARRIBA. El campo inferior muestra el primer servidor que recibió el email (el más cercano al remitente) y el superior muestra el último (más cercano al destinatario). Los atacantes pueden falsificar cabeceras superiores.",
+      "explanation_en": "Received: fields must be read from BOTTOM to TOP. The bottom field shows the first server that received the email (closest to sender) and the top shows the last (closest to recipient). Attackers can forge upper headers."
+    },
+    {
+      "id": 388,
+      "module": 5,
+      "question_es": "¿Qué protocolo de autenticación de email verifica que los servidores que envían correo están autorizados mediante registros DNS?",
+      "question_en": "Which email authentication protocol verifies that sending mail servers are authorized through DNS records?",
+      "options_es": [
+        "A. DKIM",
+        "B. SPF",
+        "C. DMARC",
+        "D. TLS"
+      ],
+      "options_en": [
+        "A. DKIM",
+        "B. SPF",
+        "C. DMARC",
+        "D. TLS"
+      ],
+      "correct": 1,
+      "explanation_es": "SPF (Sender Policy Framework) valida que los servidores que envían correo están autorizados mediante registros DNS del dominio. DKIM firma criptográficamente los mensajes. DMARC combina SPF y DKIM y define políticas. TLS cifra la comunicación pero no autentica el remitente.",
+      "explanation_en": "SPF (Sender Policy Framework) validates that sending mail servers are authorized through domain DNS records. DKIM cryptographically signs messages. DMARC combines SPF and DKIM and defines policies. TLS encrypts communication but does not authenticate the sender."
+    },
+    {
+      "id": 389,
+      "module": 5,
+      "question_es": "Un atacante manipula los registros DNS de una empresa para redirigir a los usuarios a un sitio web fraudulento idéntico al original. ¿Qué tipo de ataque se ha producido?",
+      "question_en": "An attacker manipulates a company's DNS records to redirect users to a fraudulent website identical to the original. What type of attack has occurred?",
+      "options_es": [
+        "A. Spear phishing",
+        "B. Pharming",
+        "C. Whaling",
+        "D. SPIM"
+      ],
+      "options_en": [
+        "A. Spear phishing",
+        "B. Pharming",
+        "C. Whaling",
+        "D. SPIM"
+      ],
+      "correct": 1,
+      "explanation_es": "El pharming manipula registros DNS para redirigir a los usuarios a sitios web fraudulentos. No requiere que la víctima haga clic en un enlace; la redirección ocurre a nivel de DNS. El spear phishing usa emails personalizados. El whaling apunta a ejecutivos. SPIM es spam por mensajería instantánea.",
+      "explanation_en": "Pharming manipulates DNS records to redirect users to fraudulent websites. It does not require the victim to click a link; the redirection occurs at the DNS level. Spear phishing uses personalized emails. Whaling targets executives. SPIM is spam over instant messaging."
+    },
+    {
+      "id": 390,
+      "module": 5,
+      "question_es": "¿Qué es SPIM en el contexto de ataques de seguridad por email y mensajería?",
+      "question_en": "What is SPIM in the context of email and messaging security attacks?",
+      "options_es": [
+        "A. Un tipo de malware que se propaga por email",
+        "B. Spam distribuido a través de mensajería instantánea mediante bots",
+        "C. Un protocolo de cifrado de email",
+        "D. Una herramienta de análisis de cabeceras de email"
+      ],
+      "options_en": [
+        "A. A type of malware that spreads via email",
+        "B. Spam distributed through instant messaging via bots",
+        "C. An email encryption protocol",
+        "D. An email header analysis tool"
+      ],
+      "correct": 1,
+      "explanation_es": "SPIM (Spam over Instant Messaging) es spam distribuido a través de plataformas de mensajería instantánea. Los atacantes usan bots para recolectar IDs de mensajería instantánea y enviar mensajes de spam masivos.",
+      "explanation_en": "SPIM (Spam over Instant Messaging) is spam distributed through instant messaging platforms. Attackers use bots to harvest instant messaging IDs and send mass spam messages."
+    },
+    {
+      "id": 391,
+      "module": 5,
+      "question_es": "Fernando, investigador forense, necesita rastrear un email hasta su origen geográfico y analizar las cabeceras. ¿Qué herramienta es la más apropiada?",
+      "question_en": "Fernando, a forensic investigator, needs to trace an email to its geographic origin and analyze the headers. Which tool is most appropriate?",
+      "options_es": [
+        "A. Wireshark",
+        "B. eMailTrackerPro",
+        "C. Volatility",
+        "D. PEiD"
+      ],
+      "options_en": [
+        "A. Wireshark",
+        "B. eMailTrackerPro",
+        "C. Volatility",
+        "D. PEiD"
+      ],
+      "correct": 1,
+      "explanation_es": "eMailTrackerPro rastrea el email hasta su ubicación de origen, analiza las cabeceras y revela la información geográfica del remitente. Wireshark captura tráfico de red. Volatility analiza memoria. PEiD identifica packers en ejecutables.",
+      "explanation_en": "eMailTrackerPro traces email back to source location, analyzes headers, and reveals sender's geographic information. Wireshark captures network traffic. Volatility analyzes memory. PEiD identifies packers in executables."
+    },
+    {
+      "id": 392,
+      "module": 5,
+      "question_es": "En un ataque de Business Email Compromise (BEC), ¿cuál es el objetivo más común del atacante?",
+      "question_en": "In a Business Email Compromise (BEC) attack, what is the attacker's most common objective?",
+      "options_es": [
+        "A. Robar propiedad intelectual de la empresa",
+        "B. Conseguir transferencias bancarias no autorizadas",
+        "C. Instalar ransomware en los servidores de correo",
+        "D. Obtener acceso físico a las instalaciones"
+      ],
+      "options_en": [
+        "A. Steal company intellectual property",
+        "B. Achieve unauthorized wire transfers",
+        "C. Install ransomware on mail servers",
+        "D. Obtain physical access to facilities"
+      ],
+      "correct": 1,
+      "explanation_es": "En ataques BEC, los atacantes se hacen pasar por ejecutivos para engañar a empleados y conseguir transferencias bancarias no autorizadas. Los servicios de email son un 'objetivo lucrativo' según el courseware ECIH v3.",
+      "explanation_en": "In BEC attacks, attackers impersonate executives to trick employees into making unauthorized wire transfers. Email services are a 'lucrative target' according to the ECIH v3 courseware."
+    },
+    {
+      "id": 393,
+      "module": 5,
+      "question_es": "¿Qué protocolo de autenticación de email utiliza firmas criptográficas para verificar que el mensaje no ha sido alterado en tránsito?",
+      "question_en": "Which email authentication protocol uses cryptographic signatures to verify that the message has not been altered in transit?",
+      "options_es": [
+        "A. SPF",
+        "B. DKIM",
+        "C. SMTP",
+        "D. POP3"
+      ],
+      "options_en": [
+        "A. SPF",
+        "B. DKIM",
+        "C. SMTP",
+        "D. POP3"
+      ],
+      "correct": 1,
+      "explanation_es": "DKIM (DomainKeys Identified Mail) utiliza firmas criptográficas para verificar que el mensaje no ha sido alterado en tránsito y autenticar el dominio remitente. SPF verifica servidores autorizados. SMTP y POP3 son protocolos de envío/recepción de correo.",
+      "explanation_en": "DKIM (DomainKeys Identified Mail) uses cryptographic signatures to verify the message has not been altered in transit and authenticate the sending domain. SPF verifies authorized servers. SMTP and POP3 are mail sending/receiving protocols."
+    },
+    {
+      "id": 394,
+      "module": 5,
+      "question_es": "Implementar los pasos de erradicación de troyanos, ¿cuál de las siguientes acciones es correcta según el courseware ECIH v3?",
+      "question_en": "When implementing Trojan eradication steps, which of the following actions is correct according to the ECIH v3 courseware?",
+      "options_es": [
+        "A. Permitir la ejecución de programas transferidos por mensajería instantánea",
+        "B. Bloquear todos los puertos innecesarios del host y firewall",
+        "C. Mantener la configuración predeterminada del sistema sin cambios",
+        "D. Deshabilitar el firewall para facilitar la limpieza"
+      ],
+      "options_en": [
+        "A. Allow execution of programs transferred via instant messaging",
+        "B. Block all unnecessary host and firewall ports",
+        "C. Keep default system configuration unchanged",
+        "D. Disable the firewall to facilitate cleanup"
+      ],
+      "correct": 1,
+      "explanation_es": "La erradicación de troyanos incluye bloquear puertos innecesarios, evitar ejecutar programas de mensajería instantánea, fortalecer configuraciones predeterminadas débiles y mantener el firewall activo en todo momento.",
+      "explanation_en": "Trojan eradication includes blocking unnecessary ports, avoiding running instant messaging programs, strengthening weak default configurations, and keeping the firewall active at all times."
+    },
+    {
+      "id": 395,
+      "module": 5,
+      "question_es": "¿Dónde se oculta principalmente el malware fileless para evadir la detección de los antivirus tradicionales?",
+      "question_en": "Where does fileless malware primarily hide to evade detection by traditional antivirus?",
+      "options_es": [
+        "A. En archivos cifrados del disco duro",
+        "B. En la memoria del sistema (RAM)",
+        "C. En el sector de arranque del disco",
+        "D. En archivos temporales del navegador"
+      ],
+      "options_en": [
+        "A. In encrypted hard drive files",
+        "B. In system memory (RAM)",
+        "C. In the disk boot sector",
+        "D. In browser temporary files"
+      ],
+      "correct": 1,
+      "explanation_es": "El malware fileless se oculta en la memoria del sistema (RAM), lo que lo hace invisible para los antivirus basados en firma que escanean archivos en disco. Se ejecuta directamente en memoria sin escribir archivos al disco.",
+      "explanation_en": "Fileless malware hides in system memory (RAM), making it invisible to signature-based antivirus that scans files on disk. It executes directly in memory without writing files to disk."
+    },
+    {
+      "id": 396,
+      "module": 5,
+      "question_es": "Un servidor de correo recibe miles de emails simultáneos dirigidos a una sola cuenta, causando que el servicio se vuelva inaccesible. ¿Qué tipo de ataque por email se está produciendo?",
+      "question_en": "A mail server receives thousands of simultaneous emails directed at a single account, causing the service to become inaccessible. What type of email attack is occurring?",
+      "options_es": [
+        "A. Spear phishing",
+        "B. Mail bombing",
+        "C. BEC (Business Email Compromise)",
+        "D. Pharming"
+      ],
+      "options_en": [
+        "A. Spear phishing",
+        "B. Mail bombing",
+        "C. BEC (Business Email Compromise)",
+        "D. Pharming"
+      ],
+      "correct": 1,
+      "explanation_es": "Mail bombing consiste en enviar cantidades masivas de emails a una dirección específica para causar una denegación de servicio (DoS). Spear phishing busca robar credenciales. BEC busca transferencias bancarias. Pharming manipula DNS.",
+      "explanation_en": "Mail bombing involves sending massive amounts of emails to a specific address to cause a denial of service (DoS). Spear phishing aims to steal credentials. BEC targets wire transfers. Pharming manipulates DNS."
+    },
+    {
+      "id": 397,
+      "module": 5,
+      "question_es": "Para verificar la autenticidad de un email sospechoso, ¿qué tres protocolos debe comprobar un analista de seguridad?",
+      "question_en": "To verify the authenticity of a suspicious email, which three protocols should a security analyst check?",
+      "options_es": [
+        "A. HTTP, HTTPS y FTP",
+        "B. SPF, DKIM y DMARC",
+        "C. SMTP, POP3 e IMAP",
+        "D. TCP, UDP e ICMP"
+      ],
+      "options_en": [
+        "A. HTTP, HTTPS, and FTP",
+        "B. SPF, DKIM, and DMARC",
+        "C. SMTP, POP3, and IMAP",
+        "D. TCP, UDP, and ICMP"
+      ],
+      "correct": 1,
+      "explanation_es": "Para verificar la autenticidad de un email se deben comprobar SPF (servidores autorizados), DKIM (firma criptográfica) y DMARC (política de autenticación). HTTP/FTP son protocolos web. SMTP/POP3/IMAP son protocolos de correo pero no de autenticación. TCP/UDP/ICMP son protocolos de red.",
+      "explanation_en": "To verify email authenticity, check SPF (authorized servers), DKIM (cryptographic signature), and DMARC (authentication policy). HTTP/FTP are web protocols. SMTP/POP3/IMAP are mail protocols but not for authentication. TCP/UDP/ICMP are network protocols."
+    }
+  ]
+}

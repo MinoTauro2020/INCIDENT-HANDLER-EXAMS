@@ -1,0 +1,970 @@
+{
+  "exam_questions": [
+    {
+      "id": 398,
+      "module": 6,
+      "question_es": "Carlos, analista SOC en una empresa financiera, detecta que el servidor web principal no responde. Al revisar los logs del firewall, observa miles de paquetes SYN entrantes desde diferentes direcciones IP sin completar el handshake TCP. ¿Qué técnica de contención es la MÁS apropiada para este tipo de ataque?",
+      "question_en": "Carlos, a SOC analyst at a financial company, detects that the main web server is unresponsive. Upon reviewing firewall logs, he observes thousands of incoming SYN packets from different IP addresses without completing the TCP handshake. What containment technique is MOST appropriate for this type of attack?",
+      "options_es": [
+        "A. TCP Intercept",
+        "B. Ingress Filtering",
+        "C. Rate Limiting",
+        "D. Packet Traceback"
+      ],
+      "options_en": [
+        "A. TCP Intercept",
+        "B. Ingress Filtering",
+        "C. Rate Limiting",
+        "D. Packet Traceback"
+      ],
+      "correct": 0,
+      "explanation_es": "TCP Intercept es una funcionalidad de filtrado de tráfico en routers que protege específicamente servidores TCP contra ataques de SYN flooding. Ingress Filtering previene spoofing de direcciones origen. Rate Limiting controla la tasa de tráfico pero no es específico para SYN floods. Packet Traceback rastrea el origen del ataque pero no lo contiene.",
+      "explanation_en": "TCP Intercept is a traffic-filtering feature in routers that specifically protects TCP servers from SYN-flooding attacks. Ingress Filtering prevents source address spoofing. Rate Limiting controls traffic rate but is not specific to SYN floods. Packet Traceback traces the attack source but does not contain it."
+    },
+    {
+      "id": 399,
+      "module": 6,
+      "question_es": "¿Cuál es el propósito principal del filtrado RFC 3704 en la contención de ataques DDoS?",
+      "question_en": "What is the primary purpose of RFC 3704 filtering in DDoS attack containment?",
+      "options_es": [
+        "A. Cifrar el tráfico de red para evitar interceptación",
+        "B. Bloquear tráfico con direcciones de origen falsificadas mediante ACLs básicas",
+        "C. Monitorear el ancho de banda de la red en tiempo real",
+        "D. Redirigir el tráfico malicioso a un honeypot"
+      ],
+      "options_en": [
+        "A. Encrypt network traffic to prevent interception",
+        "B. Block traffic with spoofed source addresses using basic ACLs",
+        "C. Monitor network bandwidth in real-time",
+        "D. Redirect malicious traffic to a honeypot"
+      ],
+      "correct": 1,
+      "explanation_es": "RFC 3704 (BCP 38) es un filtro ACL básico que limita el impacto de ataques DDoS bloqueando tráfico con direcciones de origen falsificadas (spoofed). No cifra tráfico, no monitorea ancho de banda ni redirige a honeypots.",
+      "explanation_en": "RFC 3704 (BCP 38) is a basic ACL filter that limits the impact of DDoS attacks by blocking traffic with spoofed source addresses. It does not encrypt traffic, monitor bandwidth, or redirect to honeypots."
+    },
+    {
+      "id": 400,
+      "module": 6,
+      "question_es": "María, administradora de red, necesita identificar qué direcciones IP corresponden a hosts activos en un segmento de red comprometido. ¿Qué técnica de escaneo debe utilizar?",
+      "question_en": "María, a network administrator, needs to identify which IP addresses correspond to active hosts in a compromised network segment. What scanning technique should she use?",
+      "options_es": [
+        "A. Port scanning",
+        "B. Ping sweep (ICMP sweep)",
+        "C. Vulnerability scanning",
+        "D. Banner grabbing"
+      ],
+      "options_en": [
+        "A. Port scanning",
+        "B. Ping sweep (ICMP sweep)",
+        "C. Vulnerability scanning",
+        "D. Banner grabbing"
+      ],
+      "correct": 1,
+      "explanation_es": "Un ping sweep (ICMP sweep) es la técnica básica de escaneo de red utilizada para determinar qué direcciones IP corresponden a hosts activos. Port scanning identifica puertos abiertos. Vulnerability scanning busca vulnerabilidades. Banner grabbing obtiene información del servicio.",
+      "explanation_en": "A ping sweep (ICMP sweep) is the basic network scanning technique used to determine which IP addresses map to live hosts. Port scanning identifies open ports. Vulnerability scanning looks for vulnerabilities. Banner grabbing obtains service information."
+    },
+    {
+      "id": 401,
+      "module": 6,
+      "question_es": "Durante una auditoría de seguridad inalámbrica, el equipo de respuesta a incidentes detecta un punto de acceso no autorizado con el mismo SSID que la red corporativa. ¿Qué tipo de ataque inalámbrico están enfrentando?",
+      "question_en": "During a wireless security audit, the incident response team detects an unauthorized access point with the same SSID as the corporate network. What type of wireless attack are they facing?",
+      "options_es": [
+        "A. Ataque de desautenticación",
+        "B. Evil Twin",
+        "C. Ataque de replay",
+        "D. Jamming de señal"
+      ],
+      "options_en": [
+        "A. Deauthentication attack",
+        "B. Evil Twin",
+        "C. Replay attack",
+        "D. Signal jamming"
+      ],
+      "correct": 1,
+      "explanation_es": "Un Evil Twin es un punto de acceso malicioso que imita el SSID de una red legítima para engañar a los usuarios y capturar su tráfico. Un ataque de desautenticación desconecta usuarios. Un replay retransmite paquetes capturados. Jamming interfiere con la señal.",
+      "explanation_en": "An Evil Twin is a malicious access point that mimics the SSID of a legitimate network to deceive users and capture their traffic. A deauthentication attack disconnects users. A replay retransmits captured packets. Jamming interferes with the signal."
+    },
+    {
+      "id": 402,
+      "module": 6,
+      "question_es": "¿Qué técnica de filtrado de paquetes utilizan los ISPs para prevenir la falsificación de direcciones de origen en el tráfico de Internet?",
+      "question_en": "What packet filtering technique do ISPs use to prevent source address spoofing in Internet traffic?",
+      "options_es": [
+        "A. Egress Filtering",
+        "B. Ingress Filtering",
+        "C. Deep Packet Inspection",
+        "D. Stateful Inspection"
+      ],
+      "options_en": [
+        "A. Egress Filtering",
+        "B. Ingress Filtering",
+        "C. Deep Packet Inspection",
+        "D. Stateful Inspection"
+      ],
+      "correct": 1,
+      "explanation_es": "Ingress Filtering es la técnica de filtrado de paquetes utilizada por ISPs para prevenir la falsificación de direcciones de origen (source address spoofing) en el tráfico de Internet. Egress Filtering filtra tráfico saliente. Deep Packet Inspection analiza contenido de paquetes. Stateful Inspection rastrea el estado de conexiones.",
+      "explanation_en": "Ingress Filtering is the packet filtering technique used by ISPs to prevent source address spoofing in Internet traffic. Egress Filtering filters outbound traffic. Deep Packet Inspection analyzes packet content. Stateful Inspection tracks connection states."
+    },
+    {
+      "id": 403,
+      "module": 6,
+      "question_es": "Roberto, ingeniero de seguridad, está configurando la monitorización de puntos de acceso inalámbricos como parte de la preparación para incidentes de red. ¿Cuál es el PRIMER paso que debe realizar?",
+      "question_en": "Roberto, a security engineer, is configuring wireless access point monitoring as part of network incident preparation. What is the FIRST step he should take?",
+      "options_es": [
+        "A. Instalar un IDS inalámbrico",
+        "B. Auditar todos los dispositivos AP y obtener dirección MAC, SSID e información de transmisión para crear una línea base",
+        "C. Deshabilitar la difusión del SSID",
+        "D. Cambiar todas las contraseñas de los AP"
+      ],
+      "options_en": [
+        "A. Install a wireless IDS",
+        "B. Audit all AP devices and obtain MAC address, SSID, and transmission info to create a baseline",
+        "C. Disable SSID broadcasting",
+        "D. Change all AP passwords"
+      ],
+      "correct": 1,
+      "explanation_es": "Según el courseware de ECIH v3, el primer paso en la monitorización de AP es auditar todos los dispositivos AP, obtener su dirección MAC, SSID e información de transmisión de red para crear una línea base. Sin esta línea base, no se pueden detectar dispositivos no autorizados.",
+      "explanation_en": "According to ECIH v3 courseware, the first step in AP monitoring is to audit all AP devices, obtain their MAC address, SSID, and network transmission info to create a baseline. Without this baseline, unauthorized devices cannot be detected."
+    },
+    {
+      "id": 404,
+      "module": 6,
+      "question_es": "¿Qué protocolo de seguridad inalámbrica recomienda el ECIH v3 habilitar en dispositivos inalámbricos como medida de contención?",
+      "question_en": "What wireless security protocol does ECIH v3 recommend enabling on wireless devices as a containment measure?",
+      "options_es": [
+        "A. WEP",
+        "B. WPA",
+        "C. WPA2",
+        "D. WPA3"
+      ],
+      "options_en": [
+        "A. WEP",
+        "B. WPA",
+        "C. WPA2",
+        "D. WPA3"
+      ],
+      "correct": 3,
+      "explanation_es": "El ECIH v3 recomienda habilitar WPA3 en dispositivos inalámbricos y cambiar las claves a intervalos regulares. WEP tiene vulnerabilidades conocidas. WPA y WPA2 son versiones anteriores con menos seguridad que WPA3.",
+      "explanation_en": "ECIH v3 recommends enabling WPA3 on wireless devices and changing keys at regular intervals. WEP has known vulnerabilities. WPA and WPA2 are older versions with less security than WPA3."
+    },
+    {
+      "id": 405,
+      "module": 6,
+      "question_es": "Ana, analista de seguridad, observa un consumo de ancho de banda inusual, patrones de tráfico incrementados y alertas del IDS/IPS en su red corporativa. ¿Qué tipo de incidente indican estos síntomas?",
+      "question_en": "Ana, a security analyst, observes unusual bandwidth consumption, increased traffic patterns, and IDS/IPS alerts on her corporate network. What type of incident do these symptoms indicate?",
+      "options_es": [
+        "A. Acceso no autorizado",
+        "B. Uso inapropiado de la red",
+        "C. Ataque de denegación de servicio (DoS/DDoS)",
+        "D. Incidente de seguridad inalámbrica"
+      ],
+      "options_en": [
+        "A. Unauthorized access",
+        "B. Inappropriate network usage",
+        "C. Denial-of-service (DoS/DDoS) attack",
+        "D. Wireless security incident"
+      ],
+      "correct": 2,
+      "explanation_es": "El consumo inusual de ancho de banda, patrones de tráfico incrementados y alertas de IDS/IPS son indicadores a nivel de red de ataques DoS/DDoS según el ECIH v3. El acceso no autorizado implica uso de puertos idle. El uso inapropiado viola políticas de uso aceptable.",
+      "explanation_en": "Unusual bandwidth consumption, increased traffic patterns, and IDS/IPS alerts are network-level indicators of DoS/DDoS attacks per ECIH v3. Unauthorized access involves using idle ports. Inappropriate usage violates acceptable use policies."
+    },
+    {
+      "id": 406,
+      "module": 6,
+      "question_es": "Un empleado de una empresa usa servidores proxy para descargar material ilegal a través de conexiones cifradas en la red corporativa. ¿Cómo se clasifica este tipo de incidente de seguridad de red?",
+      "question_en": "An employee at a company uses proxy servers to download illegal material through encrypted connections on the corporate network. How is this type of network security incident classified?",
+      "options_es": [
+        "A. Incidente de acceso no autorizado",
+        "B. Incidente de uso inapropiado",
+        "C. Incidente de denegación de servicio",
+        "D. Incidente de seguridad inalámbrica"
+      ],
+      "options_en": [
+        "A. Unauthorized access incident",
+        "B. Inappropriate usage incident",
+        "C. Denial-of-service incident",
+        "D. Wireless security incident"
+      ],
+      "correct": 1,
+      "explanation_es": "Un incidente de uso inapropiado ocurre cuando un usuario viola las políticas de uso aceptable de computación, como usar servidores proxy para descargar material ilegal. El acceso no autorizado implica uso de puertos no autorizados. DoS hace sistemas indisponibles.",
+      "explanation_en": "An inappropriate usage incident occurs when a user violates acceptable computing usage policies, such as using proxy servers to download illegal material. Unauthorized access involves using unauthorized ports. DoS makes systems unavailable."
+    },
+    {
+      "id": 407,
+      "module": 6,
+      "question_es": "¿Cuál de las siguientes herramientas funciona como un honeypot IDS para detectar intrusiones en la red?",
+      "question_en": "Which of the following tools functions as a honeypot IDS to detect network intrusions?",
+      "options_es": [
+        "A. Snort",
+        "B. KFSensor",
+        "C. Wireshark",
+        "D. Nmap"
+      ],
+      "options_en": [
+        "A. Snort",
+        "B. KFSensor",
+        "C. Wireshark",
+        "D. Nmap"
+      ],
+      "correct": 1,
+      "explanation_es": "KFSensor es un honeypot IDS diseñado para detectar intrusiones de red. Snort y Suricata son IDS/IPS basados en firmas y reglas. Wireshark es un analizador de paquetes. Nmap es un escáner de red.",
+      "explanation_en": "KFSensor is a honeypot IDS designed to detect network intrusions. Snort and Suricata are signature and rule-based IDS/IPS. Wireshark is a packet analyzer. Nmap is a network scanner."
+    },
+    {
+      "id": 408,
+      "module": 6,
+      "question_es": "Diego, responsable de respuesta a incidentes, necesita rastrear el origen de un ataque DDoS que está afectando a los servidores de su organización. ¿Qué técnica de contención le permite rastrear el tráfico del ataque hasta su fuente?",
+      "question_en": "Diego, an incident responder, needs to trace the origin of a DDoS attack affecting his organization's servers. What containment technique allows him to trace the attack traffic back to its source?",
+      "options_es": [
+        "A. Rate Limiting",
+        "B. Ingress Filtering",
+        "C. Packet Traceback",
+        "D. TCP Intercept"
+      ],
+      "options_en": [
+        "A. Rate Limiting",
+        "B. Ingress Filtering",
+        "C. Packet Traceback",
+        "D. TCP Intercept"
+      ],
+      "correct": 2,
+      "explanation_es": "Packet Traceback es la técnica que permite rastrear el tráfico del ataque hasta su origen. Rate Limiting controla la tasa de tráfico. Ingress Filtering previene spoofing. TCP Intercept protege contra SYN floods.",
+      "explanation_en": "Packet Traceback is the technique that allows tracing attack traffic back to its source. Rate Limiting controls traffic rate. Ingress Filtering prevents spoofing. TCP Intercept protects against SYN floods."
+    },
+    {
+      "id": 409,
+      "module": 6,
+      "question_es": "¿Cuál es la diferencia principal entre un ataque DoS y un ataque DDoS?",
+      "question_en": "What is the main difference between a DoS attack and a DDoS attack?",
+      "options_es": [
+        "A. DoS usa cifrado y DDoS no",
+        "B. DDoS utiliza múltiples sistemas comprometidos (zombies/botnets) para lanzar el ataque",
+        "C. DoS solo afecta aplicaciones web mientras DDoS afecta toda la red",
+        "D. DDoS requiere acceso físico al servidor objetivo"
+      ],
+      "options_en": [
+        "A. DoS uses encryption and DDoS does not",
+        "B. DDoS uses multiple compromised systems (zombies/botnets) to launch the attack",
+        "C. DoS only affects web applications while DDoS affects the entire network",
+        "D. DDoS requires physical access to the target server"
+      ],
+      "correct": 1,
+      "explanation_es": "La diferencia principal es que DDoS utiliza múltiples sistemas comprometidos (zombies/botnets) coordinados para lanzar el ataque, mientras que DoS se origina desde una sola fuente. Ambos pueden afectar aplicaciones y redes, no requieren acceso físico ni cifrado.",
+      "explanation_en": "The main difference is that DDoS uses multiple compromised systems (zombies/botnets) coordinated to launch the attack, while DoS originates from a single source. Both can affect applications and networks, require no physical access, and do not involve encryption."
+    },
+    {
+      "id": 410,
+      "module": 6,
+      "question_es": "Laura, analista de seguridad, necesita analizar tráfico de red capturado para investigar un incidente de acceso no autorizado. ¿Qué herramienta le permite realizar captura y análisis detallado de paquetes?",
+      "question_en": "Laura, a security analyst, needs to analyze captured network traffic to investigate an unauthorized access incident. What tool allows her to perform detailed packet capture and analysis?",
+      "options_es": [
+        "A. Nmap",
+        "B. Wireshark",
+        "C. KFSensor",
+        "D. AIDA64 Extreme"
+      ],
+      "options_en": [
+        "A. Nmap",
+        "B. Wireshark",
+        "C. KFSensor",
+        "D. AIDA64 Extreme"
+      ],
+      "correct": 1,
+      "explanation_es": "Wireshark es la herramienta principal para captura y análisis de paquetes de red. Nmap es un escáner de red. KFSensor es un honeypot IDS. AIDA64 Extreme es una herramienta de diagnóstico de sistemas.",
+      "explanation_en": "Wireshark is the primary tool for network packet capture and analysis. Nmap is a network scanner. KFSensor is a honeypot IDS. AIDA64 Extreme is a system diagnostics tool."
+    },
+    {
+      "id": 411,
+      "module": 6,
+      "question_es": "En el caso de estudio de DigitalOcean y Mailchimp presentado en el ECIH v3, ¿qué tipo de incidente de seguridad de red se produjo?",
+      "question_en": "In the DigitalOcean and Mailchimp case study presented in ECIH v3, what type of network security incident occurred?",
+      "options_es": [
+        "A. Ataque DDoS volumétrico",
+        "B. Incidente de seguridad que comprometió cuentas de correo de clientes",
+        "C. Ataque de inyección SQL a la base de datos",
+        "D. Ataque de ransomware a la infraestructura cloud"
+      ],
+      "options_en": [
+        "A. Volumetric DDoS attack",
+        "B. Security incident that compromised customer email accounts",
+        "C. SQL injection attack on the database",
+        "D. Ransomware attack on cloud infrastructure"
+      ],
+      "correct": 1,
+      "explanation_es": "El caso de estudio de DigitalOcean-Mailchimp fue un incidente de seguridad que comprometió las cuentas de correo electrónico de los clientes a través de la plataforma de Mailchimp. No fue un DDoS, SQLi ni ransomware.",
+      "explanation_en": "The DigitalOcean-Mailchimp case study was a security incident that compromised customer email accounts through the Mailchimp platform. It was not a DDoS, SQLi, or ransomware attack."
+    },
+    {
+      "id": 412,
+      "module": 7,
+      "question_es": "Según el OWASP Top 10 de 2021, ¿cuál es el riesgo de seguridad clasificado como A01?",
+      "question_en": "According to the OWASP Top 10 of 2021, what is the security risk classified as A01?",
+      "options_es": [
+        "A. Inyección",
+        "B. Fallos criptográficos",
+        "C. Control de acceso roto (Broken Access Control)",
+        "D. Configuración de seguridad incorrecta"
+      ],
+      "options_en": [
+        "A. Injection",
+        "B. Cryptographic Failures",
+        "C. Broken Access Control",
+        "D. Security Misconfiguration"
+      ],
+      "correct": 2,
+      "explanation_es": "En OWASP Top 10 2021: A01=Broken Access Control, A02=Cryptographic Failures, A03=Injection. El control de acceso roto subió al primer puesto desde la quinta posición en la versión anterior.",
+      "explanation_en": "In OWASP Top 10 2021: A01=Broken Access Control, A02=Cryptographic Failures, A03=Injection. Broken Access Control moved to the first position from fifth in the previous version."
+    },
+    {
+      "id": 413,
+      "module": 7,
+      "question_es": "Pedro, analista de seguridad web, investiga un incidente donde un atacante inyectó código JavaScript malicioso en el campo de comentarios de un foro. El script se ejecuta cada vez que un usuario visita la página. ¿Qué tipo de ataque XSS es este?",
+      "question_en": "Pedro, a web security analyst, investigates an incident where an attacker injected malicious JavaScript code into a forum's comment field. The script executes every time a user visits the page. What type of XSS attack is this?",
+      "options_es": [
+        "A. XSS Reflejado",
+        "B. XSS Almacenado (Stored)",
+        "C. XSS basado en DOM",
+        "D. XSS basado en mutación"
+      ],
+      "options_en": [
+        "A. Reflected XSS",
+        "B. Stored XSS",
+        "C. DOM-based XSS",
+        "D. Mutation-based XSS"
+      ],
+      "correct": 1,
+      "explanation_es": "El XSS Almacenado (Stored) ocurre cuando el código malicioso se inyecta en secciones de entrada y se almacena permanentemente en la aplicación, ejecutándose cada vez que un usuario accede a la página. Ataca valores de cookies y es más difícil de identificar que el XSS Reflejado. El Reflejado se refleja en mensajes de error. El DOM-based manipula el DOM del navegador.",
+      "explanation_en": "Stored XSS occurs when malicious code is injected into input sections and permanently stored by the application, executing every time a user visits the page. It targets cookie values and is harder to identify than Reflected XSS. Reflected XSS is reflected in error messages. DOM-based manipulates the browser's DOM."
+    },
+    {
+      "id": 414,
+      "module": 7,
+      "question_es": "¿Cuál es la técnica de erradicación recomendada por el ECIH v3 para prevenir ataques de Cross-Site Scripting (XSS)?",
+      "question_en": "What is the eradication technique recommended by ECIH v3 to prevent Cross-Site Scripting (XSS) attacks?",
+      "options_es": [
+        "A. Hex Encoding de entradas",
+        "B. HTML Encoding de salidas",
+        "C. Consultas parametrizadas",
+        "D. Cifrado AES-256"
+      ],
+      "options_en": [
+        "A. Hex Encoding of inputs",
+        "B. HTML Encoding of outputs",
+        "C. Parameterized queries",
+        "D. AES-256 encryption"
+      ],
+      "correct": 1,
+      "explanation_es": "HTML Encoding es la técnica de erradicación para ataques XSS según el ECIH v3. Hex Encoding se usa para inyección SQL. Las consultas parametrizadas previenen SQLi. El cifrado AES-256 protege datos en reposo/tránsito, no contra XSS.",
+      "explanation_en": "HTML Encoding is the eradication technique for XSS attacks per ECIH v3. Hex Encoding is used for SQL Injection. Parameterized queries prevent SQLi. AES-256 encryption protects data at rest/in transit, not against XSS."
+    },
+    {
+      "id": 415,
+      "module": 7,
+      "question_es": "¿Cuál es la técnica de erradicación recomendada por el ECIH v3 para prevenir ataques de inyección SQL?",
+      "question_en": "What is the eradication technique recommended by ECIH v3 to prevent SQL Injection attacks?",
+      "options_es": [
+        "A. HTML Encoding",
+        "B. Hex Encoding",
+        "C. Base64 Encoding",
+        "D. URL Encoding"
+      ],
+      "options_en": [
+        "A. HTML Encoding",
+        "B. Hex Encoding",
+        "C. Base64 Encoding",
+        "D. URL Encoding"
+      ],
+      "correct": 1,
+      "explanation_es": "Hex Encoding es la técnica de erradicación para ataques de inyección SQL según el ECIH v3. HTML Encoding se usa para XSS. Base64 y URL Encoding tienen otros propósitos y no son las técnicas específicas recomendadas para SQLi.",
+      "explanation_en": "Hex Encoding is the eradication technique for SQL Injection attacks per ECIH v3. HTML Encoding is used for XSS. Base64 and URL Encoding serve other purposes and are not the specific techniques recommended for SQLi."
+    },
+    {
+      "id": 416,
+      "module": 7,
+      "question_es": "Elena, ingeniera de seguridad, investiga un incidente donde un atacante manipuló URLs con secuencias '../' para acceder a archivos fuera del directorio raíz del servidor web. ¿Qué tipo de ataque web es este?",
+      "question_en": "Elena, a security engineer, investigates an incident where an attacker manipulated URLs with '../' sequences to access files outside the web server's root directory. What type of web attack is this?",
+      "options_es": [
+        "A. SQL Injection",
+        "B. Server-Side Request Forgery (SSRF)",
+        "C. Directory Traversal (Path Traversal)",
+        "D. Cross-Site Request Forgery (CSRF)"
+      ],
+      "options_en": [
+        "A. SQL Injection",
+        "B. Server-Side Request Forgery (SSRF)",
+        "C. Directory Traversal (Path Traversal)",
+        "D. Cross-Site Request Forgery (CSRF)"
+      ],
+      "correct": 2,
+      "explanation_es": "Directory Traversal (Path Traversal) explota HTTP para ganar acceso a directorios restringidos y ejecutar comandos fuera del directorio raíz del servidor web usando secuencias como '../'. SQLi inyecta consultas SQL. SSRF fuerza al servidor a hacer peticiones internas. CSRF fuerza al usuario a enviar peticiones falsificadas.",
+      "explanation_en": "Directory Traversal (Path Traversal) exploits HTTP to gain access to restricted directories and execute commands outside the web server's root directory using sequences like '../'. SQLi injects SQL queries. SSRF forces the server to make internal requests. CSRF forces the user to submit forged requests."
+    },
+    {
+      "id": 417,
+      "module": 7,
+      "question_es": "Un atacante fuerza a un usuario autenticado en una aplicación bancaria a enviar una solicitud de transferencia de fondos sin su conocimiento. ¿Qué tipo de vulnerabilidad está explotando?",
+      "question_en": "An attacker forces an authenticated user on a banking application to submit a fund transfer request without their knowledge. What type of vulnerability is being exploited?",
+      "options_es": [
+        "A. Cross-Site Scripting (XSS)",
+        "B. Cross-Site Request Forgery (CSRF)",
+        "C. Session Hijacking",
+        "D. Insecure Deserialization"
+      ],
+      "options_en": [
+        "A. Cross-Site Scripting (XSS)",
+        "B. Cross-Site Request Forgery (CSRF)",
+        "C. Session Hijacking",
+        "D. Insecure Deserialization"
+      ],
+      "correct": 1,
+      "explanation_es": "CSRF fuerza a un usuario autenticado a enviar peticiones falsificadas sin su conocimiento. XSS inyecta scripts maliciosos. Session Hijacking roba tokens de sesión. Insecure Deserialization altera datos serializados.",
+      "explanation_en": "CSRF forces an authenticated user to submit forged requests without their knowledge. XSS injects malicious scripts. Session Hijacking steals session tokens. Insecure Deserialization alters serialized data."
+    },
+    {
+      "id": 418,
+      "module": 7,
+      "question_es": "¿Qué herramienta se recomienda en el ECIH v3 para la recuperación de bases de datos después de incidentes de seguridad en aplicaciones web?",
+      "question_en": "What tool does ECIH v3 recommend for database recovery after web application security incidents?",
+      "options_es": [
+        "A. Burp Suite",
+        "B. OWASP ZAP",
+        "C. ApexSQL Recovery",
+        "D. SQLMap"
+      ],
+      "options_en": [
+        "A. Burp Suite",
+        "B. OWASP ZAP",
+        "C. ApexSQL Recovery",
+        "D. SQLMap"
+      ],
+      "correct": 2,
+      "explanation_es": "ApexSQL Recovery es la herramienta mencionada en el ECIH v3 para recuperación de bases de datos después de incidentes de aplicaciones web. Burp Suite y OWASP ZAP son herramientas de pruebas de seguridad web. SQLMap automatiza la detección de inyección SQL.",
+      "explanation_en": "ApexSQL Recovery is the tool mentioned in ECIH v3 for database recovery after web application incidents. Burp Suite and OWASP ZAP are web security testing tools. SQLMap automates SQL injection detection."
+    },
+    {
+      "id": 419,
+      "module": 7,
+      "question_es": "Marcos descubre que un atacante envía peticiones maliciosas desde el servidor web a sistemas internos de la organización para escanear puertos y acceder a servicios internos. ¿Qué tipo de ataque es este?",
+      "question_en": "Marcos discovers that an attacker sends malicious requests from the web server to the organization's internal systems to scan ports and access internal services. What type of attack is this?",
+      "options_es": [
+        "A. Cross-Site Request Forgery (CSRF)",
+        "B. Server-Side Request Forgery (SSRF)",
+        "C. Command Injection",
+        "D. Directory Traversal"
+      ],
+      "options_en": [
+        "A. Cross-Site Request Forgery (CSRF)",
+        "B. Server-Side Request Forgery (SSRF)",
+        "C. Command Injection",
+        "D. Directory Traversal"
+      ],
+      "correct": 1,
+      "explanation_es": "SSRF es una vulnerabilidad donde el servidor remoto envía peticiones maliciosas a sistemas internos. CSRF fuerza a usuarios a enviar peticiones. Command Injection inyecta comandos del SO. Directory Traversal accede a directorios restringidos.",
+      "explanation_en": "SSRF is a vulnerability where the remote server sends malicious requests to internal systems. CSRF forces users to submit requests. Command Injection injects OS commands. Directory Traversal accesses restricted directories."
+    },
+    {
+      "id": 420,
+      "module": 7,
+      "question_es": "¿Cuál es el orden correcto del OWASP Top 10 de 2021 para las tres primeras posiciones?",
+      "question_en": "What is the correct order of the OWASP Top 10 2021 for the first three positions?",
+      "options_es": [
+        "A. A01: Inyección, A02: Autenticación rota, A03: XSS",
+        "B. A01: Control de acceso roto, A02: Fallos criptográficos, A03: Inyección",
+        "C. A01: Fallos criptográficos, A02: Inyección, A03: Control de acceso roto",
+        "D. A01: Configuración incorrecta, A02: Control de acceso roto, A03: Fallos criptográficos"
+      ],
+      "options_en": [
+        "A. A01: Injection, A02: Broken Authentication, A03: XSS",
+        "B. A01: Broken Access Control, A02: Cryptographic Failures, A03: Injection",
+        "C. A01: Cryptographic Failures, A02: Injection, A03: Broken Access Control",
+        "D. A01: Security Misconfiguration, A02: Broken Access Control, A03: Cryptographic Failures"
+      ],
+      "correct": 1,
+      "explanation_es": "El orden correcto del OWASP Top 10 2021 es: A01=Broken Access Control, A02=Cryptographic Failures, A03=Injection. Este cambió respecto a versiones anteriores donde Injection era A01.",
+      "explanation_en": "The correct OWASP Top 10 2021 order is: A01=Broken Access Control, A02=Cryptographic Failures, A03=Injection. This changed from previous versions where Injection was A01."
+    },
+    {
+      "id": 421,
+      "module": 7,
+      "question_es": "Durante la investigación de un incidente de defacement del sitio web corporativo, ¿cuál debería ser la PRIMERA acción del equipo de respuesta a incidentes?",
+      "question_en": "During the investigation of a corporate website defacement incident, what should be the FIRST action of the incident response team?",
+      "options_es": [
+        "A. Restaurar el sitio web desde un backup limpio",
+        "B. Contener el incidente aislando el servidor afectado y preservando evidencia",
+        "C. Notificar a los medios de comunicación",
+        "D. Reinstalar completamente el servidor web"
+      ],
+      "options_en": [
+        "A. Restore the website from a clean backup",
+        "B. Contain the incident by isolating the affected server and preserving evidence",
+        "C. Notify the media",
+        "D. Completely reinstall the web server"
+      ],
+      "correct": 1,
+      "explanation_es": "Según el proceso de IH&R, la contención es el primer paso después de la detección/validación. Se debe aislar el servidor y preservar evidencia forense antes de restaurar o reinstalar. Notificar a medios no es prioridad inmediata.",
+      "explanation_en": "Per the IH&R process, containment is the first step after detection/validation. The server must be isolated and forensic evidence preserved before restoring or reinstalling. Media notification is not an immediate priority."
+    },
+    {
+      "id": 422,
+      "module": 8,
+      "question_es": "En el modelo de servicio IaaS, ¿cómo se distribuye la responsabilidad de respuesta a incidentes entre el proveedor de servicios cloud (CSP) y el cliente cloud (CC)?",
+      "question_en": "In the IaaS service model, how is incident response responsibility distributed between the Cloud Service Provider (CSP) and the Cloud Customer (CC)?",
+      "options_es": [
+        "A. El CSP es totalmente responsable",
+        "B. El CC es totalmente responsable",
+        "C. La responsabilidad es compartida entre CC y CSP",
+        "D. Una tercera parte independiente es responsable"
+      ],
+      "options_en": [
+        "A. The CSP is fully responsible",
+        "B. The CC is fully responsible",
+        "C. Responsibility is shared between CC and CSP",
+        "D. An independent third party is responsible"
+      ],
+      "correct": 2,
+      "explanation_es": "En el modelo IaaS, la responsabilidad de manejo de incidentes es compartida entre el CC y el CSP. El CSP gestiona la infraestructura (red, almacenamiento, servidores, virtualización) y el CC es responsable del SO, middleware, runtime, datos y aplicaciones.",
+      "explanation_en": "In the IaaS model, incident handling responsibility is shared between the CC and the CSP. The CSP manages infrastructure (network, storage, servers, virtualization) and the CC is responsible for OS, middleware, runtime, data, and applications."
+    },
+    {
+      "id": 423,
+      "module": 8,
+      "question_es": "Sofía, analista de incidentes cloud, necesita obtener datos de un incidente de seguridad en una aplicación SaaS como Office 365. ¿Qué debe hacer para obtener los datos del incidente?",
+      "question_en": "Sofía, a cloud incident analyst, needs to obtain incident data from a SaaS application like Office 365. What must she do to get the incident data?",
+      "options_es": [
+        "A. Acceder directamente a los logs del servidor",
+        "B. Solicitar los datos al proveedor de servicios cloud (CSP)",
+        "C. Usar herramientas forenses propias en la infraestructura cloud",
+        "D. Desplegar un agente de monitoreo en el servidor SaaS"
+      ],
+      "options_en": [
+        "A. Access server logs directly",
+        "B. Request the data from the Cloud Service Provider (CSP)",
+        "C. Use own forensic tools on the cloud infrastructure",
+        "D. Deploy a monitoring agent on the SaaS server"
+      ],
+      "correct": 1,
+      "explanation_es": "En el modelo SaaS, el CC debe solicitar al CSP los datos del incidente ya que el CSP es responsable de la mayoría de las actividades. El cliente no tiene acceso directo a la infraestructura subyacente ni puede desplegar agentes propios.",
+      "explanation_en": "In the SaaS model, the CC must request incident data from the CSP since the CSP is responsible for most activities. The customer does not have direct access to the underlying infrastructure and cannot deploy their own agents."
+    },
+    {
+      "id": 424,
+      "module": 8,
+      "question_es": "¿Qué servicio de AWS permite registrar y auditar todas las llamadas API realizadas en una cuenta, siendo fundamental para la investigación de incidentes cloud?",
+      "question_en": "Which AWS service allows recording and auditing all API calls made in an account, being fundamental for cloud incident investigation?",
+      "options_es": [
+        "A. AWS GuardDuty",
+        "B. AWS CloudTrail",
+        "C. AWS Shield",
+        "D. AWS Inspector"
+      ],
+      "options_en": [
+        "A. AWS GuardDuty",
+        "B. AWS CloudTrail",
+        "C. AWS Shield",
+        "D. AWS Inspector"
+      ],
+      "correct": 1,
+      "explanation_es": "AWS CloudTrail registra y audita todas las llamadas API realizadas en una cuenta AWS, siendo esencial para investigación de incidentes. GuardDuty detecta amenazas. Shield protege contra DDoS. Inspector evalúa vulnerabilidades.",
+      "explanation_en": "AWS CloudTrail records and audits all API calls made in an AWS account, being essential for incident investigation. GuardDuty detects threats. Shield protects against DDoS. Inspector assesses vulnerabilities."
+    },
+    {
+      "id": 425,
+      "module": 8,
+      "question_es": "En el caso de estudio del ataque a la cadena de suministro de Kaseya VSA presentado en el ECIH v3, ¿qué técnica utilizaron los atacantes para evadir la detección de Microsoft Defender?",
+      "question_en": "In the Kaseya VSA supply chain attack case study presented in ECIH v3, what technique did the attackers use to evade Microsoft Defender detection?",
+      "options_es": [
+        "A. Ofuscación de PowerShell",
+        "B. Codificación del archivo AGENT.CRT",
+        "C. Inyección de DLL en procesos legítimos",
+        "D. Uso de certificados robados de firma de código"
+      ],
+      "options_en": [
+        "A. PowerShell obfuscation",
+        "B. Encoding of the AGENT.CRT file",
+        "C. DLL injection into legitimate processes",
+        "D. Use of stolen code signing certificates"
+      ],
+      "correct": 1,
+      "explanation_es": "Según el caso de estudio del ECIH v3, en el ataque de Kaseya VSA, el archivo AGENT.CRT fue codificado para evadir la detección de Microsoft Defender. Las otras opciones son técnicas de evasión pero no corresponden a este caso específico.",
+      "explanation_en": "Per the ECIH v3 case study, in the Kaseya VSA attack, the AGENT.CRT file was encoded to bypass Microsoft Defender detection. The other options are evasion techniques but do not correspond to this specific case."
+    },
+    {
+      "id": 426,
+      "module": 8,
+      "question_es": "¿En qué modelo de servicio cloud el CSP adquiere datos de plataformas virtuales y es responsable de la mayoría de las actividades de manejo de incidentes, mientras que el cliente solo se encarga del desarrollo?",
+      "question_en": "In which cloud service model does the CSP acquire data from virtual platforms and is responsible for most incident handling activities, while the customer only handles development?",
+      "options_es": [
+        "A. IaaS",
+        "B. PaaS",
+        "C. SaaS",
+        "D. FaaS"
+      ],
+      "options_en": [
+        "A. IaaS",
+        "B. PaaS",
+        "C. SaaS",
+        "D. FaaS"
+      ],
+      "correct": 1,
+      "explanation_es": "En PaaS, los CSP manejan la mayoría de las actividades de manejo de incidentes y adquieren datos de plataformas virtuales. Los CC son responsables del desarrollo. En IaaS la responsabilidad es compartida. En SaaS el CC solo es usuario final.",
+      "explanation_en": "In PaaS, CSPs handle most incident handling activities and acquire data from virtual platforms. CCs are responsible for development. In IaaS responsibility is shared. In SaaS the CC is only an end user."
+    },
+    {
+      "id": 427,
+      "module": 8,
+      "question_es": "¿Cuál de los siguientes modelos de despliegue cloud ofrece infraestructura compartida entre varias organizaciones con intereses comunes?",
+      "question_en": "Which of the following cloud deployment models offers infrastructure shared among several organizations with common interests?",
+      "options_es": [
+        "A. Cloud Pública",
+        "B. Cloud Privada",
+        "C. Cloud Comunitaria",
+        "D. Cloud Híbrida"
+      ],
+      "options_en": [
+        "A. Public Cloud",
+        "B. Private Cloud",
+        "C. Community Cloud",
+        "D. Hybrid Cloud"
+      ],
+      "correct": 2,
+      "explanation_es": "La Cloud Comunitaria es compartida entre organizaciones con intereses o requisitos comunes. La Cloud Pública está disponible para el público general. La Privada es exclusiva de una organización. La Híbrida combina dos o más modelos.",
+      "explanation_en": "Community Cloud is shared among organizations with common interests or requirements. Public Cloud is available to the general public. Private is exclusive to one organization. Hybrid combines two or more models."
+    },
+    {
+      "id": 428,
+      "module": 8,
+      "question_es": "Miguel, CISO de una empresa, observa accesos inusuales a buckets de almacenamiento S3 desde direcciones IP no reconocidas. ¿Qué servicio de AWS debería revisar PRIMERO para investigar este incidente?",
+      "question_en": "Miguel, CISO of a company, observes unusual access to S3 storage buckets from unrecognized IP addresses. What AWS service should he review FIRST to investigate this incident?",
+      "options_es": [
+        "A. AWS WAF",
+        "B. AWS CloudTrail",
+        "C. AWS Shield",
+        "D. AWS Config"
+      ],
+      "options_en": [
+        "A. AWS WAF",
+        "B. AWS CloudTrail",
+        "C. AWS Shield",
+        "D. AWS Config"
+      ],
+      "correct": 1,
+      "explanation_es": "AWS CloudTrail registra todas las llamadas API, incluyendo accesos a S3, con información sobre quién, cuándo y desde dónde se realizaron. Es el primer lugar para investigar accesos sospechosos. WAF protege aplicaciones web. Shield protege contra DDoS. Config registra cambios de configuración.",
+      "explanation_en": "AWS CloudTrail records all API calls, including S3 access, with information about who, when, and where they were made. It is the first place to investigate suspicious access. WAF protects web applications. Shield protects against DDoS. Config records configuration changes."
+    },
+    {
+      "id": 429,
+      "module": 8,
+      "question_es": "En el modelo de responsabilidad compartida del cloud, ¿de qué es responsable el cliente en un modelo SaaS?",
+      "question_en": "In the cloud shared responsibility model, what is the customer responsible for in a SaaS model?",
+      "options_es": [
+        "A. Sistema operativo y middleware",
+        "B. Infraestructura de red y almacenamiento",
+        "C. Solo el uso como usuario final",
+        "D. Aplicaciones y runtime"
+      ],
+      "options_en": [
+        "A. Operating system and middleware",
+        "B. Network infrastructure and storage",
+        "C. End-user usage only",
+        "D. Applications and runtime"
+      ],
+      "correct": 2,
+      "explanation_es": "En SaaS, el CSP es responsable del software, almacenamiento, aplicaciones y datos. El cliente solo es responsable del uso como usuario final. El SO y middleware son responsabilidad del CC en IaaS. La infraestructura siempre es del CSP.",
+      "explanation_en": "In SaaS, the CSP is responsible for software, storage, applications, and data. The customer is only responsible for end-user usage. OS and middleware are the CC's responsibility in IaaS. Infrastructure is always the CSP's."
+    },
+    {
+      "id": 430,
+      "module": 9,
+      "question_es": "Según el ECIH v3, ¿cuál es el tipo de amenaza interna (insider threat) que causa el MAYOR daño a una organización?",
+      "question_en": "According to ECIH v3, which type of insider threat causes the MOST damage to an organization?",
+      "options_es": [
+        "A. Insider negligente",
+        "B. Insider malicioso",
+        "C. Insider profesional",
+        "D. Insider comprometido"
+      ],
+      "options_en": [
+        "A. Negligent insider",
+        "B. Malicious insider",
+        "C. Professional insider",
+        "D. Compromised insider"
+      ],
+      "correct": 2,
+      "explanation_es": "Según el ECIH v3, los insiders profesionales son los MÁS dañinos. Son personas con conocimiento técnico avanzado que trabajan para competidores o gobiernos extranjeros. Los negligentes actúan sin intención. Los maliciosos tienen motivación personal. Los comprometidos son manipulados externamente.",
+      "explanation_en": "Per ECIH v3, professional insiders are the MOST harmful. They are individuals with advanced technical knowledge working for competitors or foreign governments. Negligent insiders act without intent. Malicious ones have personal motivation. Compromised ones are externally manipulated."
+    },
+    {
+      "id": 431,
+      "module": 9,
+      "question_es": "¿Cuál es la motivación MÁS común detrás de los ataques de amenazas internas según el ECIH v3?",
+      "question_en": "What is the MOST common motivation behind insider threat attacks according to ECIH v3?",
+      "options_es": [
+        "A. Venganza personal",
+        "B. Necesidades financieras",
+        "C. Espionaje industrial",
+        "D. Ideología política"
+      ],
+      "options_en": [
+        "A. Personal revenge",
+        "B. Financial needs",
+        "C. Industrial espionage",
+        "D. Political ideology"
+      ],
+      "correct": 1,
+      "explanation_es": "Las necesidades financieras son la motivación más común para ataques de insiders según el ECIH v3. Aunque la venganza, el espionaje y la ideología son motivaciones válidas, la financiera es estadísticamente la más frecuente.",
+      "explanation_en": "Financial needs are the most common motivation for insider attacks per ECIH v3. Although revenge, espionage, and ideology are valid motivations, financial is statistically the most frequent."
+    },
+    {
+      "id": 432,
+      "module": 9,
+      "question_es": "Patricia, analista de seguridad, está implementando tecnologías para detectar amenazas internas basándose en el análisis del comportamiento de usuarios. ¿Qué tecnología es la MÁS apropiada?",
+      "question_en": "Patricia, a security analyst, is implementing technologies to detect insider threats based on user behavior analysis. What technology is MOST appropriate?",
+      "options_es": [
+        "A. IDS/IPS",
+        "B. DLP (Data Loss Prevention)",
+        "C. UEBA (User and Entity Behavior Analytics)",
+        "D. WAF (Web Application Firewall)"
+      ],
+      "options_en": [
+        "A. IDS/IPS",
+        "B. DLP (Data Loss Prevention)",
+        "C. UEBA (User and Entity Behavior Analytics)",
+        "D. WAF (Web Application Firewall)"
+      ],
+      "correct": 2,
+      "explanation_es": "UEBA (User and Entity Behavior Analytics) es la tecnología diseñada específicamente para analizar el comportamiento de usuarios y entidades, detectando amenazas internas. IDS/IPS detecta intrusiones de red. DLP previene pérdida de datos pero no analiza comportamiento. WAF protege aplicaciones web.",
+      "explanation_en": "UEBA (User and Entity Behavior Analytics) is the technology specifically designed to analyze user and entity behavior, detecting insider threats. IDS/IPS detects network intrusions. DLP prevents data loss but does not analyze behavior. WAF protects web applications."
+    },
+    {
+      "id": 433,
+      "module": 9,
+      "question_es": "¿Cuál es la diferencia entre perfilado individual y perfilado grupal en la detección de amenazas internas?",
+      "question_en": "What is the difference between individual profiling and group profiling in insider threat detection?",
+      "options_es": [
+        "A. Individual analiza logs y grupal analiza tráfico de red",
+        "B. Individual observa el comportamiento cuando la persona está sola; grupal observa el comportamiento en grupo",
+        "C. Individual usa herramientas automatizadas y grupal usa investigación manual",
+        "D. Individual se aplica a empleados y grupal a contratistas"
+      ],
+      "options_en": [
+        "A. Individual analyzes logs and group analyzes network traffic",
+        "B. Individual observes behavior when the person is alone; group observes behavior in a group setting",
+        "C. Individual uses automated tools and group uses manual investigation",
+        "D. Individual applies to employees and group applies to contractors"
+      ],
+      "correct": 1,
+      "explanation_es": "Según el ECIH v3, el perfilado individual consiste en observar el comportamiento de una persona cuando está sola, mientras que el perfilado grupal observa su comportamiento dentro de un grupo. No se trata de tipos de herramientas ni de roles laborales.",
+      "explanation_en": "Per ECIH v3, individual profiling involves observing a person's behavior when alone, while group profiling observes their behavior within a group setting. It is not about tool types or job roles."
+    },
+    {
+      "id": 434,
+      "module": 9,
+      "question_es": "Después de confirmar que un insider ha exfiltrado datos confidenciales de la organización, el equipo de respuesta intenta recuperar la información robada. ¿Qué afirma el ECIH v3 sobre la recuperación de datos exfiltrados?",
+      "question_en": "After confirming that an insider has exfiltrated confidential data from the organization, the response team attempts to recover the stolen information. What does ECIH v3 state about recovering exfiltrated data?",
+      "options_es": [
+        "A. Es posible mediante herramientas forenses avanzadas",
+        "B. Se puede lograr con cooperación de las fuerzas del orden",
+        "C. Es inalcanzable una vez que el robo se ha completado",
+        "D. Depende del tipo de cifrado utilizado en los datos"
+      ],
+      "options_en": [
+        "A. It is possible using advanced forensic tools",
+        "B. It can be achieved with law enforcement cooperation",
+        "C. It is unattainable once the theft is completed",
+        "D. It depends on the type of encryption used on the data"
+      ],
+      "correct": 2,
+      "explanation_es": "El ECIH v3 establece claramente que la recuperación de datos exfiltrados es inalcanzable (unattainable) una vez que el robo se ha completado. Esto subraya la importancia de la prevención y detección temprana sobre la recuperación posterior.",
+      "explanation_en": "ECIH v3 clearly states that recovery of exfiltrated data is unattainable once the theft is completed. This underscores the importance of prevention and early detection over post-incident recovery."
+    },
+    {
+      "id": 435,
+      "module": 10,
+      "question_es": "¿Cuál es la vulnerabilidad principal del protocolo Modbus/TCP según el ECIH v3?",
+      "question_en": "What is the main vulnerability of the Modbus/TCP protocol according to ECIH v3?",
+      "options_es": [
+        "A. Utiliza puertos no estándar que son difíciles de monitorear",
+        "B. No tiene cifrado ni autenticación integrados",
+        "C. Solo funciona en redes locales sin soporte para WAN",
+        "D. Requiere actualizaciones frecuentes que causan interrupciones"
+      ],
+      "options_en": [
+        "A. It uses non-standard ports that are difficult to monitor",
+        "B. It has no built-in encryption or authentication",
+        "C. It only works on local networks without WAN support",
+        "D. It requires frequent updates that cause disruptions"
+      ],
+      "correct": 1,
+      "explanation_es": "Modbus/TCP NO tiene cifrado ni autenticación integrados, lo que lo hace vulnerable a interceptación y manipulación de tráfico. Opera en el puerto estándar 502, funciona sobre redes IP y no requiere actualizaciones frecuentes.",
+      "explanation_en": "Modbus/TCP does NOT have built-in encryption or authentication, making it vulnerable to traffic interception and manipulation. It operates on standard port 502, works over IP networks, and does not require frequent updates."
+    },
+    {
+      "id": 436,
+      "module": 10,
+      "question_es": "Según el OWASP Top 10 IoT, ¿cuál es la amenaza número 1 para dispositivos IoT?",
+      "question_en": "According to the OWASP Top 10 IoT, what is the number 1 threat to IoT devices?",
+      "options_es": [
+        "A. Servicios de red inseguros",
+        "B. Contraseñas débiles, predecibles o hardcodeadas",
+        "C. Falta de mecanismo de actualización seguro",
+        "D. Transferencia y almacenamiento inseguro de datos"
+      ],
+      "options_en": [
+        "A. Insecure network services",
+        "B. Weak, guessable, or hardcoded passwords",
+        "C. Lack of secure update mechanism",
+        "D. Insecure data transfer and storage"
+      ],
+      "correct": 1,
+      "explanation_es": "La amenaza #1 del OWASP Top 10 IoT son las contraseñas débiles, predecibles o hardcodeadas. Los servicios de red inseguros son #2. La falta de actualización segura es #4. La transferencia insegura de datos es #7.",
+      "explanation_en": "The #1 OWASP Top 10 IoT threat is weak, guessable, or hardcoded passwords. Insecure network services are #2. Lack of secure update mechanism is #4. Insecure data transfer is #7."
+    },
+    {
+      "id": 437,
+      "module": 10,
+      "question_es": "¿Qué dos herramientas proporcionan cobertura integral para el marco ATT&CK for ICS según el ECIH v3?",
+      "question_en": "Which two tools provide comprehensive coverage for the ATT&CK for ICS framework according to ECIH v3?",
+      "options_es": [
+        "A. Wireshark y Nmap",
+        "B. Dragos y SCADAfence",
+        "C. Claroty y Nozomi Networks",
+        "D. CrowdStrike y Carbon Black"
+      ],
+      "options_en": [
+        "A. Wireshark and Nmap",
+        "B. Dragos and SCADAfence",
+        "C. Claroty and Nozomi Networks",
+        "D. CrowdStrike and Carbon Black"
+      ],
+      "correct": 1,
+      "explanation_es": "Dragos y SCADAfence proporcionan cobertura integral para ATT&CK for ICS según el ECIH v3. Wireshark y Nmap son herramientas genéricas de red. Claroty y Nozomi son herramientas OT pero no se mencionan específicamente para ATT&CK for ICS. CrowdStrike y Carbon Black son EDR.",
+      "explanation_en": "Dragos and SCADAfence provide comprehensive coverage for ATT&CK for ICS per ECIH v3. Wireshark and Nmap are generic network tools. Claroty and Nozomi are OT tools but not specifically mentioned for ATT&CK for ICS. CrowdStrike and Carbon Black are EDR."
+    },
+    {
+      "id": 438,
+      "module": 10,
+      "question_es": "Ricardo, ingeniero de OT en una planta industrial, necesita analizar tráfico sospechoso en el protocolo Modbus/TCP de sus sistemas SCADA. ¿Qué herramienta debe utilizar?",
+      "question_en": "Ricardo, an OT engineer at an industrial plant, needs to analyze suspicious Modbus/TCP traffic on his SCADA systems. What tool should he use?",
+      "options_es": [
+        "A. Burp Suite",
+        "B. Wireshark",
+        "C. SQLMap",
+        "D. OWASP ZAP"
+      ],
+      "options_en": [
+        "A. Burp Suite",
+        "B. Wireshark",
+        "C. SQLMap",
+        "D. OWASP ZAP"
+      ],
+      "correct": 1,
+      "explanation_es": "Wireshark es la herramienta recomendada en el ECIH v3 para análisis de tráfico Modbus/TCP en entornos OT/SCADA. Burp Suite y OWASP ZAP son para aplicaciones web. SQLMap es para inyección SQL.",
+      "explanation_en": "Wireshark is the tool recommended in ECIH v3 for Modbus/TCP traffic analysis in OT/SCADA environments. Burp Suite and OWASP ZAP are for web applications. SQLMap is for SQL injection."
+    },
+    {
+      "id": 439,
+      "module": 10,
+      "question_es": "¿Qué herramientas menciona el ECIH v3 específicamente para la recuperación de dispositivos IoT tras fallos?",
+      "question_en": "What tools does ECIH v3 specifically mention for IoT device failure recovery?",
+      "options_es": [
+        "A. CrowdStrike Falcon y Carbon Black",
+        "B. EmSPARK y InnoOSR",
+        "C. Dragos y Claroty",
+        "D. Nozomi Networks y ServiceNow"
+      ],
+      "options_en": [
+        "A. CrowdStrike Falcon and Carbon Black",
+        "B. EmSPARK and InnoOSR",
+        "C. Dragos and Claroty",
+        "D. Nozomi Networks and ServiceNow"
+      ],
+      "correct": 1,
+      "explanation_es": "EmSPARK y InnoOSR son las herramientas específicas mencionadas en el ECIH v3 para recuperación de fallos de dispositivos IoT. CrowdStrike y Carbon Black son EDR. Dragos y Claroty son para seguridad OT/ICS. Nozomi y ServiceNow son para monitoreo y gestión OT.",
+      "explanation_en": "EmSPARK and InnoOSR are the specific tools mentioned in ECIH v3 for IoT device failure recovery. CrowdStrike and Carbon Black are EDR. Dragos and Claroty are for OT/ICS security. Nozomi and ServiceNow are for OT monitoring and management."
+    },
+    {
+      "id": 440,
+      "module": 10,
+      "question_es": "Lucía, responsable de seguridad móvil, necesita implementar una solución que permita gestionar, monitorear y aplicar políticas de seguridad en todos los dispositivos móviles corporativos. ¿Qué solución debe implementar?",
+      "question_en": "Lucía, mobile security manager, needs to implement a solution that allows managing, monitoring, and applying security policies across all corporate mobile devices. What solution should she implement?",
+      "options_es": [
+        "A. EDR (Endpoint Detection and Response)",
+        "B. MDM (Mobile Device Management)",
+        "C. DLP (Data Loss Prevention)",
+        "D. SIEM (Security Information and Event Management)"
+      ],
+      "options_en": [
+        "A. EDR (Endpoint Detection and Response)",
+        "B. MDM (Mobile Device Management)",
+        "C. DLP (Data Loss Prevention)",
+        "D. SIEM (Security Information and Event Management)"
+      ],
+      "correct": 1,
+      "explanation_es": "MDM (Mobile Device Management) es la solución diseñada específicamente para gestionar, monitorear y aplicar políticas de seguridad en dispositivos móviles corporativos, incluyendo borrado remoto y aislamiento. EDR se enfoca en endpoints tradicionales. DLP previene fuga de datos. SIEM correlaciona eventos de seguridad.",
+      "explanation_en": "MDM (Mobile Device Management) is the solution specifically designed to manage, monitor, and apply security policies on corporate mobile devices, including remote wipe and isolation. EDR focuses on traditional endpoints. DLP prevents data leakage. SIEM correlates security events."
+    },
+    {
+      "id": 441,
+      "module": 10,
+      "question_es": "Según el OWASP Top 10 IoT, ¿cuál de las siguientes es la amenaza número 3?",
+      "question_en": "According to the OWASP Top 10 IoT, which of the following is threat number 3?",
+      "options_es": [
+        "A. Falta de endurecimiento físico",
+        "B. Interfaces de ecosistema inseguras (web, API backend, móvil, cloud)",
+        "C. Protección de privacidad insuficiente",
+        "D. Configuraciones por defecto inseguras"
+      ],
+      "options_en": [
+        "A. Lack of physical hardening",
+        "B. Insecure ecosystem interfaces (web, backend API, mobile, cloud)",
+        "C. Insufficient privacy protection",
+        "D. Insecure default settings"
+      ],
+      "correct": 1,
+      "explanation_es": "La amenaza #3 del OWASP Top 10 IoT son las interfaces de ecosistema inseguras (web, API backend, móvil, cloud). La falta de endurecimiento físico es #10. La protección de privacidad insuficiente es #6. Las configuraciones por defecto inseguras son #9.",
+      "explanation_en": "OWASP Top 10 IoT threat #3 is insecure ecosystem interfaces (web, backend API, mobile, cloud). Lack of physical hardening is #10. Insufficient privacy protection is #6. Insecure default settings are #9."
+    },
+    {
+      "id": 442,
+      "module": 10,
+      "question_es": "¿Cuáles son los tres principales protocolos de comunicación OT mencionados en el ECIH v3?",
+      "question_en": "What are the three main OT communication protocols mentioned in ECIH v3?",
+      "options_es": [
+        "A. HTTP, FTP, SSH",
+        "B. Modbus/TCP, CIP, S7Comm",
+        "C. MQTT, CoAP, AMQP",
+        "D. DNP3, BACnet, LonWorks"
+      ],
+      "options_en": [
+        "A. HTTP, FTP, SSH",
+        "B. Modbus/TCP, CIP, S7Comm",
+        "C. MQTT, CoAP, AMQP",
+        "D. DNP3, BACnet, LonWorks"
+      ],
+      "correct": 1,
+      "explanation_es": "El ECIH v3 menciona específicamente Modbus/TCP, CIP (Common Industrial Protocol) y S7Comm (Siemens S7 Communication) como los protocolos OT principales. HTTP/FTP/SSH son protocolos IT. MQTT/CoAP/AMQP son protocolos IoT. DNP3/BACnet/LonWorks son protocolos OT pero no los mencionados específicamente.",
+      "explanation_en": "ECIH v3 specifically mentions Modbus/TCP, CIP (Common Industrial Protocol), and S7Comm (Siemens S7 Communication) as the main OT protocols. HTTP/FTP/SSH are IT protocols. MQTT/CoAP/AMQP are IoT protocols. DNP3/BACnet/LonWorks are OT protocols but not the ones specifically mentioned."
+    },
+    {
+      "id": 443,
+      "module": 10,
+      "question_es": "Javier, administrador de TI, detecta que un dispositivo IoT comprometido en la red corporativa está siendo utilizado como parte de una botnet. ¿Cuál es la PRIMERA acción de contención que debe tomar?",
+      "question_en": "Javier, an IT administrator, detects that a compromised IoT device on the corporate network is being used as part of a botnet. What is the FIRST containment action he should take?",
+      "options_es": [
+        "A. Actualizar el firmware del dispositivo",
+        "B. Aislar el dispositivo de la red",
+        "C. Restaurar el dispositivo a configuración de fábrica",
+        "D. Cambiar las credenciales del dispositivo"
+      ],
+      "options_en": [
+        "A. Update the device firmware",
+        "B. Isolate the device from the network",
+        "C. Restore the device to factory settings",
+        "D. Change the device credentials"
+      ],
+      "correct": 1,
+      "explanation_es": "La primera acción de contención es aislar el dispositivo comprometido de la red para evitar que continúe participando en la botnet y prevenir propagación lateral. Actualizar firmware, restaurar o cambiar credenciales son pasos de erradicación/recuperación posteriores.",
+      "explanation_en": "The first containment action is to isolate the compromised device from the network to prevent it from continuing to participate in the botnet and prevent lateral spread. Updating firmware, restoring, or changing credentials are subsequent eradication/recovery steps."
+    }
+  ]
+}

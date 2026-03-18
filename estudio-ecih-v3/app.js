@@ -16,6 +16,10 @@ let examAnswers = [];
 let examCurrentIndex = 0;
 let examTimer = null;
 let examTimeRemaining = 180 * 60; // 3 horas en segundos
+let examFlagged = []; // Feature 3: flags/bookmarks
+let examIsReviewing = false; // Feature 3: review mode flag
+let examIsMiniExam = false; // Feature 5: mini-exam mode
+let examMiniModule = null;  // Feature 5: which module
 
 // Progreso (localStorage)
 let progress = {
@@ -26,6 +30,19 @@ let progress = {
     bestScore: 0,
     moduleScores: {}
 };
+
+// Feature 2: Failed Questions
+let failedQuestions = JSON.parse(localStorage.getItem('ecih_failedQuestions') || '[]');
+
+// Feature 4: Exam History
+let examHistory = JSON.parse(localStorage.getItem('ecih_examHistory') || '[]');
+
+// Feature 6: Leitner boxes for flashcards
+let leitnerBoxes = JSON.parse(localStorage.getItem('ecih_leitnerBoxes') || '{}');
+let leitnerSession = parseInt(localStorage.getItem('ecih_leitnerSession') || '0');
+
+// Feature 7: Immediate explanation mode (always on for practice)
+let practiceAnswered = false;
 
 // =============================================
 // INTERNACIONALIZACIÓN (i18n)
@@ -96,7 +113,40 @@ const i18n = {
         'section.modules': 'Resúmenes por Módulo',
         'section.flashcards': 'Flashcards',
         'select.allModules': 'Todos los módulos',
-        'select.module': 'Módulo'
+        'select.module': 'Módulo',
+        'exam.weighted': 'Modo ponderado (blueprint)',
+        'exam.random': 'Modo aleatorio',
+        'exam.weightedToggle': 'Ponderado (blueprint real)',
+        'exam.moduleSelect': 'Mini-examen por módulo:',
+        'exam.allModules': 'Examen completo (todos los módulos)',
+        'exam.flagged': 'Marcadas',
+        'exam.nextFlagged': 'Ir a siguiente marcada',
+        'btn.repeatFailed': 'Repetir falladas',
+        'btn.studyPending': 'Estudiar pendientes (Leitner)',
+        'btn.nextQuestion': 'Siguiente pregunta',
+        'failed.badge': 'preguntas falladas pendientes',
+        'failed.none': 'No hay preguntas falladas',
+        'failed.cleared': 'Eliminada de falladas',
+        'history.title': 'Historial de Exámenes',
+        'history.date': 'Fecha',
+        'history.score': 'Puntuación',
+        'history.pct': '%',
+        'history.time': 'Tiempo',
+        'history.trend': 'Tendencia',
+        'history.avg': 'Promedio',
+        'history.none': 'No hay exámenes completados aún',
+        'leitner.title': 'Sistema Leitner (Repetición Espaciada)',
+        'leitner.box': 'Caja',
+        'leitner.mastered': 'Dominadas',
+        'leitner.session': 'Sesión',
+        'leitner.correct': 'Correcto → subir caja',
+        'leitner.wrong': 'Incorrecto → volver a caja 1',
+        'miniexam.title': 'Mini-Examen Módulo',
+        'miniexam.questions': 'preguntas',
+        'miniexam.minutes': 'minutos',
+        'practice.correct': 'Correcto',
+        'practice.incorrect': 'Incorrecto',
+        'practice.nextBtn': 'Siguiente pregunta →'
     },
     en: {
         'dashboard.welcome': 'Welcome to Incident Handler v3 Study Platform',
@@ -160,7 +210,40 @@ const i18n = {
         'section.modules': 'Module Summaries',
         'section.flashcards': 'Flashcards',
         'select.allModules': 'All modules',
-        'select.module': 'Module'
+        'select.module': 'Module',
+        'exam.weighted': 'Weighted mode (blueprint)',
+        'exam.random': 'Random mode',
+        'exam.weightedToggle': 'Weighted (real blueprint)',
+        'exam.moduleSelect': 'Mini-exam by module:',
+        'exam.allModules': 'Full exam (all modules)',
+        'exam.flagged': 'Flagged',
+        'exam.nextFlagged': 'Go to next flagged',
+        'btn.repeatFailed': 'Repeat failed',
+        'btn.studyPending': 'Study pending (Leitner)',
+        'btn.nextQuestion': 'Next question',
+        'failed.badge': 'failed questions pending',
+        'failed.none': 'No failed questions',
+        'failed.cleared': 'Removed from failed',
+        'history.title': 'Exam History',
+        'history.date': 'Date',
+        'history.score': 'Score',
+        'history.pct': '%',
+        'history.time': 'Time',
+        'history.trend': 'Trend',
+        'history.avg': 'Average',
+        'history.none': 'No exams completed yet',
+        'leitner.title': 'Leitner System (Spaced Repetition)',
+        'leitner.box': 'Box',
+        'leitner.mastered': 'Mastered',
+        'leitner.session': 'Session',
+        'leitner.correct': 'Correct → move up a box',
+        'leitner.wrong': 'Wrong → back to box 1',
+        'miniexam.title': 'Module Mini-Exam',
+        'miniexam.questions': 'questions',
+        'miniexam.minutes': 'minutes',
+        'practice.correct': 'Correct',
+        'practice.incorrect': 'Incorrect',
+        'practice.nextBtn': 'Next question →'
     }
 };
 
@@ -241,8 +324,17 @@ async function loadExternalQuestions() {
             if (!resp.ok) continue;
             const data = await resp.json();
 
-            // Handle all formats: array, { questions: [] }, { additional_questions: [] }
-            const rawList = Array.isArray(data) ? data : (data.questions || data.additional_questions || []);
+            // Handle all formats: array, { questions: [] }, { additional_questions: [] }, or any key with array
+            let rawList;
+            if (Array.isArray(data)) {
+                rawList = data;
+            } else {
+                rawList = data.questions || data.additional_questions || [];
+                if (rawList.length === 0) {
+                    const arrayKey = Object.keys(data).find(k => Array.isArray(data[k]));
+                    if (arrayKey) rawList = data[arrayKey];
+                }
+            }
 
             rawList.forEach(q => {
                 if (existingIds.has(q.id)) return;
@@ -289,14 +381,29 @@ async function loadExternalQuestions() {
     // Also try pro question files if they exist
     const proFiles = [
         'questions_pro_m1_m5.json',
-        'questions_pro_m6_m10.json'
+        'questions_pro_m6_m10.json',
+        'questions_exam_m2.json',
+        'questions_exam_m2_extra.json',
+        'questions_exam_m1_m3_m4_m5.json',
+        'questions_exam_m6_m7_m8_m9_m10.json'
     ];
     for (const file of proFiles) {
         try {
             const resp = await fetch(file);
             if (!resp.ok) continue;
             const data = await resp.json();
-            const rawList = Array.isArray(data) ? data : (data.questions || data.additional_questions || []);
+            // Handle all formats: array, or object with any key containing an array
+            let rawList;
+            if (Array.isArray(data)) {
+                rawList = data;
+            } else {
+                rawList = data.questions || data.additional_questions || [];
+                if (rawList.length === 0) {
+                    // Try first key that contains an array (e.g. exam_questions_m2, exam_questions)
+                    const arrayKey = Object.keys(data).find(k => Array.isArray(data[k]));
+                    if (arrayKey) rawList = data[arrayKey];
+                }
+            }
 
             rawList.forEach(q => {
                 if (existingIds.has(q.id)) return;
@@ -446,6 +553,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadPracticeQuestions();
     updateProgressDisplay();
     updateWeakAreas();
+    updateFailedBadge(); // Feature 2
 
     // Set initial question count
     const countEl = document.getElementById('availableQuestionsCount');
@@ -480,6 +588,8 @@ function showSection(sectionId) {
     if (sectionId === 'progreso') {
         updateProgressDisplay();
         renderModuleProgressBars();
+        renderExamHistory(); // Feature 4
+        renderLeitnerDistribution(); // Feature 6
     }
     if (sectionId === 'dashboard') {
         updateWeakAreas();
@@ -713,6 +823,7 @@ function loadFlashcards() {
 
     currentFlashcardIndex = 0;
     displayFlashcard();
+    renderLeitnerDistribution(); // Feature 6
 }
 
 function shuffleFlashcards() {
@@ -771,22 +882,35 @@ function prevFlashcard() {
 // PRÁCTICA
 // =============================================
 
-function loadPracticeQuestions() {
-    const moduleFilter = document.getElementById('practiceModule').value;
-
-    if (moduleFilter === 'all') {
-        currentQuestions = [...practiceQuestions].sort(() => Math.random() - 0.5);
-    } else {
+function loadPracticeQuestions(useFailedPool) {
+    if (useFailedPool) {
+        // Feature 2: load only failed questions
+        const failedIds = new Set(failedQuestions);
         currentQuestions = practiceQuestions
-            .filter(q => q.module == moduleFilter)
+            .filter(q => failedIds.has(q.id))
             .sort(() => Math.random() - 0.5);
+        if (currentQuestions.length === 0) {
+            alert(t('failed.none'));
+            return;
+        }
+    } else {
+        const moduleFilter = document.getElementById('practiceModule').value;
+        if (moduleFilter === 'all') {
+            currentQuestions = [...practiceQuestions].sort(() => Math.random() - 0.5);
+        } else {
+            currentQuestions = practiceQuestions
+                .filter(q => q.module == moduleFilter)
+                .sort(() => Math.random() - 0.5);
+        }
     }
 
     currentQuestionIndex = 0;
     practiceCorrect = 0;
     practiceTotal = 0;
+    practiceAnswered = false;
     updatePracticeScore();
     displayPracticeQuestion();
+    updateFailedBadge();
 }
 
 function getQuestionText(q) {
@@ -812,6 +936,7 @@ function displayPracticeQuestion() {
         return;
     }
 
+    practiceAnswered = false;
     const q = currentQuestions[currentQuestionIndex];
     const letters = ['A', 'B', 'C', 'D'];
     const questionText = getQuestionText(q);
@@ -826,6 +951,13 @@ function displayPracticeQuestion() {
         </li>
     `).join('');
 
+    // Feature 7: next button visible only after answering
+    const nextBtnHtml = `
+        <button id="practiceNextBtn" class="practice-next-btn" style="display:none;" onclick="nextQuestion()">
+            ${t('practice.nextBtn')}
+        </button>
+    `;
+
     document.getElementById('practiceContainer').innerHTML = `
         <p class="question-text">${currentQuestionIndex + 1}. ${questionText} ${diffBadge}</p>
         <ul class="options-list">${optionsHtml}</ul>
@@ -833,6 +965,7 @@ function displayPracticeQuestion() {
             <strong>${t('label.explanation')}:</strong> ${explanation}
         </div>
         <div class="answer-module-stats" id="answerModuleStats" style="display:none;"></div>
+        ${nextBtnHtml}
     `;
 
     document.getElementById('questionCounter').textContent =
@@ -840,23 +973,39 @@ function displayPracticeQuestion() {
 }
 
 function selectPracticeAnswer(selectedIdx, element) {
+    if (practiceAnswered) return; // Feature 7: prevent double-answer
+    practiceAnswered = true;
+
     const q = currentQuestions[currentQuestionIndex];
     const options = document.querySelectorAll('.option-item');
 
     // Deshabilitar más clics
     options.forEach(opt => opt.onclick = null);
 
-    // Marcar respuestas
+    const isCorrect = selectedIdx === q.correct;
+
+    // Feature 7: Immediate feedback - highlight correct/incorrect immediately
     options.forEach((opt, idx) => {
         if (idx === q.correct) {
             opt.classList.add('correct');
-        } else if (idx === selectedIdx) {
+        } else if (idx === selectedIdx && !isCorrect) {
             opt.classList.add('incorrect');
         }
     });
 
-    // Mostrar explicación
-    document.getElementById('explanation').classList.add('show');
+    // Feature 7: Show explanation immediately with result banner
+    const explanationEl = document.getElementById('explanation');
+    if (explanationEl) {
+        const resultLabel = isCorrect
+            ? `<span class="practice-result-correct">✓ ${t('practice.correct')}</span>`
+            : `<span class="practice-result-incorrect">✗ ${t('practice.incorrect')}</span>`;
+        explanationEl.innerHTML = `${resultLabel}<br><strong>${t('label.explanation')}:</strong> ${getQuestionExplanation(q)}`;
+        explanationEl.classList.add('show');
+    }
+
+    // Feature 7: Show "Siguiente" button after answering
+    const nextBtn = document.getElementById('practiceNextBtn');
+    if (nextBtn) nextBtn.style.display = 'inline-block';
 
     // Actualizar puntuación
     practiceTotal++;
@@ -867,10 +1016,24 @@ function selectPracticeAnswer(selectedIdx, element) {
         progress.moduleScores[moduleKey] = { correct: 0, total: 0 };
     }
 
-    if (selectedIdx === q.correct) {
+    if (isCorrect) {
         practiceCorrect++;
         progress.practiceCorrect++;
         progress.moduleScores[moduleKey].correct++;
+        // Feature 2: Remove from failed pool if answered correctly
+        const fIdx = failedQuestions.indexOf(q.id);
+        if (fIdx !== -1) {
+            failedQuestions.splice(fIdx, 1);
+            localStorage.setItem('ecih_failedQuestions', JSON.stringify(failedQuestions));
+            updateFailedBadge();
+        }
+    } else {
+        // Feature 2: Track failed question
+        if (q.id && !failedQuestions.includes(q.id)) {
+            failedQuestions.push(q.id);
+            localStorage.setItem('ecih_failedQuestions', JSON.stringify(failedQuestions));
+            updateFailedBadge();
+        }
     }
     progress.moduleScores[moduleKey].total++;
 
@@ -923,6 +1086,7 @@ function showAnswerModuleStats(moduleNum) {
 function nextQuestion() {
     if (currentQuestionIndex < currentQuestions.length - 1) {
         currentQuestionIndex++;
+        practiceAnswered = false;
         displayPracticeQuestion();
     }
 }
@@ -930,7 +1094,19 @@ function nextQuestion() {
 function prevQuestion() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
+        practiceAnswered = false;
         displayPracticeQuestion();
+    }
+}
+
+// Feature 2: Helper to update failed badge
+function updateFailedBadge() {
+    const badge = document.getElementById('failedBadge');
+    if (badge) {
+        badge.textContent = failedQuestions.length > 0
+            ? `${failedQuestions.length} ${t('failed.badge')}`
+            : '';
+        badge.style.display = failedQuestions.length > 0 ? 'inline-block' : 'none';
     }
 }
 
@@ -938,12 +1114,77 @@ function prevQuestion() {
 // SIMULACRO DE EXAMEN
 // =============================================
 
+// Feature 1: Weighted exam blueprint
+const EXAM_BLUEPRINT = { 1:5, 2:31, 3:15, 4:13, 5:10, 6:11, 7:8, 8:6, 9:4, 10:7 };
+
+function generateWeightedExamQuestions() {
+    const result = [];
+    const existingIds = new Set();
+    for (let mod = 1; mod <= 10; mod++) {
+        const needed = EXAM_BLUEPRINT[mod] || 0;
+        const pool = practiceQuestions
+            .filter(q => q.module == mod)
+            .sort(() => Math.random() - 0.5);
+        let added = 0;
+        for (const q of pool) {
+            if (added >= needed) break;
+            if (!existingIds.has(q.id)) {
+                result.push(q);
+                existingIds.add(q.id);
+                added++;
+            }
+        }
+        // If not enough questions for this module, fill from pool anyway
+        if (added < needed) {
+            const extra = pool.filter(q => !existingIds.has(q.id));
+            extra.slice(0, needed - added).forEach(q => {
+                result.push(q);
+                existingIds.add(q.id);
+            });
+        }
+    }
+    return result.sort(() => Math.random() - 0.5);
+}
+
+// Feature 5: Mini-exam per module
+function generateMiniExamQuestions(moduleNum) {
+    const pool = practiceQuestions
+        .filter(q => q.module == moduleNum)
+        .sort(() => Math.random() - 0.5);
+    const count = Math.min(30, pool.length);
+    return pool.slice(0, count);
+}
+
 function startExam() {
-    // Generar preguntas del examen
-    examQuestions = generateExamQuestions();
+    const weightedToggle = document.getElementById('weightedToggle');
+    const moduleExamSelect = document.getElementById('moduleExamSelect');
+    const selectedModule = moduleExamSelect ? moduleExamSelect.value : 'all';
+    const useWeighted = weightedToggle ? weightedToggle.checked : false;
+
+    examIsReviewing = false;
+
+    // Feature 5: Mini-exam
+    if (selectedModule !== 'all') {
+        examIsMiniExam = true;
+        examMiniModule = parseInt(selectedModule);
+        examQuestions = generateMiniExamQuestions(examMiniModule);
+        const miniMinutes = Math.round((examQuestions.length / 100) * 180);
+        examTimeRemaining = miniMinutes * 60;
+    } else {
+        examIsMiniExam = false;
+        examMiniModule = null;
+        // Feature 1: Weighted or random
+        if (useWeighted) {
+            examQuestions = generateWeightedExamQuestions();
+        } else {
+            examQuestions = generateExamQuestions();
+        }
+        examTimeRemaining = 180 * 60;
+    }
+
     examAnswers = new Array(examQuestions.length).fill(null);
+    examFlagged = new Array(examQuestions.length).fill(false); // Feature 3
     examCurrentIndex = 0;
-    examTimeRemaining = 180 * 60; // 3 horas
 
     // Ocultar intro, mostrar examen
     document.getElementById('examIntro').style.display = 'none';
@@ -958,6 +1199,7 @@ function startExam() {
 
     // Mostrar primera pregunta
     displayExamQuestion();
+    updateFlaggedCount(); // Feature 3
 }
 
 function startExamTimer() {
@@ -995,9 +1237,10 @@ function createQuestionGrid() {
 function updateQuestionGrid() {
     const buttons = document.querySelectorAll('.q-btn');
     buttons.forEach((btn, idx) => {
-        btn.classList.remove('current', 'answered');
+        btn.classList.remove('current', 'answered', 'flagged-q');
         if (idx === examCurrentIndex) btn.classList.add('current');
         if (examAnswers[idx] !== null) btn.classList.add('answered');
+        if (examFlagged[idx]) btn.classList.add('flagged-q'); // Feature 3
     });
 }
 
@@ -1007,6 +1250,7 @@ function displayExamQuestion() {
     const questionText = getQuestionText(q);
     const options = getQuestionOptions(q);
     const diffBadge = getDifficultyBadgeHtml(questionText);
+    const isFlagged = examFlagged[examCurrentIndex]; // Feature 3
 
     let optionsHtml = options.map((opt, idx) => `
         <li class="option-item ${examAnswers[examCurrentIndex] === idx ? 'selected' : ''}"
@@ -1016,8 +1260,16 @@ function displayExamQuestion() {
         </li>
     `).join('');
 
+    // Feature 3: flag button
+    const flagBtn = `<button class="flag-btn ${isFlagged ? 'flagged' : ''}" onclick="toggleExamFlag()" title="${t('exam.flagged')}">
+        ${isFlagged ? '🚩' : '⚑'} ${isFlagged ? t('exam.flagged') : ''}
+    </button>`;
+
     document.getElementById('examQuestion').innerHTML = `
-        <p class="question-text">${examCurrentIndex + 1}. ${questionText} ${diffBadge}</p>
+        <div class="question-header-row">
+            <p class="question-text">${examCurrentIndex + 1}. ${questionText} ${diffBadge}</p>
+            ${flagBtn}
+        </div>
         <ul class="options-list">${optionsHtml}</ul>
     `;
 
@@ -1039,9 +1291,38 @@ function selectExamAnswer(selectedIdx, element) {
     updateQuestionGrid();
 }
 
+// Feature 3: Flag functions
+function toggleExamFlag() {
+    examFlagged[examCurrentIndex] = !examFlagged[examCurrentIndex];
+    displayExamQuestion();
+    updateFlaggedCount();
+    updateQuestionGrid();
+}
+
+function updateFlaggedCount() {
+    const count = examFlagged.filter(Boolean).length;
+    const el = document.getElementById('flaggedCount');
+    if (el) el.textContent = count > 0 ? `🚩 ${count} ${t('exam.flagged')}` : '';
+}
+
+function goToNextFlagged() {
+    const start = examCurrentIndex;
+    for (let i = 1; i <= examFlagged.length; i++) {
+        const idx = (start + i) % examFlagged.length;
+        if (examFlagged[idx]) {
+            goToExamQuestion(idx);
+            return;
+        }
+    }
+}
+
 function goToExamQuestion(index) {
     examCurrentIndex = index;
-    displayExamQuestion();
+    if (examIsReviewing) {
+        displayExamReview();
+    } else {
+        displayExamQuestion();
+    }
 }
 
 function nextExamQuestion() {
@@ -1093,6 +1374,24 @@ function finishExam() {
         progress.bestScore = percentage;
     }
     saveProgress();
+
+    // Feature 4: Save exam history
+    const perModule = {};
+    Object.entries(moduleResults).forEach(([k, v]) => {
+        perModule[k] = Math.round((v.correct / v.total) * 100);
+    });
+    const timeUsed = 180 * 60 - examTimeRemaining;
+    examHistory.unshift({
+        date: new Date().toLocaleDateString(),
+        score: correct,
+        total: examQuestions.length,
+        percentage,
+        perModule,
+        timeUsed: formatTime(timeUsed),
+        weighted: document.getElementById('weightedToggle') ? document.getElementById('weightedToggle').checked : false
+    });
+    if (examHistory.length > 10) examHistory = examHistory.slice(0, 10);
+    localStorage.setItem('ecih_examHistory', JSON.stringify(examHistory));
 
     // Mostrar resultados
     document.getElementById('examContainer').style.display = 'none';
@@ -1149,6 +1448,7 @@ function formatTime(seconds) {
 }
 
 function reviewExam() {
+    examIsReviewing = true;
     document.getElementById('examResults').style.display = 'none';
     document.getElementById('examContainer').style.display = 'block';
 
@@ -1177,8 +1477,14 @@ function displayExamReview() {
         </li>`;
     }).join('');
 
+    // Feature 3: flag indicator in review
+    const isFlagged = examFlagged[examCurrentIndex];
+    const flagIndicator = isFlagged ? `<span class="flag-indicator">🚩 ${t('exam.flagged')}</span>` : '';
+
     document.getElementById('examQuestion').innerHTML = `
-        <p class="question-text">${examCurrentIndex + 1}. ${questionText} ${diffBadge}</p>
+        <div class="question-header-row">
+            <p class="question-text">${examCurrentIndex + 1}. ${questionText} ${diffBadge} ${flagIndicator}</p>
+        </div>
         <ul class="options-list">${optionsHtml}</ul>
         <div class="explanation show">
             <strong>${t('label.explanation')}:</strong> ${explanation}
@@ -1278,6 +1584,131 @@ function resetProgress() {
         updateProgressDisplay();
         renderModuleProgressBars();
     }
+}
+
+// Feature 4: Render exam history table
+function renderExamHistory() {
+    const container = document.getElementById('examHistoryContainer');
+    if (!container) return;
+
+    if (examHistory.length === 0) {
+        container.innerHTML = `<p class="no-history">${t('history.none')}</p>`;
+        return;
+    }
+
+    // Calculate average
+    const avg = Math.round(examHistory.reduce((s, e) => s + e.percentage, 0) / examHistory.length);
+
+    // Trend: compare last vs second-to-last
+    let trendHtml = '';
+    if (examHistory.length >= 2) {
+        const diff = examHistory[0].percentage - examHistory[1].percentage;
+        if (diff > 0) trendHtml = `<span class="trend-up">▲ +${diff}%</span>`;
+        else if (diff < 0) trendHtml = `<span class="trend-down">▼ ${diff}%</span>`;
+        else trendHtml = `<span class="trend-flat">→ 0%</span>`;
+    }
+
+    const rows = examHistory.map((e, i) => {
+        const pctClass = e.percentage >= 70 ? 'pass' : 'fail';
+        const trendIcon = i === 0 && examHistory.length >= 2
+            ? (e.percentage >= examHistory[1].percentage ? '▲' : '▼')
+            : '';
+        return `<tr>
+            <td>${e.date}</td>
+            <td>${e.score}/${e.total}</td>
+            <td class="history-pct ${pctClass}">${e.percentage}%</td>
+            <td>${e.timeUsed}</td>
+            <td>${trendIcon}</td>
+        </tr>`;
+    }).join('');
+
+    container.innerHTML = `
+        <h3>${t('history.title')} ${trendHtml} — ${t('history.avg')}: ${avg}%</h3>
+        <table class="history-table">
+            <thead><tr>
+                <th>${t('history.date')}</th>
+                <th>${t('history.score')}</th>
+                <th>${t('history.pct')}</th>
+                <th>${t('history.time')}</th>
+                <th>${t('history.trend')}</th>
+            </tr></thead>
+            <tbody>${rows}</tbody>
+        </table>
+    `;
+}
+
+// Feature 6: Leitner Spaced Repetition
+function getLeitnerBox(cardKey) {
+    return leitnerBoxes[cardKey] || 1;
+}
+
+function setLeitnerBox(cardKey, box) {
+    leitnerBoxes[cardKey] = Math.max(1, Math.min(5, box));
+    localStorage.setItem('ecih_leitnerBoxes', JSON.stringify(leitnerBoxes));
+}
+
+function getCardKey(cardIndex) {
+    const card = currentFlashcards[cardIndex];
+    return card ? `fc_${card.module}_${card.q.substring(0, 30).replace(/\s/g, '_')}` : `fc_${cardIndex}`;
+}
+
+function leitnerCorrect() {
+    const key = getCardKey(currentFlashcardIndex);
+    const current = getLeitnerBox(key);
+    setLeitnerBox(key, current + 1);
+    renderLeitnerDistribution();
+    nextFlashcard();
+}
+
+function leitnerWrong() {
+    const key = getCardKey(currentFlashcardIndex);
+    setLeitnerBox(key, 1);
+    renderLeitnerDistribution();
+    nextFlashcard();
+}
+
+function loadLeitnerPendingCards() {
+    leitnerSession++;
+    localStorage.setItem('ecih_leitnerSession', leitnerSession);
+
+    // Due intervals per box: box1=every session, box2=every2, box3=every4, box4=every8, box5=mastered(skip)
+    const intervals = [0, 1, 2, 4, 8, Infinity];
+
+    const allCards = currentFlashcards.length > 0 ? currentFlashcards : [...flashcards];
+    const pending = allCards.filter((card, idx) => {
+        const key = `fc_${card.module}_${card.q.substring(0, 30).replace(/\s/g, '_')}`;
+        const box = getLeitnerBox(key);
+        if (box >= 5) return false; // mastered
+        return leitnerSession % intervals[box] === 0;
+    });
+
+    if (pending.length === 0) {
+        alert('No hay tarjetas pendientes para esta sesión (¡todas en caja alta!). Intenta en la siguiente sesión.');
+        return;
+    }
+
+    currentFlashcards = pending.sort(() => Math.random() - 0.5);
+    currentFlashcardIndex = 0;
+    displayFlashcard();
+    renderLeitnerDistribution();
+}
+
+function renderLeitnerDistribution() {
+    const container = document.getElementById('leitnerDistribution');
+    if (!container) return;
+
+    const dist = [0, 0, 0, 0, 0, 0]; // index 1-5
+    const allCards = [...flashcards];
+    allCards.forEach(card => {
+        const key = `fc_${card.module}_${card.q.substring(0, 30).replace(/\s/g, '_')}`;
+        const box = getLeitnerBox(key);
+        if (box >= 1 && box <= 5) dist[box]++;
+    });
+
+    const boxLabels = ['', t('leitner.box') + ' 1', t('leitner.box') + ' 2', t('leitner.box') + ' 3', t('leitner.box') + ' 4', t('leitner.mastered')];
+    container.innerHTML = `<div class="leitner-dist">` +
+        [1,2,3,4,5].map(b => `<span class="leitner-box leitner-box-${b}">${boxLabels[b]}: ${dist[b]}</span>`).join('') +
+        `</div>`;
 }
 
 // =============================================
